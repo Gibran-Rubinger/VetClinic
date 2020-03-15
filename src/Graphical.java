@@ -9,11 +9,11 @@ public class Graphical {
 	}
 
 	public void setMessage(String message) {
-		this.message = message;
+		Graphical.message = message;
 	}
 	
 //	In this method it will print some strings as type writer effect.
-	public void typeWriter(String mesage, int delayChar) {
+	protected void typeWriter(String mesage, int delayChar) {
 		
 //		for loop to print which character with milliseconds delay solution by *Nodehead, link avaliable in Github* 
 		for(int i = 0; i < message.length(); i++) {
