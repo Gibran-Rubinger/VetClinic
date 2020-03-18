@@ -3,6 +3,7 @@ import java.util.Random;
 public class RandomName {
 	
 //	Set a String Poll of characters.
+	public void RN() {
 	String poolOfCharacters = "ABCDEFGHIKLMNOPQRSTVXYZ";
 	String randomSelect = "";
 //	this integer will be use to define the size of a random name.
@@ -21,6 +22,6 @@ public class RandomName {
 	}
 	 
 	System.out.println(randomSelect);
-	
+	}	
 }
 

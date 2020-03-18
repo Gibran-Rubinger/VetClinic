@@ -67,9 +67,8 @@ public class Main {
 		
 		RandomName printName = new RandomName();
 		
-		System.out.println(printName.randomSelect);
-		System.out.println(printName.randomSelect);
-		System.out.println(printName.randomSelect);
+		System.out.println();
+		
 		
 		
 	}
