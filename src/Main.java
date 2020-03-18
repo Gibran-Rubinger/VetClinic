@@ -64,6 +64,14 @@ public class Main {
 				"\r\n" + 
 				"");
 		printer.typeWriter(null, 1);
+		
+		RandomName printName = new RandomName();
+		
+		System.out.println(printName.randomSelect);
+		System.out.println(printName.randomSelect);
+		System.out.println(printName.randomSelect);
+		
+		
 	}
 
 }
