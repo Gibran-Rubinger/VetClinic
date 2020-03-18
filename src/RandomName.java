@@ -3,11 +3,14 @@ import java.util.Random;
 public class RandomName {
 	
 //	Set a String Poll of characters.
-	public void RN() {
+	
 	String poolOfCharacters = "ABCDEFGHIKLMNOPQRSTVXYZ";
 	String randomSelect = "";
 //	this integer will be use to define the size of a random name.
 	int size = 10;
+
+	
+	public void RN() {
 	
 //	set the superclass Random for using in a loop to create random names.
 	Random myRandom = new Random();
@@ -22,6 +25,15 @@ public class RandomName {
 	}
 	 
 	System.out.println(randomSelect);
+	}
+//	getting the getters and setters for randomSelect
+
+	public String getRandomSelect() {
+		return randomSelect;
+	}
+
+	public void setRandomSelect(String randomSelect) {
+		this.randomSelect = randomSelect;
 	}	
 }
 
