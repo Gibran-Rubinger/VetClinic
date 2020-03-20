@@ -70,13 +70,9 @@ public class Main {
 		//printName.setRandomSelect(printName.randomSelect);
 		//printName.getRandomSelect();
 		
-		System.out.println(printName);
-		System.out.println(printName);
-		System.out.println(printName);
-		System.out.println(printName);
-		System.out.println(printName);
-		
-		
+		printName.Rn();
+		printName.storage();
+		//printName.mdf();
 		
 	}
 

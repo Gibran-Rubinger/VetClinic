@@ -7,14 +7,14 @@ public class RandomName {
 	String poolOfCharacters = "ABCDEFGHIKLMNOPQRSTVXYZ";
 	String randomSelect = "";
 //	this integer will be use to define the size of a random name.
-	int size = 10;
+	int size = 5;
 
 	
-	public void RN(to String) {
+	public String Rn() {
 	
 //	set the superclass Random for using in a loop to create random names.
 	Random myRandom = new Random();
-	
+//	
 	char[] alphabet = new char[size];
 	
 	for (int i = 0; i < size; i++) {
@@ -23,9 +23,16 @@ public class RandomName {
 	for (int i = 0; i < alphabet.length; i++) {
 		randomSelect += alphabet[i];
 	}
-	 
-	System.out.println(randomSelect);
+	return randomSelect;
+}
+	
+	public void storage() {
+	String[]  storageName = new String[10];
+	for(int i = 0; i <= storageName.length;i++){
+		System.out.println(randomSelect);
 	}
+}
+	
 //	getting the getters and setters for randomSelect
 
 	public String getRandomSelect() {
