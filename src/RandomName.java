@@ -10,7 +10,7 @@ public class RandomName {
 	int size = 10;
 
 	
-	public void RN() {
+	public void RN(to String) {
 	
 //	set the superclass Random for using in a loop to create random names.
 	Random myRandom = new Random();

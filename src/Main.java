@@ -65,9 +65,10 @@ public class Main {
 				"");
 		printer.typeWriter(null, 1);
 		
+		
 		RandomName printName = new RandomName();
-		printName.setRandomSelect(printName.randomSelect);
-		printName.getRandomSelect();
+		//printName.setRandomSelect(printName.randomSelect);
+		//printName.getRandomSelect();
 		
 		System.out.println(printName);
 		System.out.println(printName);
