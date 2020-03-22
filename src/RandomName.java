@@ -20,27 +20,12 @@ public class RandomName {
 	for (int i = 0; i < size; i++) {
 		alphabet[i] = poolOfCharacters.charAt(myRandom.nextInt(poolOfCharacters.length()));
 	}
-	for (int i = 0; i < alphabet.length; i++) {
+	for (int i = 0; i < size; i++) {
 		randomSelect += alphabet[i];
 	}
 	return randomSelect;
-}
 	
-	public void storage() {
-	String[]  storageName = new String[10];
-	for(int i = 0; i <= storageName.length;i++){
-		System.out.println(randomSelect);
-	}
-}
-	
-//	getting the getters and setters for randomSelect
+  }
 
-	public String getRandomSelect() {
-		return randomSelect;
-	}
-
-	public void setRandomSelect(String randomSelect) {
-		this.randomSelect = randomSelect;
-	}	
 }
 

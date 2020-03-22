@@ -70,8 +70,13 @@ public class Main {
 		//printName.setRandomSelect(printName.randomSelect);
 		//printName.getRandomSelect();
 		
-		printName.Rn();
-		printName.storage();
+		String[]  storageName = new String[10];
+		for(int i = 0; i <= storageName.length;i++){
+			 
+			System.out.println(printName.Rn());
+		}
+		
+		
 		//printName.mdf();
 		
 	}
