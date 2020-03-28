@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 //above are being import the super classes that it will be used in the code.
 public class Main {
@@ -64,21 +65,7 @@ public class Main {
 				"\r\n" + 
 				"");
 		printer.typeWriter(null, 1);
-		
-		
-		RandomName printName = new RandomName();
-		//printName.setRandomSelect(printName.randomSelect);
-		//printName.getRandomSelect();
-		
-		String[]  storageName = new String[10];
-		for(int i = 0; i <= storageName.length;i++){
-			 
-			System.out.println(printName.Rn());
-		}
-		
-		
-		//printName.mdf();
+			
 		
 	}
-
 }
