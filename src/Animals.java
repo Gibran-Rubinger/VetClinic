@@ -3,29 +3,30 @@ import java.util.ArrayList;
 public class Animals {
 
 //  attributes
-	 String idAnimal = null;
+	 int idAnimal = 0;
 	 String name = null;
 	 int age = 0;
-	 boolean species = true;
-	 boolean gender = true;
+	 String species = null;
+	 String gender = null;
 	 String medicalCond = null;
 //	constructor
 	public Animals() {
 	}
 //	constructor to set the Attributes.
-	public Animals(String idAnimal, String name, int age, boolean species, boolean gender, String medicalCond) {
+	public Animals(int idAnimal, String name, int age, String species, String gender, String medicalCond) {
 		this.idAnimal = idAnimal;
 		this.name = name;
 		this.species = species;
 		this.gender = gender;
 		this.medicalCond = medicalCond;	
+		
 	}
 	
 //	produce the methods for getters and setters.
-	public String getIdAnimal() {
+	public int getIdAnimal() {
 		return idAnimal;
 	}
-	public void setIdAnimal(String idAnimal) {
+	public void setIdAnimal(int idAnimal) {
 		this.idAnimal = idAnimal;
 	}
 	public String getName() {
@@ -40,16 +41,16 @@ public class Animals {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public boolean isSpecies() {
+	public String getSpecies() {
 		return species;
 	}
-	public void setSpecies(boolean species) {
+	public void setSpecies(String species) {
 		this.species = species;
 	}
-	public boolean isGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(boolean gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getMedicalCond() {
@@ -58,7 +59,11 @@ public class Animals {
 	public void setMedicalCond(String medicalCond) {
 		this.medicalCond = medicalCond;
 	}
-// creating the to String
 	
-	
+	// creating the to String to override it.
+		@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return idAnimal+ ": " + name + ": " + age+ ": " + gender+ ": " + medicalCond+ ": ";
+		}
 }
