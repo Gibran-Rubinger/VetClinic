@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Animals {
 
 //  attributes
-	 int idAnimal = 0;
+	 int idAnimal= 0;
 	 String name = null;
-	 int age = 0;
+	 int age= 0;
 	 String species = null;
 	 String gender = null;
 	 String medicalCond = null;
@@ -16,6 +16,7 @@ public class Animals {
 	public Animals(int idAnimal, String name, int age, String species, String gender, String medicalCond) {
 		this.idAnimal = idAnimal;
 		this.name = name;
+		this.age = age;
 		this.species = species;
 		this.gender = gender;
 		this.medicalCond = medicalCond;	
@@ -63,6 +64,6 @@ public class Animals {
 	// creating the to String to override it.
 		@Override
 		public String toString() {
-			return "ID: " +idAnimal+ "   Name: " + name + "   Age: " + age+ "   Gender: " + gender+ "   Medical Condition: " + medicalCond+ ". ";
+			return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+ "       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n\n________________________________________________________________________________________________________________________________________________________";
 		}
 }
