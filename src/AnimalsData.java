@@ -1,17 +1,30 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class AnimalsData {
+	int size = 1000;
 	
-	public void addAnimal(Animals ne) {
-		ArrayList<Animals> animalList = new ArrayList<Animals>();
+	public void addAnimal() {
+		Animals[] listOfAnimals;
+		
+		listOfAnimals = new Animals[size];
+		String[] poolOfNames = {"Deco","Bob","Joly","Laize"};
+		String[] poolOfSpecies = {"Dog","Cat", "Domestic Pig", "Cockatiel", "Oscar Fish","Rabbit"};
+		String[] poolOfGender = {"Male","Female"};
+		String[] poolOfMedicalCond = {"A","B","C","D","E","F","G"};
 		
 		
-		Animals animal0001 = new Animals(0001, "Deco", 10, "Dog", "Male", "bcdc");
-		Animals animal0002 = new Animals(0002, "Bob", 16, "Dog", "Male", "dcdcbcdc");
-		Animals animal0003 = new Animals(0003, "Joly", 6, "Dog", "female", "bccccdc");
-		Animals animal0004 = new Animals(0004, "Laize", 10, "Dog", "female", "dddfbcdc");
-		 
-		animalList.add(animal0001);
+		Random myRandom = new Random();
+		
+//		generate the animal id
+		
+//		generate the objects
+		for(int i = 0; i < listOfAnimals.length; i++) {
+			
+			listOfAnimals[i] = new Animals(0000, poolOfNames[myRandom.nextInt(poolOfNames.length)], myRandom.nextInt(15), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], poolOfGender[myRandom.nextInt(poolOfGender.length)], poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
+		}
+		
+		System.out.println(listOfAnimals);
 	}
 
 }

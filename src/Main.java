@@ -66,6 +66,8 @@ public class Main {
 				"");
 		printer.typeWriter(null, 1);
 			
+		AnimalsData myAnimals = new AnimalsData();
 		
+		myAnimals.addAnimal();
 	}
 }

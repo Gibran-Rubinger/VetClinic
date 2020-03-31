@@ -63,7 +63,6 @@ public class Animals {
 	// creating the to String to override it.
 		@Override
 		public String toString() {
-			// TODO Auto-generated method stub
-			return idAnimal+ ": " + name + ": " + age+ ": " + gender+ ": " + medicalCond+ ": ";
+			return "ID: " +idAnimal+ "   Name: " + name + "   Age: " + age+ "   Gender: " + gender+ "   Medical Condition: " + medicalCond+ ". ";
 		}
 }
