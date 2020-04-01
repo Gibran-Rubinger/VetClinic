@@ -18,7 +18,7 @@ public class AnimalsData {
 		
 //		generating the Array for populating the objects.
 		String[] poolOfNames = {"Deco","Bob","Joly","Laize"};
-		String[] poolOfSpecies = {"Dog","Cat", "Domestic Pig", "Cockatiel", "Oscar Fish","Rabbit"};
+		String[] poolOfSpecies = {"Dog","Cat","Domestic Pig","Cockatiel","Oscar Fish","Rabbit"};
 		String[] poolOfGender = {"Male","Female"};
 		String[] poolOfMedicalCond = {"A","B","C","D","E","F","G"};
 		
