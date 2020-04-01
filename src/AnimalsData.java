@@ -20,7 +20,7 @@ public class AnimalsData {
 		String[] poolOfNames = {"Deco","Bob","Joly","Laize"};
 		String[] poolOfSpecies = {"Dog","Cat","Domestic Pig","Cockatiel","Oscar Fish","Rabbit"};
 		String[] poolOfGender = {"Male","Female"};
-		String[] poolOfMedicalCond = {"A","B","C","D","E","F","G"};
+		String[] poolOfMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
 		
 //		Instantiation the random method.
 		Random myRandom = new Random();
