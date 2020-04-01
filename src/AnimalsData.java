@@ -6,6 +6,7 @@ public class AnimalsData {
 //	define the size of the array with this integer.
 	int size = 1000;
 	int idObj =0;
+	int speciesGenerator = 0;
 	
 //	method responsible to populate 1.000 animals in a random way.
 	public void addAnimal() {
@@ -75,9 +76,21 @@ public class AnimalsData {
 				"Thomas","Thor","Tigger","Timmy","Toby","Tracker","Tucker","Tyson","Vader","Waldo","Wally","Wesson",
 				"Whiskey","William","Winston","Yoda","Zeus","Ziggy"};
 		
-		String[] poolOfSpecies = {"Dog","Cat","Domestic Pig","Cockatiel","Oscar Fish","Rabbit"};
-		String[] poolOfGender = {"Male","Female"};
-		String[] poolOfMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		String[] poolOfCommonAnimals = {"Dog","Cat","Domestic Pig","Rabbit", "Hamister", "Guinea Pig"};
+		String[] poolOfBirdsAnimals = {"Cockatiel","Gouldian finch","Parrot","Cockatoo", "Budgerigar", "Dove"};
+		String[] poolOfFishAnimals = {"Oscar","Neon Tetra","Guppies","Discus", "Bettas", "Goldfish"};
+		String[] poolOfReptileAnimals = {"Water Dragon","Chameleon","Rat Snake","Ball Python Snake", "Iguana", "Turtle"};
+		String[] poolOfFarmAnimals = {"Ox","Horse","Sheep","Goat", "Pony", "Donkey"};
+		String[] poolOfWeirdAnimals = {"Spider","Scorpion","Frog"};
+		
+		
+		
+		String[] poolOfCommonPetzMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		String[] poolOfBirdsMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		String[] poolOfFishMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		String[] poolOfReptaleMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		String[] poolOfFarmMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		String[] poolOfWeirdMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
 		
 //		Instantiation the random method.
 		Random myRandom = new Random();
@@ -88,13 +101,14 @@ public class AnimalsData {
 			idObj+= i;
 //			if statement responsible to generate objects per gender.
 			if(idObj %2 ==0) {
-				//every attribute of the object is picked using the random method.
+			
+				speciesGenerator = myRandom.nextInt(5); 
 				
-//				Female Object.
+//				Female Object - every attribute of the object is picked using the random method.
 				listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], " Female ", poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
 			}
 			else {
-//				Male Object.
+//				Male Object - every attribute of the object is picked using the random method.
 				listOfAnimals[i] = new Animals(idObj, poolOfManeNames[myRandom.nextInt(poolOfManeNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], " Male ", poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
 			}
 		}
