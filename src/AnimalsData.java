@@ -17,7 +17,7 @@ public class AnimalsData {
 		listOfAnimals = new Animals[size];
 		
 //		generating the Array for populating the objects.
-		String[] poolOfNames = {"Deco","Bob","Joly","Laize",
+		String[] poolOfFemaleNames = {"Deco","Bob","Joly","Laize",
 		
 				"Abbey","Abbie","Abby","Abigail","Addie","Akira","Alex","Alice","Allie","Ally","Amber","Amy","Angel",
 				"Angora","Annabelle","Annie","Aribella","Ariel","Artemis","Arya","Ashley","Aspen","Astra","Athena",
@@ -45,9 +45,9 @@ public class AnimalsData {
 				"Spike","Spooky","Stanley","Star","Storm","Stormy","Sugar","Suki","Summer","Sunny","Sunshine","Sweetie",
 				"Sydney","Tabby","Tabitha","Tasha","Tasha","Tess","Tessa","Tiana","Tiffany","Tiger Lily","Tigger",
 				"Tilly","Tina","Tink","Tinkerbell","Tootsie","Trixie","Una","Violet","Whiskers","Willow","Winnie",
-				"Winona","Xena","Zelda","Ziva","Zoe","Zoey","Zola",
-				
-				"Ace","Albert","Alex","Alexander","Alvin","Amos","Andy","Angel","Angus","Apollo","Archie","Arthur","Ash",
+				"Winona","Xena","Zelda","Ziva","Zoe","Zoey","Zola"};
+		
+		String[] poolOfManeNames = {"Ace","Albert","Alex","Alexander","Alvin","Amos","Andy","Angel","Angus","Apollo","Archie","Arthur","Ash",
 				"Atticus","Baby","Bailey","Bandit","Barley","Barnabas","Barnaby","Barney","Bart","Batman","Baxter","Bear",
 				"Ben","Benjamin","Benji","Benny","Bentley","Billy","Binx","Blackie","Blue","Bo","Bob","Bobby","Boo","Boomer",
 				"Boots","Boris","Bourbon","Brady","Brody","Brooks","Bruce","Bruno","Brutus","Bubba","Buddy","Budweiser",
@@ -82,16 +82,24 @@ public class AnimalsData {
 //		Instantiation the random method.
 		Random myRandom = new Random();
 		
-
-		
 //		For loop responsible to generate the objects. 
 		for(int i = 0; i < listOfAnimals.length; i++) {
 //          Generate the id 
 			idObj+= i;
-			
-//			every attribute of the object is picked using the random method.
-			listOfAnimals[i] = new Animals(idObj, poolOfNames[myRandom.nextInt(poolOfNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], poolOfGender[myRandom.nextInt(poolOfGender.length)], poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
+//			if statement responsible to generate objects per gender.
+			if(idObj %2 ==0) {
+				//every attribute of the object is picked using the random method.
+				
+//				Female Object.
+				listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], " Female ", poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
+			}
+			else {
+//				Male Object.
+				listOfAnimals[i] = new Animals(idObj, poolOfManeNames[myRandom.nextInt(poolOfManeNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], " Male ", poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
+			}
 		}
+		
+
 //		print the all list
 		for(Animals print : listOfAnimals) {
 		System.out.println(print);
