@@ -1,3 +1,4 @@
+import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,9 +19,7 @@ public class AnimalsData {
 		listOfAnimals = new Animals[size];
 		
 //		generating the Array for populating the objects.
-		String[] poolOfFemaleNames = {"Deco","Bob","Joly","Laize",
-		
-				"Abbey","Abbie","Abby","Abigail","Addie","Akira","Alex","Alice","Allie","Ally","Amber","Amy","Angel",
+		String[] poolOfFemaleNames = {"Joly","Laize","Abbey","Abbie","Abby","Abigail","Addie","Akira","Alex","Alice","Allie","Ally","Amber","Amy","Angel",
 				"Angora","Annabelle","Annie","Aribella","Ariel","Artemis","Arya","Ashley","Aspen","Astra","Athena",
 				"Aurora","Autumn","Ava","Baby","Baby Girl","Bailey","Ballerina","Bandit","Bear","Beatrice","Bebe",
 				"Bella","Belle","Betty","Bianca","Biscuit","Blossom","Blue","Blush","Bonnet","Bonnie","Boo","Boots",
@@ -48,7 +47,7 @@ public class AnimalsData {
 				"Tilly","Tina","Tink","Tinkerbell","Tootsie","Trixie","Una","Violet","Whiskers","Willow","Winnie",
 				"Winona","Xena","Zelda","Ziva","Zoe","Zoey","Zola"};
 		
-		String[] poolOfManeNames = {"Ace","Albert","Alex","Alexander","Alvin","Amos","Andy","Angel","Angus","Apollo","Archie","Arthur","Ash",
+		String[] poolOfMaleNames = {"Deco","Bob","Teddy","Red","Ralfh","Duque","Cu","Ace","Albert","Alex","Alexander","Alvin","Amos","Andy","Angel","Angus","Apollo","Archie","Arthur","Ash",
 				"Atticus","Baby","Bailey","Bandit","Barley","Barnabas","Barnaby","Barney","Bart","Batman","Baxter","Bear",
 				"Ben","Benjamin","Benji","Benny","Bentley","Billy","Binx","Blackie","Blue","Bo","Bob","Bobby","Boo","Boomer",
 				"Boots","Boris","Bourbon","Brady","Brody","Brooks","Bruce","Bruno","Brutus","Bubba","Buddy","Budweiser",
@@ -76,21 +75,33 @@ public class AnimalsData {
 				"Thomas","Thor","Tigger","Timmy","Toby","Tracker","Tucker","Tyson","Vader","Waldo","Wally","Wesson",
 				"Whiskey","William","Winston","Yoda","Zeus","Ziggy"};
 		
+		
+		// if == 0
 		String[] poolOfCommonAnimals = {"Dog","Cat","Domestic Pig","Rabbit", "Hamister", "Guinea Pig"};
+		// if == 1
 		String[] poolOfBirdsAnimals = {"Cockatiel","Gouldian finch","Parrot","Cockatoo", "Budgerigar", "Dove"};
+		// if == 2
 		String[] poolOfFishAnimals = {"Oscar","Neon Tetra","Guppies","Discus", "Bettas", "Goldfish"};
+		// if == 3
 		String[] poolOfReptileAnimals = {"Water Dragon","Chameleon","Rat Snake","Ball Python Snake", "Iguana", "Turtle"};
+		// if == 4
 		String[] poolOfFarmAnimals = {"Ox","Horse","Sheep","Goat", "Pony", "Donkey"};
-		String[] poolOfWeirdAnimals = {"Spider","Scorpion","Frog"};
+		// if == 5
+		String[] poolOfExoticAnimals = {"Spider","Scorpion","Frog"};
 		
 		
-		
+		// if == 0
 		String[] poolOfCommonPetzMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		String[] poolOfBirdsMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		String[] poolOfFishMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		String[] poolOfReptaleMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		// if == 1
+		String[] poolOfBirdsMedicalCond = {"Gastric Foreign Object(s) Ingestion", "B", "C" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "D", "E","FFF","GGG", "Preventative Healthcare (Check-Up)","HHH","Diagnostic Imaging","vaccine"};
+		// if == 2
+		String[] poolOfFishMedicalCond = {"Gastric Foreign Object(s) Ingestion", "CC", "DD" , "Poisoning", "EE","GG", "KKK", "UUU","RRRR","EEER", "Preventative Healthcare (Check-Up)","Acupuncture","ssss","vaccine"};
+		// if == 3
+		String[] poolOfReptileMedicalCond = {"Gastric Foreign Object(s) Ingestion", "FFFD", "DEDEDE" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		// if == 4
 		String[] poolOfFarmMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		String[] poolOfWeirdMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		// if == 5
+		String[] poolOfExoticMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
 		
 //		Instantiation the random method.
 		Random myRandom = new Random();
@@ -101,15 +112,52 @@ public class AnimalsData {
 			idObj+= i;
 //			if statement responsible to generate objects per gender.
 			if(idObj %2 ==0) {
-			
-				speciesGenerator = myRandom.nextInt(5); 
+//				Inside the if statement just Female Object - every attribute of the object is picked using the random method.
 				
-//				Female Object - every attribute of the object is picked using the random method.
-				listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], " Female ", poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
+//			this attribute is responsible for generate in a random way with kind of Species the animal will be.
+				speciesGenerator = myRandom.nextInt(5); 
+			
+				if(speciesGenerator == 0) { // Common Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 1) { // Birds Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(30)+1), poolOfBirdsAnimals[myRandom.nextInt(poolOfBirdsAnimals.length)], " Female ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 2) { // Fish Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(10)+1), poolOfFishAnimals[myRandom.nextInt(poolOfFishAnimals.length)], " Female ", poolOfFishMedicalCond[myRandom.nextInt(poolOfFishMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 3) { // Reptile Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfReptileAnimals[myRandom.nextInt(poolOfReptileAnimals.length)], " Female ", poolOfReptileMedicalCond[myRandom.nextInt(poolOfReptileMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 4) { // Farm Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(30)+1), poolOfFarmAnimals[myRandom.nextInt(poolOfFarmAnimals.length)], " Female ", poolOfFarmMedicalCond[myRandom.nextInt(poolOfFarmMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 5) { // Exotic Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(30)+1), poolOfExoticAnimals[myRandom.nextInt(poolOfExoticAnimals.length)], " Female ", poolOfExoticMedicalCond[myRandom.nextInt(poolOfExoticMedicalCond.length)]);
+				}
 			}
+			
+				
 			else {
 //				Male Object - every attribute of the object is picked using the random method.
-				listOfAnimals[i] = new Animals(idObj, poolOfManeNames[myRandom.nextInt(poolOfManeNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], " Male ", poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
+				if(speciesGenerator == 0) { // Common Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(15)+1), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Male ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 1) { // Birds Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(30)+1), poolOfBirdsAnimals[myRandom.nextInt(poolOfBirdsAnimals.length)], " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 2) { // Fish Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(10)+1), poolOfFishAnimals[myRandom.nextInt(poolOfFishAnimals.length)], " Male ", poolOfFishMedicalCond[myRandom.nextInt(poolOfFishMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 3) { // Reptile Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(15)+1), poolOfReptileAnimals[myRandom.nextInt(poolOfReptileAnimals.length)], " Male ", poolOfReptileMedicalCond[myRandom.nextInt(poolOfReptileMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 4) { // Farm Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(30)+1), poolOfFarmAnimals[myRandom.nextInt(poolOfFarmAnimals.length)], " Male ", poolOfFarmMedicalCond[myRandom.nextInt(poolOfFarmMedicalCond.length)]);
+				}
+				else if(speciesGenerator == 5) { // Exotic Animals.
+					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(30)+1), poolOfExoticAnimals[myRandom.nextInt(poolOfExoticAnimals.length)], " Male ", poolOfExoticMedicalCond[myRandom.nextInt(poolOfExoticMedicalCond.length)]);
+				}
 			}
 		}
 		
