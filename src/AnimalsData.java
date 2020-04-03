@@ -35,7 +35,7 @@ public class AnimalsData {
 //			every attribute of the object is picked using the random method.
 			listOfAnimals[i] = new Animals(idObj, poolOfNames[myRandom.nextInt(poolOfNames.length)], (myRandom.nextInt(15)+1), poolOfSpecies[myRandom.nextInt(poolOfSpecies.length)], poolOfGender[myRandom.nextInt(poolOfGender.length)], poolOfMedicalCond[myRandom.nextInt(poolOfMedicalCond.length)]);
 		}
-//		print the all list
+//		print the all list using a for each loop.
 		for(Animals print : listOfAnimals) {
 		System.out.println(print);
 		}
