@@ -3,11 +3,18 @@ import java.util.ArrayList;
 //above are being import the super classes that it will be used in the code.
 public class Main {
 
+//	Attributes
+	String userInput = "";
+	Boolean userValidOption;
+	
 //	this is the constructor that will call the objects (methods)	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 
 		Graphical printer = new Graphical();
+		
+		
+		
 //		Main Screen is being printed using the setMenssage() and the effect of type writer, and the timer delay, is setting by typeWriter()
 		printer.setMessage("##############################################################################################################################################################################\r\n" + 
 				"##############################################################################################################################################################################\r\n" + 
@@ -44,26 +51,7 @@ public class Main {
 		printer.setMessage("\n\n\n\nBOM DIA CAROLINA \nGOSTARIA DE ALGO?");
 		printer.typeWriter(null, 50);
 		
-//		error message
-		printer.setMessage("\r\n" + 
-				"                                                                                                                                                                              \r\n" + 
-				"                                                                                                                                                  @(    @*                    \r\n" + 
-				"                                                                                                                                              @&            @&                \r\n" + 
-				"                                                                                                                                            @@               @@&              \r\n" + 
-				"                                                                                                                                           @@@                @@@             \r\n" + 
-				"                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n" + 
-				"    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n" + 
-				"    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n" + 
-				"    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n" + 
-				"    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n" + 
-				"    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n" + 
-				"    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n" + 
-				"                                                                                                                                               .@  #@@@@  @&           &      \r\n" + 
-				"                                                                                                                                                  @@@@@@@,                    \r\n" + 
-				"                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n" + 
-				"                                                                                                                                           .,                .,               \r\n" + 
-				"\r\n" + 
-				"");
+
 		printer.typeWriter(null, 1);
 			
 		AnimalsData myAnimals = new AnimalsData();
