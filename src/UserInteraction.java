@@ -13,15 +13,18 @@ public class UserInteraction {
 	
 	private String GettingUserInput() {
 //	Instantiate scanner to collect the interaction
-	Scanner collect = new Scanner(System.in);
-	userInput = collect.nextLine();
+	
 	return userInput;
 	}
+	
+	
 //	this a method to simple verification of Yes or No choice from the client.
 	public boolean YesOrNo(int attempt) {
 		
-		//userValidOption= true;
-		
+		Scanner collect = new Scanner(System.in);
+		printer.setMessage("\n\n\n\n Please type Yes or No. \n");
+		printer.typeWriter(null, 50);
+		userInput = collect.nextLine();
 		
 		for(int i=0; i<attempt; i++) {
 			
@@ -64,6 +67,7 @@ public class UserInteraction {
 				printer.setMessage("\n\n\n\n Sorry It is not valid typing option \n");
 				printer.typeWriter(null, 50);
 			}
+			
 		}
 		
 //		error message
@@ -88,8 +92,9 @@ public class UserInteraction {
 				"");
 		
 		printer.typeWriter(null, 1);
-		
 		return false;
+		
+		
 		
 	}
 	

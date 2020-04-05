@@ -46,8 +46,14 @@ public class Main {
 		printer.typeWriter(null, 1);
 		
 //		Standard effect for any interaction with the client.  
-		printer.setMessage("\n\n\n\nBOM DIA CAROLINA \nGOSTARIA DE ALGO?");
+		printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?  \n\ntype Yes or No.");
 		printer.typeWriter(null, 50);
+		
+		UserInteraction test = new UserInteraction();
+		
+		test.YesOrNo(3);
+		
+		
 		
 
 		printer.typeWriter(null, 1);
