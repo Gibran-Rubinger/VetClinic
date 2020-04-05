@@ -3,9 +3,7 @@ import java.util.ArrayList;
 //above are being import the super classes that it will be used in the code.
 public class Main {
 
-//	Attributes
-	String userInput = "";
-	Boolean userValidOption;
+
 	
 //	this is the constructor that will call the objects (methods)	
 	public static void main(String[] args) {

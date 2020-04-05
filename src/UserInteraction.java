@@ -8,14 +8,8 @@ public class UserInteraction {
 	
 	int attempt =0;
 	
-	String validAnswer1 ="Yes";
-	String validAnswer2 ="yes";
-	String validAnswer3 ="Y";
-	String validAnswer4 ="y";
-	String validAnswer5 ="No";
-	String validAnswer6 ="no";
-	String validAnswer7 ="N";
-	String validAnswer8 ="n";
+//	instantiate the graphical method to print some interactions.
+	Graphical printer = new Graphical();
 	
 	private String GettingUserInput() {
 //	Instantiate scanner to collect the interaction
@@ -31,35 +25,72 @@ public class UserInteraction {
 		
 		for(int i=0; i<attempt; i++) {
 			
-			switch (userInput != null ) {
-			case validAnswer1:
+			switch (userInput) {
+			
+			case "Yes":
 				return true;
 				break;
-			case validAnswer2:
+				
+			case "yes":
 				return true;
 				break;
-			case validAnswer3:
+				
+			case "Y":
 				return true;
 				break;
-			case validAnswer4:
+				
+			case "y":
 				return true;
 				break;
-			case validAnswer5:
+				
+			case "No":
 				return false;
 				break;
-			case validAnswer6:
+				
+			case "no":
 				return false;
 				break;
-			case validAnswer7:
+				
+			case "N":
 				return false;
 				break;
-			case validAnswer8:
+				
+			case "n":
 				return false;
 				break;
+				
+//				here if non of options above matches we inform the client is a unknown value.
+			default:
+				printer.setMessage("\n\n\n\n Sorry It is not valid typing option \n");
+				printer.typeWriter(null, 50);
 			}
 		}
 		
-	return false;
+//		error message
+		printer.setMessage("\r\n" + 
+				"                                                                                                                                                                              \r\n" + 
+				"                                                                                                                                                  @(    @*                    \r\n" + 
+				"                                                                                                                                              @&            @&                \r\n" + 
+				"                                                                                                                                            @@               @@&              \r\n" + 
+				"                                                                                                                                           @@@                @@@             \r\n" + 
+				"                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n" + 
+				"    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n" + 
+				"    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n" + 
+				"    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n" + 
+				"    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n" + 
+				"    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n" + 
+				"    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n" + 
+				"                                                                                                                                               .@  #@@@@  @&           &      \r\n" + 
+				"                                                                                                                                                  @@@@@@@,                    \r\n" + 
+				"                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n" + 
+				"                                                                                                                                           .,                .,               \r\n" + 
+				"\r\n" + 
+				"");
+		
+		printer.typeWriter(null, 1);
+		
+		return false;
+		
 	}
 	
 		
