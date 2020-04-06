@@ -4,72 +4,40 @@ public class UserInteraction {
 //	Attributes
 	String userInput = "";
 	
-	Boolean userValidOption;
+	int userValidOption = 0;
 	
-	int attempt =0;
+	String validAnswer1 ="Yes";
+	String validAnswer2 ="yes";
+	String validAnswer3 ="Y";
+	String validAnswer4 ="y";
+	String validAnswer5 ="No";
+	String validAnswer6 ="no";
+	String validAnswer7 ="N";
+	String validAnswer8 ="n";
+	
 	
 //	instantiate the graphical method to print some interactions.
 	Graphical printer = new Graphical();
 	
-	private String GettingUserInput() {
-//	Instantiate scanner to collect the interaction
 	
-	return userInput;
-	}
-	
-	
-//	this a method to simple verification of Yes or No choice from the client.
-	public boolean YesOrNo(int attempt) {
-		
+//	this a method to simple verification by Yes or No choice from the client.
+	public void YesOrNo(int attempt, String text) {
+		//"\n\n\n\n would you like to continue? Please type Yes or No. \n"
 		Scanner collect = new Scanner(System.in);
-		printer.setMessage("\n\n\n\n Please type Yes or No. \n");
+		printer.setMessage(text);
 		printer.typeWriter(null, 50);
 		userInput = collect.nextLine();
 		
 		for(int i=0; i<attempt; i++) {
 			
-			switch (userInput) {
-			
-			case "Yes":
-				return true;
-				break;
-				
-			case "yes":
-				return true;
-				break;
-				
-			case "Y":
-				return true;
-				break;
-				
-			case "y":
-				return true;
-				break;
-				
-			case "No":
-				return false;
-				break;
-				
-			case "no":
-				return false;
-				break;
-				
-			case "N":
-				return false;
-				break;
-				
-			case "n":
-				return false;
-				break;
-				
-//				here if non of options above matches we inform the client is a unknown value.
-			default:
-				printer.setMessage("\n\n\n\n Sorry It is not valid typing option \n");
-				printer.typeWriter(null, 50);
+			if (userInput == validAnswer1 || userInput == validAnswer2 || userInput == validAnswer3 || userInput == validAnswer4){
+				userValidOption = 1;
 			}
-			
-		}
-		
+			else if (userInput == validAnswer5 || userInput == validAnswer6 || userInput == validAnswer7 || userInput == validAnswer8){
+				userValidOption = 2;
+			}
+		}		
+		collect.close();
 //		error message
 		printer.setMessage("\r\n" + 
 				"                                                                                                                                                                              \r\n" + 
@@ -92,18 +60,7 @@ public class UserInteraction {
 				"");
 		
 		printer.typeWriter(null, 1);
-		return false;
-		
-		
 		
 	}
-	
 		
-		
-		
-		
-			
-		
-	
-
 }

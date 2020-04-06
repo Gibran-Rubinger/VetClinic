@@ -46,20 +46,22 @@ public class Main {
 		printer.typeWriter(null, 1);
 		
 //		Standard effect for any interaction with the client.  
-		printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?  \n\ntype Yes or No.");
-		printer.typeWriter(null, 50);
+		//printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?  \n\ntype Yes or No.");
+		//printer.typeWriter(null, 50);
 		
 		UserInteraction test = new UserInteraction();
 		
-		test.YesOrNo(3);
+		test.YesOrNo(3,"\n\n\n\n would you like to create a bunch of animals now?  \n\n type Yes or No.");
 		
-		
-		
-
-		printer.typeWriter(null, 1);
+		if (test.userValidOption == 1) {
+			AnimalsData myAnimals = new AnimalsData();
 			
-		AnimalsData myAnimals = new AnimalsData();
+			myAnimals.addAnimal();
+		}
+		else {
+			System.out.println(" ok");
+		}
+
 		
-		myAnimals.addAnimal();
 	}
 }
