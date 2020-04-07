@@ -43,7 +43,7 @@ public class Main {
 				"##############################################################################################################################################################################\r\n" + 
 				"######################################################################################################    DEVELOPED BY:    CAROLINA SACCO   &   GIBRAN RUBINGER  -  2020 V.1.0\r\n" + 
 				"");	
-		printer.typeWriter(null, 1);
+		printer.typeWriter( 1);
 		
 //		Standard effect for any interaction with the client.  
 		//printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?  \n\n type Yes or No.");
