@@ -52,14 +52,13 @@ public class Main {
 		UserInteraction test = new UserInteraction();
 		
 		test.YesOrNo(3,"\n\n\n\n would you like to create a bunch of animals now?  \n\n type Yes or No.");
+		AnimalsData myAnimals = new AnimalsData();
 		
-		if (test.userValidOption == 1) {
-			AnimalsData myAnimals = new AnimalsData();
-			
+		if (test.userValidOption == 1) {	
 			myAnimals.addAnimal();
 		}
 		else {
-			System.out.println(" ok");
+			System.out.println(" bye");
 		}
 
 		
