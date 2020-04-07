@@ -46,7 +46,7 @@ public class Main {
 		printer.typeWriter(null, 1);
 		
 //		Standard effect for any interaction with the client.  
-		//printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?  \n\ntype Yes or No.");
+		//printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?  \n\n type Yes or No.");
 		//printer.typeWriter(null, 50);
 		
 		UserInteraction test = new UserInteraction();
@@ -57,7 +57,7 @@ public class Main {
 		if (test.userValidOption == 1) {	
 			myAnimals.addAnimal();
 		}
-		else {
+		else if (test.userValidOption == 0){
 			System.out.println(" bye");
 		}
 

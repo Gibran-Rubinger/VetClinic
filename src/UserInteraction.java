@@ -5,6 +5,9 @@ public class UserInteraction {
 	String userInput = "";
 	
 	int userValidOption = 404;
+	
+	int speedUp = 50;
+	int slowDown = 50;
 	//boolean stopTry = false;
 	
 	String validAnswer1 ="Yes";
@@ -18,12 +21,15 @@ public class UserInteraction {
 	
 	boolean stopTry = false;
 	
+	
+	
 //	instantiate the graphical method to print some interactions.
 	Graphical printer = new Graphical();
 	
-//	this a method to simple verification by Yes or No choice from the client.
+//	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void YesOrNo(int attempt, String text) {
 	
+		
 //		setting the graphical with the milliseconds  preferred.
 		printer.setMessage(text);
 		printer.typeWriter(null, 50);
@@ -33,6 +39,11 @@ public class UserInteraction {
 //		 Assign the attribute userInput with the client typing.
 		userInput = myScanner.next();
 		
+		
+		int countdown = attempt;
+		
+//		countdown need to start with -- otherwise the numbers of attempt will be one times bigger than we choose in the main class
+		//countdown--;
 		
 		for (int i = 0; i < attempt; i++) {
 			
@@ -49,49 +60,57 @@ public class UserInteraction {
 						stopTry = true;
 						break;		
 					}
-					else {
-						printer.setMessage(" Warnning this is not a valid option! You have more " + attempt + " attempts.");
-					}
-				}
-			
-			
-			while(stopTry == false){
-//				error message
-			if (stopTry == false){
-				
-			
-								printer.setMessage("\r\n" + 
-										"                                                                                                                                                                              \r\n" + 
-										"                                                                                                                                                  @(    @*                    \r\n" + 
-										"                                                                                                                                              @&            @&                \r\n" + 
-										"                                                                                                                                            @@               @@&              \r\n" + 
-										"                                                                                                                                           @@@                @@@             \r\n" + 
-										"                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n" + 
-										"    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n" + 
-										"    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n" + 
-										"    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n" + 
-										"    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n" + 
-										"    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n" + 
-										"    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n" + 
-										"                                                                                                                                               .@  #@@@@  @&           &      \r\n" + 
-										"                                                                                                                                                  @@@@@@@,                    \r\n" + 
-										"                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n" + 
-										"                                                                                                                                           .,                .,               \r\n" + 
-										"\r\n" + 
-										"");
-								
-								printer.typeWriter(null, 1);
-								break;
+					else if (userValidOption == 404) {
+						
+//						in this for loop we define a bug message when the countdown =0.
+						
+							countdown --;
+							
+							if(countdown!=1){
+							
+							 
+							printer.setMessage(" Warnning this is not a valid option! You have " + countdown   + "  attempts.");
+							printer.typeWriter(null, slowDown);
 							}
+							else if (countdown == 1) {
+								printer.setMessage(" Warnning this is not a valid option! This is your LAST  attempts.");
+								printer.typeWriter(null, slowDown);
+							}
+							speedUp += 50;
+							slowDown -= 10;
+							printer.setMessage(text);
+							printer.typeWriter(null, speedUp);
+							userInput = myScanner.next();
+						}
+					
+				
+				}
+		 if (countdown == 0) {
+			printer.setMessage("\r\n" + 
+					"                                                                                                                                                                              \r\n" + 
+					"                                                                                                                                                  @(    @*                    \r\n" + 
+					"                                                                                                                                              @&            @&                \r\n" + 
+					"                                                                                                                                            @@               @@&              \r\n" + 
+					"                                                                                                                                           @@@                @@@             \r\n" + 
+					"                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n" + 
+					"    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n" + 
+					"    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n" + 
+					"    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n" + 
+					"    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n" + 
+					"    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n" + 
+					"    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n" + 
+					"                                                                                                                                               .@  #@@@@  @&           &      \r\n" + 
+					"                                                                                                                                                  @@@@@@@,                    \r\n" + 
+					"                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n" + 
+					"                                                                                                                                           .,                .,               \r\n" + 
+					"\r\n" + 
+					"");
 			
-			}
-		
+			printer.typeWriter(null, 1);
+		}
+
 //		closing the Scanner.
 		myScanner.close();
-		
-		
-		
-		
-		
+
 	}
 }
