@@ -14,14 +14,11 @@ public class UserInteraction {
 	int bugRunning = 0;
 
 //	Those are the pool of valid options typing for the client. 
-	String validAnswer1 = "Yes";
-	String validAnswer2 = "yes";
-	String validAnswer3 = "Y";
-	String validAnswer4 = "y";
-	String validAnswer5 = "No";
-	String validAnswer6 = "no";
-	String validAnswer7 = "N";
-	String validAnswer8 = "n";
+	String validAnswer1 = "yes";
+	String validAnswer2 = "Y";
+	String validAnswer3 = "no";
+	String validAnswer4 = "n";
+	
 
 //	instantiate the graphical method to print some interactions.
 	Graphical printer = new Graphical();
@@ -38,37 +35,36 @@ public class UserInteraction {
 //		Assign the attribute userInput with the client typing.
 		userInput = myScanner.next();
 
-//		before to start the for loop, countdown and display are being created and evaluated with the same number of attempt defined in the main method.
+//		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
 		int countdown = attempt;
 		int display = attempt;
 
-//		in this for loop if in the las attempt the client will be inform it will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
+//		in this for loop if in the last attempt the client will be inform it will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
 		for (int i = 0; i < attempt; i++) {
 
 			
 			
 			
-			
-//                  check if  the client choose yes.		
-			if (validAnswer1.equals(userInput) || validAnswer2.equals(userInput) || validAnswer3.equals(userInput)
-					|| validAnswer4.equals(userInput)) {
+//          		check if  the client choose yes.								
+//          		No case sensitive 		
+			if (validAnswer1.equalsIgnoreCase(userInput) || validAnswer2.equalsIgnoreCase(userInput)) {
 				userValidOption = 1;
 				break;
 			}
-//                  check if if the clieent choose no.
-			else if (validAnswer5.equals(userInput) || validAnswer6.equals(userInput) || validAnswer7.equals(userInput)
-					|| validAnswer8.equals(userInput)) {
+//                  check if if the client choose no.
+//					No case sensitive
+			else if (validAnswer3.equalsIgnoreCase(userInput) || validAnswer4.equalsIgnoreCase(userInput)) {
 				userValidOption = 0;
 				break;
 			}
 //					in this part start to count how many left attempts has.
 			else if (userValidOption == 404) {
 
-//								populating the countdown and display.
+//								populating the count down and display.
 				display--;
 				countdown--;
 
-//							in this if statement start the coutdown.	
+//							in this if statement start the count down.	
 				if (countdown > 1) {
 					printer.setMessage(
 							" Warnning this is not a valid option! You have " + display + "  attempts left.");
