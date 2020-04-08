@@ -1,6 +1,7 @@
+package Animals;
 import java.util.ArrayList;
 
-public class Animals {
+public abstract class Animals {
 
 //  attributes
 	 int idAnimal= 0;
