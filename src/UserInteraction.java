@@ -45,6 +45,10 @@ public class UserInteraction {
 //		in this for loop if in the las attempt the client will be inform it will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
 		for (int i = 0; i < attempt; i++) {
 
+			
+			
+			
+			
 //                  check if  the client choose yes.		
 			if (validAnswer1.equals(userInput) || validAnswer2.equals(userInput) || validAnswer3.equals(userInput)
 					|| validAnswer4.equals(userInput)) {
