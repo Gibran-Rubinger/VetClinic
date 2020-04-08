@@ -162,10 +162,13 @@ public class AnimalsData {
 		}
 		
 
-//		print the all list
+		
+//		print the all list using a for each loop.
 		for(Animals print : listOfAnimals) {
 		System.out.println(print);
 		}
+		
+		
 //		counting the numbers of item in the Array.
 		System.out.println(" The Total of Animals in the system is:  " + listOfAnimals.length);
 	}
