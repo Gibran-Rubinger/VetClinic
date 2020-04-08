@@ -5,7 +5,7 @@ public class UserInteraction {
 	String userInput = "";
 
 //	This attribute is responsible for validation the algorithm. Initialising the with a key value.
-	int userValidOption = 404;
+	int userValidOption = 1000;
 //	Those attribute, speedUp and slowDown are responsible to chance the milliseconds of the writeTyping.
 	int speedUp = 50;
 	int slowDown = 50;
@@ -58,7 +58,7 @@ public class UserInteraction {
 				break;
 			}
 //					in this part start to count how many left attempts has.
-			else if (userValidOption == 404) {
+			else if (userValidOption == 1000) {
 
 //								populating the count down and display.
 				display--;
@@ -66,12 +66,13 @@ public class UserInteraction {
 
 //							in this if statement start the count down.	
 				if (countdown > 1) {
-					printer.setMessage(
-							" Warnning this is not a valid option! You have " + display + "  attempts left.");
+					printer.setMessage(" Warnning this is not a valid option! You have " + display + "  attempts left.");
 					printer.typeWriter(slowDown);
-
-//							here is decreasing the millisecond to clarify the client the numbers of attempt left.
+					
+//					this difference is to create a better interaction with the client
+//					here is decreasing the millisecond to clarify the client the numbers of attempt left.
 					slowDown -= 10;
+					
 //							here increasing the milliseconds to repeat the Yes or no message.
 					speedUp += 50;
 //							calling the yes or no message again.
