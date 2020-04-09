@@ -3,8 +3,8 @@ import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class AnimalsData {
-	
+public class animalsData {
+
 //	define the size of the array with this integer.
 	int size = 1000;
 	int idObj =0;
@@ -175,3 +175,4 @@ public class AnimalsData {
 	}
 
 }
+

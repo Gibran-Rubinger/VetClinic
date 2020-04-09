@@ -1,4 +1,4 @@
-package Animals;
+
 import java.util.ArrayList;
 
 public abstract class Animals {
@@ -67,3 +67,4 @@ public abstract class Animals {
 					return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+"       Specie: "+species +"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n\n________________________________________________________________________________________________________________________________________________________";
 				}
 }
+
