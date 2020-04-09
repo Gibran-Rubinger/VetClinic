@@ -119,7 +119,7 @@ public class animalsData {
 				speciesGenerator = myRandom.nextInt(5); 
 			
 				if(speciesGenerator == 0) { // Common Animals.
-					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
+					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(15)+1), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
 				}
 				else if(speciesGenerator == 1) { // Birds Animals.
 					listOfAnimals[i] = new Animals(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(30)+1), poolOfBirdsAnimals[myRandom.nextInt(poolOfBirdsAnimals.length)], " Female ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)]);
@@ -142,7 +142,7 @@ public class animalsData {
 			else {
 //				Male Object - every attribute of the object is picked using the random method.
 				if(speciesGenerator == 0) { // Common Animals.
-					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(15)+1), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Male ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
+					listOfAnimals[i] = new Dog(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(15)+1), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Male ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
 				}
 				else if(speciesGenerator == 1) { // Birds Animals.
 					listOfAnimals[i] = new Animals(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(30)+1), poolOfBirdsAnimals[myRandom.nextInt(poolOfBirdsAnimals.length)], " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)]);
