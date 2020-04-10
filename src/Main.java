@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-import Animals.AnimalsData;
+import Animals.*;
 
 //above are being import the super classes that it will be used in the code.
 public class Main {
@@ -54,11 +54,11 @@ public class Main {
 		UserInteraction test = new UserInteraction();
 		
 		test.YesOrNo(3,"\n\n\n\n would you like to create a bunch of animals now?  \n\n type Yes or No.");
-		AnimalsData myAnimals = new AnimalsData();
+		animalsData myAnimals = new animalsData();
 	
 		
 		if (test.userValidOption == 1) {	
-			myAnimals.addAnimal();
+			myAnimals.addAnimal(0, 0);
 		}
 		else if (test.userValidOption == 0){
 			System.out.println(" bye");
