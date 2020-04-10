@@ -11,6 +11,9 @@ public class Animals {
 	 String species = null;
 	 String gender = null;
 	 String medicalCond = null;
+	 
+	 AnimalOwner owner = new AnimalOwner("Carolina", "Sacco", 3383, 037, 3049);
+	 
 //	constructor
 	public Animals() {
 	}
@@ -65,7 +68,7 @@ public class Animals {
 		// creating the to String to override it.
 				@Override
 				public String toString() {
-					return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+"       Specie: "+species +"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n\n________________________________________________________________________________________________________________________________________________________";
+					return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+"       Specie: "+species +"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n"+owner+"\n________________________________________________________________________________________________________________________________________________________";
 				}
 }
 

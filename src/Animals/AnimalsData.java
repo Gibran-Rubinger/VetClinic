@@ -3,7 +3,7 @@ import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class animalsData {
+public class AnimalsData {
 
 //	define the size of the array with this integer.
 	int size = 40000;
@@ -109,6 +109,7 @@ public class animalsData {
 //		Instantiation the random method.
 		Random myRandom = new Random();
 		
+		Dog Dog = new Dog(numbersFinishBunch, null, numbersFinishBunch, null, null, null);
 //		For loop responsible to generate the objects. 
 		for(int i = 0; i < listOfAnimals.length; i++) {
 //          Generate the id 
@@ -124,7 +125,7 @@ public class animalsData {
 					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(numbersFinishBunch - numbersStartBunch + 1)+numbersStartBunch), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
 				}
 				else if(speciesGenerator == 1) { // Birds Animals.
-					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(30)+1), poolOfBirdsAnimals[myRandom.nextInt(poolOfBirdsAnimals.length)], " Female ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)]);
+					listOfAnimals[i] = DogDog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(numbersFinishBunch - numbersStartBunch + 1)+numbersStartBunch), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
 				}
 				else if(speciesGenerator == 2) { // Fish Animals.
 					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(10)+1), poolOfFishAnimals[myRandom.nextInt(poolOfFishAnimals.length)], " Female ", poolOfFishMedicalCond[myRandom.nextInt(poolOfFishMedicalCond.length)]);

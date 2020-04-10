@@ -54,7 +54,7 @@ public class Main {
 		UserInteraction test = new UserInteraction();
 		
 		test.YesOrNo(3,"\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
-		animalsData myAnimals = new animalsData();
+		AnimalsData myAnimals = new AnimalsData();
 	
 		
 		if (test.userValidOption == 1) {	

@@ -60,6 +60,6 @@ public class AnimalOwner {
 	// creating the to String to override it.
 	@Override
 	public String toString() {
-		return " Animal Owner: " +ownerName+" "+ownerSurname+" Phone number: +353 "+phoneN1+"."+phoneN2+"."+phoneN3+"E-mail:"+ownerName.toLowerCase()+"."+ownerSurname.toLowerCase()+"@cct.ie";
+		return " Animal Owner: " +ownerName+" "+ownerSurname+" Phone number: +353 "+phoneN1+"."+phoneN2+"."+phoneN3+"E-mail:"+ownerName.toLowerCase()+"."+ownerSurname.toLowerCase()+"@cct.ie"+" Phone:  +353 "+phoneN1+" "+phoneN2+" "+phoneN3;
 	}
 }
