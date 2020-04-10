@@ -6,7 +6,7 @@ import java.util.Random;
 public class animalsData {
 
 //	define the size of the array with this integer.
-	int size = 1000;
+	int size = 40000;
 	int idObj =0;
 	int speciesGenerator = 0;
 	

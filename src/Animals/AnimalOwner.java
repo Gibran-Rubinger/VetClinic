@@ -18,10 +18,11 @@ public class AnimalOwner {
 		this.ownerName = ownerName;
 		this.ownerSurname = ownerSurname;
 		
-		
 		this.phoneN1 = phoneN1;
 		this.phoneN2 = phoneN2;
 		this.phoneN3 = phoneN3;
+		
+
 	}
 //	this method will create a random email.
 	
@@ -59,6 +60,6 @@ public class AnimalOwner {
 	// creating the to String to override it.
 	@Override
 	public String toString() {
-		return " Animal Owner: " +ownerName+" "+ownerSurname+" Phone number: +353 "+phoneN1+"."+phoneN2+"."+phoneN3;
+		return " Animal Owner: " +ownerName+" "+ownerSurname+" Phone number: +353 "+phoneN1+"."+phoneN2+"."+phoneN3+"E-mail:"+ownerName.toLowerCase()+"."+ownerSurname.toLowerCase()+"@cct.ie";
 	}
 }

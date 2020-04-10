@@ -53,7 +53,7 @@ public class Main {
 		
 		UserInteraction test = new UserInteraction();
 		
-		test.YesOrNo(3,"\n\n\n\n would you like to create a bunch of animals now?  \n\n type Yes or No.");
+		test.YesOrNo(3,"\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
 		animalsData myAnimals = new animalsData();
 	
 		
