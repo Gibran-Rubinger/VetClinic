@@ -1,17 +1,23 @@
 package Animals;
 
+import java.util.Random;
+
 public class Dog extends Animals implements Ianimals {
 	
-	AnimalOwner owner = new AnimalOwner("Carolina", "Sacco", 3383, 037, 3049);
+//	Instantiation the random method.
+	Random myRandom = new Random();
+	
+	AnimalOwner owner = new AnimalOwner(null, null, 0, 0, 0);
 
 //	constructor to set the Attributes.
-	public Dog(int idAnimal, String name, int age, String species,String gender, String medicalCond) {
+	public Dog(int idAnimal, String name, int age, String species,String gender, String medicalCond, AnimalOwner owner) {
 		this.idAnimal = idAnimal;
 		this.name = name;
 		this.age = age;
 		this.species = species;
 		this.gender = gender;
 		this.medicalCond = medicalCond;	
+		this.owner = owner;
 	}
 	
 	

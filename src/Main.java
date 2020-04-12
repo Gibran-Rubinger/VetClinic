@@ -58,7 +58,7 @@ public class Main {
 	
 		
 		if (test.userValidOption == 1) {	
-			myAnimals.addAnimal(0, 0);
+			myAnimals.addAnimal();
 		}
 		else if (test.userValidOption == 0){
 			System.out.println(" bye");
