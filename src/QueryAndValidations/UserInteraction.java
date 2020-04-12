@@ -1,11 +1,12 @@
+package QueryAndValidations;
 import java.util.Scanner;
-
+import Graphical.*;
 public class UserInteraction {
 //	Attributes
 	String userInput = "";
 
 //	This attribute is responsible for validation the algorithm. Initialising the with a key value.
-	int userValidOption = 1000;
+	public int userValidOption = 1000;
 //	Those attribute, speedUp and slowDown are responsible to chance the milliseconds of the writeTyping.
 	int speedUp = 50;
 	int slowDown = 50;
@@ -27,8 +28,7 @@ public class UserInteraction {
 	public void YesOrNo(int attempt, String text) {
 
 //		setting the graphical with the milliseconds  preferred.
-		printer.setMessage(text);
-		printer.typeWriter(50);
+		printer.typeWriter(text,50);
 
 //		instantiate of Scanner.
 		Scanner myScanner = new Scanner(System.in);
@@ -66,8 +66,7 @@ public class UserInteraction {
 
 //							in this if statement start the count down.	
 				if (countdown > 1) {
-					printer.setMessage(" Warnning this is not a valid option! You have " + display + "  attempts left.");
-					printer.typeWriter(slowDown);
+					printer.typeWriter(" Warnning this is not a valid option! You have " + display + "  attempts left.",slowDown);
 					
 //					this difference is to create a better interaction with the client
 //					here is decreasing the millisecond to clarify the client the numbers of attempt left.
@@ -76,8 +75,7 @@ public class UserInteraction {
 //							here increasing the milliseconds to repeat the Yes or no message.
 					speedUp += 50;
 //							calling the yes or no message again.
-					printer.setMessage(text);
-					printer.typeWriter(speedUp);
+					printer.typeWriter(text,speedUp);
 //							Waiting for new typing
 					userInput = myScanner.next();
 				}
@@ -85,11 +83,9 @@ public class UserInteraction {
 //							in this if statement is checked the last attempt before the bug message.
 				else if (countdown == 1 && display == 1) {
 
-					printer.setMessage(" Warnning this is not a valid option! This is your * LAST *  attempts left.");
-					printer.typeWriter(slowDown);
+					printer.typeWriter(" Warnning this is not a valid option! This is your * LAST *  attempts left.",slowDown);
 //								calling the yes or no message for the last time.
-					printer.setMessage(text);
-					printer.typeWriter(speedUp);
+					printer.typeWriter(text,speedUp);
 //								Waiting for the last trying
 					userInput = myScanner.next();
 				}
@@ -103,7 +99,8 @@ public class UserInteraction {
 
 //		calling the bug message.
 		if (bugRunning == attempt) {
-			printer.setMessage("\r\n"
+
+			printer.typeWriter("\r\n"
 					+ "                                                                                                                                                                              \r\n"
 					+ "                                                                                                                                                  @(    @*                    \r\n"
 					+ "                                                                                                                                              @&            @&                \r\n"
@@ -120,9 +117,7 @@ public class UserInteraction {
 					+ "                                                                                                                                                  @@@@@@@,                    \r\n"
 					+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
 					+ "                                                                                                                                           .,                .,               \r\n"
-					+ "\r\n" + "");
-
-			printer.typeWriter(1);
+					+ "\r\n" + "",1);
 		}
 
 	}

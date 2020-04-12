@@ -1,31 +1,11 @@
 package Animals;
 //import java.security.Policy;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class AnimalsData {
 
-//	define the size of the array with this integer.
-	int size = 1000;
-	int idObj =0;
-	int speciesGenerator = 0;
-	
-//	method responsible to populate 1.000 animals in a random way.
-	public void addAnimal() {
-		
-		int number1StartBunch = 80;
-		int number1FinishBunch = 89;
-		int number2StartBunch = 100;
-		int number2FinishBunch = 999;
-		int number3StartBunch = 1000;
-		int number3FinishBunch = 9999;
-//		generate the Array to storage the 1.000 random Animals.
-		Animals[] listOfAnimals;
-		AnimalOwner[] listOfOwner; 
-		
-//		instantiation of the Array
-		listOfAnimals = new Animals[size];
-		listOfOwner = new AnimalOwner[size];
 //		generating the Array for populating the objects.
 		String[] poolOfOwnerNames = {"Carolina","Alcione","Livia","Fatima","Carla","Fabiola","Dercio","Alirio","Adair","Adilson","Adriano","Afranio","Alessadra",
 				 "Aline","Amanda","Ana","Angela","Arlen","Bernardo","Frederico","Fernando","Isabela","Larissa","Lucas","Malu","Marcela","Marli","Natalia",
@@ -71,9 +51,10 @@ public class AnimalsData {
 				"Tilly","Tina","Tink","Tinkerbell","Tootsie","Trixie","Una","Violet","Whiskers","Willow","Winnie",
 				"Winona","Xena","Zelda","Ziva","Zoe","Zoey","Zola"};
 		
-		String[] poolOfMaleNames = {"Deco","Bob","Teddy","Red","Ralfh","Duque","Cu","Ace","Albert","Alex","Alexander","Alvin","Amos","Andy","Angel","Angus","Apollo","Archie","Arthur","Ash",
-				"Atticus","Baby","Bailey","Bandit","Barley","Barnabas","Barnaby","Barney","Bart","Batman","Baxter","Bear",
-				"Ben","Benjamin","Benji","Benny","Bentley","Billy","Binx","Blackie","Blue","Bo","Bob","Bobby","Boo","Boomer",
+		String[] poolOfMaleNames = {"Deco","Bob","Teddy","Red","Ralfh","Duque","Cu","Ace","Albert","Alex","Alexander","Alvin",
+				"Amos","Andy","Angel","Angus","Apollo","Archie","Arthur","Ash","Atticus","Baby","Bailey","Bandit","Barley",
+				"Barnabas","Barnaby","Barney","Bart","Batman","Baxter","Bear","Ben","Benjamin","Benji","Benny","Bentley",
+				"Billy","Binx","Blackie","Blue","Bo","Bob","Bobby","Boo","Boomer",
 				"Boots","Boris","Bourbon","Brady","Brody","Brooks","Bruce","Bruno","Brutus","Bubba","Buddy","Budweiser",
 				"Buffalo","Bugatti","Buster","Butters","Buzz","Caesar","Calvin","Captain","Casey","Cash","Casper","Champ",
 				"Chance","Charlie","Chase","Chester","Chevy","Chico","Cleveland","Clyde","Coco","Cody","Cole","Cookie",
@@ -100,19 +81,19 @@ public class AnimalsData {
 				"Whiskey","William","Winston","Yoda","Zeus","Ziggy"};
 		
 		
-		// if == 0
-		String[] poolOfCommonAnimals = {"Dog","Cat","Domestic Pig","Rabbit", "Hamister", "Guinea Pig"};
-		// if == 1
-		String[] poolOfBirdsAnimals = {"Cockatiel","Gouldian finch","Parrot","Cockatoo", "Budgerigar", "Dove"};
-		// if == 2
-		String[] poolOfFishAnimals = {"Oscar","Neon Tetra","Guppies","Discus", "Bettas", "Goldfish"};
-		// if == 3
-		String[] poolOfReptileAnimals = {"Water Dragon","Chameleon","Rat Snake","Ball Python Snake", "Iguana", "Turtle"};
-		// if == 4
-		String[] poolOfFarmAnimals = {"Ox","Horse","Sheep","Goat", "Pony", "Donkey"};
-		// if == 5
-		String[] poolOfExoticAnimals = {"Spider","Scorpion","Frog"};
-		
+//		// if == 0
+//		String[] poolOfCommonAnimals = {"Dog","Cat","Domestic Pig","Rabbit", "Hamister", "Guinea Pig"};
+//		// if == 1
+//		String[] poolOfBirdsAnimals = {"Cockatiel","Gouldian finch","Parrot","Cockatoo", "Budgerigar", "Dove"};
+//		// if == 2
+//		String[] poolOfFishAnimals = {"Oscar","Neon Tetra","Guppies","Discus", "Bettas", "Goldfish"};
+//		// if == 3
+//		String[] poolOfReptileAnimals = {"Water Dragon","Chameleon","Rat Snake","Ball Python Snake", "Iguana", "Turtle"};
+//		// if == 4
+//		String[] poolOfFarmAnimals = {"Ox","Horse","Sheep","Goat", "Pony", "Donkey"};
+//		// if == 5
+//		String[] poolOfExoticAnimals = {"Spider","Scorpion","Frog"};
+//		
 		
 		// if == 0
 		String[] poolOfCommonPetzMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
@@ -127,29 +108,49 @@ public class AnimalsData {
 		// if == 5
 		String[] poolOfExoticMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
 		
+//		define the size of the ArrayList with this integer.
+		int animalsQuantity = 1000;
+		int idObj =0;
+		int speciesGenerator = 0;
+		
+//		method responsible to populate 1.000 animals in a random way.
+		public void addAnimal() {
+			
+			int number1StartBunch = 80;
+			int number1FinishBunch = 89;
+			int number2StartBunch = 100;
+			int number2FinishBunch = 999;
+			int number3StartBunch = 1000;
+			int number3FinishBunch = 9999;
+			
+//			generate the Array to storage the 1.000 random Animals.
+			ArrayList<Animals> listOfAnimals;
+			ArrayList<AnimalOwner> listOfOwner;
+			 
+			
+//			instantiation of the Array
+			listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+			listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
+					
 //		Instantiation the random method.
 		Random myRandom = new Random();
-		for(int i = 0; i < listOfOwner.length; i++) {
-			listOfOwner[i] = new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch)); 
-			
-		
-		}
-
-		Dog Dog = new Dog(number1FinishBunch, null, number1FinishBunch, null, null, null,null);
+		for(int i = 0; i < animalsQuantity; i++) {
+			listOfOwner.add(new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))); 
+			}
 		
 //		For loop responsible to generate the objects. 
-		for(int i = 0; i < listOfAnimals.length; i++) {
+		for(int i = 0; i < animalsQuantity; i++) {
 //          Generate the id 
 			idObj+= i;
 //			if statement responsible to generate objects per gender.
 			if(idObj %2 ==0) {
-//				Inside the if statement just Female Object - every attribute of the object is picked using the random method.
+//				Inside the if statement just Female Object.
 				
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 				speciesGenerator = myRandom.nextInt(5); 
 			
 				if(speciesGenerator == 0) { // Common Animals.
-					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), "Dog", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], listOfOwner[myRandom.nextInt(listOfOwner.length)]);
+					listOfAnimals.add(new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(18)+1), "Dog", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], listOfOwner[myRandom.nextInt(listOfOwner.length)]));
 				}
 				else if(speciesGenerator == 1) { // Birds Animals.
 					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), "Dog", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], listOfOwner[myRandom.nextInt(listOfOwner.length)]);
