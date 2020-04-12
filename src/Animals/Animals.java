@@ -2,7 +2,7 @@ package Animals;
 
 import java.util.ArrayList;
 
-public class Animals {
+abstract class Animals {
 
 //  attributes
 	 int idAnimal= 0;
@@ -12,13 +12,12 @@ public class Animals {
 	 String gender = null;
 	 String medicalCond = null;
 	 
-	 AnimalOwner owner = new AnimalOwner("Carolina", "Sacco", 3383, 037, 3049);
 	 
 //	constructor
 	public Animals() {
 	}
 //	constructor to set the Attributes.
-	public Animals(int idAnimal, String name, int age, String species, String gender, String medicalCond) {
+	public Animals(int idAnimal, String name, int age,String species, String gender, String medicalCond) {
 		this.idAnimal = idAnimal;
 		this.name = name;
 		this.age = age;
@@ -68,7 +67,7 @@ public class Animals {
 		// creating the to String to override it.
 				@Override
 				public String toString() {
-					return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+"       Specie: "+species +"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n"+owner+"\n________________________________________________________________________________________________________________________________________________________";
+					return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+ "         Specie: " + species+"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n"+"\n________________________________________________________________________________________________________________________________________________________";
 				}
 }
 

@@ -1,9 +1,11 @@
 package Animals;
 
 public class Dog extends Animals implements Ianimals {
+	
+	AnimalOwner owner = new AnimalOwner("Carolina", "Sacco", 3383, 037, 3049);
 
 //	constructor to set the Attributes.
-	public Dog(int idAnimal, String name, int age, String species, String gender, String medicalCond) {
+	public Dog(int idAnimal, String name, int age, String species,String gender, String medicalCond) {
 		this.idAnimal = idAnimal;
 		this.name = name;
 		this.age = age;
@@ -11,6 +13,7 @@ public class Dog extends Animals implements Ianimals {
 		this.gender = gender;
 		this.medicalCond = medicalCond;	
 	}
+	
 	
 	@Override
 	public void sounds() {
@@ -38,7 +41,7 @@ public class Dog extends Animals implements Ianimals {
 	// creating the to String to override it.
 	@Override
 	public String toString() {
-		return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+"       Specie: "+species +"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n"+owner+"\n________________________________________________________________________________________________________________________________________________________";
+		return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+ "         Specie: " + species+"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n"+owner+"\n________________________________________________________________________________________________________________________________________________________";
 	}
 	
 }

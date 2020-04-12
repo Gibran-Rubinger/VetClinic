@@ -6,7 +6,7 @@ import java.util.Random;
 public class AnimalsData {
 
 //	define the size of the array with this integer.
-	int size = 40000;
+	int size = 1000;
 	int idObj =0;
 	int speciesGenerator = 0;
 	
@@ -22,6 +22,22 @@ public class AnimalsData {
 		listOfAnimals = new Animals[size];
 		
 //		generating the Array for populating the objects.
+		String[] poolOfOwnerNames = {"Carolina","Alcione","Livia","Fatima","Carla","Fabiola","Dercio","Alirio","Adair","Adilson","Adriano","Afranio","Alessadra",
+				 "Aline","Amanda","Ana","Angela","Arlen","Bernardo","Frederico","Fernando","Isabela","Larissa","Lucas","Malu","Marcela","Marli","Natalia",
+				 "Polyana","Rafaela","Sibele","Silvia","Anita","Cristina","Cintia","Fabiana","Livea","Luiz","Marcos","Maria","Mary","Patricia","Paulo",
+				 "Barbara","Edson","Bianca","Braulio","Braz","Bruna","Camila","Carol","Catia","Charles","Cicero","Lourdes","Daniela","Fernanda","Gabrielle",
+				 "Humberto","Luiz","Mark","Max","Clara","Cosme","Cristiano","Vitor","Vinicius","Grace","Marcelo","Priscila","Daniel","Dave","Denise","Geraldo",
+				 "Shirley","Simone","Erik","Francisco","Guilherme","Gustavo","Heitor","Hugo","Icaro","Igor","Leonardo","Joao","Jhon","Joshua","Julia","Juliana",
+				 "Karen","Laura","Lucia","Luisa","Marco","Margareth","Marijke", "Alexandre","Ludmila","Conrrado","Neimar", "Jorge","Pamela","Pedro","Liz","Ricardo",
+				 "Robert","Rodrigo","Rose","Sandra","Sarah","Simoes","Fabiano","Talita","Thiago","Thomas","Troy","Washington","Aoife","Caoimhe","Saoirse","Ciara",
+				 "Niamh","Roisin","Nora","Lorraine","Connor","Nolan","Carson","Brayden","Declan","Kevin","Derek","Darren","Amilcar","Ken","Alan","Nico","Michael",
+				 "Conor","Sean","Oisin","Cian","Darragh","Cillian","Fionn","Finn","Rian","Eoin","Oscar","Callum","Aidan","Tadhg","Eoghan","Niamh","Clodagh", 
+				 "Aisling","Eabha","Aoibhinn","Aine","Sadhbh","Eimear","Orla","Sinead","Caoimhe","Saoirse","Roisin","Shannon" };
+		
+		String[] poolOfOwnerSurnames = {"Ferreira","Cunha","Silva","Cram","Murphy","Kelly","Byrne","Ryan","OSullivan","Walsh","OConnor","McCarthy",
+				 "McLoughlin","MacLochlainn","OCarroll","Connolly","Daly","OConnell","Wilson", "Dunne", "Brennan", "Burke","Collins","Casey","Graham", 
+				 "Higgins","Cullen","Keane","King","Maher","MacKenna","Bell","Aponte","Healy","Gonzales","McKeown"};
+		
 		String[] poolOfFemaleNames = {"Joly","Laize","Abbey","Abbie","Abby","Abigail","Addie","Akira","Alex","Alice","Allie","Ally","Amber","Amy","Angel",
 				"Angora","Annabelle","Annie","Aribella","Ariel","Artemis","Arya","Ashley","Aspen","Astra","Athena",
 				"Aurora","Autumn","Ava","Baby","Baby Girl","Bailey","Ballerina","Bandit","Bear","Beatrice","Bebe",
@@ -122,10 +138,10 @@ public class AnimalsData {
 				speciesGenerator = myRandom.nextInt(5); 
 			
 				if(speciesGenerator == 0) { // Common Animals.
-					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(numbersFinishBunch - numbersStartBunch + 1)+numbersStartBunch), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
+					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(numbersFinishBunch - numbersStartBunch + 1)+numbersStartBunch), "Dog", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
 				}
 				else if(speciesGenerator == 1) { // Birds Animals.
-					listOfAnimals[i] = DogDog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(numbersFinishBunch - numbersStartBunch + 1)+numbersStartBunch), poolOfCommonAnimals[myRandom.nextInt(poolOfCommonAnimals.length)], " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
+					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(numbersFinishBunch - numbersStartBunch + 1)+numbersStartBunch), "Dog", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)]);
 				}
 				else if(speciesGenerator == 2) { // Fish Animals.
 					listOfAnimals[i] = new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(10)+1), poolOfFishAnimals[myRandom.nextInt(poolOfFishAnimals.length)], " Female ", poolOfFishMedicalCond[myRandom.nextInt(poolOfFishMedicalCond.length)]);
