@@ -49,13 +49,14 @@ public class Dog extends Animals implements Ianimals {
 			
 	test.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
 	
-	if (test.userValidOption == 1) {
+	if (test.userYesOrNoValidOption == 1) {
 
 		int imageGenerator = myRandom.nextInt(5);
 //		picture 1
 		switch(imageGenerator) {
 		case 1: 
-		printer.typeWriter("\"    ___\\r\\n\" + \r\n" + 
+		printer.typeWriter(""
+				+ "             \"    ___\\r\\n\" + \r\n" + 
 				"				\" __/_  `.  .-\\\"\\\"\\\"-.\\r\\n\" + \r\n" + 
 				"				\" \\\\_,` | \\\\-'  /   )`-')\\r\\n\" + \r\n" + 
 				"				\"  \\\"\\\") `\\\"` \\\\  ((`\\\"`\\r\\n\" + \r\n" + 
@@ -63,21 +64,24 @@ public class Dog extends Animals implements Ianimals {
 				"				\"(_,___/...-` (_/_/ \"", 1);
 			break;
 		case 2:
-			printer.typeWriter("'.-.'. \r\n" + 
+			printer.typeWriter(""
+					+ "'.-.'. \r\n" + 
 					"'\\~ o/` ,,\r\n" + 
 					" { @ } f\r\n" + 
 					" /`-'\\$ \r\n" + 
 					"(_/-\\_) ", 1);
 			break;
 		case 3:
-			printer.typeWriter("         __\r\n" + 
+			printer.typeWriter(""
+					+ "         __\r\n" + 
 					" \\ ______/ V`-,\r\n" + 
 					"  }        /~~\r\n" + 
 					" /_)^ --,r'\r\n" + 
 					"|b      |b", 1);
 			break;
 		case 4:
-			printer.typeWriter(" _=,_\r\n" + 
+			printer.typeWriter(""
+					+ "     _=,_\r\n" + 
 					"    o_/6 /#\\\r\n" + 
 					"    \\__ |##/\r\n" + 
 					"     ='|--\\\r\n" + 
@@ -87,7 +91,8 @@ public class Dog extends Animals implements Ianimals {
 					"       C/ ,--___/", 1);
 			break;
 		case 5:
-			printer.typeWriter("   ,_____ ,\r\n" + 
+			printer.typeWriter(""
+					+ "   ,_____ ,\r\n" + 
 					"  ,._ ,_. 7\\\r\n" + 
 					" j `-'     /\r\n" + 
 					" |o_, o    \\\r\n" + 
@@ -105,7 +110,7 @@ public class Dog extends Animals implements Ianimals {
 			break;	
 			}
 		}
-	else if (test.userValidOption == 0){
+	else if (test.userYesOrNoValidOption == 0){
 		printer.typeWriter("Ok, see you later", 50);
 	}
 

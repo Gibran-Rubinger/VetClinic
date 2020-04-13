@@ -4,9 +4,11 @@ import Graphical.*;
 public class UserInteraction {
 //	Attributes
 	String userInput = "";
+	String userInput2 = "";
 
 //	This attribute is responsible for validation the algorithm. Initialising the with a key value.
-	public int userValidOption = 1000;
+	public int userYesOrNoValidOption = 1000;
+	public int userMultipleChoiseValidOption = 1000;
 //	Those attribute, speedUp and slowDown are responsible to chance the milliseconds of the writeTyping.
 	int speedUp = 50;
 	int slowDown = 50;
@@ -60,17 +62,17 @@ public class UserInteraction {
 //          		check if  the client choose yes.								
 //          		No case sensitive 		
 			if (validAnswer1.equalsIgnoreCase(userInput) || validAnswer2.equalsIgnoreCase(userInput)) {
-				userValidOption = 1;
+				userYesOrNoValidOption = 1;
 				break;
 			}
 //                  check if if the client choose no.
 //					No case sensitive
 			else if (validAnswer3.equalsIgnoreCase(userInput) || validAnswer4.equalsIgnoreCase(userInput)) {
-				userValidOption = 0;
+				userYesOrNoValidOption = 0;
 				break;
 			}
 //					in this part start to count how many left attempts has.
-			else if (userValidOption == 1000) {
+			else if (userYesOrNoValidOption == 1000) {
 
 //								populating the count down and display.
 				display--;
@@ -129,7 +131,8 @@ public class UserInteraction {
 					+ "                                                                                                                                                  @@@@@@@,                    \r\n"
 					+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
 					+ "                                                                                                                                           .,                .,               \r\n"
-					+ "\r\n" + "",1);
+					+ "\r\n" 
+					+ "",1);
 		}
 
 	}
@@ -144,63 +147,60 @@ public class UserInteraction {
 	public void MultipleChoise(int attempt, String text) {
 		
 //		instantiate of Scanner.
-		Scanner myScanner = new Scanner(System.in);
+		Scanner myScanner2 = new Scanner(System.in);
 //		Assign the attribute userInput with the client typing.
-		userInput = myScanner.next();
-		int userInputNumber = Integer.parseInt(userInput);
+		userInput2 = myScanner2.next();
+		int userInputNumber = Integer.parseInt(userInput2);
 //		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
 		int countdown = attempt;
 		int display = attempt;
 		
 		for (int i = 0; i < attempt; i++) {
 
-			
-			
-			
 //  		check if  the client choose yes.								
 //  		No case sensitive 		
-	if (validAnswer5.equalsIgnoreCase(userInput) || userInputNumber == 0) {
-		userValidOption = 0;
+	if (validAnswer5.equalsIgnoreCase(userInput2) || userInputNumber == 0) {
+		userMultipleChoiseValidOption = 0;
 		break;
 	}
-	else if (validAnswer6.equalsIgnoreCase(userInput) || userInputNumber == 1) {
-		userValidOption = 1;
+	else if (validAnswer6.equalsIgnoreCase(userInput2) || userInputNumber == 1) {
+		userMultipleChoiseValidOption = 1;
 		break;
 	}
-	else if (validAnswer7.equalsIgnoreCase(userInput) || userInputNumber == 2) {
-		userValidOption = 2;
+	else if (validAnswer7.equalsIgnoreCase(userInput2) || userInputNumber == 2) {
+		userMultipleChoiseValidOption = 2;
 		break;
 	}
-	else if (validAnswer8.equalsIgnoreCase(userInput) || userInputNumber == 3) {
-		userValidOption = 3;
+	else if (validAnswer8.equalsIgnoreCase(userInput2) || userInputNumber == 3) {
+		userMultipleChoiseValidOption = 3;
 		break;
 	}
-	else if (validAnswer9.equalsIgnoreCase(userInput) || userInputNumber == 4) {
-		userValidOption = 4;
+	else if (validAnswer9.equalsIgnoreCase(userInput2) || userInputNumber == 4) {
+		userMultipleChoiseValidOption = 4;
 		break;
 	}
-	else if (validAnswer10.equalsIgnoreCase(userInput) || userInputNumber == 5) {
-		userValidOption = 5;
+	else if (validAnswer10.equalsIgnoreCase(userInput2) || userInputNumber == 5) {
+		userMultipleChoiseValidOption = 5;
 		break;
 	}
-	else if (validAnswer11.equalsIgnoreCase(userInput) || userInputNumber == 6) {
-		userValidOption = 6;
+	else if (validAnswer11.equalsIgnoreCase(userInput2) || userInputNumber == 6) {
+		userMultipleChoiseValidOption = 6;
 		break;
 	}
-	else if (validAnswer12.equalsIgnoreCase(userInput) || userInputNumber == 7) {
-		userValidOption = 7;
+	else if (validAnswer12.equalsIgnoreCase(userInput2) || userInputNumber == 7) {
+		userMultipleChoiseValidOption = 7;
 		break;
 	}
-	else if (validAnswer13.equalsIgnoreCase(userInput) || userInputNumber == 8) {
-		userValidOption = 8;
+	else if (validAnswer13.equalsIgnoreCase(userInput2) || userInputNumber == 8) {
+		userMultipleChoiseValidOption = 8;
 		break;
 	}
-	else if (validAnswer14.equalsIgnoreCase(userInput) || userInputNumber == 9) {
-		userValidOption = 9;
+	else if (validAnswer14.equalsIgnoreCase(userInput2) || userInputNumber == 9) {
+		userMultipleChoiseValidOption = 9;
 		break;
 	}
 //			in this part start to count how many left attempts has.
-	else if (userValidOption == 1000) {
+	else if (userMultipleChoiseValidOption == 1000) {
 
 //						populating the count down and display.
 		display--;
@@ -219,7 +219,7 @@ public class UserInteraction {
 //					calling the yes or no message again.
 			printer.typeWriter(text,speedUp);
 //					Waiting for new typing
-			userInput = myScanner.next();
+			userInput2 = myScanner2.next();
 		}
 
 //					in this if statement is checked the last attempt before the bug message.
@@ -229,7 +229,7 @@ public class UserInteraction {
 //						calling the yes or no message for the last time.
 			printer.typeWriter(text,speedUp);
 //						Waiting for the last trying
-			userInput = myScanner.next();
+			userInput2 = myScanner2.next();
 		}
 
 	}
@@ -237,7 +237,7 @@ public class UserInteraction {
 	bugRunning++;
 }
 //closing the Scanner.
-myScanner.close();
+myScanner2.close();
 
 //calling the bug message.
 if (bugRunning == attempt) {
@@ -259,7 +259,8 @@ if (bugRunning == attempt) {
 			+ "                                                                                                                                                  @@@@@@@,                    \r\n"
 			+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
 			+ "                                                                                                                                           .,                .,               \r\n"
-			+ "\r\n" + "",1);
+			+ "\r\n" 
+			+ "",1);
 }
 
 

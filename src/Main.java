@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 import Animals.*;
 import Graphical.*;
-import QueryAndValidation.*;
+import QueryAndValidations.*;
 //above are being import the super classes that it will be used in the code.
 public class Main {
 
@@ -55,16 +55,43 @@ public class Main {
 		UserInteraction test = new UserInteraction();
 		
 		test.YesOrNo(3,"\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
-		AnimalsData myAnimals = new AnimalsData();
+		//AnimalsData myAnimals = new AnimalsData();
 	
 		
-		if (test.userValidOption == 1) {	
-			myAnimals.addAnimal();
+		if (test.userYesOrNoValidOption == 1) {
+			
+			test.MultipleChoise(3, " Grand. The animals in our data is devided in 6  sub categories written bellow: \n"
+					+ "  1 - COMMON PETZ: \n"
+					+ "\n"
+					+ "    DOGS       |       CATS         |       DOMESTIC PIG     |        RABBIT     |     HAMISTER     |        GUINEA PIG        |"
+					+ "\n"
+					+ " 2 - BIRDS: \n"
+					+ "\n"
+					+ "   COKCATIEL   |    GOUDIAN FINCH   |         PARROT         |      COCKATOO     |     BUDGERIGAR   |           DOVE           |"
+					+"\n"
+					+ " 3 - FISH: \n"
+					+ "\n"
+					+ "      OSCAR    |     NEON TRETA     |         GUPPIES        |       DISCUS      |      BETTA       |          GOLDFISH        |"
+					+"\n"
+					+ " 4 - REPILES: \n"
+					+ "\n"
+					+ "  WATER DRAGON |      CHAMELEON     |   GREEN TREE PYTHON    |    BALL PYTHON    |      IGUANA      |    EASTERN BOX TURTLE    |"
+					+"\n"
+					+ " 5 - FARM: \n"
+					+ "\n"
+					+ "OX             |         HORSE      |          SHEEP         |       GOAT        |       PONY       |           DONKEY         |"
+					+"\n"
+					+ " 6 - EXOTIC: \n"
+					+ "\n"
+					+ "  PACMAN FROG  |   GREEN TREE FROG  |  COBALT BLUE TARANTULA | CHILE ROSE SPIDER | EMPEROR SCORPION |   HETEROMETRUS SCORPION  |"
+					+ "Please press");
+			//myAnimals.addAnimal();
 		}
-		else if (test.userValidOption == 0){
-			System.out.println(" bye");
+		else if (test.userYesOrNoValidOption == 0){
+			printer.typeWriter("Ok, see you later", 50);
 		}
 
+		
 		
 	}
 }
