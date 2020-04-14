@@ -134,13 +134,24 @@ public class AnimalsData {
 				speciesGenerator = myRandom.nextInt(5); 
 				
 				
-				if(speciesGenerator == 0) { // Common Animals.
+				if(speciesGenerator == 0) { 
 					listOfAnimals.add(new Dog(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(20)+1), "Dog", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
 				}
-				else if(speciesGenerator == 1) { // Birds Animals.
+				else if(speciesGenerator == 1) { 
 					listOfAnimals.add(new Cat(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(18)+1), "Cat", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
 				}
-
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new DomesticPig(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(18)+1), "Domestic Pig", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new Rabbit(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(8)+1), "Domestic Pig", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
+				else if(speciesGenerator == 1) {
+					listOfAnimals.add(new Hamister(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(4)+1), "Domestic Pig", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new GuineaPig(idObj, poolOfFemaleNames[myRandom.nextInt(poolOfFemaleNames.length)], (myRandom.nextInt(8)+1), "Domestic Pig", " Female ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
 			}
 			
 				
@@ -150,10 +161,20 @@ public class AnimalsData {
 					listOfAnimals.add(new Dog(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(20)+1), "Dog", " Male ", poolOfCommonPetzMedicalCond[myRandom.nextInt(poolOfCommonPetzMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
 				}
 				else if(speciesGenerator == 1) { 
-					
 					listOfAnimals.add(new Cat(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(18)+1), "Cat", " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
 				}
-
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new DomesticPig(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(18)+1), "Domestic Pig", " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new Rabbit(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(8)+1), "Domestic Pig", " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new Hamister(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(8)+1), "Domestic Pig", " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
+				else if(speciesGenerator == 1) { 
+					listOfAnimals.add(new GuineaPig(idObj, poolOfMaleNames[myRandom.nextInt(poolOfMaleNames.length)], (myRandom.nextInt(8)+1), "Domestic Pig", " Male ", poolOfBirdsMedicalCond[myRandom.nextInt(poolOfBirdsMedicalCond.length)], new AnimalOwner(poolOfOwnerNames[myRandom.nextInt(poolOfOwnerNames.length)], poolOfOwnerSurnames[myRandom.nextInt(poolOfOwnerSurnames.length)], (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1)+number1StartBunch), (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch), (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch))));
+				}
 			}
 		}
 		

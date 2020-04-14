@@ -60,21 +60,21 @@ public class Main {
 
 			query.MultipleChoise(3,
 					" Grand. The animals in our database is devided in 6  sub categories written bellow: \n"
-							+ "  1 - COMMON PETZ: \n" + "\n"
+							+ "\n  1 - COMMON PETZ: " + "\n"
 							+ "    DOGS       |       CATS         |       DOMESTIC PIG     |        RABBIT     |     HAMISTER     |        GUINEA PIG        |"
-							+ "\n" + " 2 - BIRDS: \n" + "\n"
+							+ "\n" + "\n 2 - BIRDS: " + "\n"
 							+ "   COKCATIEL   |    GOUDIAN FINCH   |         PARROT         |      COCKATOO     |     BUDGERIGAR   |           DOVE           |"
-							+ "\n" + " 3 - FISH: \n" + "\n"
+							+ "\n" + "\n 3 - FISH: " + "\n"
 							+ "      OSCAR    |     NEON TRETA     |         GUPPIES        |       DISCUS      |      BETTA       |          GOLDFISH        |"
-							+ "\n" + " 4 - REPILES: \n" + "\n"
+							+ "\n" + "\n 4 - REPILES: " + "\n"
 							+ "  WATER DRAGON |      CHAMELEON     |   GREEN TREE PYTHON    |    BALL PYTHON    |      IGUANA      |    EASTERN BOX TURTLE    |"
-							+ "\n" + " 5 - FARM: \n" + "\n"
-							+ "OX             |         HORSE      |          SHEEP         |       GOAT        |       PONY       |           DONKEY         |"
-							+ "\n" + " 6 - EXOTIC: \n" + "\n"
+							+ "\n" + "\n 5 - FARM: " + "\n"
+							+ "       OX      |         HORSE      |          SHEEP         |       GOAT        |       PONY       |           DONKEY         |"
+							+ "\n" + "\n 6 - EXOTIC: " + "\n"
 							+ "  PACMAN FROG  |   GREEN TREE FROG  |  COBALT BLUE TARANTULA | CHILE ROSE SPIDER | EMPEROR SCORPION |   HETEROMETRUS SCORPION  |"
-							+ "" + "\n" + " 7 - CRAZY:" + "\n"
+							+ "" + "\n" + "\n 7 - CRAZY:" + "\n"
 							+ " yes! with this option we will mix all the categories above and generate a bunch of animals! "
-							+ "\n"
+							+ "\n\n"
 							+ "Please press or write down the number of the sub category would you like to chosee");
 			// myAnimals.addAnimal();
 		} else if (query.userYesOrNoValidOption == 0) {

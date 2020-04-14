@@ -1,20 +1,17 @@
 package Animals;
-
 import java.util.Random;
 
 import Graphical.Graphical;
 import QueryAndValidations.UserInteraction;
 
-
-public class DomesticPig extends Animals implements Ianimals {
-	
-//	Instantiation the random method.
+public class Hamister extends Animals implements Ianimals {
+//		Instantiation the random method.
 	Random myRandom = new Random();
 	
 	AnimalOwner owner = new AnimalOwner(null, null, 0, 0, 0);
 
 //	constructor to set the Attributes.
-	public DomesticPig(int idAnimal, String name, int age, String species,String gender, String medicalCond, AnimalOwner owner) {
+	public Hamister(int idAnimal, String name, int age, String species,String gender, String medicalCond, AnimalOwner owner) {
 		this.idAnimal = idAnimal;
 		this.name = name;
 		this.age = age;
@@ -23,9 +20,11 @@ public class DomesticPig extends Animals implements Ianimals {
 		this.medicalCond = medicalCond;	
 		this.owner = owner;
 	}
+	
 //	instantiate the graphical and UserInteraction methods to print some interactions.
 	Graphical printer = new Graphical();	
 	UserInteraction test = new UserInteraction();
+	
 	@Override
 	public void sounds() {
 		// TODO Auto-generated method stub
@@ -55,59 +54,47 @@ public class DomesticPig extends Animals implements Ianimals {
 			case 1: 
 			printer.typeWriter(
 					""
-					+ "/\\~\"~/\\~\"\"~~____\r\n" + 
-					"    (\"`-'/\"\").       \"'\"`~-._     .\r\n" + 
-					" __~6 _ 6    }       {      }.-.__.)\r\n" + 
-					"(oo) |\\     }        {       }\"--,-'\r\n" + 
-					" \"--.~~~ __/ {   }    \\     }\r\n" + 
-					"     '\"ii\"/ \\_ \\  | __~ \"; >\"\r\n" + 
-					"        / /  \"\"\\ |\"    / /\r\n" + 
-					"       ^^\"      ^^    ^^\"", 1);
+					+ "\r\n" + 
+					"                            (\\,/)\r\n" + 
+					"                            oo   '''//,        _\r\n" + 
+					"                          ,/_;~,        \\,    / '\r\n" + 
+					"                          \"'   \\    (    \\    !\r\n" + 
+					"                                ',|  \\    |__.'\r\n" + 
+					"                                '~  '~----''\r\n" + 
+					"", 1);
 				break;
 			case 2:
 				printer.typeWriter(""
-						+ "  ,.\r\n" + 
-						"                        (_|,.\r\n" + 
-						"                       ,' /, )_______   _\r\n" + 
-						"                    __j o``-'        `.'-)'\r\n" + 
-						"                   (\")                 \\'\r\n" + 
-						"                    `-j                |\r\n" + 
-						"                      `-._(           /\r\n" + 
-						"                         |_\\  |--^.  /\r\n" + 
-						"                        /_]'|_| /_)_/\r\n" + 
-						"                           /_]'  /_]'", 1);
+						+ " ,     .\r\n" + 
+						"                       (\\,;,/)\r\n" + 
+						"                        (o o)\\//,\r\n" + 
+						"                         \\ /     \\,\r\n" + 
+						"                         `+'(  (   \\    )\r\n" + 
+						"                            //  \\   |_./\r\n" + 
+						"                          '~' '~----'  ", 1);
 				break;
 			case 3:
 				printer.typeWriter(""
-						+ "        9\r\n" + 
-						"     ,--.-'-,--.\r\n" + 
-						"     \\  /-~-\\  /\r\n" + 
-						"    / )' a a `( \\\r\n" + 
-						"   ( (  ,---.  ) )\r\n" + 
-						"    \\ `(_o_o_)' /\r\n" + 
-						"     \\   `-'   /\r\n" + 
-						"      | |---| |     \r\n" + 
-						"      [_]   [_]", 1);
+						+ "  (`-()_.-=-.\r\n" + 
+						"       /66  ,  ,  \\\r\n" + 
+						"     =(o_/=//_(   /======`\r\n" + 
+						"         ~\"` ~\"~~`", 1);
 				break;
 			case 4:
 				printer.typeWriter(""
-						+ "--.__.--\r\n" + 
-						"     ___\\(0_0)/\r\n" + 
-						"  ~~/     (OO)\r\n" + 
-						"    \\  __  /\r\n" + 
-						"     `='`='=", 1);
+						+ "          ___\r\n" + 
+						" _  _  .-'   '-.\r\n" + 
+						"(.)(.)/         \\   \r\n" + 
+						" /@@             ;\r\n" + 
+						"o_\\\\-mm-......-mm`~~~~~~~", 1);
 				break;
 			case 5:
 				printer.typeWriter(""
-						+ "  \\/---\\/\r\n" + 
-						"      ). .(\r\n" + 
-						"     ( (\") )\r\n" + 
-						"      )   (\r\n" + 
-						"     /     \\ \r\n" + 
-						"    (       )`\r\n" + 
-						"   ( \\ /-\\ / )\r\n" + 
-						"    w'W   W'w\r\n" + 
-						"", 1);
+						+ "              _,_\r\n" + 
+						"           _.-~' o'~;,\r\n" + 
+						" _      .-~_  =,,-~~\r\n" + 
+						"' ~--._(___ )__/\r\n" + 
+						"         ~~~^ ~^ ", 1);
 				break;	
 				}
 			}
@@ -123,8 +110,7 @@ public class DomesticPig extends Animals implements Ianimals {
 		public String toString() {
 			return "ID: " +idAnimal+ "   Name: " + name + "         Age: " + age+ "         Specie: " + species+"       Gender: " + gender+ "   \n \n Medical Condition: " + medicalCond+ ". \n\n"+owner+"\n________________________________________________________________________________________________________________________________________________________";
 		}
-		
 	
-	}
+	
 
-
+}
