@@ -153,9 +153,10 @@ public class UserInteraction {
 		int countdown = attempt;
 		int display = attempt;
 		try {
-			userInput = input.readLine();
-			userInputInt = Integer.parseInt(input.readLine());
+			
 			for (int i = 0; i < attempt; i++) {
+				userInput = input.readLine();
+				userInputInt = Integer.parseInt(input.readLine());
 
 //  		check if  the client choose yes.								
 //  		No case sensitive 		

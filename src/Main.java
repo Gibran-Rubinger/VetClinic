@@ -1,6 +1,6 @@
-import java.util.ArrayList;
 
 import Animals.*;
+import java.io.BufferedReader;
 import Graphical.*;
 import QueryAndValidations.*;
 
@@ -52,6 +52,7 @@ public class Main {
 		// printer.typeWriter(null, 50);
 
 		UserInteraction query = new UserInteraction();
+		AnimalsData myAnimals = new AnimalsData();
 
 		query.YesOrNo(3, "\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
 		// AnimalsData myAnimals = new AnimalsData();
@@ -76,7 +77,10 @@ public class Main {
 							+ " yes! with this option we will mix all the categories above and generate a bunch of animals! "
 							+ "\n\n"
 							+ "Please press or write down the number of the sub category would you like to chosee");
-			// myAnimals.addAnimal();
+			if (query.userMultipleChoiseValidOption == 1) {
+				 myAnimals.addAnimal();
+			}
+			
 		} else if (query.userYesOrNoValidOption == 0) {
 			printer.typeWriter("Ok, see you later", 50);
 		}
