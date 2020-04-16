@@ -11,14 +11,10 @@ public class UserInteraction {
 //	This attribute is responsible for validation the algorithm. Initialising the with a key value.
 	public int userYesOrNoValidOption = 1000;
 	public int userMultipleChoiseValidOption = 1000;
-//	Those attribute, speedUp and slowDown are responsible to chance the milliseconds of the writeTyping.
-	int speedUp = 50;
-	int slowDown = 50;
-
 //	This attribute is responsible to count the numbers of attempts left to trigger the bug message.
-	int bugRunning1 = 0;
-	boolean bugRunning2 = true;
-	int bugRunning3 = 0;
+
+	boolean bugRunning = true;
+
 	int countdown = 0;
 	int display = 0;
 	
@@ -65,45 +61,37 @@ public class UserInteraction {
 //					in this part start to count how many left attempts has.
 			else if (userYesOrNoValidOption == 1000) {
 
-//								populating the count down and display.
+//				populating the count down and display.
 				display--;
 				countdown--;
 
-//							in this if statement start the count down.	
+//				in this if statement start the count down.	
 				if (countdown > 1) {
 					printer.typeWriter(" Warnning this is not a valid option! You have " + display + "  attempts left.",
-							slowDown);
+							60);
 
-//					this difference is to create a better interaction with the client
-//					here is decreasing the millisecond to clarify the client the numbers of attempt left.
-					slowDown -= 10;
-
-//							here increasing the milliseconds to repeat the Yes or no message.
-					speedUp += 50;
 //							calling the yes or no message again.
-					printer.typeWriter(text, speedUp);
+					printer.typeWriter(text, 10);
 //							Waiting for new typing
 					userInput = myScanner.next();
 				}
 
 //							in this if statement is checked the last attempt before the bug message.
-				else if (countdown == 1 && display == 1) {
+				else if (countdown == 1 ) {
 
-					printer.typeWriter(" Warnning this is not a valid option! This is your * LAST *  attempts left.",
-							slowDown);
+					printer.typeWriter(" Warnning this is not a valid option! This is your * LAST *  attempts left.",70);
 //								calling the yes or no message for the last time.
-					printer.typeWriter(text, speedUp);
+					printer.typeWriter(text, 5);
 //								Waiting for the last trying
 					userInput = myScanner.next();
 				}
 
 			}
-//				Increasing the bug count.	
-			bugRunning1++;
+
 		}
 
 //		calling the bug message.
-		if (bugRunning1 == attempt) {
+		if (countdown == 0) {
 
 			printer.typeWriter("\r\n"
 					+ "                                                                                                                                                                              \r\n"
@@ -132,78 +120,80 @@ public class UserInteraction {
 	public void MultipleChoise(int attempt, String text) {
 		int countdown = attempt;
 		int display = attempt;
-		printer.typeWriter(text, 1);
+		printer.typeWriter(text, 35);
 
 //		Assign the attribute userInput with the client typing.
     do { 
 		try {
-			
 				userInputInt = Integer.parseInt(myScanner.next());
 
 //  			check if  the client choose yes.								
 				if (userInputInt == 0) {
 					userMultipleChoiseValidOption = 0;
-				
+					bugRunning = false;
+					
 				} else if (userInputInt == 1) {
 					userMultipleChoiseValidOption = 1;
-					bugRunning2 = false;
+					bugRunning = false;
 				
 				} else if (userInputInt == 2) {
 					userMultipleChoiseValidOption = 2;
-					bugRunning2 = false;
+					bugRunning = false;
 				
 				} else if (userInputInt == 3) {
 					userMultipleChoiseValidOption = 3;
-					bugRunning2 = false;
+					bugRunning = false;
 					
 				} else if (userInputInt == 4) {
 					userMultipleChoiseValidOption = 4;
-					bugRunning2 = false;
+					bugRunning = false;
 					
 				} else if (userInputInt == 5) {
 					userMultipleChoiseValidOption = 5;
-					bugRunning2 = false;
+					bugRunning = false;
 					
 				} else if (userInputInt == 6) {
 					userMultipleChoiseValidOption = 6;
-					bugRunning2 = false;
+					bugRunning = false;
 					
 				} else if (userInputInt == 7) {
 					userMultipleChoiseValidOption = 7;
-					bugRunning2 = false;
+					bugRunning = false;
 					
 				} else if (userInputInt == 8) {
 					userMultipleChoiseValidOption = 8;
-					bugRunning2 = false;
+					bugRunning = false;
 					
 				} else if (userInputInt == 9) {
 					userMultipleChoiseValidOption = 9;
-					bugRunning2 = false;
+					bugRunning = false;
 				}
 //			    Increasing the bug count.	
 			
 		}
 //		calling the bug message.
 		catch (Exception e) {
-			
+		
+			printer.typeWriter("Buddy just numbers are allowed here!", 60);
 	    for (int i = 0; i < attempt; i++) {
-	    	printer.typeWriter("Buddy just numbers are allowed here!", 60);	  
+	    		  
 	    	display--;
 	    	countdown--;
-	    	bugRunning3++;
+	    	
 		
 	    	if(countdown > 1) {
 	    		printer.typeWriter("\n\n Warnning this is not a valid option! You have " + display + "  attempts left.", 20);
 	    		printer.typeWriter(text, 1);
-	    		userInputInt = Integer.parseInt(myScanner.next());
+	    		break;
 	    	}
-	    	else if (bugRunning3 == (attempt-1) && display == 1) {
+	    	else if (countdown == 1) {
 	    		printer.typeWriter("\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.", 60);
 	    		printer.typeWriter("\n\n so, how you decide if we will continue execute the program  or not?", 1);
-	    		userInputInt = Integer.parseInt(myScanner.next());
+	    		printer.typeWriter(text, 1);
+	    		break;
 	    	}
-	    	else if (bugRunning3 == attempt){
-	    		bugRunning2 = false;
+	    	else if (countdown == 0){
+	    		bugRunning = false;
 	    		printer.typeWriter("\r\n"
 					+ "                                                                                                                                                                              \r\n"
 					+ "                                                                                                                                                  @(    @*                    \r\n"
@@ -226,7 +216,7 @@ public class UserInteraction {
 	    }
 	  }
 	}
-		while(bugRunning2 == true );				
+		while(bugRunning == true );				
 					   
 						
 //		closing the Scanner.

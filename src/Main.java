@@ -60,7 +60,7 @@ public class Main {
 
 		if (query.userYesOrNoValidOption == 1) {
 			query.MultipleChoise(3,
-					"\n Grand. \nThe animals in our database is devided in 6  sub categories written bellow: \n"
+					"\n \n Grand. \nThe animals in our database is devided in 6  sub categories written bellow: \n"
 							+ "           \n 1 - COMMON PETZ: " + "\n"
 							+ "             |    DOGS       |       CATS         |       DOMESTIC PIG     |        RABBIT     |     HAMISTER     |        GUINEA PIG        |"
 							+ "\n" + "    \n 2 - BIRDS: " + "\n"
