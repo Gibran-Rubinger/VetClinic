@@ -1,7 +1,5 @@
 package QueryAndValidations;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 import Graphical.*;
 
@@ -41,14 +39,15 @@ public class UserInteraction {
 //	instantiate the graphical method to print some interactions.
 	Graphical printer = new Graphical();
 
+//	instantiate of Scanner.
+	Scanner myScanner = new Scanner(System.in);
+
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void YesOrNo(int attempt, String text) {
 
 //		setting the graphical with the milliseconds  preferred.
 		printer.typeWriter(text, 50);
 
-//		instantiate of Scanner.
-		Scanner myScanner = new Scanner(System.in);
 //		Assign the attribute userInput with the client typing.
 		userInput = myScanner.next();
 
@@ -110,8 +109,6 @@ public class UserInteraction {
 //				Increasing the bug count.	
 			bugRunning++;
 		}
-//		closing the Scanner.
-		myScanner.close();
 
 //		calling the bug message.
 		if (bugRunning == attempt) {
@@ -142,106 +139,107 @@ public class UserInteraction {
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void MultipleChoise(int attempt, String text) {
 
-//		instantiate of Scanner.
-		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-		printer.typeWriter(text, 50);
+		printer.typeWriter(text, 1);
 
 //		Assign the attribute userInput with the client typing.
-		
 
-//		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
-		int countdown = attempt;
-		int display = attempt;
 		try {
 			
-			for (int i = 0; i < attempt; i++) {
-				userInput = input.readLine();
-				userInputInt = Integer.parseInt(input.readLine());
-
+				userInputInt = Integer.parseInt(myScanner.next());
+				// userInputInt = myScanner.nextInt();
 //  		check if  the client choose yes.								
 //  		No case sensitive 		
-				if (validAnswer5.equalsIgnoreCase(userInput) || userInputInt == 0) {
+				if (userInputInt == 0) {
 					userMultipleChoiseValidOption = 0;
-					break;
-				} else if (validAnswer6.equalsIgnoreCase(userInput) || userInputInt == 1) {
+				
+				} else if (userInputInt == 1) {
 					userMultipleChoiseValidOption = 1;
-					break;
-				} else if (validAnswer7.equalsIgnoreCase(userInput) || userInputInt == 2) {
+				
+				} else if (userInputInt == 2) {
 					userMultipleChoiseValidOption = 2;
-					break;
-				} else if (validAnswer8.equalsIgnoreCase(userInput) || userInputInt == 3) {
+				
+				} else if (userInputInt == 3) {
 					userMultipleChoiseValidOption = 3;
-					break;
-				} else if (validAnswer9.equalsIgnoreCase(userInput) || userInputInt == 4) {
+				
+				} else if (userInputInt == 4) {
 					userMultipleChoiseValidOption = 4;
-					break;
-				} else if (validAnswer10.equalsIgnoreCase(userInput) || userInputInt == 5) {
+				
+				} else if (userInputInt == 5) {
 					userMultipleChoiseValidOption = 5;
-					break;
-				} else if (validAnswer11.equalsIgnoreCase(userInput) || userInputInt == 6) {
+				
+				} else if (userInputInt == 6) {
 					userMultipleChoiseValidOption = 6;
-					break;
-				} else if (validAnswer12.equalsIgnoreCase(userInput) || userInputInt == 7) {
+				
+				} else if (userInputInt == 7) {
 					userMultipleChoiseValidOption = 7;
-					break;
-				} else if (validAnswer13.equalsIgnoreCase(userInput) || userInputInt == 8) {
+				
+				} else if (userInputInt == 8) {
 					userMultipleChoiseValidOption = 8;
-					break;
-				} else if (validAnswer14.equalsIgnoreCase(userInput) || userInputInt == 9) {
+				
+				} else if (userInputInt == 9) {
 					userMultipleChoiseValidOption = 9;
-					break;
+				
 				}
-//			in this part start to count how many left attempts has.
-				else if (userMultipleChoiseValidOption == 1000) {
+				
 
-//						populating the count down and display.
-					display--;
-					countdown--;
-
-//					in this if statement start the count down.	
-					if (countdown > 1) {
-						printer.typeWriter(
-								" Warnning this is not a valid option! You have " + display + "  attempts left.",
-								slowDown);
-
-//			this difference is to create a better interaction with the client
-//			here is decreasing the millisecond to clarify the client the numbers of attempt left.
-						slowDown -= 10;
-
-//					here increasing the milliseconds to repeat the Yes or no message.
-						speedUp += 50;
-//					calling the yes or no message again.
-						printer.typeWriter(text, speedUp);
-//					Waiting for new typing
-						userInput = input.readLine();
-						userInputInt = Integer.parseInt(input.readLine());
-						// userInputInt = myScannerint.nextInt();
-					}
-
-//					in this if statement is checked the last attempt before the bug message.
-					else if (countdown == 1 && display == 1) {
-
-						printer.typeWriter(
-								" Warnning this is not a valid option! This is your * LAST *  attempts left.",
-								slowDown);
-//						calling the yes or no message for the last time.
-						printer.typeWriter(text, speedUp);
-//						Waiting for the last trying
-						userInput = input.readLine();
-						userInputInt = Integer.parseInt(input.readLine());
-						// userInputInt = myScannerint.nextInt();
-					}
-
-				}
-//		Increasing the bug count.	
-				bugRunning++;
-			}
-
+			
+		
 //closing the Scanner.
-			input.close();
-		}
+			myScanner.close();
+	}
+
 //calling the bug message.
 		catch (Exception e) {
+			
+//			before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
+			int countdown = attempt;
+			int display = attempt;
+
+			for (int i = 0; i < attempt; i++) {
+//				in this part start to count how many left attempts has.
+					if (userMultipleChoiseValidOption == 1000) {
+
+//							populating the count down and display.
+						display--;
+						countdown--;
+					}
+//						in this if statement start the count down.	
+						else if (countdown > 1) {
+							printer.typeWriter(
+									" Warnning this is not a valid option! You have " + display + "  attempts left.",
+									slowDown);
+
+//				this difference is to create a better interaction with the client
+//				here is decreasing the millisecond to clarify the client the numbers of attempt left.
+							slowDown -= 10;
+
+//						here increasing the milliseconds to repeat the Yes or no message.
+							speedUp += 50;
+//						calling the yes or no message again.
+							printer.typeWriter(text, speedUp);
+//						Waiting for new typing
+							userInputInt = Integer.parseInt(userInput);
+						}
+			}
+		}
+
+//						in this if statement is checked the last attempt before the bug message.
+					catch (Exception e) {
+						else if (countdown == 1 && display == 1) {
+
+							printer.typeWriter(
+									" Warnning this is not a valid option! This is your * LAST *  attempts left.",
+									slowDown);
+//							calling the yes or no message for the last time.
+							printer.typeWriter(text, speedUp);
+//							Waiting for the last trying
+							userInputInt = Integer.parseInt(userInput);
+						}
+//					Increasing the bug count.	
+							bugRunning++;
+					}
+		catch (Exception e) {
+			
 			if (bugRunning == attempt) {
 
 				printer.typeWriter("\r\n"
@@ -265,6 +263,5 @@ public class UserInteraction {
 			}
 
 		}
-
 	}
 }

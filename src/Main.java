@@ -55,28 +55,28 @@ public class Main {
 		AnimalsData myAnimals = new AnimalsData();
 
 		query.YesOrNo(3, "\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
+		
 		// AnimalsData myAnimals = new AnimalsData();
 
 		if (query.userYesOrNoValidOption == 1) {
-
 			query.MultipleChoise(3,
-					" Grand. The animals in our database is devided in 6  sub categories written bellow: \n"
-							+ "\n  1 - COMMON PETZ: " + "\n"
-							+ "    DOGS       |       CATS         |       DOMESTIC PIG     |        RABBIT     |     HAMISTER     |        GUINEA PIG        |"
-							+ "\n" + "\n 2 - BIRDS: " + "\n"
-							+ "   COKCATIEL   |    GOUDIAN FINCH   |         PARROT         |      COCKATOO     |     BUDGERIGAR   |           DOVE           |"
-							+ "\n" + "\n 3 - FISH: " + "\n"
-							+ "      OSCAR    |     NEON TRETA     |         GUPPIES        |       DISCUS      |      BETTA       |          GOLDFISH        |"
-							+ "\n" + "\n 4 - REPILES: " + "\n"
-							+ "  WATER DRAGON |      CHAMELEON     |   GREEN TREE PYTHON    |    BALL PYTHON    |      IGUANA      |    EASTERN BOX TURTLE    |"
-							+ "\n" + "\n 5 - FARM: " + "\n"
-							+ "       OX      |         HORSE      |          SHEEP         |       GOAT        |       PONY       |           DONKEY         |"
-							+ "\n" + "\n 6 - EXOTIC: " + "\n"
-							+ "  PACMAN FROG  |   GREEN TREE FROG  |  COBALT BLUE TARANTULA | CHILE ROSE SPIDER | EMPEROR SCORPION |   HETEROMETRUS SCORPION  |"
+					"\n Grand. \nThe animals in our database is devided in 6  sub categories written bellow: \n"
+							+ "           \n 1 - COMMON PETZ: " + "\n"
+							+ "             |    DOGS       |       CATS         |       DOMESTIC PIG     |        RABBIT     |     HAMISTER     |        GUINEA PIG        |"
+							+ "\n" + "    \n 2 - BIRDS: " + "\n"
+							+ "             |   COKCATIEL   |    GOUDIAN FINCH   |         PARROT         |      COCKATOO     |     BUDGERIGAR   |           DOVE           |"
+							+ "\n" + "    \n 3 - FISH: " + "\n"
+							+ "             |   OSCAR       |     NEON TRETA     |         GUPPIES        |       DISCUS      |      BETTA       |          GOLDFISH        |"
+							+ "\n" + "    \n 4 - REPILES: " + "\n"
+							+ "             |  WATER DRAGON |      CHAMELEON     |   GREEN TREE PYTHON    |    BALL PYTHON    |      IGUANA      |    EASTERN BOX TURTLE    |"
+							+ "\n" + "    \n 5 - FARM: " + "\n"
+							+ "             |       OX      |         HORSE      |          SHEEP         |       GOAT        |       PONY       |           DONKEY         |"
+							+ "\n" + "    \n 6 - EXOTIC: " + "\n"
+							+ "             |  PACMAN FROG  |   GREEN TREE FROG  |  COBALT BLUE TARANTULA | CHILE ROSE SPIDER | EMPEROR SCORPION |   HETEROMETRUS SCORPION  |"
 							+ "" + "\n" + "\n 7 - CRAZY:" + "\n"
 							+ " yes! with this option we will mix all the categories above and generate a bunch of animals! "
 							+ "\n\n"
-							+ "Please press or write down the number of the sub category would you like to chosee");
+							+ "Please press or write down the number of the sub category would you like to chosee:\n");
 			if (query.userMultipleChoiseValidOption == 1) {
 				 myAnimals.addAnimal();
 			}

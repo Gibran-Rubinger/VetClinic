@@ -169,19 +169,19 @@ public class AnimalsData {
 				if(speciesGenerator == 0) { 
 					listOfAnimals.add(new Dog(idObj, femaleAnimalNames, dogAge, "Dog", " Female ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 1) { 
 					listOfAnimals.add(new Cat(idObj, femaleAnimalNames, catAge, "Cat", " Female ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 2) { 
 					listOfAnimals.add(new DomesticPig(idObj, femaleAnimalNames, domesticPigAge, "Domestic Pig", " Female ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 3) { 
 					listOfAnimals.add(new Rabbit(idObj, femaleAnimalNames, rabbitAge, "Rabbit", " Female ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 4) { 
 					listOfAnimals.add(new Hamister(idObj, femaleAnimalNames, hamisterAge, "Hamister", " Female ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 5) { 
 					listOfAnimals.add(new Rabbit(idObj, femaleAnimalNames, guineaPigAge, "Guinea Pig", " Female ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
 				
@@ -193,19 +193,19 @@ public class AnimalsData {
 				if(speciesGenerator == 0) { 
 					listOfAnimals.add(new Dog(idObj, maleAnimalNames, dogAge, "Dog", " Male ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 1) { 
 					listOfAnimals.add(new Cat(idObj, maleAnimalNames, catAge, "Cat", " Male ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 2) { 
 					listOfAnimals.add(new DomesticPig(idObj, maleAnimalNames, domesticPigAge, "Domestic Pig", " Male ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 3) { 
 					listOfAnimals.add(new Rabbit(idObj, maleAnimalNames, rabbitAge, "Rabbit", " Male ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 4) { 
 					listOfAnimals.add(new Hamister(idObj, maleAnimalNames, hamisterAge, "Hamister", " Male ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
-				else if(speciesGenerator == 0) { 
+				else if(speciesGenerator == 5) { 
 					listOfAnimals.add(new Rabbit(idObj, maleAnimalNames, guineaPigAge, "Guinea Pig", " Male ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
 			}
