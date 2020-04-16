@@ -76,7 +76,7 @@ public class Main {
 							+ "" + "\n" + "\n 7 - CRAZY:" + "\n"
 							+ " yes! with this option we will mix all the categories above and generate a bunch of animals! "
 							+ "\n\n"
-							+ "Please press or write down the number of the sub category would you like to chosee:\n");
+							+ "Please press the number of the sub category would you like to chosee:\n");
 			if (query.userMultipleChoiseValidOption == 1) {
 				 myAnimals.addAnimal();
 			}

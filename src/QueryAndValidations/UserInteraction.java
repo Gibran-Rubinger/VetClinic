@@ -16,25 +16,17 @@ public class UserInteraction {
 	int slowDown = 50;
 
 //	This attribute is responsible to count the numbers of attempts left to trigger the bug message.
-	int bugRunning = 0;
-
+	int bugRunning1 = 0;
+	boolean bugRunning2 = true;
+	int bugRunning3 = 0;
+	int countdown = 0;
+	int display = 0;
+	
 //	Those are the pool of valid options typing for the client. 
 	String validAnswer1 = "yes";
 	String validAnswer2 = "Y";
 	String validAnswer3 = "no";
 	String validAnswer4 = "n";
-
-//	zero one two three four five six seven eight nine 
-	String validAnswer5 = "zero";
-	String validAnswer6 = "one";
-	String validAnswer7 = "two";
-	String validAnswer8 = "three";
-	String validAnswer9 = "four";
-	String validAnswer10 = "five";
-	String validAnswer11 = "six";
-	String validAnswer12 = "seven";
-	String validAnswer13 = "eight";
-	String validAnswer14 = "nine";
 
 //	instantiate the graphical method to print some interactions.
 	Graphical printer = new Graphical();
@@ -107,11 +99,11 @@ public class UserInteraction {
 
 			}
 //				Increasing the bug count.	
-			bugRunning++;
+			bugRunning1++;
 		}
 
 //		calling the bug message.
-		if (bugRunning == attempt) {
+		if (bugRunning1 == attempt) {
 
 			printer.typeWriter("\r\n"
 					+ "                                                                                                                                                                              \r\n"
@@ -138,130 +130,107 @@ public class UserInteraction {
 
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void MultipleChoise(int attempt, String text) {
-
+		int countdown = attempt;
+		int display = attempt;
 		printer.typeWriter(text, 1);
 
 //		Assign the attribute userInput with the client typing.
-
+    do { 
 		try {
 			
 				userInputInt = Integer.parseInt(myScanner.next());
-				// userInputInt = myScanner.nextInt();
-//  		check if  the client choose yes.								
-//  		No case sensitive 		
+
+//  			check if  the client choose yes.								
 				if (userInputInt == 0) {
 					userMultipleChoiseValidOption = 0;
 				
 				} else if (userInputInt == 1) {
 					userMultipleChoiseValidOption = 1;
+					bugRunning2 = false;
 				
 				} else if (userInputInt == 2) {
 					userMultipleChoiseValidOption = 2;
+					bugRunning2 = false;
 				
 				} else if (userInputInt == 3) {
 					userMultipleChoiseValidOption = 3;
-				
+					bugRunning2 = false;
+					
 				} else if (userInputInt == 4) {
 					userMultipleChoiseValidOption = 4;
-				
+					bugRunning2 = false;
+					
 				} else if (userInputInt == 5) {
 					userMultipleChoiseValidOption = 5;
-				
+					bugRunning2 = false;
+					
 				} else if (userInputInt == 6) {
 					userMultipleChoiseValidOption = 6;
-				
+					bugRunning2 = false;
+					
 				} else if (userInputInt == 7) {
 					userMultipleChoiseValidOption = 7;
-				
+					bugRunning2 = false;
+					
 				} else if (userInputInt == 8) {
 					userMultipleChoiseValidOption = 8;
-				
+					bugRunning2 = false;
+					
 				} else if (userInputInt == 9) {
 					userMultipleChoiseValidOption = 9;
-				
+					bugRunning2 = false;
 				}
-				
-
+//			    Increasing the bug count.	
 			
+		}
+//		calling the bug message.
+		catch (Exception e) {
+			
+	    for (int i = 0; i < attempt; i++) {
+	    	printer.typeWriter("Buddy just numbers are allowed here!", 60);	  
+	    	display--;
+	    	countdown--;
+	    	bugRunning3++;
 		
-//closing the Scanner.
-			myScanner.close();
+	    	if(countdown > 1) {
+	    		printer.typeWriter("\n\n Warnning this is not a valid option! You have " + display + "  attempts left.", 20);
+	    		printer.typeWriter(text, 1);
+	    		userInputInt = Integer.parseInt(myScanner.next());
+	    	}
+	    	else if (bugRunning3 == (attempt-1) && display == 1) {
+	    		printer.typeWriter("\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.", 60);
+	    		printer.typeWriter("\n\n so, how you decide if we will continue execute the program  or not?", 1);
+	    		userInputInt = Integer.parseInt(myScanner.next());
+	    	}
+	    	else if (bugRunning3 == attempt){
+	    		bugRunning2 = false;
+	    		printer.typeWriter("\r\n"
+					+ "                                                                                                                                                                              \r\n"
+					+ "                                                                                                                                                  @(    @*                    \r\n"
+					+ "                                                                                                                                              @&            @&                \r\n"
+					+ "                                                                                                                                            @@               @@&              \r\n"
+					+ "                                                                                                                                           @@@                @@@             \r\n"
+					+ "                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n"
+					+ "    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n"
+					+ "    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n"
+					+ "    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n"
+					+ "    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n"
+					+ "    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n"
+					+ "    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n"
+					+ "                                                                                                                                               .@  #@@@@  @&           &      \r\n"
+					+ "                                                                                                                                                  @@@@@@@,                    \r\n"
+					+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
+					+ "                                                                                                                                           .,                .,               \r\n"
+					+ "\r\n" + "", 1);
+	      		}
+	    }
+	  }
 	}
-
-//calling the bug message.
-		catch (Exception e) {
-			
-//			before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
-			int countdown = attempt;
-			int display = attempt;
-
-			for (int i = 0; i < attempt; i++) {
-//				in this part start to count how many left attempts has.
-					if (userMultipleChoiseValidOption == 1000) {
-
-//							populating the count down and display.
-						display--;
-						countdown--;
-					}
-//						in this if statement start the count down.	
-						else if (countdown > 1) {
-							printer.typeWriter(
-									" Warnning this is not a valid option! You have " + display + "  attempts left.",
-									slowDown);
-
-//				this difference is to create a better interaction with the client
-//				here is decreasing the millisecond to clarify the client the numbers of attempt left.
-							slowDown -= 10;
-
-//						here increasing the milliseconds to repeat the Yes or no message.
-							speedUp += 50;
-//						calling the yes or no message again.
-							printer.typeWriter(text, speedUp);
-//						Waiting for new typing
-							userInputInt = Integer.parseInt(userInput);
-						}
-			}
-		}
-
-//						in this if statement is checked the last attempt before the bug message.
-					catch (Exception e) {
-						else if (countdown == 1 && display == 1) {
-
-							printer.typeWriter(
-									" Warnning this is not a valid option! This is your * LAST *  attempts left.",
-									slowDown);
-//							calling the yes or no message for the last time.
-							printer.typeWriter(text, speedUp);
-//							Waiting for the last trying
-							userInputInt = Integer.parseInt(userInput);
-						}
-//					Increasing the bug count.	
-							bugRunning++;
-					}
-		catch (Exception e) {
-			
-			if (bugRunning == attempt) {
-
-				printer.typeWriter("\r\n"
-						+ "                                                                                                                                                                              \r\n"
-						+ "                                                                                                                                                  @(    @*                    \r\n"
-						+ "                                                                                                                                              @&            @&                \r\n"
-						+ "                                                                                                                                            @@               @@&              \r\n"
-						+ "                                                                                                                                           @@@                @@@             \r\n"
-						+ "                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n"
-						+ "    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n"
-						+ "    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n"
-						+ "    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n"
-						+ "    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n"
-						+ "    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n"
-						+ "    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n"
-						+ "                                                                                                                                               .@  #@@@@  @&           &      \r\n"
-						+ "                                                                                                                                                  @@@@@@@,                    \r\n"
-						+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
-						+ "                                                                                                                                           .,                .,               \r\n"
-						+ "\r\n" + "", 1);
-			}
-
-		}
+		while(bugRunning2 == true );				
+					   
+						
+//		closing the Scanner.
+		myScanner.close();
 	}
+	
 }
