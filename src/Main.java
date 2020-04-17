@@ -1,6 +1,3 @@
-
-import java.io.BufferedReader;
-
 import animals.*;
 import graphical.*;
 import queryAndValidations.*;
@@ -53,7 +50,7 @@ public class Main {
 		// printer.typeWriter(null, 50);
 
 		UserInteraction query = new UserInteraction();
-		AnimalsData myAnimals = new AnimalsData();
+		AnimalFactory myAnimals = new AnimalFactory();
 
 		query.YesOrNo(3, "\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
 		
