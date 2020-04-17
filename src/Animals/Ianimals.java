@@ -1,6 +1,6 @@
-package Animals;
-import Graphical.*;
-import QueryAndValidations.*;
+package animals;
+import graphical.*;
+import queryAndValidations.*;
 
 public interface Ianimals {
 	

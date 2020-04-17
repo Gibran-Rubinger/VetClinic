@@ -1,8 +1,9 @@
 
-import Animals.*;
 import java.io.BufferedReader;
-import Graphical.*;
-import QueryAndValidations.*;
+
+import animals.*;
+import graphical.*;
+import queryAndValidations.*;
 
 //above are being import the super classes that it will be used in the code.
 public class Main {

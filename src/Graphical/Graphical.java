@@ -1,4 +1,4 @@
-package Graphical;
+package graphical;
 
 public class Graphical {
 

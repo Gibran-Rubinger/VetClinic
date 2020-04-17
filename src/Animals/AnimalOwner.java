@@ -1,14 +1,14 @@
-package Animals;
+package animals;
 
 
 public class AnimalOwner extends AnimalsData {
 	
-	String ownerName = null;
-	String ownerSurname = null;
+   public String ownerName = null;
+   protected String ownerSurname = null;
 	
-	int phoneN1 = 0;
-	int phoneN2 = 0;
-	int phoneN3 = 0;
+   protected int phoneN1 = 0;
+   protected int phoneN2 = 0;
+   protected int phoneN3 = 0;
 	
 	
 

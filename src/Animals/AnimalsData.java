@@ -1,8 +1,10 @@
-package Animals;
+package animals;
 //import java.security.Policy;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import animals.commonPets.*;
 
 public class AnimalsData {
 
@@ -122,10 +124,17 @@ public class AnimalsData {
 					
 //		Instantiation the random method.
 		Random myRandom = new Random();
+		
+		
 //		For loop responsible to generate the objects. 
 		for(int i = 0; i < animalsQuantity; i++) {
+			
+//			this attribute is responsible for generate in a random way with kind of Species the animal will be.
+				speciesGenerator = myRandom.nextInt(5); 
+			
 //          Generate the id 
 			idObj+= i;
+
 //			generate the random attribute just once instead to repeat the same amount of code every time.
 //			__________________________________________
 //			Loading random Names
@@ -158,12 +167,12 @@ public class AnimalsData {
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1)+number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch);		
 			
+			
 //			if statement responsible to generate objects per gender.
 			if(idObj %2 ==0) {
 
 				
-//			this attribute is responsible for generate in a random way with kind of Species the animal will be.
-				speciesGenerator = myRandom.nextInt(5); 
+
 
 //				Inside the if statement just Female Object.
 				if(speciesGenerator == 0) { 

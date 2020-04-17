@@ -1,7 +1,8 @@
-package QueryAndValidations;
+package queryAndValidations;
 
 import java.util.Scanner;
-import Graphical.*;
+
+import graphical.*;
 
 public class UserInteraction {
 //	Attributes

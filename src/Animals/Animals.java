@@ -1,16 +1,14 @@
-package Animals;
+package animals;
 
-import java.util.ArrayList;
-
-abstract class Animals {
+public abstract class Animals {
 
 //  attributes
-	 int idAnimal= 0;
-	 String name = null;
-	 int age= 0;
-	 String species = null;
-	 String gender = null;
-	 String medicalCond = null;
+	 protected int idAnimal= 0;
+	 protected String name = null;
+	 protected int age= 0;
+	 protected String species = null;
+	 protected String gender = null;
+	 protected String medicalCond = null;
 	 
 	 
 //	constructor
