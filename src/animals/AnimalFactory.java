@@ -47,7 +47,9 @@ public class AnimalFactory {
 	for(int i = 0; i < animalsQuantity; i++) {
 		
 //		this attribute is responsible for generate in a random way with kind of Species the animal will be.
-			speciesGenerator = myRandom.nextInt(5); 
+		groupGenerator = myRandom.nextInt(2);	
+		speciesGenerator = myRandom.nextInt(5); 
+			
 		
 //      Generate the id 
 		idObj+= i;
@@ -81,22 +83,7 @@ public class AnimalFactory {
 		int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1)+number3StartBunch);		
 		
 //		__________________________________________
-//		Ages
-		
-//		wrapping the random process to define the animals age.
-		int limitAge =0;
-		Integer calcAge = (myRandom.nextInt(limitAge)+1);
-		 
-		
-		
-		int dogAge = (myRandom.nextInt(20)+1);
-		int catAge = (myRandom.nextInt(18)+1);
-		int domesticPigAge = (myRandom.nextInt(17)+1);
-		int rabbitAge = (myRandom.nextInt(9)+1);
-		int hamisterAge = (myRandom.nextInt(3)+1);
-		int guineaPigAge = (myRandom.nextInt(8)+1);
-		
-		int cokcatielAge = (myRandom.nextInt(8)+1);
+//		
 		
 //		Generate a common pets group.
 		if(groupGenerator == 1) {
@@ -148,12 +135,12 @@ public class AnimalFactory {
 							    }
 						}
 		
-		if(groupGenerator == 2) {
+		else if(groupGenerator == 2) {
 //			if statement responsible to generate objects per gender.
 			if(idObj %2 ==0) {
 
 //				Inside the if statement just Female Object.
-				if(speciesGenerator == 7) { 
+				if(speciesGenerator == 0) { 
 					listOfAnimals.add(new Cokcatiel(idObj, femaleAnimalNames, AgeRandom(14), "Cokcatiel", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
 				else if(speciesGenerator == 1) { 
@@ -175,7 +162,7 @@ public class AnimalFactory {
 
 		    else {
 //			Male Object - every attribute of the object is picked using the random method.
-		    	if(speciesGenerator == 7) { 
+		    	if(speciesGenerator == 0) { 
 					listOfAnimals.add(new Cokcatiel(idObj, maleAnimalNames, AgeRandom(14), "Cokcatiel", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 				}
 				else if(speciesGenerator == 1) { 
@@ -196,7 +183,7 @@ public class AnimalFactory {
 		    }
 	}
 	
-
+	}
 	
 //	print the all list using a for each loop.
 	for(Animals print : listOfAnimals) {
@@ -207,7 +194,7 @@ public class AnimalFactory {
 //	counting the numbers of item in the Array.
 	System.out.println(" The Total of Animals in the system is:  " + listOfAnimals.size());
 	}
-}
+
 	
 	
 	public int AgeRandom(int limitAge){

@@ -121,7 +121,7 @@ public class UserInteraction {
 	public void MultipleChoise(int attempt, String text) {
 		int countdown = attempt;
 		int display = attempt;
-		printer.typeWriter(text, 35);
+		printer.typeWriter(text, 1);
 
 //		Assign the attribute userInput with the client typing.
     do { 
