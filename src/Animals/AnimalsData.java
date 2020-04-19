@@ -76,18 +76,86 @@ public class AnimalsData {
 				"Thomas","Thor","Tigger","Timmy","Toby","Tracker","Tucker","Tyson","Vader","Waldo","Wally","Wesson",
 				"Whiskey","William","Winston","Yoda","Zeus","Ziggy"};
 		
-		// if == 0
-		String[] poolOfCommonPetzMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		// if == 1
-		String[] poolOfBirdsMedicalCond = {"Gastric Foreign Object(s) Ingestion", "B", "C" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "D", "E","FFF","GGG", "Preventative Healthcare (Check-Up)","HHH","Diagnostic Imaging","vaccine"};
-		// if == 2
-		String[] poolOfFishMedicalCond = {"Gastric Foreign Object(s) Ingestion", "CC", "DD" , "Poisoning", "EE","GG", "KKK", "UUU","RRRR","EEER", "Preventative Healthcare (Check-Up)","Acupuncture","ssss","vaccine"};
-		// if == 3
-		String[] poolOfReptileMedicalCond = {"Gastric Foreign Object(s) Ingestion", "FFFD", "DEDEDE" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		// if == 4
-		String[] poolOfFarmMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-		// if == 5
-		String[] poolOfExoticMedicalCond = {"Gastric Foreign Object(s) Ingestion", "Being Hit by a Car", "Lacerations or Bite Wounds" , "Poisoning", "Abscesses","Scratch or Wound on Eye", "Cruciate Ligament Injury (without surgery)", "Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair", "Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
-	
+		
+		String[] dogMedCond = {"Has been stung by a bee or insect.","Regularly treated for worms.","Vomiting and diarrhoea.","Anal Sacculectomy.",
+				"Hair loss under tail. ","Allergic skin disease.","Cruciate Ligament Disease.","Itchy lesion - hotspot.",
+				"Foreign Body Ingestion.","Torn or Broken Nail.","Gastric Foreign Object(s) Ingestion.","Being Hit by a Car",
+				"Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye","Cruciate Ligament Injury (without surgery)",
+				"Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair",
+				"Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		
+		String[] catMedCond = {"Feet infection by chewing.","Aural haematoma ear arllergy.","Arthritis or osteoarthritis.","Joint injury by obesitty.",
+				"Joint support medication injections.","Weight control.","Liver and kidneys are unestablished.","Feline Bronchial asthma.",
+				"Has been stung by a bee or insect.","Diabetes Mellitus.","Gastric Foreign Object(s) Ingestion.","Being Hit by a Car",
+				"Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye","Lameness/Back Trouble","Heat Stroke/Dehydration",
+				"Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		
+		String[] domesticPigMedCond = {"Has been stung by a bee or insect.","Feet infection by chewing.","Hair loss under tail.","Swine pleuropneumonia.",
+				"Swine leptospirosis.","Gastrointestinal worms.","Swine cysticercosis.","Swine coccidiosis.","Coughing, sneezing, abdominal breathing.",
+				"Mastitis","Gastric Foreign Object(s) Ingestion.","Being Hit by a Car","Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye",
+				"Cruciate Ligament Injury (without surgery)","Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair",
+				"Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		
+		String[] rabbitMedCond = {"Anaesthetic and burring the teeth flat to overgrown teeth.","Rabbit’s stomach obstruction.","uterine adenocarcinoma.",
+				"Diagnostic with Myxomatosis.","Haemorrhagic Disease Virus (Rabbit Calicivirus).","Vaccine Provide protection against RHDV1.",
+				"Pasteurella multocida bacterium snuffles"," Checkup blood test and vaccine","Bacterial infections of the middle and inner ear or infections of the brain.",
+				"Encephalitozoon cuniculi parasite.","Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Poisoning",
+				"Scratch or Wound on Eye","Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		
+		String[] hamisterMedCond = {"Diagnostic with cold, swollen nasal discharge.","Wet Tail bacterial illness.","Scratches its ears, loses its hair - mange illness.",
+				"Abscesses swelling on the body","Hair loss and bleeding, by Bar Rub.","Circling moves in circles, running round seemingly without cause.",
+				"moves in circles, running round seemingly without cause,","Dry Ears the skin on ears is flaky.","Dehydration, is lying down and not moving,hyperventilating too.",
+				"Protruding Eyes are not symmetrical caused by an infection.","Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds",
+				"Poisoning","Scratch or Wound on Eye","Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)","vaccine"};
+		
+		String[] guineaPigMedCond = {"Respiratory Infections caused by Pneumonia.","Stress by overcrowding.","Cultures of the ocular (eye) and nasal discharge.",
+				"infection in the sensitive gastrointestinal tract.","Slow down digestion and food passage through the intestinal tract.",
+				"Debility in skin, joints, and mucosal surfaces by Scurvy (Vitamin C deficiency).","Abscesses (infected swelling containing an accumulation of pus and bacteria).",
+				"development of urinary calculi (stones or uroliths).","Skin Infection by itchy.","deep bacterial infection that causes lameness and pain. .","vaccine",
+				"Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye","Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)"};
+		
+		String[] fishMedCond = {"Diagnostic  with aeromonas bacteria.","Diagnostic with Mycobacterium marinum.","Diagnostic with Mycobacterium marinum.",
+				"Infected by Streptococcus  iniae bacteria.","Vomiting and diarrhoea caused by Salmonella.","Diarrhoea or blood infections caused by bacteria called Aeromonas.",
+				"skin infections through contact with infected water.","Anchor worms hang from body of fish.","Flat, disk-shapes slowly moving on skin and fins.",
+				"Flukers Small red spots on skin and fins.","Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Scratch or Wound on Eye",
+				"Preventative Healthcare (Check-Up)"};
+		
+		String[] reptileMedCond = {"Infected by Salmonella.","Infected by campylobacteriosis (a bowel infection).","Infected by leptospirosis (a liver disease).",
+				"Trichinellosis disease of muscles, the nervous system and the heart and lungs.","Infection by the Clostridium bacterium botulism.",
+				"Dysecdysis, inadequate skin shedding.","Low humidity, ectoparasitism, nutritional deficiencies.","Secondary infection and abscessation.",
+				"Fractures due to trauma are commonly.","Burns associated with unscreened incandescent lights or other heat sources.",
+				"Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Scratch or Wound on Eye","Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)"};
+		
+		String[] oxMedCond = {"Bovine infectious rhinotracheitis.","Bovine viral diarrhea.","Foot-and-mouth disease.","Progressive paralysis.","Mammary gland infection.",
+				"Infected by Mycobacterium bovis (M. bovis).","Diagnostic with bovine brucellosis.","zoonotic infection caused by pathogenic spirochetes of the genus Leptospira.",
+				"Neosporose vacccine.","Diagnostic  with fever, apathy, anorexia.","Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye",
+				"Cruciate Ligament Injury (without surgery)","Lameness/Back Trouble","Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair",
+				"Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		
+		String[] sheepAndGoatMedCond = {"Central nervous system disease.","Digestive system disease.","Diagnostic with fungus of facial eczema (Pithomyces chartarum).",
+			"Infected by heliotrope / Potato Weed (Heliotropium europaeum).","Bone surfaces in one or more joints become damaged by infection.",
+			"Uncoordination, loss of appetite, excessive salivation, mild excitability by Botulism infection.","Diagnostic with cheesy gland (CLA) bacterial infection.",
+			"Weepy eyes and photosensitisation by Cobalt Deficiency.","Heavy infestation of lungworms causes irritation to the lining of the airways and a cough.",
+			"Diagnostic with listeriosis bacterial infection.","Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds",
+			"Poisoning","Scratch or Wound on Eye","Cruciate Ligament Injury (without surgery)","Lameness/Back Trouble","Heat Stroke/Dehydration",
+			"Cruciate Ligament Injury Surgical Repair","Preventative Healthcare (Check-Up)","Acupuncture","Diagnostic Imaging","vaccine"};
+		
+		String[] horsePonyAndDonkeyMedCond = {"Abdominal pain and colic.","Diagnostic with degenerative Joint Disease (DJD).","Progressive type of arthritis and osteoarthritis.",
+				"Laminitis inflammation attaches the coffin bone to the hoof wall.","Equine Encephalomyelitis.","Diagnostic with equine encephalomyelitis.",
+				"West Nile infection from being bitten by an infected mosquito.","infectious condition muscle weakness in the form of a weak tongue,.",
+				"Azoturia colapse by overexerted.","Diagnostic with potomac Horse Fever.","Gastric Foreign Object(s) Ingestion.","Being Hit by a Car",
+				"Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye","Cruciate Ligament Injury (without surgery)","Lameness/Back Trouble",
+				"Heat Stroke/Dehydration","Cruciate Ligament Injury Surgical Repair","Preventative Healthcare (Check-Up)","Diagnostic Imaging","vaccine"};
+		
+		String[] birdsMedCond = {"Diagnostic with Proventricular Dilatation Disease (PDD).","Difficulty in breathing by Chlamydia bacterium infection.","Diagnostic with Psittacosis Fever.",
+				"Infected by Psittacine Beak and Feather Disease.","infectious condition loss, an enlarged abdomen, paralysis, and diarrhea.","Diagnostic with fungal infection similar to Candidiasis.",
+				"check up after a bron wings surgery.","Diagnostic with Cryptococcosis infection (Cryptococcus neoformans).","Unknown causes of loose feathers, probably stress factor.",
+				"respiratory secretions caused by bacteria (Chylamydia psittaci) .","Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Poisoning","Scratch or Wound on Eye",
+				"Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)","vaccine"};
+		
+		String[] exoticMedCond = {"Infection condition by salmonella.","Survey and adaptations of the terrarium's micro ecosystem.","Inactivity and unusual behaviors by stress factor.",
+				"Sudden weight loss.","Skin blotches caused by hemorrhaging.","Eye cloudiness for immune system is depressed."," internal parasites infection condiction.",
+				"infectious condition Cryptosporidiosis protozoal parasite.","Diagnostic with Skin infection.","Diagnostic with infectious stomatitis.",
+				"Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Scratch or Wound on Eye","Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)"};
 }
 
