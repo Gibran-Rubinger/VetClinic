@@ -10,8 +10,8 @@ public class Main {
 
 		Graphical printer = new Graphical();
 
-//		Main Screen is being printed using the setMenssage() and the effect of type writer, and the timer delay, is setting by typeWriter()
-//		printer.setMessage();	
+//		Main Screen is being printed tipeWriter() and the effect of type writer, and the timer delay, is setting by typeWriter()
+	
 		printer.typeWriter(
 				"##############################################################################################################################################################################\r\n"
 						+ "##############################################################################################################################################################################\r\n"
@@ -76,9 +76,24 @@ public class Main {
 							+ "\n\n"
 							+ "Please press the number of the sub category would you like to chosee:\n");
 			if (query.userMultipleChoiseValidOption == 1) {
-				 myAnimals.addAnimal();
+				 myAnimals.CommonPets();
 			}
 			
+			else if (query.userMultipleChoiseValidOption == 2) {
+				myAnimals.Birds();
+			}
+			else if (query.userMultipleChoiseValidOption == 3) {
+				myAnimals.Fish();
+			}
+			else if (query.userMultipleChoiseValidOption == 4) {
+				myAnimals.Reptile();
+			}
+			else if (query.userMultipleChoiseValidOption == 5) {
+				myAnimals.Farm();
+			}
+			else if (query.userMultipleChoiseValidOption == 6) {
+				myAnimals.Exotic();
+			}
 		} else if (query.userYesOrNoValidOption == 0) {
 			printer.typeWriter("Ok, see you later", 50);
 		}
