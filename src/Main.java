@@ -80,6 +80,10 @@ public class Main {
 			}
 			
 			else if (query.userMultipleChoiseValidOption == 2) {
+				query.gettingnumber("Nice. how many Animals would you like to create? you can type any value would you like but"
+						+ "I would you aks to type at least 1000 animals.. we are trying to keep ourself busy here =)"
+						+ "ps. the maximun number of animals we can create here will dependes only how many your machine "
+						+ "can be able to deal with >) ...", 3);
 				myAnimals.Birds();
 			}
 			else if (query.userMultipleChoiseValidOption == 3) {
