@@ -1,5 +1,6 @@
 package animals;
 import java.util.ArrayList;
+
 import java.util.Random;
 
 import animals.*;
@@ -10,7 +11,7 @@ import animals.farm.*;
 import animals.fish.*;
 import animals.reptile.*;
 import graphical.Graphical;
-
+import queryAndValidations.*;
 
 public class AnimalFactory {
 	
@@ -29,9 +30,12 @@ public class AnimalFactory {
 	
 	Graphical printer = new Graphical();
 	
+	UserInteraction query = new UserInteraction(idObj);
+	
 //	method responsible to populate 1.000 animals in a random way.
 	public void CommonPets() {
 		
+		query.;
 		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;

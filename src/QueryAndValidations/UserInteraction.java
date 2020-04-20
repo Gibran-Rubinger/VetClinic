@@ -223,5 +223,81 @@ public class UserInteraction {
 //		closing the Scanner.
 		myScanner.close();
 	}
+
+	public void gettingNumber(String text, int attempt) {
+
+//		setting the graphical with the milliseconds  preferred.
+		printer.typeWriter(text, 50);
+
+//		Assign the attribute userInput with the client typing.
+		userInput = myScanner.next();
+		do { 
+			try {
+					userInputInt = Integer.parseInt(myScanner.next());
+
+			}
+//			calling the bug message.
+			catch (Exception e) {
+			
+				printer.typeWriter("Buddy just numbers are allowed here!", 60);
+		    for (int i = 0; i < attempt; i++) {
+		    		  
+		    	display--;
+		    	countdown--;
+		    	
+			
+		    	if(countdown > 1) {
+		    		printer.typeWriter("\n\n Warnning this is not a valid option! You have " + display + "  attempts left.", 20);
+		    		printer.typeWriter(text, 1);
+		    		break;
+		    	}
+		    	else if (countdown == 1) {
+		    		printer.typeWriter("\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.", 60);
+		    		printer.typeWriter("\n\n so, how you decide if we will continue execute the program  or not?", 1);
+		    		printer.typeWriter(text, 1);
+		    		break;
+		    	}
+		    	else if (countdown == 0){
+		    		bugRunning = false;
+		    		printer.typeWriter("\r\n"
+						+ "                                                                                                                                                                              \r\n"
+						+ "                                                                                                                                                  @(    @*                    \r\n"
+						+ "                                                                                                                                              @&            @&                \r\n"
+						+ "                                                                                                                                            @@               @@&              \r\n"
+						+ "                                                                                                                                           @@@                @@@             \r\n"
+						+ "                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n"
+						+ "    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n"
+						+ "    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n"
+						+ "    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n"
+						+ "    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n"
+						+ "    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n"
+						+ "    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n"
+						+ "                                                                                                                                               .@  #@@@@  @&           &      \r\n"
+						+ "                                                                                                                                                  @@@@@@@,                    \r\n"
+						+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
+						+ "                                                                                                                                           .,                .,               \r\n"
+						+ "\r\n" + "", 1);
+		      		}
+		    }
+		  }
+		}
+			while(bugRunning == true );				
+						   
+						
+//			closing the Scanner.
+			myScanner.close();
+		}
 	
-}
+	public int getUserInputInt() {
+		return userInputInt;
+	}
+
+	public void setUserInputInt(int userInputInt) {
+		this.userInputInt = userInputInt;
+	}
+
+	public UserInteraction(int userInputInt ) {
+		this.userInputInt = userInputInt;
+	}
+		
+	}
