@@ -94,6 +94,9 @@ public class Main {
 			else if (query.userMultipleChoiseValidOption == 6) {
 				myAnimals.Exotic();
 			}
+			else if (query.userMultipleChoiseValidOption == 7) {
+				myAnimals.Crazy();
+			}
 		} else if (query.userYesOrNoValidOption == 0) {
 			printer.typeWriter("Ok, see you later", 50);
 		}
