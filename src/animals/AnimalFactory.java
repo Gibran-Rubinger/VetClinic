@@ -16,7 +16,7 @@ import queryAndValidations.*;
 public class AnimalFactory {
 	
 //	define the size of the ArrayList with this integer.
-	int animalsQuantity = 1000;
+	public int animalsQuantity = 0;
 	int idObj =0;
 	int speciesGenerator = 0;
 	int groupGenerator = 0;
@@ -29,14 +29,14 @@ public class AnimalFactory {
 	int number3FinishBunch = 9999;
 	
 	Graphical printer = new Graphical();
-	
-	UserInteraction query = new UserInteraction(idObj);
-	
-//	method responsible to populate 1.000 animals in a random way.
-	public void CommonPets() {
-		
-		query.;
-		
+
+	UserInteraction Ntot = new UserInteraction();
+
+		//	method responsible to populate 1.000 animals in a random way.
+	  	public void CommonPets() {
+
+	  		animalsQuantity = Ntot.getBunch();
+	  		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
 		//ArrayList<AnimalOwner> listOfOwner;

@@ -2,12 +2,13 @@ package queryAndValidations;
 
 import java.util.Scanner;
 
+import animals.AnimalFactory;
 import graphical.*;
 
 public class UserInteraction {
 //	Attributes
 	String userInput = "";
-	int userInputInt = 0;
+	protected int userInputInt = 0;
 
 //	This attribute is responsible for validation the algorithm. Initialising the with a key value.
 	public int userYesOrNoValidOption = 1000;
@@ -18,19 +19,22 @@ public class UserInteraction {
 
 	int countdown = 0;
 	int display = 0;
+	int bunch = 0;
 	
 //	Those are the pool of valid options typing for the client. 
 	String validAnswer1 = "yes";
 	String validAnswer2 = "Y";
 	String validAnswer3 = "no";
 	String validAnswer4 = "n";
+	
+	
 
 //	instantiate the graphical method to print some interactions.
 	Graphical printer = new Graphical();
 
 //	instantiate of Scanner.
 	Scanner myScanner = new Scanner(System.in);
-
+	
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void YesOrNo(int attempt, String text) {
 
@@ -218,34 +222,34 @@ public class UserInteraction {
 	  }
 	}
 		while(bugRunning == true );				
-					   
-						
-//		closing the Scanner.
-		myScanner.close();
 	}
 
-	public void gettingNumber(String text, int attempt) {
-
+	
+	public void GettingNumber(String text, int attempt) {
+	
+		int countdown = attempt;
+		int display = attempt;
 //		setting the graphical with the milliseconds  preferred.
 		printer.typeWriter(text, 50);
 
 //		Assign the attribute userInput with the client typing.
-		userInput = myScanner.next();
 		do { 
 			try {
 					userInputInt = Integer.parseInt(myScanner.next());
-
+					if (userInputInt  !=0){
+					bunch = userInputInt;
+					bugRunning = false;
+					}
 			}
 //			calling the bug message.
 			catch (Exception e) {
 			
-				printer.typeWriter("Buddy just numbers are allowed here!", 60);
+				printer.typeWriter("Sorry, I can not understand what you type in. Just possitive numbers ok? ", 60);
 		    for (int i = 0; i < attempt; i++) {
 		    		  
 		    	display--;
 		    	countdown--;
 		    	
-			
 		    	if(countdown > 1) {
 		    		printer.typeWriter("\n\n Warnning this is not a valid option! You have " + display + "  attempts left.", 20);
 		    		printer.typeWriter(text, 1);
@@ -287,17 +291,13 @@ public class UserInteraction {
 //			closing the Scanner.
 			myScanner.close();
 		}
-	
-	public int getUserInputInt() {
-		return userInputInt;
+
+	public int getBunch() {
+		return bunch;
 	}
 
-	public void setUserInputInt(int userInputInt) {
-		this.userInputInt = userInputInt;
+	public void setBunch(int bunch) {
+		this.bunch = bunch;
 	}
-
-	public UserInteraction(int userInputInt ) {
-		this.userInputInt = userInputInt;
-	}
-		
-	}
+			
+ }

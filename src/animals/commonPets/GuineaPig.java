@@ -24,7 +24,7 @@ public GuineaPig(int idAnimal, String name, int age, String species,String gende
 
 //instantiate the graphical and UserInteraction methods to print some interactions.
 Graphical printer = new Graphical();	
-UserInteraction test = new UserInteraction();
+
 
 	@Override
 	public void sounds() {

@@ -24,7 +24,6 @@ public class Hamister extends Animals implements Ianimals {
 	
 //	instantiate the graphical and UserInteraction methods to print some interactions.
 	Graphical printer = new Graphical();	
-	UserInteraction test = new UserInteraction();
 	
 	@Override
 	public void sounds() {

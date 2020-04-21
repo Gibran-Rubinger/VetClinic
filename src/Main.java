@@ -72,18 +72,20 @@ public class Main {
 							+ "\n" + "    \n 6 - EXOTIC: " + "\n"
 							+ "             |  PACMAN FROG  |   GREEN TREE FROG  |  COBALT BLUE TARANTULA | CHILE ROSE SPIDER | EMPEROR SCORPION |   HETEROMETRUS SCORPION  |"
 							+ "" + "\n" + "\n 7 - CRAZY:" + "\n"
-							+ " yes! with this option we will mix all the categories above and generate a bunch of animals! "
+							+ " \n yes! with this option we will mix all the categories above and generate a bunch of animals! "
 							+ "\n\n"
 							+ "Please press the number of the sub category would you like to chosee:\n");
 			if (query.userMultipleChoiseValidOption == 1) {
+				query.GettingNumber("\n\n "
+						+ "Nice. how many Animals would you like to create? you can type any value would you like but"
+						+ "\n I would you aks to you to type at least 1000 animals.. we are trying to keep ourself busy here =)"
+						+ "\n\n KEEP IN MIND. the maximun number of animals we can create here will dependes only how many your device "
+						+ "can deal with >)  ... "
+						+ "\n", 3);
 				 myAnimals.CommonPets();
 			}
 			
 			else if (query.userMultipleChoiseValidOption == 2) {
-				query.gettingnumber("Nice. how many Animals would you like to create? you can type any value would you like but"
-						+ "I would you aks to type at least 1000 animals.. we are trying to keep ourself busy here =)"
-						+ "ps. the maximun number of animals we can create here will dependes only how many your machine "
-						+ "can be able to deal with >) ...", 3);
 				myAnimals.Birds();
 			}
 			else if (query.userMultipleChoiseValidOption == 3) {
