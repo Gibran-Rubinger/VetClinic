@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 import java.util.Random;
 
-import animals.*;
 import animals.commonPets.*;
 import animals.birds.*;
 import animals.exotic.*;
@@ -33,9 +32,7 @@ public class AnimalFactory {
 	UserInteraction Ntot = new UserInteraction();
 
 		//	method responsible to populate 1.000 animals in a random way.
-	  	public void CommonPets() {
-
-	  		animalsQuantity = Ntot.getBunch();
+	  	public void CommonPets(int bunch) {
 	  		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
@@ -43,7 +40,7 @@ public class AnimalFactory {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -52,7 +49,7 @@ public class AnimalFactory {
 
 		
 //	For loop responsible to generate the objects. 
-	for(int i = 0; i < animalsQuantity; i++) {
+	for(int i = 0; i < bunch; i++) {
 		
 //		this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			
@@ -150,7 +147,7 @@ public class AnimalFactory {
 	
 	  }
 
-	public void Birds() {
+	public void Birds(int bunch) {
 		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
@@ -158,7 +155,7 @@ public class AnimalFactory {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -167,7 +164,7 @@ public class AnimalFactory {
 
 		
 //		For loop responsible to generate the objects. 
-		for(int i = 0; i < animalsQuantity; i++) {
+		for(int i = 0; i < bunch; i++) {
 			
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6); 
@@ -255,7 +252,7 @@ public class AnimalFactory {
             System.out.println(listOfAnimals.size());
 	}
 
-	public void Fish() {
+	public void Fish(int bunch) {
 		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
@@ -263,7 +260,7 @@ public class AnimalFactory {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -272,7 +269,7 @@ public class AnimalFactory {
 
 		
 //		For loop responsible to generate the objects. 
-		for(int i = 0; i < animalsQuantity; i++) {
+		for(int i = 0; i < bunch; i++) {
 			
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6); 
@@ -360,7 +357,7 @@ public class AnimalFactory {
             System.out.println(listOfAnimals.size());
 	}
 
-    public void Reptile() {
+    public void Reptile(int bunch) {
 		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
@@ -368,7 +365,7 @@ public class AnimalFactory {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -377,7 +374,7 @@ public class AnimalFactory {
 
 		
 //		For loop responsible to generate the objects. 
-		for(int i = 0; i < animalsQuantity; i++) {
+		for(int i = 0; i < bunch; i++) {
 			
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6); 
@@ -465,7 +462,7 @@ public class AnimalFactory {
             System.out.println(listOfAnimals.size());
 	}
 
-    public void Farm() {
+    public void Farm(int bunch) {
 		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
@@ -473,7 +470,7 @@ public class AnimalFactory {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -482,7 +479,7 @@ public class AnimalFactory {
 
 		
 //		For loop responsible to generate the objects. 
-		for(int i = 0; i < animalsQuantity; i++) {
+		for(int i = 0; i < bunch; i++) {
 			
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6); 
@@ -571,7 +568,7 @@ public class AnimalFactory {
             System.out.println(listOfAnimals.size());
 	}
 
-    public void Exotic() {
+    public void Exotic(int bunch) {
 		
 //		generate the Array to storage the 1.000 random Animals.
 		ArrayList<Animals> listOfAnimals;
@@ -579,7 +576,7 @@ public class AnimalFactory {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -588,7 +585,7 @@ public class AnimalFactory {
 
 		
 //		For loop responsible to generate the objects. 
-		for(int i = 0; i < animalsQuantity; i++) {
+		for(int i = 0; i < bunch; i++) {
 			
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6); 
@@ -677,7 +674,7 @@ public class AnimalFactory {
             System.out.println(listOfAnimals.size());
 	}
 
-public void Crazy() {
+public void Crazy(int bunch) {
 		
 		
 //		generate the Array to storage the 1.000 random Animals.
@@ -686,7 +683,7 @@ public void Crazy() {
 		 
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(animalsQuantity);
+		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -695,7 +692,7 @@ public void Crazy() {
 
 		
 //	For loop responsible to generate the objects. 
-	for(int i = 0; i < animalsQuantity; i++) {
+	for(int i = 0; i < bunch; i++) {
 		
 //		this attribute is responsible for generate in a random way with kind of Species the animal will be.
 		groupGenerator = myRandom.nextInt(6);	

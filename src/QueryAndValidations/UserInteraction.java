@@ -2,7 +2,6 @@ package queryAndValidations;
 
 import java.util.Scanner;
 
-import animals.AnimalFactory;
 import graphical.*;
 
 public class UserInteraction {
@@ -131,7 +130,7 @@ public class UserInteraction {
     do { 
 		try {
 				userInputInt = Integer.parseInt(myScanner.next());
-
+			if(userInputInt >=0 && userInputInt<=9) {
 //  			check if  the client choose yes.								
 				if (userInputInt == 0) {
 					userMultipleChoiseValidOption = 0;
@@ -174,7 +173,7 @@ public class UserInteraction {
 					bugRunning = false;
 				}
 //			    Increasing the bug count.	
-			
+			}
 		}
 //		calling the bug message.
 		catch (Exception e) {
@@ -225,7 +224,7 @@ public class UserInteraction {
 	}
 
 	
-	public void GettingNumber(String text, int attempt) {
+	public int GettingNumber(String text, int attempt) {
 	
 		int countdown = attempt;
 		int display = attempt;
@@ -252,13 +251,17 @@ public class UserInteraction {
 		    	
 		    	if(countdown > 1) {
 		    		printer.typeWriter("\n\n Warnning this is not a valid option! You have " + display + "  attempts left.", 20);
+		    		printer.typeWriter("\n_______________________________________________________________________________________________________________________________________________", 1);
 		    		printer.typeWriter(text, 1);
+		    		bugRunning = true;
 		    		break;
 		    	}
 		    	else if (countdown == 1) {
 		    		printer.typeWriter("\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.", 60);
 		    		printer.typeWriter("\n\n so, how you decide if we will continue execute the program  or not?", 1);
+		    		printer.typeWriter("\n_______________________________________________________________________________________________________________________________________________", 1);
 		    		printer.typeWriter(text, 1);
+		    		bugRunning = true;
 		    		break;
 		    	}
 		    	else if (countdown == 0){
@@ -285,11 +288,10 @@ public class UserInteraction {
 		    }
 		  }
 		}
-			while(bugRunning == true );				
-						   
-						
-//			closing the Scanner.
-			myScanner.close();
+			while(bugRunning == true );	
+//		closing the Scanner.
+		myScanner.close();
+			return bunch;			   
 		}
 
 	public int getBunch() {
