@@ -47,7 +47,7 @@ public class DomesticPig extends Animals implements Ianimals {
 				
 		test.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
 		
-		if (test.userYesOrNoValidOption == 1) {
+		if (test.getUserYesOrNoValidOption() == 1) {
 
 			int imageGenerator = myRandom.nextInt(5);
 //			picture 1
@@ -111,7 +111,7 @@ public class DomesticPig extends Animals implements Ianimals {
 				break;	
 				}
 			}
-		else if (test.userYesOrNoValidOption == 0){
+		else if (test.getUserYesOrNoValidOption() == 0){
 			printer.typeWriter("Ok, see you later", 50);
 		}
 
