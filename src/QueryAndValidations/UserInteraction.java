@@ -2,6 +2,7 @@ package queryAndValidations;
 
 import java.util.Scanner;
 
+import exceptions.MultipleChoiseExceptions;
 import graphical.*;
 
 public class UserInteraction {
@@ -121,17 +122,20 @@ public class UserInteraction {
 
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void MultipleChoise(int attempt, String text) {
-		int countdown = attempt;
-		int display = attempt;
+		 countdown = attempt;
+		 display = attempt;
 		printer.typeWriter(text, 1);
 
 //		Assign the attribute userInput with the client typing.
 		do {
 			try {
 				userInputInt = Integer.parseInt(myScanner.next());
-				if (userInputInt >= 0 && userInputInt <= 9) {
+				if (userInputInt < 1 || userInputInt > 7) {
+					bugRunning = false;
+					throw new MultipleChoiseExceptions();
+				}
 //  			check if  the client choose yes.								
-					if (userInputInt == 0) {
+				else if (userInputInt == 0) {
 						userMultipleChoiseValidOption = 0;
 						bugRunning = false;
 
@@ -173,52 +177,16 @@ public class UserInteraction {
 					}
 //			    Increasing the bug count.	
 				}
-			}
+			
 //		calling the bug message.
+			catch (MultipleChoiseExceptions e) {
+//				System.out.println(e.getMessage());
+				Bug(text,attempt);
+			}
 			catch (Exception e) {
-				if (userInputInt < 0 && userInputInt > 9) {
-					printer.typeWriter("Buddy just numbers are allowed here!", 60);
-					for (int i = 0; i < attempt; i++) {
-
-						display--;
-						countdown--;
-
-						if (countdown > 1) {
-							printer.typeWriter("\n\n Warnning this is not a valid option! You have " + display
-									+ "  attempts left.", 20);
-							printer.typeWriter(text, 1);
-							break;
-						} else if (countdown == 1) {
-							printer.typeWriter(
-									"\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.",
-									60);
-							printer.typeWriter(
-									"\n\n so, how you decide if we will continue execute the program  or not?", 1);
-							printer.typeWriter(text, 1);
-							break;
-						} else if (countdown == 0) {
-							bugRunning = false;
-							printer.typeWriter("\r\n"
-									+ "                                                                                                                                                                              \r\n"
-									+ "                                                                                                                                                  @(    @*                    \r\n"
-									+ "                                                                                                                                              @&            @&                \r\n"
-									+ "                                                                                                                                            @@               @@&              \r\n"
-									+ "                                                                                                                                           @@@                @@@             \r\n"
-									+ "                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n"
-									+ "    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n"
-									+ "    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n"
-									+ "    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n"
-									+ "    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n"
-									+ "    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n"
-									+ "    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n"
-									+ "                                                                                                                                               .@  #@@@@  @&           &      \r\n"
-									+ "                                                                                                                                                  @@@@@@@,                    \r\n"
-									+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
-									+ "                                                                                                                                           .,                .,               \r\n"
-									+ "\r\n" + "", 1);
-						}
-					}
-				}
+				
+				Bug(text,attempt);
+//								
 			}
 		} while (bugRunning == true);
 	}
@@ -241,61 +209,65 @@ public class UserInteraction {
 			}
 //			calling the bug message.
 			catch (Exception e) {
-
-				printer.typeWriter("Sorry, I can not understand what you type in. Just possitive numbers ok? ", 60);
-				for (int i = 0; i < attempt; i++) {
-
-					display--;
-					countdown--;
-
-					if (countdown > 1) {
-						printer.typeWriter(
-								"\n\n Warnning this is not a valid option! You have " + display + "  attempts left.",
-								20);
-						printer.typeWriter(
-								"\n_______________________________________________________________________________________________________________________________________________",
-								1);
-						printer.typeWriter(text, 1);
-						bugRunning = true;
-						break;
-					} else if (countdown == 1) {
-						printer.typeWriter(
-								"\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.", 60);
-						printer.typeWriter("\n\n so, how you decide if we will continue execute the program  or not?",
-								1);
-						printer.typeWriter(
-								"\n_______________________________________________________________________________________________________________________________________________",
-								1);
-						printer.typeWriter(text, 1);
-						bugRunning = true;
-						break;
-					} else if (countdown == 0) {
-						bugRunning = false;
-						printer.typeWriter("\r\n"
-								+ "                                                                                                                                                                              \r\n"
-								+ "                                                                                                                                                  @(    @*                    \r\n"
-								+ "                                                                                                                                              @&            @&                \r\n"
-								+ "                                                                                                                                            @@               @@&              \r\n"
-								+ "                                                                                                                                           @@@                @@@             \r\n"
-								+ "                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n"
-								+ "    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n"
-								+ "    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n"
-								+ "    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n"
-								+ "    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n"
-								+ "    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n"
-								+ "    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n"
-								+ "                                                                                                                                               .@  #@@@@  @&           &      \r\n"
-								+ "                                                                                                                                                  @@@@@@@,                    \r\n"
-								+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
-								+ "                                                                                                                                           .,                .,               \r\n"
-								+ "\r\n" + "", 1);
-					}
-				}
+				
+						Bug(text,attempt);
 			}
 		} while (bugRunning == true);
 //		closing the Scanner.
 		myScanner.close();
 		return bunch;
+	}
+	
+	public void Bug(String text, int attempt) {
+		printer.typeWriter("Sorry, I can not understand what you type in. Please follow the menu guidelines and select a valid option", 60);
+		for (int i = 0; i < attempt; i++) {
+
+			display--;
+			countdown--;
+
+			if (countdown > 1) {
+				printer.typeWriter(
+						"\n\n Warnning this is not a valid option! You have " + display + "  attempts left.",
+						20);
+				printer.typeWriter(
+						"\n_______________________________________________________________________________________________________________________________________________",
+						1);
+				printer.typeWriter(text, 1);
+				bugRunning = true;
+				break;
+			} else if (countdown == 1) {
+				printer.typeWriter(
+						"\n\n Warnning this is not a valid option! This is your * LAST *  attempts left.", 60);
+				printer.typeWriter("\n\n so, how you decide if we will continue execute the program  or not?",
+						1);
+				printer.typeWriter(
+						"\n_______________________________________________________________________________________________________________________________________________",
+						1);
+				printer.typeWriter(text, 1);
+				bugRunning = true;
+				break;
+			} else if (countdown == 0) {
+				bugRunning = false;
+				printer.typeWriter("\r\n"
+						+ "                                                                                                                                                                              \r\n"
+						+ "                                                                                                                                                  @(    @*                    \r\n"
+						+ "                                                                                                                                              @&            @&                \r\n"
+						+ "                                                                                                                                            @@               @@&              \r\n"
+						+ "                                                                                                                                           @@@                @@@             \r\n"
+						+ "                                                                                                                                          &@@@  @@@@@@@@@@@. /@@@             \r\n"
+						+ "    @@@@@@@@@.   @@.@@@,@@@     @@@@,,@@@%     %@@@@@./@@@      @@ @@@#@@@               @@         %@@  .@@%        @@                   %@@@@             @@@@@             \r\n"
+						+ "    @@           @@.     (@@    @@      @@    @@         @@&    @@      @@              @@         #@#     &@%      @@                 @@@@@@@@@@@,      %@@@@@@@@@@@         \r\n"
+						+ "    @@@@@@@@&    @@*,,,%@@*     @@,,,/@@@    @@#          @@    @@,.,*@@@              @@   @@     @@       @@     @@   @@          .@@@%     .@@@@@   &@@@@#     ,@@@@       \r\n"
+						+ "    @@           @@.  %@@/      @@   @@@     &@@          @@    @@   @@@              @@    @@     @@       @@    @@    @@         /@*     @@@    @#    @.   /@@      @@      \r\n"
+						+ "    @@           @@.    (@@     @@     @@*    @@#        @@*    @@     @@&           @@@@@@@@@@@   *@@     @@(   @@@@@@@@@@@       @        @@@    /@@@@     @@@       &/     \r\n"
+						+ "    @@@@@@@@@&   @@.     .@@    @@      @@&     @@@@&@@@@#      @@      &@@                 @@       @@@&@@@            @@         @         @@@@   @@@@  *@@@.         ,     \r\n"
+						+ "                                                                                                                                               .@  #@@@@  @&           &      \r\n"
+						+ "                                                                                                                                                  @@@@@@@,                    \r\n"
+						+ "                                                                                                                                       (@     ,@@@@@@(@@@@@@@     *@          \r\n"
+						+ "                                                                                                                                           .,                .,               \r\n"
+						+ "\r\n" + "", 1);
+			}
+		}
 	}
 
 	public int getBunch() {

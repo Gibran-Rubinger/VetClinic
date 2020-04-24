@@ -1,7 +1,9 @@
 package animals;
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import animals.commonPets.*;
 import animals.birds.*;
@@ -137,10 +139,17 @@ public class AnimalFactory {
 							    }
 				}
 	
-	for(Animals print : listOfAnimals) {
-		System.out.println(print);
-		}
+	
 //		counting the numbers of item in the Array.
+        
+	Set <Animals> perSpecie = new HashSet<>(listOfAnimals);
+        
+        for(Animals item : perSpecie) {
+    		System.out.println(item);
+    		
+        
+        System.out.println(item+ ": " + Collections.frequency(listOfAnimals, item) );
+        } 
         printer.typeWriter("\n"
         		+ "The Total of Animals in the system is:  ", 50);
         System.out.println(listOfAnimals.size());
