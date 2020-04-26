@@ -142,14 +142,10 @@ public class AnimalFactory {
 	
 //		counting the numbers of item in the Array.
         
-	Set <Animals> perSpecie = new HashSet<>(listOfAnimals);
-        
-        for(Animals item : perSpecie) {
-    		System.out.println(item);
-    		
-        
-        System.out.println(item+ ": " + Collections.frequency(listOfAnimals, item) );
-        } 
+	for(Animals print : listOfAnimals) {
+		System.out.println(print);
+		}
+//		counting the numbers of item in the Array.
         printer.typeWriter("\n"
         		+ "The Total of Animals in the system is:  ", 50);
         System.out.println(listOfAnimals.size());

@@ -45,12 +45,8 @@ public class Main {
 						+ "",
 				1);
 
-//		Standard effect for any interaction with the client.  
-		// printer.setMessage("\n\n\n\n would you like to create a bunch of animals now?
-		// \n\n type Yes or No.");
-		// printer.typeWriter(null, 50);
 
-//		UserInteraction query = new UserInteraction();
+		UserInteraction query = new UserInteraction();
 //		AnimalFactory myAnimals = new AnimalFactory();
 
 		
