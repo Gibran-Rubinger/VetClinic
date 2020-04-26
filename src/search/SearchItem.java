@@ -16,8 +16,6 @@ public class SearchItem {
 	
 	public void SearchAnimalById(ArrayList<Animals> listOfAnimals, int idSearch ) {
 
-		printer.typeWriter("Please type the ID you looking for: ", 35);
-		
 //			for loop to check the all list 
 			for(int i = 0; i < listOfAnimals.size(); i++) {
 //				if statement to identify the position where the item is storage on the list.
@@ -35,7 +33,7 @@ public class SearchItem {
 		}
 		else {
 			printer.typeWriter(" Your search was sucessfull: ", 35);
-			System.out.println(idResults);
+			System.out.println(listOfAnimals.get(idResults));
 		}
 	}
 }

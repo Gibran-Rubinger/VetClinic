@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 
 import animals.commonPets.*;
@@ -13,6 +14,7 @@ import animals.fish.*;
 import animals.reptile.*;
 import graphical.Graphical;
 import queryAndValidations.*;
+import search.SearchItem;
 
 public class AnimalFactory {
 	
@@ -29,18 +31,21 @@ public class AnimalFactory {
 	int number3StartBunch = 1000;
 	int number3FinishBunch = 9999;
 	
+	int idS = 0;
+	
 	Graphical printer = new Graphical();
-
-	UserInteraction Ntot = new UserInteraction();
-
-		//	method responsible to populate 1.000 animals in a random way.
-	  	public void CommonPets(int bunch) {
+	
+	UserInteraction query = new UserInteraction();
+	
+	SearchItem where = new SearchItem();
+	
+	Scanner myScanner = new Scanner(System.in);
+//	generate the Array to storage the random Animals.
+	ArrayList<Animals> listOfAnimals;
+//_________________________________________________________________________________
+	
+	public void CommonPets(int bunch) {
 	  		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
-		
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
@@ -153,12 +158,7 @@ public class AnimalFactory {
 	  }
 
 	public void Birds(int bunch) {
-		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
-		
+			
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
@@ -258,11 +258,6 @@ public class AnimalFactory {
 	}
 
 	public void Fish(int bunch) {
-		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
 		
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
@@ -364,11 +359,6 @@ public class AnimalFactory {
 
     public void Reptile(int bunch) {
 		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
-		
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
@@ -468,11 +458,6 @@ public class AnimalFactory {
 	}
 
     public void Farm(int bunch) {
-		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
 		
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
@@ -575,11 +560,6 @@ public class AnimalFactory {
 
     public void Exotic(int bunch) {
 		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
-		
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
@@ -679,13 +659,7 @@ public class AnimalFactory {
             System.out.println(listOfAnimals.size());
 	}
 
-public void Crazy(int bunch) {
-		
-		
-//		generate the Array to storage the 1.000 random Animals.
-		ArrayList<Animals> listOfAnimals;
-		//ArrayList<AnimalOwner> listOfOwner;
-		 
+    public void Crazy(int bunch) {
 		
 //		instantiation of the Array
 		listOfAnimals = new ArrayList<Animals>(bunch);
@@ -1058,8 +1032,6 @@ public void Crazy(int bunch) {
 
     
 //___________________________________________________________________________
-//	print the all list using a for each loop.
-	
 	
 	public int AgeRandom(int limitAge){
 	
@@ -1071,6 +1043,23 @@ public void Crazy(int bunch) {
 		return randomAge;
 	
 	 }
+
+
+//___________________________________________________________________________
+// Searches
+
+public void searchId() {
+	query.YesOrNo(4, "\n\n\n\n Would you like to search for an espesifc animals ID?  \n\n type Yes or No.");
+	
+	if (query.userYesOrNoValidOption == 1) {
+		query.GettingNumber("Please type the ID you looking for: ", 4);
+		idS = query.getBunch();
+		where.SearchAnimalById(listOfAnimals, idS);
+	}
+	else if (query.userYesOrNoValidOption == 0) {
+		printer.typeWriter("Ok, see you later", 50);
+	}
+ }
 }
 
 
