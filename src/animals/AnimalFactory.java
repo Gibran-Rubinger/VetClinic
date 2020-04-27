@@ -1,11 +1,8 @@
 package animals;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Set;
 
+
+import java.util.ArrayList;
+import java.util.Random;
 import animals.commonPets.*;
 import animals.birds.*;
 import animals.exotic.*;
@@ -13,8 +10,7 @@ import animals.farm.*;
 import animals.fish.*;
 import animals.reptile.*;
 import graphical.Graphical;
-import queryAndValidations.*;
-import search.SearchItem;
+
 
 public class AnimalFactory {
 	
@@ -31,23 +27,18 @@ public class AnimalFactory {
 	int number3StartBunch = 1000;
 	int number3FinishBunch = 9999;
 	
-	int idS = 0;
 	
 	Graphical printer = new Graphical();
 	
-	UserInteraction query = new UserInteraction();
 	
-	SearchItem where = new SearchItem();
-	
-	Scanner myScanner = new Scanner(System.in);
 //	generate the Array to storage the random Animals.
-	ArrayList<Animals> listOfAnimals;
+	private ArrayList<Animals> listOfAnimals;
 //_________________________________________________________________________________
 	
 	public void CommonPets(int bunch) {
 	  		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -101,44 +92,44 @@ public class AnimalFactory {
 		
 //									Inside the if statement just Female Object.
 									if(speciesGenerator == 0) { 
-										listOfAnimals.add(new Dog(idObj, femaleAnimalNames, AgeRandom(20), "Dog", " Female ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Dog(idObj, femaleAnimalNames, AgeRandom(20), "Dog", " Female ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 1) { 
-										listOfAnimals.add(new Cat(idObj, femaleAnimalNames, AgeRandom(18), "Cat", " Female ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Cat(idObj, femaleAnimalNames, AgeRandom(18), "Cat", " Female ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 2) { 
-										listOfAnimals.add(new DomesticPig(idObj, femaleAnimalNames, AgeRandom(17), "Domestic Pig", " Female ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new DomesticPig(idObj, femaleAnimalNames, AgeRandom(17), "Domestic Pig", " Female ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 3) { 
-										listOfAnimals.add(new Rabbit(idObj, femaleAnimalNames, AgeRandom(9), "Rabbit", " Female ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Rabbit(idObj, femaleAnimalNames, AgeRandom(9), "Rabbit", " Female ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 4) { 
-										listOfAnimals.add(new Hamister(idObj, femaleAnimalNames, AgeRandom(3), "Hamister", " Female ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Hamister(idObj, femaleAnimalNames, AgeRandom(3), "Hamister", " Female ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 5) { 
-										listOfAnimals.add(new GuineaPig(idObj, femaleAnimalNames, AgeRandom(8), "Guinea Pig", " Female ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new GuineaPig(idObj, femaleAnimalNames, AgeRandom(8), "Guinea Pig", " Female ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 								}
 		
 							    else {
 //								Male Object - every attribute of the object is picked using the random method.
 							    	if(speciesGenerator == 0) { 
-							    		listOfAnimals.add(new Dog(idObj, maleAnimalNames, AgeRandom(20), "Dog", " Male ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Dog(idObj, maleAnimalNames, AgeRandom(20), "Dog", " Male ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 1) { 
-							    		listOfAnimals.add(new Cat(idObj, maleAnimalNames, AgeRandom(18), "Cat", " Male ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Cat(idObj, maleAnimalNames, AgeRandom(18), "Cat", " Male ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 2) { 
-							    		listOfAnimals.add(new DomesticPig(idObj, maleAnimalNames, AgeRandom(17), "Domestic Pig", " Male ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new DomesticPig(idObj, maleAnimalNames, AgeRandom(17), "Domestic Pig", " Male ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 3) { 
-							    		listOfAnimals.add(new Rabbit(idObj, maleAnimalNames, AgeRandom(9), "Rabbit", " Male ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Rabbit(idObj, maleAnimalNames, AgeRandom(9), "Rabbit", " Male ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 4) { 
-							    		listOfAnimals.add(new Hamister(idObj, maleAnimalNames, AgeRandom(3), "Hamister", " Male ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Hamister(idObj, maleAnimalNames, AgeRandom(3), "Hamister", " Male ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 5) { 
-							    		listOfAnimals.add(new GuineaPig(idObj, maleAnimalNames, AgeRandom(8), "Guinea Pig", " Male ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new GuineaPig(idObj, maleAnimalNames, AgeRandom(8), "Guinea Pig", " Male ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 			
 							    }
@@ -147,20 +138,20 @@ public class AnimalFactory {
 	
 //		counting the numbers of item in the Array.
         
-	for(Animals print : listOfAnimals) {
+	for(Animals print : getListOfAnimals()) {
 		System.out.println(print);
 		}
 //		counting the numbers of item in the Array.
         printer.typeWriter("\n"
         		+ "The Total of Animals in the system is:  ", 50);
-        System.out.println(listOfAnimals.size());
+        System.out.println(getListOfAnimals().size());
 	
 	  }
 
 	public void Birds(int bunch) {
 			
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -206,61 +197,61 @@ public class AnimalFactory {
 
 //					Inside the if statement just Female Object.
 					if(speciesGenerator == 0) { 
-						listOfAnimals.add(new Cokcatiel(idObj, femaleAnimalNames, AgeRandom(14), "Cokcatiel", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Cokcatiel(idObj, femaleAnimalNames, AgeRandom(14), "Cokcatiel", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new GoldianFinch(idObj, femaleAnimalNames, AgeRandom(6), "GoldianFinch", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new GoldianFinch(idObj, femaleAnimalNames, AgeRandom(6), "GoldianFinch", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new Budgerigar(idObj, femaleAnimalNames, AgeRandom(20), "Budgerigar", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Budgerigar(idObj, femaleAnimalNames, AgeRandom(20), "Budgerigar", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new Cockatoo(idObj, femaleAnimalNames, AgeRandom(70), "Cockatoo", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Cockatoo(idObj, femaleAnimalNames, AgeRandom(70), "Cockatoo", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Dove(idObj, femaleAnimalNames, AgeRandom(10), "Dove", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Dove(idObj, femaleAnimalNames, AgeRandom(10), "Dove", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new Parrot(idObj, femaleAnimalNames, AgeRandom(14), "Parrot", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Parrot(idObj, femaleAnimalNames, AgeRandom(14), "Parrot", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 				}
 
 			    else {
 //				Male Object - every attribute of the object is picked using the random method.
 			    	if(speciesGenerator == 0) { 
-						listOfAnimals.add(new Cokcatiel(idObj, maleAnimalNames, AgeRandom(14), "Cokcatiel", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Cokcatiel(idObj, maleAnimalNames, AgeRandom(14), "Cokcatiel", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new GoldianFinch(idObj, maleAnimalNames, AgeRandom(6), "GoldianFinch", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new GoldianFinch(idObj, maleAnimalNames, AgeRandom(6), "GoldianFinch", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new Budgerigar(idObj, maleAnimalNames, AgeRandom(20), "Budgerigar", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Budgerigar(idObj, maleAnimalNames, AgeRandom(20), "Budgerigar", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new Cockatoo(idObj, maleAnimalNames, AgeRandom(70), "Cockatoo", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Cockatoo(idObj, maleAnimalNames, AgeRandom(70), "Cockatoo", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Dove(idObj, maleAnimalNames, AgeRandom(10), "Dove", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Dove(idObj, maleAnimalNames, AgeRandom(10), "Dove", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new Parrot(idObj, maleAnimalNames, AgeRandom(14), "Parrot", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Parrot(idObj, maleAnimalNames, AgeRandom(14), "Parrot", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 			    }
 			}
 		
-		for(Animals print : listOfAnimals) {
+		for(Animals print : getListOfAnimals()) {
 			System.out.println(print);
 			}
 //			counting the numbers of item in the Array.
             printer.typeWriter("\n"
             		+ "The Total of Animals in the system is:  ", 50);
-            System.out.println(listOfAnimals.size());
+            System.out.println(getListOfAnimals().size());
 	}
 
 	public void Fish(int bunch) {
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -306,61 +297,61 @@ public class AnimalFactory {
 
 //					Inside the if statement just Female Object.
 					if(speciesGenerator == 0) { 
-						listOfAnimals.add(new Oscar(idObj, femaleAnimalNames, AgeRandom(21), "Oscar", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Oscar(idObj, femaleAnimalNames, AgeRandom(21), "Oscar", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new NeonTreta(idObj, femaleAnimalNames, AgeRandom(11), "Neon Treta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new NeonTreta(idObj, femaleAnimalNames, AgeRandom(11), "Neon Treta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new Guppies(idObj, femaleAnimalNames, AgeRandom(3), "Guppies", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Guppies(idObj, femaleAnimalNames, AgeRandom(3), "Guppies", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new Discus(idObj, femaleAnimalNames, AgeRandom(11), "Discus", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Discus(idObj, femaleAnimalNames, AgeRandom(11), "Discus", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Betta(idObj, femaleAnimalNames, AgeRandom(6), "Betta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Betta(idObj, femaleAnimalNames, AgeRandom(6), "Betta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new Goldfish(idObj, femaleAnimalNames, AgeRandom(11), "Goldfish", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Goldfish(idObj, femaleAnimalNames, AgeRandom(11), "Goldfish", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 				}
 
 			    else {
 //				Male Object - every attribute of the object is picked using the random method.
 			    	if(speciesGenerator == 0) { 
-						listOfAnimals.add(new Oscar(idObj, maleAnimalNames, AgeRandom(21), "Oscar", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Oscar(idObj, maleAnimalNames, AgeRandom(21), "Oscar", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new NeonTreta(idObj, maleAnimalNames, AgeRandom(11), "Neon Treta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new NeonTreta(idObj, maleAnimalNames, AgeRandom(11), "Neon Treta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new Guppies(idObj, maleAnimalNames, AgeRandom(3), "Guppies", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Guppies(idObj, maleAnimalNames, AgeRandom(3), "Guppies", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new Discus(idObj, maleAnimalNames, AgeRandom(11), "Discus", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Discus(idObj, maleAnimalNames, AgeRandom(11), "Discus", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Betta(idObj, maleAnimalNames, AgeRandom(6), "Betta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Betta(idObj, maleAnimalNames, AgeRandom(6), "Betta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new Goldfish(idObj, maleAnimalNames, AgeRandom(11), "Goldfish", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Goldfish(idObj, maleAnimalNames, AgeRandom(11), "Goldfish", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 			    }
 			}
 		
-		for(Animals print : listOfAnimals) {
+		for(Animals print : getListOfAnimals()) {
 			System.out.println(print);
 			}
 //			counting the numbers of item in the Array.
             printer.typeWriter("\n"
             		+ "The Total of Animals in the system is:  ", 50);
-            System.out.println(listOfAnimals.size());
+            System.out.println(getListOfAnimals().size());
 	}
 
     public void Reptile(int bunch) {
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -406,61 +397,61 @@ public class AnimalFactory {
 
 //					Inside the if statement just Female Object.
 					if(speciesGenerator == 0) { 
-						listOfAnimals.add(new WaterDragon(idObj, femaleAnimalNames, AgeRandom(21), "Whater Dragon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new WaterDragon(idObj, femaleAnimalNames, AgeRandom(21), "Whater Dragon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new Chameleon(idObj, femaleAnimalNames, AgeRandom(11), "Chameleon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Chameleon(idObj, femaleAnimalNames, AgeRandom(11), "Chameleon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new GreenTreePython(idObj, femaleAnimalNames, AgeRandom(21), "Green Tree Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new GreenTreePython(idObj, femaleAnimalNames, AgeRandom(21), "Green Tree Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new BallPython(idObj, femaleAnimalNames, AgeRandom(31), "Ball Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new BallPython(idObj, femaleAnimalNames, AgeRandom(31), "Ball Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Iguana(idObj, femaleAnimalNames, AgeRandom(11), "Iguana", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Iguana(idObj, femaleAnimalNames, AgeRandom(11), "Iguana", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 				}
 
 			    else {
 //				Male Object - every attribute of the object is picked using the random method.
 					if(speciesGenerator == 0) { 
-						listOfAnimals.add(new WaterDragon(idObj, maleAnimalNames, AgeRandom(21), "Whater Dragon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new WaterDragon(idObj, maleAnimalNames, AgeRandom(21), "Whater Dragon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new Chameleon(idObj, maleAnimalNames, AgeRandom(11), "Chameleon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Chameleon(idObj, maleAnimalNames, AgeRandom(11), "Chameleon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new GreenTreePython(idObj, maleAnimalNames, AgeRandom(21), "Green Tree Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new GreenTreePython(idObj, maleAnimalNames, AgeRandom(21), "Green Tree Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new BallPython(idObj, maleAnimalNames, AgeRandom(31), "Ball Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new BallPython(idObj, maleAnimalNames, AgeRandom(31), "Ball Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Iguana(idObj, maleAnimalNames, AgeRandom(11), "Iguana", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Iguana(idObj, maleAnimalNames, AgeRandom(11), "Iguana", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}	
 			    }
 			}
 		
-		for(Animals print : listOfAnimals) {
+		for(Animals print : getListOfAnimals()) {
 			System.out.println(print);
 			}
 //			counting the numbers of item in the Array.
             printer.typeWriter("\n"
             		+ "The Total of Animals in the system is:  ", 50);
-            System.out.println(listOfAnimals.size());
+            System.out.println(getListOfAnimals().size());
 	}
 
     public void Farm(int bunch) {
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -507,61 +498,61 @@ public class AnimalFactory {
 
 //					Inside the if statement just Female Object.
 					if(speciesGenerator == 0) { 
-						listOfAnimals.add(new Ox(idObj, femaleAnimalNames, AgeRandom(23), "Ox", " Female ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Ox(idObj, femaleAnimalNames, AgeRandom(23), "Ox", " Female ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new Horse(idObj, femaleAnimalNames, AgeRandom(31), "Horse", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Horse(idObj, femaleAnimalNames, AgeRandom(31), "Horse", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new Sheep(idObj, femaleAnimalNames, AgeRandom(13), "Sheep", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Sheep(idObj, femaleAnimalNames, AgeRandom(13), "Sheep", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new Goat(idObj, femaleAnimalNames, AgeRandom(19), "Goat", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Goat(idObj, femaleAnimalNames, AgeRandom(19), "Goat", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Pony(idObj, femaleAnimalNames, AgeRandom(30), "Pony", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Pony(idObj, femaleAnimalNames, AgeRandom(30), "Pony", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(31), "Donkey", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(31), "Donkey", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 				}
 
 			    else {
 //				Male Object - every attribute of the object is picked using the random method.
 			    	if(speciesGenerator == 0) { 
-						listOfAnimals.add(new Ox(idObj, maleAnimalNames, AgeRandom(23), "Ox", " Male ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Ox(idObj, maleAnimalNames, AgeRandom(23), "Ox", " Male ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new Horse(idObj, maleAnimalNames, AgeRandom(31), "Horse", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Horse(idObj, maleAnimalNames, AgeRandom(31), "Horse", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new Sheep(idObj, maleAnimalNames, AgeRandom(13), "Sheep", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Sheep(idObj, maleAnimalNames, AgeRandom(13), "Sheep", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new Goat(idObj, maleAnimalNames, AgeRandom(19), "Goat", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Goat(idObj, maleAnimalNames, AgeRandom(19), "Goat", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new Pony(idObj, maleAnimalNames, AgeRandom(30), "Pony", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new Pony(idObj, maleAnimalNames, AgeRandom(30), "Pony", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(31), "Donkey", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(31), "Donkey", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 			    }
 			}
 		
-		for(Animals print : listOfAnimals) {
+		for(Animals print : getListOfAnimals()) {
 			System.out.println(print);
 			}
 //			counting the numbers of item in the Array.
             printer.typeWriter("\n"
             		+ "The Total of Animals in the system is:  ", 50);
-            System.out.println(listOfAnimals.size());
+            System.out.println(getListOfAnimals().size());
 	}
 
     public void Exotic(int bunch) {
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -608,61 +599,61 @@ public class AnimalFactory {
 
 //					Inside the if statement just Female Object.
 					if(speciesGenerator == 0) { 
-						listOfAnimals.add(new PacmanFrog(idObj, femaleAnimalNames, AgeRandom(16), "PacmanFrong", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new PacmanFrog(idObj, femaleAnimalNames, AgeRandom(16), "PacmanFrong", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new GreenTreeFrog(idObj, femaleAnimalNames, AgeRandom(17), "Green Tree Frog", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new GreenTreeFrog(idObj, femaleAnimalNames, AgeRandom(17), "Green Tree Frog", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new CobaltBlueTarantula(idObj, femaleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new CobaltBlueTarantula(idObj, femaleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new ChileRoseSpider(idObj, femaleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new ChileRoseSpider(idObj, femaleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new EmperorScorpion(idObj, femaleAnimalNames, AgeRandom(9), "Empero Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new EmperorScorpion(idObj, femaleAnimalNames, AgeRandom(9), "Empero Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new HeterometrusScorpion(idObj, femaleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new HeterometrusScorpion(idObj, femaleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 				}
 
 			    else {
 //				Male Object - every attribute of the object is picked using the random method.
 			    	if(speciesGenerator == 0) { 
-						listOfAnimals.add(new PacmanFrog(idObj, maleAnimalNames, AgeRandom(16), "PacmanFrong", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new PacmanFrog(idObj, maleAnimalNames, AgeRandom(16), "PacmanFrong", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 1) { 
-						listOfAnimals.add(new GreenTreeFrog(idObj, maleAnimalNames, AgeRandom(17), "Green Tree Frog", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new GreenTreeFrog(idObj, maleAnimalNames, AgeRandom(17), "Green Tree Frog", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 2) { 
-						listOfAnimals.add(new CobaltBlueTarantula(idObj, maleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new CobaltBlueTarantula(idObj, maleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 3) { 
-						listOfAnimals.add(new ChileRoseSpider(idObj, maleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new ChileRoseSpider(idObj, maleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 4) { 
-						listOfAnimals.add(new EmperorScorpion(idObj, maleAnimalNames, AgeRandom(9), "Empero Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new EmperorScorpion(idObj, maleAnimalNames, AgeRandom(9), "Empero Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 					else if(speciesGenerator == 5) { 
-						listOfAnimals.add(new HeterometrusScorpion(idObj, maleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+						getListOfAnimals().add(new HeterometrusScorpion(idObj, maleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 					}
 			    }	
 		}
 		
-		for(Animals print : listOfAnimals) {
+		for(Animals print : getListOfAnimals()) {
 			System.out.println(print);
 			}
 //			counting the numbers of item in the Array.
             printer.typeWriter("\n"
             		+ "The Total of Animals in the system is:  ", 50);
-            System.out.println(listOfAnimals.size());
+            System.out.println(getListOfAnimals().size());
 	}
 
     public void Crazy(int bunch) {
 		
 //		instantiation of the Array
-		listOfAnimals = new ArrayList<Animals>(bunch);
+		setListOfAnimals(new ArrayList<Animals>(bunch));
 		//listOfOwner = new ArrayList<AnimalOwner>(animalsQuantity);
 			
 	//Instantiation the random method.
@@ -734,44 +725,44 @@ public class AnimalFactory {
 		
 //									Inside the if statement just Female Object.
 									if(speciesGenerator == 0) { 
-										listOfAnimals.add(new Dog(idObj, femaleAnimalNames, AgeRandom(20), "Dog", " Female ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Dog(idObj, femaleAnimalNames, AgeRandom(20), "Dog", " Female ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 1) { 
-										listOfAnimals.add(new Cat(idObj, femaleAnimalNames, AgeRandom(18), "Cat", " Female ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Cat(idObj, femaleAnimalNames, AgeRandom(18), "Cat", " Female ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 2) { 
-										listOfAnimals.add(new DomesticPig(idObj, femaleAnimalNames, AgeRandom(17), "Domestic Pig", " Female ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new DomesticPig(idObj, femaleAnimalNames, AgeRandom(17), "Domestic Pig", " Female ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 3) { 
-										listOfAnimals.add(new Rabbit(idObj, femaleAnimalNames, AgeRandom(9), "Rabbit", " Female ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Rabbit(idObj, femaleAnimalNames, AgeRandom(9), "Rabbit", " Female ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 4) { 
-										listOfAnimals.add(new Hamister(idObj, femaleAnimalNames, AgeRandom(3), "Hamister", " Female ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Hamister(idObj, femaleAnimalNames, AgeRandom(3), "Hamister", " Female ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 5) { 
-										listOfAnimals.add(new GuineaPig(idObj, femaleAnimalNames, AgeRandom(8), "Guinea Pig", " Female ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new GuineaPig(idObj, femaleAnimalNames, AgeRandom(8), "Guinea Pig", " Female ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 								}
 		
 							    else {
 //								Male Object - every attribute of the object is picked using the random method.
 							    	if(speciesGenerator == 0) { 
-							    		listOfAnimals.add(new Dog(idObj, maleAnimalNames, AgeRandom(20), "Dog", " Male ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Dog(idObj, maleAnimalNames, AgeRandom(20), "Dog", " Male ", dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 1) { 
-							    		listOfAnimals.add(new Cat(idObj, maleAnimalNames, AgeRandom(18), "Cat", " Male ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Cat(idObj, maleAnimalNames, AgeRandom(18), "Cat", " Male ", catMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 2) { 
-							    		listOfAnimals.add(new DomesticPig(idObj, maleAnimalNames, AgeRandom(17), "Domestic Pig", " Male ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new DomesticPig(idObj, maleAnimalNames, AgeRandom(17), "Domestic Pig", " Male ", domesticPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 3) { 
-							    		listOfAnimals.add(new Rabbit(idObj, maleAnimalNames, AgeRandom(9), "Rabbit", " Male ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Rabbit(idObj, maleAnimalNames, AgeRandom(9), "Rabbit", " Male ", rabbitMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 4) { 
-							    		listOfAnimals.add(new Hamister(idObj, maleAnimalNames, AgeRandom(3), "Hamister", " Male ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new Hamister(idObj, maleAnimalNames, AgeRandom(3), "Hamister", " Male ", hamisterMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 							    	else if(speciesGenerator == 5) { 
-							    		listOfAnimals.add(new GuineaPig(idObj, maleAnimalNames, AgeRandom(8), "Guinea Pig", " Male ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+							    		getListOfAnimals().add(new GuineaPig(idObj, maleAnimalNames, AgeRandom(8), "Guinea Pig", " Male ", guineaPigMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 							    	}
 			
 							    }
@@ -784,44 +775,44 @@ public class AnimalFactory {
 
 //									Inside the if statement just Female Object.
 									if(speciesGenerator == 0) { 
-										listOfAnimals.add(new Cokcatiel(idObj, femaleAnimalNames, AgeRandom(14), "Cokcatiel", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Cokcatiel(idObj, femaleAnimalNames, AgeRandom(14), "Cokcatiel", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 1) { 
-										listOfAnimals.add(new GoldianFinch(idObj, femaleAnimalNames, AgeRandom(6), "GoldianFinch", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new GoldianFinch(idObj, femaleAnimalNames, AgeRandom(6), "GoldianFinch", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 2) { 
-										listOfAnimals.add(new Budgerigar(idObj, femaleAnimalNames, AgeRandom(20), "Budgerigar", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Budgerigar(idObj, femaleAnimalNames, AgeRandom(20), "Budgerigar", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 3) { 
-										listOfAnimals.add(new Cockatoo(idObj, femaleAnimalNames, AgeRandom(70), "Cockatoo", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Cockatoo(idObj, femaleAnimalNames, AgeRandom(70), "Cockatoo", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 4) { 
-										listOfAnimals.add(new Dove(idObj, femaleAnimalNames, AgeRandom(10), "Dove", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Dove(idObj, femaleAnimalNames, AgeRandom(10), "Dove", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 									else if(speciesGenerator == 5) { 
-										listOfAnimals.add(new Parrot(idObj, femaleAnimalNames, AgeRandom(14), "Parrot", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+										getListOfAnimals().add(new Parrot(idObj, femaleAnimalNames, AgeRandom(14), "Parrot", " Female ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 									}
 								}
 
 									else {
 //										Male Object - every attribute of the object is picked using the random method.
 										if(speciesGenerator == 0) { 
-											listOfAnimals.add(new Cokcatiel(idObj, maleAnimalNames, AgeRandom(14), "Cokcatiel", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Cokcatiel(idObj, maleAnimalNames, AgeRandom(14), "Cokcatiel", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 1) { 
-											listOfAnimals.add(new GoldianFinch(idObj, maleAnimalNames, AgeRandom(6), "GoldianFinch", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new GoldianFinch(idObj, maleAnimalNames, AgeRandom(6), "GoldianFinch", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 2) { 
-											listOfAnimals.add(new Budgerigar(idObj, maleAnimalNames, AgeRandom(20), "Budgerigar", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Budgerigar(idObj, maleAnimalNames, AgeRandom(20), "Budgerigar", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 3) { 
-											listOfAnimals.add(new Cockatoo(idObj, maleAnimalNames, AgeRandom(70), "Cockatoo", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Cockatoo(idObj, maleAnimalNames, AgeRandom(70), "Cockatoo", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 4) { 
-											listOfAnimals.add(new Dove(idObj, maleAnimalNames, AgeRandom(10), "Dove", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Dove(idObj, maleAnimalNames, AgeRandom(10), "Dove", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 5) { 
-											listOfAnimals.add(new Parrot(idObj, maleAnimalNames, AgeRandom(14), "Parrot", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Parrot(idObj, maleAnimalNames, AgeRandom(14), "Parrot", " Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 									}
 							}
@@ -832,44 +823,44 @@ public class AnimalFactory {
 							if(idObj %2 ==0) {
 //								Inside the if statement just Female Object.
 										if(speciesGenerator == 0) { 
-											listOfAnimals.add(new Oscar(idObj, femaleAnimalNames, AgeRandom(21), "Oscar", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Oscar(idObj, femaleAnimalNames, AgeRandom(21), "Oscar", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 1) { 
-											listOfAnimals.add(new NeonTreta(idObj, femaleAnimalNames, AgeRandom(11), "Neon Treta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new NeonTreta(idObj, femaleAnimalNames, AgeRandom(11), "Neon Treta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 2) { 
-											listOfAnimals.add(new Guppies(idObj, femaleAnimalNames, AgeRandom(3), "Guppies", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Guppies(idObj, femaleAnimalNames, AgeRandom(3), "Guppies", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 3) { 
-											listOfAnimals.add(new Discus(idObj, femaleAnimalNames, AgeRandom(11), "Discus", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Discus(idObj, femaleAnimalNames, AgeRandom(11), "Discus", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 4) { 
-											listOfAnimals.add(new Betta(idObj, femaleAnimalNames, AgeRandom(6), "Betta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Betta(idObj, femaleAnimalNames, AgeRandom(6), "Betta", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 5) { 
-											listOfAnimals.add(new Goldfish(idObj, femaleAnimalNames, AgeRandom(11), "Goldfish", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Goldfish(idObj, femaleAnimalNames, AgeRandom(11), "Goldfish", " Female ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 									}
 
 								    else {
 //                       			Male Object - every attribute of the object is picked using the random method.
 								    	if(speciesGenerator == 0) { 
-											listOfAnimals.add(new Oscar(idObj, maleAnimalNames, AgeRandom(21), "Oscar", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Oscar(idObj, maleAnimalNames, AgeRandom(21), "Oscar", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 1) { 
-											listOfAnimals.add(new NeonTreta(idObj, maleAnimalNames, AgeRandom(11), "Neon Treta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new NeonTreta(idObj, maleAnimalNames, AgeRandom(11), "Neon Treta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 2) { 
-											listOfAnimals.add(new Guppies(idObj, maleAnimalNames, AgeRandom(3), "Guppies", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Guppies(idObj, maleAnimalNames, AgeRandom(3), "Guppies", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 3) { 
-											listOfAnimals.add(new Discus(idObj, maleAnimalNames, AgeRandom(11), "Discus", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Discus(idObj, maleAnimalNames, AgeRandom(11), "Discus", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 4) { 
-											listOfAnimals.add(new Betta(idObj, maleAnimalNames, AgeRandom(6), "Betta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Betta(idObj, maleAnimalNames, AgeRandom(6), "Betta", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 5) { 
-											listOfAnimals.add(new Goldfish(idObj, maleAnimalNames, AgeRandom(11), "Goldfish", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Goldfish(idObj, maleAnimalNames, AgeRandom(11), "Goldfish", " Male ", fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 								    }	
 							}
@@ -879,44 +870,44 @@ public class AnimalFactory {
 								if(idObj %2 ==0) {
 //											Inside the if statement just Female Object.
 											if(speciesGenerator == 0) { 
-												listOfAnimals.add(new WaterDragon(idObj, femaleAnimalNames, AgeRandom(21), "Whater Dragon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new WaterDragon(idObj, femaleAnimalNames, AgeRandom(21), "Whater Dragon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 1) { 
-												listOfAnimals.add(new Chameleon(idObj, femaleAnimalNames, AgeRandom(11), "Chameleon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new Chameleon(idObj, femaleAnimalNames, AgeRandom(11), "Chameleon", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 2) { 
-												listOfAnimals.add(new GreenTreePython(idObj, femaleAnimalNames, AgeRandom(21), "Green Tree Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new GreenTreePython(idObj, femaleAnimalNames, AgeRandom(21), "Green Tree Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 3) { 
-												listOfAnimals.add(new BallPython(idObj, femaleAnimalNames, AgeRandom(31), "Ball Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new BallPython(idObj, femaleAnimalNames, AgeRandom(31), "Ball Python", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 4) { 
-												listOfAnimals.add(new Iguana(idObj, femaleAnimalNames, AgeRandom(11), "Iguana", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new Iguana(idObj, femaleAnimalNames, AgeRandom(11), "Iguana", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 5) { 
-												listOfAnimals.add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 										}
 								
 									    else {
 //											Male Object - every attribute of the object is picked using the random method.
 											if(speciesGenerator == 0) { 
-												listOfAnimals.add(new WaterDragon(idObj, maleAnimalNames, AgeRandom(21), "Whater Dragon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new WaterDragon(idObj, maleAnimalNames, AgeRandom(21), "Whater Dragon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 1) { 
-												listOfAnimals.add(new Chameleon(idObj, maleAnimalNames, AgeRandom(11), "Chameleon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new Chameleon(idObj, maleAnimalNames, AgeRandom(11), "Chameleon", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 2) { 
-												listOfAnimals.add(new GreenTreePython(idObj, maleAnimalNames, AgeRandom(21), "Green Tree Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new GreenTreePython(idObj, maleAnimalNames, AgeRandom(21), "Green Tree Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 3) { 
-												listOfAnimals.add(new BallPython(idObj, maleAnimalNames, AgeRandom(31), "Ball Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new BallPython(idObj, maleAnimalNames, AgeRandom(31), "Ball Python", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 4) { 
-												listOfAnimals.add(new Iguana(idObj, maleAnimalNames, AgeRandom(11), "Iguana", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new Iguana(idObj, maleAnimalNames, AgeRandom(11), "Iguana", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 5) { 
-												listOfAnimals.add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(101), "Eastern Box Turtle", " Male ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}	
 									    }
 									}
@@ -926,44 +917,44 @@ public class AnimalFactory {
 							
 							//			Inside the if statement just Female Object.
 										if(speciesGenerator == 0) { 
-											listOfAnimals.add(new Ox(idObj, femaleAnimalNames, AgeRandom(23), "Ox", " Female ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Ox(idObj, femaleAnimalNames, AgeRandom(23), "Ox", " Female ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 1) { 
-											listOfAnimals.add(new Horse(idObj, femaleAnimalNames, AgeRandom(31), "Horse", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Horse(idObj, femaleAnimalNames, AgeRandom(31), "Horse", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 2) { 
-											listOfAnimals.add(new Sheep(idObj, femaleAnimalNames, AgeRandom(13), "Sheep", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Sheep(idObj, femaleAnimalNames, AgeRandom(13), "Sheep", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 3) { 
-											listOfAnimals.add(new Goat(idObj, femaleAnimalNames, AgeRandom(19), "Goat", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Goat(idObj, femaleAnimalNames, AgeRandom(19), "Goat", " Female ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 4) { 
-											listOfAnimals.add(new Pony(idObj, femaleAnimalNames, AgeRandom(30), "Pony", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Pony(idObj, femaleAnimalNames, AgeRandom(30), "Pony", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 5) { 
-											listOfAnimals.add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(31), "Donkey", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new EasternBoxTurtle(idObj, femaleAnimalNames, AgeRandom(31), "Donkey", " Female ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 									}
 							
 								    else {
 							//		Male Object - every attribute of the object is picked using the random method.
 								    	if(speciesGenerator == 0) { 
-											listOfAnimals.add(new Ox(idObj, maleAnimalNames, AgeRandom(23), "Ox", " Male ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Ox(idObj, maleAnimalNames, AgeRandom(23), "Ox", " Male ", oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 1) { 
-											listOfAnimals.add(new Horse(idObj, maleAnimalNames, AgeRandom(31), "Horse", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Horse(idObj, maleAnimalNames, AgeRandom(31), "Horse", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 2) { 
-											listOfAnimals.add(new Sheep(idObj, maleAnimalNames, AgeRandom(13), "Sheep", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Sheep(idObj, maleAnimalNames, AgeRandom(13), "Sheep", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 3) { 
-											listOfAnimals.add(new Goat(idObj, maleAnimalNames, AgeRandom(19), "Goat", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Goat(idObj, maleAnimalNames, AgeRandom(19), "Goat", " Male ", sheepAndGoatMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 4) { 
-											listOfAnimals.add(new Pony(idObj, maleAnimalNames, AgeRandom(30), "Pony", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new Pony(idObj, maleAnimalNames, AgeRandom(30), "Pony", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 										else if(speciesGenerator == 5) { 
-											listOfAnimals.add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(31), "Donkey", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+											getListOfAnimals().add(new EasternBoxTurtle(idObj, maleAnimalNames, AgeRandom(31), "Donkey", " Male ", horsePonyAndDonkeyMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 										}
 								    }
 								
@@ -975,44 +966,44 @@ public class AnimalFactory {
 								
 //											Inside the if statement just Female Object.
 											if(speciesGenerator == 0) { 
-												listOfAnimals.add(new PacmanFrog(idObj, femaleAnimalNames, AgeRandom(16), "PacmanFrong", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new PacmanFrog(idObj, femaleAnimalNames, AgeRandom(16), "PacmanFrong", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 1) { 
-												listOfAnimals.add(new GreenTreeFrog(idObj, femaleAnimalNames, AgeRandom(17), "Green Tree Frog", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new GreenTreeFrog(idObj, femaleAnimalNames, AgeRandom(17), "Green Tree Frog", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 2) { 
-												listOfAnimals.add(new CobaltBlueTarantula(idObj, femaleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new CobaltBlueTarantula(idObj, femaleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 3) { 
-												listOfAnimals.add(new ChileRoseSpider(idObj, femaleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new ChileRoseSpider(idObj, femaleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 4) { 
-												listOfAnimals.add(new EmperorScorpion(idObj, femaleAnimalNames, AgeRandom(9), "Empero Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new EmperorScorpion(idObj, femaleAnimalNames, AgeRandom(9), "Empero Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 5) { 
-												listOfAnimals.add(new HeterometrusScorpion(idObj, femaleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new HeterometrusScorpion(idObj, femaleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 										}
 								
 									    else {
 //											Male Object - every attribute of the object is picked using the random method.
 									    	if(speciesGenerator == 0) { 
-												listOfAnimals.add(new PacmanFrog(idObj, maleAnimalNames, AgeRandom(16), "PacmanFrong", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new PacmanFrog(idObj, maleAnimalNames, AgeRandom(16), "PacmanFrong", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 1) { 
-												listOfAnimals.add(new GreenTreeFrog(idObj, maleAnimalNames, AgeRandom(17), "Green Tree Frog", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new GreenTreeFrog(idObj, maleAnimalNames, AgeRandom(17), "Green Tree Frog", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 2) { 
-												listOfAnimals.add(new CobaltBlueTarantula(idObj, maleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new CobaltBlueTarantula(idObj, maleAnimalNames, AgeRandom(17), "Cobalt Blue Tarantula", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 3) { 
-												listOfAnimals.add(new ChileRoseSpider(idObj, maleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new ChileRoseSpider(idObj, maleAnimalNames, AgeRandom(21), "Chile Rose Spider", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 4) { 
-												listOfAnimals.add(new EmperorScorpion(idObj, maleAnimalNames, AgeRandom(9), "Empero Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new EmperorScorpion(idObj, maleAnimalNames, AgeRandom(9), "Empero Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 											else if(speciesGenerator == 5) { 
-												listOfAnimals.add(new HeterometrusScorpion(idObj, maleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
+												getListOfAnimals().add(new HeterometrusScorpion(idObj, maleAnimalNames, AgeRandom(7), "Heterometrus Scorpion", " Male ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1 , n2, n3)));
 											}
 									    }	
 
@@ -1020,13 +1011,13 @@ public class AnimalFactory {
 				}
 	
 	
-	for(Animals print : listOfAnimals) {
+	for(Animals print : getListOfAnimals()) {
 		System.out.println(print);
 		}
 //		counting the numbers of item in the Array.
         printer.typeWriter("\n"
         		+ "The Total of Animals in the system is:  ", 50);
-        System.out.println(listOfAnimals.size());
+        System.out.println(getListOfAnimals().size());
 	
 	  }
 
@@ -1044,22 +1035,19 @@ public class AnimalFactory {
 	
 	 }
 
+	public ArrayList<Animals> getListOfAnimals() {
+		return listOfAnimals;
+	}
+
+	public void setListOfAnimals(ArrayList<Animals> listOfAnimals) {
+		this.listOfAnimals = listOfAnimals;
+	}
+
 
 //___________________________________________________________________________
 // Searches
 
-public void searchId() {
-	query.YesOrNo(4, "\n\n\n\n Would you like to search for an espesifc animals ID?  \n\n type Yes or No.");
-	
-	if (query.userYesOrNoValidOption == 1) {
-		query.GettingNumber("Please type the ID you looking for: ", 4);
-		idS = query.getBunch();
-		where.SearchAnimalById(listOfAnimals, idS);
-	}
-	else if (query.userYesOrNoValidOption == 0) {
-		printer.typeWriter("Ok, see you later", 50);
-	}
- }
+
 }
 
 

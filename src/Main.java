@@ -48,11 +48,11 @@ public class Main {
 
 
 		UserInteraction query = new UserInteraction();
-		AnimalFactory search = new AnimalFactory();
+		AnimalSearch search = new AnimalSearch();
 		
 		animals.AnimalsChoise();
 		
-		search.searchId();
+		search.SearchAnimals();
 		
 	}
 }

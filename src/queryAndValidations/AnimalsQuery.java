@@ -33,7 +33,7 @@ public class AnimalsQuery {
 							+ "\n\n"
 							+ "_______________________________________________________________________________________________________________________________________________"
 							+ "\n"
-							+ "                               *   Please press the number of the sub category would you like to chosee   *\n");
+							+ "                               *   Please press the number of the sub category would you like to chosee   *\n",1,7);
 			if (query.userMultipleChoiseValidOption == 1) {
 				query.GettingNumber("\n\n " + "Nice. " + "\n\n COMMON PETS"
 						+ "\n\n How many Animals would you like to create? You can type any value would you like but"
