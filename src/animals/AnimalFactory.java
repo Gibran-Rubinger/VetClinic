@@ -16,7 +16,7 @@ public class AnimalFactory {
 	
 //	define the size of the ArrayList with this integer.
 	public int animalsQuantity = 0;
-	int idObj =0;
+	int idObj =1000;
 	int speciesGenerator = 0;
 	int groupGenerator = 0;
 	
@@ -54,7 +54,7 @@ public class AnimalFactory {
 		speciesGenerator = myRandom.nextInt(6); 
 			
 //      Generate the id 
-		idObj+= i;
+		idObj+=i;
 
 //		generate the random attribute just once instead to repeat the same amount of code every time.
 //		__________________________________________

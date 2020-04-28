@@ -1,6 +1,6 @@
 package queryAndValidations;
 
-import java.util.Scanner;
+
 
 import animals.AnimalFactory;
 import graphical.Graphical;
@@ -16,7 +16,6 @@ public class AnimalSearch {
 
 	SearchItem where = new SearchItem();
 
-	Scanner myScanner = new Scanner(System.in);
 
 	AnimalFactory fact = new AnimalFactory();
 

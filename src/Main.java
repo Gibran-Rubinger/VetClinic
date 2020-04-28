@@ -47,12 +47,12 @@ public class Main {
 				1);
 
 
-		UserInteraction query = new UserInteraction();
+		
 		AnimalSearch search = new AnimalSearch();
 		
 		animals.AnimalsChoise();
 		
 		search.SearchAnimals();
-		
+	
 	}
 }

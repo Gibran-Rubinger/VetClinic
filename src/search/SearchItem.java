@@ -19,7 +19,7 @@ public class SearchItem {
 //			for loop to check the all list 
 			for(int i = 0; i < listOfAnimals.size(); i++) {
 //				if statement to identify the position where the item is storage on the list.
-				if(listOfAnimals.get(i).getIdAnimal() == idSearch) {
+				if(listOfAnimals.contains(idSearch)) {
 					idResults = i;
 				}
 			}
@@ -33,7 +33,7 @@ public class SearchItem {
 		}
 		else {
 			printer.typeWriter(" Your search was sucessfull: ", 35);
-			System.out.println(listOfAnimals.get(idResults));
+			System.out.println(listOfAnimals.indexOf(idResults));
 		}
 	}
 }

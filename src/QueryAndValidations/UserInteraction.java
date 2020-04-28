@@ -167,8 +167,7 @@ public class UserInteraction {
 				Bug(text, attempt);
 			}
 		} while (bugRunning == true);
-//		closing the Scanner.
-		myScanner.close();
+
 		return bunch;
 	}
 
@@ -222,6 +221,7 @@ public class UserInteraction {
 						+ "\r\n" + "", 1);
 			}
 		}
+
 	}
 
 	public int getBunch() {
@@ -230,6 +230,8 @@ public class UserInteraction {
 
 	public void setBunch(int bunch) {
 		this.bunch = bunch;
+//		closing the Scanner.
+		myScanner.close();
 	}
 
 	public int getUserYesOrNoValidOption() {
@@ -238,3 +240,4 @@ public class UserInteraction {
 	}
 
 }
+
