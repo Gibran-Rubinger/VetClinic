@@ -2,7 +2,7 @@ package queryAndValidations;
 
 
 
-import animals.AnimalFactory;
+
 import graphical.Graphical;
 import search.SearchItem;
 
@@ -17,7 +17,7 @@ public class AnimalSearch {
 	SearchItem where = new SearchItem();
 
 
-	AnimalFactory fact = new AnimalFactory();
+	
 
 	public void SearchAnimals() {
 		query.YesOrNo(4, "\n\n\n\n Would you like to search for an espesifc type of data?  \n\n type Yes or No.");
@@ -40,7 +40,7 @@ public class AnimalSearch {
 			
 			
               if(query.userMultipleChoiseValidOption == 1) {
-            	  SearchId();
+            	  where.SearchAnimalById();
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
             	  System.out.println("no implemented yet");
@@ -58,11 +58,5 @@ public class AnimalSearch {
 		}
 	}
 
-	public void SearchId() {
-
-		query.GettingNumber("Please type the ID you looking for: ", 4);
-		idS = query.getBunch();
-		where.SearchAnimalById(fact.getListOfAnimals(), idS);
-	}
 
 }
