@@ -1,5 +1,7 @@
 package queryAndValidations;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import exceptions.CustomExceptions;
@@ -32,9 +34,12 @@ public class UserInteraction {
 
 //	instantiate of Scanner.
 	Scanner myScanner = new Scanner(System.in);
-
+	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void YesOrNo(int attempt, String text) {
+
+//		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
+
 		countdown = attempt;
 		display = attempt;
 //		setting the graphical with the milliseconds  preferred.
@@ -43,11 +48,7 @@ public class UserInteraction {
 		do {
 			try {
 //		Assign the attribute userInput with the client typing.
-				userInput = myScanner.next();
-
-//		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
-				countdown = attempt;
-				display = attempt;
+				userInput = myReader.readLine();
 
 //		in this for loop the client will be inform when will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
 
@@ -83,7 +84,7 @@ public class UserInteraction {
 //		Assign the attribute userInput with the client typing.
 		do {
 			try {
-				userInputInt = Integer.parseInt(myScanner.next());
+				userInputInt = Integer.parseInt(myReader.readLine());
 //				in this statement we throw a custom error  to keep valid only the options chosen in the parameter StarN endN.
 				if (userInputInt < starN || userInputInt > endN) {
 					bugRunning = false;
@@ -155,7 +156,7 @@ public class UserInteraction {
 //		Assign the attribute userInput with the client typing.
 		do {
 			try {
-				userInputInt = Integer.parseInt(myScanner.next());
+				userInputInt = Integer.parseInt(myReader.readLine());
 				if (userInputInt != 0) {
 					bunch = userInputInt;
 					bugRunning = false;
@@ -172,6 +173,7 @@ public class UserInteraction {
 	}
 
 	public void Bug(String text, int attempt) {
+		
 		printer.typeWriter(
 				"Sorry, I can not understand what you type in. Please follow the menu guidelines and type a valid option",
 				60);
@@ -230,8 +232,6 @@ public class UserInteraction {
 
 	public void setBunch(int bunch) {
 		this.bunch = bunch;
-//		closing the Scanner.
-		myScanner.close();
 	}
 
 	public int getUserYesOrNoValidOption() {
