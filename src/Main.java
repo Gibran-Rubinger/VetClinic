@@ -1,7 +1,5 @@
-import animals.*;
 import graphical.*;
 import queryAndValidations.*;
-import search.SearchItem;
 
 //above are being import the super classes that it will be used in the code.
 public class Main {

@@ -9,41 +9,27 @@ import queryAndValidations.UserInteraction;
 
 public class SearchItem {
 
-	Animals animal = new Animals() {
-	};
+	Animals animal;
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
-	AnimalFactory born = new AnimalFactory();
+	//AnimalFactory born;
 
-	int idSearch = 0;
-	boolean found = false;
-
+	ArrayList<Animals> listOfAnimals;
 	
-	public void SearchAnimalById() {
-
-		ArrayList<Animals> idResults = new ArrayList<>();
-
-		query.GettingNumber("Please type the ID you looking for: ", 4);
-		idSearch = query.getBunch();
-		 //			for loop to check the all list 
-		for(int i = 0; i < born.getListOfAnimals().size(); i++) {
+	
+	
+	public Animals SearchAnimalById(int idSearch, ArrayList<Animals>listOfAnimals){
 		
-			if(born.getListOfAnimals().get(i).equals(idSearch)) {  
-				idResults.add(i, animal);
+		this.listOfAnimals = listOfAnimals;
+		 //			for loop to check the all list.
+		for(Animals id : listOfAnimals) {
+			
+			if(listOfAnimals.equals(idSearch)) {
+				return id;
 			}
 		}
-//		for (Animals id : idResults) {
-//			if (id.equals(idSearch)) {
-//				found = true;
-//				printer.typeWriter("\n" + "\n Successfully search: \n", 50);
-//				System.out.println(id);
-//			}
-//
-//			else if (found = false) {
-//				printer.typeWriter("\n Unfortunately, your item was not found: \n", 50);
-//			}
-//		}
+		return null;
 
 	}
 

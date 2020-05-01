@@ -3,6 +3,12 @@ package queryAndValidations;
 
 
 
+
+
+import java.util.ArrayList;
+
+import animals.AnimalFactory;
+import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;
 
@@ -15,6 +21,7 @@ public class AnimalSearch {
 	UserInteraction query = new UserInteraction();
 
 	SearchItem where = new SearchItem();
+	AnimalFactory factory;
 
 
 	
@@ -40,7 +47,10 @@ public class AnimalSearch {
 			
 			
               if(query.userMultipleChoiseValidOption == 1) {
-            	  where.SearchAnimalById();
+            	  query.GettingNumber("Please type the ID you looking for: ", 4);
+          		idS = query.getBunch();
+          		ArrayList<Animals> listOfAnimals = factory.getListOfAnimals();
+            	  where.SearchAnimalById(idS, listOfAnimals);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
             	  System.out.println("no implemented yet");

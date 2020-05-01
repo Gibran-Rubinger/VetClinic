@@ -10,6 +10,7 @@ public class AnimalsQuery {
 	AnimalFactory myAnimals = new AnimalFactory();
 	Graphical printer = new Graphical();
 	SearchItem where = new SearchItem();
+	
 	int quantityOfAnimals = 0;
 	public void AnimalsChoise() {
 		query.YesOrNo(3, "\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
