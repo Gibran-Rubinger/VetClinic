@@ -13,23 +13,27 @@ public class SearchItem {
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
-	//AnimalFactory born;
 
-	ArrayList<Animals> listOfAnimals;
 	
 	
 	
-	public Animals SearchAnimalById(int idSearch, ArrayList<Animals>listOfAnimals){
+	public 
+  Animals SearchAnimalById(int idSearch, ArrayList<Animals>listOfAnimals){
 		
-		this.listOfAnimals = listOfAnimals;
+		
 		 //			for loop to check the all list.
 		for(Animals id : listOfAnimals) {
 			
 			if(listOfAnimals.equals(idSearch)) {
-				return id;
+				 printer.typeWriter("\n Your search was sucefull:  ", 50);
+				 System.out.println(id);
+				 return id;
+				
 			}
 		}
+		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
 		return null;
+		
 
 	}
 

@@ -21,7 +21,7 @@ public class AnimalSearch {
 	UserInteraction query = new UserInteraction();
 
 	SearchItem where = new SearchItem();
-	AnimalFactory factory;
+	AnimalFactory factory = new AnimalFactory();
 
 
 	
@@ -49,7 +49,8 @@ public class AnimalSearch {
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
           		idS = query.getBunch();
-          		ArrayList<Animals> listOfAnimals = factory.getListOfAnimals();
+          		ArrayList<Animals> listOfAnimals = null;
+          		listOfAnimals = factory.getListOfAnimals();
             	  where.SearchAnimalById(idS, listOfAnimals);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
