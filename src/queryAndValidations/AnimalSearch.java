@@ -49,7 +49,7 @@ public class AnimalSearch {
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
           		idS = query.getBunch();
-          		ArrayList<Animals> listOfAnimals = null;
+          		ArrayList<Animals> listOfAnimals = new ArrayList<>();
           		listOfAnimals = factory.getListOfAnimals();
             	  where.SearchAnimalById(idS, listOfAnimals);
                 }

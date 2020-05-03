@@ -17,8 +17,7 @@ public class SearchItem {
 	
 	
 	
-	public 
-  Animals SearchAnimalById(int idSearch, ArrayList<Animals>listOfAnimals){
+	public Animals SearchAnimalById(int idSearch, ArrayList<Animals>listOfAnimals){
 		
 		
 		 //			for loop to check the all list.
