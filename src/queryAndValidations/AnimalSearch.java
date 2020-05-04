@@ -12,8 +12,12 @@ import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;
 
-public class AnimalSearch {
+public class AnimalSearch extends AnimalFactory{
 
+	public AnimalSearch(ArrayList<Animals> listOfAnimals) {
+		super(listOfAnimals);
+		// TODO Auto-generated constructor stub
+	}
 	int idS = 0;
 
 	Graphical printer = new Graphical();
@@ -21,10 +25,8 @@ public class AnimalSearch {
 	UserInteraction query = new UserInteraction();
 
 	SearchItem where = new SearchItem();
-	AnimalFactory factory = new AnimalFactory();
+//	AnimalFactory factory = new AnimalFactory(null);
 
-
-	
 
 	public void SearchAnimals() {
 		query.YesOrNo(4, "\n\n\n\n Would you like to search for an espesifc type of data?  \n\n type Yes or No.");
@@ -49,9 +51,8 @@ public class AnimalSearch {
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
           		idS = query.getBunch();
-          		ArrayList<Animals> listOfAnimals = new ArrayList<>();
-          		listOfAnimals = factory.getListOfAnimals();
-            	  where.SearchAnimalById(idS, listOfAnimals);
+          		
+            	  where.SearchAnimalById(idS, getListOfAnimals());
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
             	  System.out.println("no implemented yet");

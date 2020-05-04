@@ -4,7 +4,6 @@ import animals.*;
 import java.util.Random;
 
 import graphical.Graphical;
-import queryAndValidations.*;
 
 public class Dog extends Animals implements Ianimals {
 	

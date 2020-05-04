@@ -7,7 +7,7 @@ import animals.Animals;
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 
-public class SearchItem {
+public class SearchItem extends AnimalFactory {
 
 	Animals animal;
 
@@ -23,7 +23,7 @@ public class SearchItem {
 		 //			for loop to check the all list.
 		for(Animals id : listOfAnimals) {
 			
-			if(listOfAnimals.equals(idSearch)) {
+			if(listOfAnimals.contains(idSearch)) {
 				 printer.typeWriter("\n Your search was sucefull:  ", 50);
 				 System.out.println(id);
 				 return id;

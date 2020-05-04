@@ -32,6 +32,14 @@ public class AnimalFactory {
 
 //	generate the Array to storage the random Animals.
 	private ArrayList<Animals> listOfAnimals = new ArrayList<Animals>();
+	
+	public AnimalFactory() {
+		
+	}
+	
+	public AnimalFactory(ArrayList<Animals> listOfAnimals) {
+		this.listOfAnimals = listOfAnimals;
+	}
 //_________________________________________________________________________________
 
 	public void CommonPets(int bunch) {
