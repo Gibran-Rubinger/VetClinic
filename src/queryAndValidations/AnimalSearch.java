@@ -18,13 +18,15 @@ public class AnimalSearch extends AnimalFactory{
 		super(listOfAnimals);
 		// TODO Auto-generated constructor stub
 	}
-	int idS = 0;
+	
 
 	Graphical printer = new Graphical();
 
 	UserInteraction query = new UserInteraction();
 
 	SearchItem where = new SearchItem();
+	
+	int idS = query.getBunch();
 //	AnimalFactory factory = new AnimalFactory(null);
 
 
@@ -50,8 +52,6 @@ public class AnimalSearch extends AnimalFactory{
 			
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
-          		idS = query.getBunch();
-          		
             	  where.SearchAnimalById(idS, getListOfAnimals());
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
