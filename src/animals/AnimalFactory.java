@@ -1,6 +1,7 @@
 package animals;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import animals.commonPets.*;
 import animals.birds.*;
@@ -31,21 +32,17 @@ public class AnimalFactory {
 	AnimalsData database = new AnimalsData();
 
 //	generate the Array to storage the random Animals.
-	private ArrayList<Animals> listOfAnimals = new ArrayList<Animals>();
+	private List<Animals> listOfAnimals;
 	
 	public AnimalFactory() {
-		
-	}
-	
-	public AnimalFactory(ArrayList<Animals> listOfAnimals) {
-		this.listOfAnimals = listOfAnimals;
+		listOfAnimals = new ArrayList<Animals>();
 	}
 //_________________________________________________________________________________
 
 	public void CommonPets(int bunch) {
 
 //		instantiation of the Array
-		setListOfAnimals(new ArrayList<Animals>(bunch));
+//		setListOfAnimals(new ArrayList<Animals>(bunch));
 
 //	For loop responsible to generate the objects. 
 		for (int i = 0; i < bunch; i++) {
@@ -1062,11 +1059,11 @@ public class AnimalFactory {
 
 	}
 
-	public ArrayList<Animals> getListOfAnimals() {
+	public List<Animals> getListOfAnimals() {
 		return listOfAnimals;
 	}
 
-	public void setListOfAnimals(ArrayList<Animals> listOfAnimals) {
+	public void setListOfAnimals(List<Animals> listOfAnimals) {
 		this.listOfAnimals = listOfAnimals;
 	}
 

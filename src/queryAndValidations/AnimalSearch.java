@@ -6,6 +6,7 @@ package queryAndValidations;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import animals.AnimalFactory;
 import animals.Animals;
@@ -14,11 +15,6 @@ import search.SearchItem;
 
 public class AnimalSearch extends AnimalFactory{
 
-	public AnimalSearch(ArrayList<Animals> listOfAnimals) {
-		super(listOfAnimals);
-		// TODO Auto-generated constructor stub
-	}
-	
 
 	Graphical printer = new Graphical();
 

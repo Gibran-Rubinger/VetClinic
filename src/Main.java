@@ -46,7 +46,7 @@ public class Main {
 
 
 		
-		AnimalSearch search = new AnimalSearch(null);
+		AnimalSearch search = new AnimalSearch();
 		
 		animals.AnimalsChoise();
 		

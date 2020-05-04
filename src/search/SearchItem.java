@@ -1,6 +1,7 @@
 package search;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import animals.AnimalFactory;
 import animals.Animals;
@@ -17,7 +18,7 @@ public class SearchItem extends AnimalFactory {
 	
 	
 	
-	public Animals SearchAnimalById(int idSearch, ArrayList<Animals>listOfAnimals){
+	public Animals SearchAnimalById(int idSearch, List<Animals>listOfAnimals){
 		
 		
 		 //			for loop to check the all list.
