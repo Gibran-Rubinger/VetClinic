@@ -1,6 +1,5 @@
 package search;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import animals.AnimalFactory;
@@ -18,13 +17,13 @@ public class SearchItem extends AnimalFactory {
 	
 	
 	
-	public Animals SearchAnimalById(int idSearch, List<Animals>listOfAnimals){
+	public Animals SearchAnimalById(int idSearch){
 		
 		
 		 //			for loop to check the all list.
 		for(Animals id : listOfAnimals) {
 			
-			if(listOfAnimals.contains(idSearch)) {
+			if(id.hashCode(idSearch)) {
 				 printer.typeWriter("\n Your search was sucefull:  ", 50);
 				 System.out.println(id);
 				 return id;

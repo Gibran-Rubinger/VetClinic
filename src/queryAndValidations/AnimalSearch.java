@@ -5,11 +5,9 @@ package queryAndValidations;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import animals.AnimalFactory;
-import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;
 
