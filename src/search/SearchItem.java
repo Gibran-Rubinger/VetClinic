@@ -23,7 +23,7 @@ public class SearchItem extends AnimalFactory {
 		 //			for loop to check the all list.
 		for(Animals id : listOfAnimals) {
 			
-			if(id.hashCode(idSearch)) {
+			if(id.equals(animal.getIdAnimal() == idSearch)) {
 				 printer.typeWriter("\n Your search was sucefull:  ", 50);
 				 System.out.println(id);
 				 return id;

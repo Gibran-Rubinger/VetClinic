@@ -46,7 +46,7 @@ public class AnimalSearch extends AnimalFactory{
 			
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
-            	  where.SearchAnimalById(idS, getListOfAnimals());
+            	  where.SearchAnimalById(idS);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
             	  System.out.println("no implemented yet");
