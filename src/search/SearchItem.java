@@ -1,7 +1,5 @@
 package search;
 
-import java.util.List;
-
 import animals.AnimalFactory;
 import animals.Animals;
 import graphical.Graphical;
@@ -17,14 +15,14 @@ public class SearchItem extends AnimalFactory {
 	
 	
 	
-	public Animals SearchAnimalById(int idSearch){
+	public Animals SearchAnimalById( int idSearch){
 		
 		
 		 //			for loop to check the all list.
 		for(Animals id : listOfAnimals) {
 			
-			if(id.equals(animal.getIdAnimal() == idSearch)) {
-				 printer.typeWriter("\n Your search was sucefull:  ", 50);
+			if(id.getIdAnimal() == idSearch) {
+				 printer.typeWriter("\n Your search was successfull:  ", 50);
 				 System.out.println(id);
 				 return id;
 				
