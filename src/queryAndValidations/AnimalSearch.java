@@ -1,28 +1,21 @@
 package queryAndValidations;
 
-
-
-
-
-
-import java.util.List;
-
 import animals.AnimalFactory;
+import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;
 
-public class AnimalSearch extends AnimalFactory{
-
+public class AnimalSearch{
 
 	Graphical printer = new Graphical();
 
 	UserInteraction query = new UserInteraction();
 
 	SearchItem where = new SearchItem();
-	
-	int idS = query.getBunch();
-//	AnimalFactory factory = new AnimalFactory(null);
 
+	int idS = query.getBunch();
+	Animals s;
+//	AnimalFactory factory = new AnimalFactory(null);
 
 	public void SearchAnimals() {
 		query.YesOrNo(4, "\n\n\n\n Would you like to search for an espesifc type of data?  \n\n type Yes or No.");
@@ -46,7 +39,7 @@ public class AnimalSearch extends AnimalFactory{
 			
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
-            	  where.SearchAnimalById(idS);
+            	  where.SearchAnimalById(s,idS);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
             	  System.out.println("no implemented yet");
@@ -63,6 +56,5 @@ public class AnimalSearch extends AnimalFactory{
 			printer.typeWriter("Ok, see you later", 50);
 		}
 	}
-
 
 }
