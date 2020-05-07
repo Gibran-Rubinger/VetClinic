@@ -1,6 +1,5 @@
 package queryAndValidations;
 
-import animals.AnimalFactory;
 import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;

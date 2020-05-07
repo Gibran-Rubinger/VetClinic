@@ -13,20 +13,16 @@ public class SearchItem extends AnimalFactory {
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
 
-	public void SearchAnimalById(Animals animal) {
+	public Animals SearchAnimalById(Animals animal) {
 
-		while (check > listOfAnimals.size()) {
-
+		for (int i = 0; i > listOfAnimals.size();i++) {
 			// listOfAnimals.get(check).getIdAnimal();
-			if (animal.equals(listOfAnimals.get(check))) {
+			listOfAnimals.get(i).equals(animal);
 				printer.typeWriter("\n Your search was successful:  ", 50);
-			}
-			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+			return listOfAnimals.get(i);	
 		}
-
-//			
-//		}
-//		return null;
+		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		return null;
 	}
 
 }

@@ -22,6 +22,7 @@ public class UserInteraction {
 	int countdown = 0;
 	int display = 0;
 	int bunch = 0;
+	
 
 //	Those are the pool of valid options typing for the client. 
 	String validAnswer1 = "yes";
@@ -170,6 +171,31 @@ public class UserInteraction {
 		} while (bugRunning == true);
 
 		return bunch;
+	}
+	
+	public String GettingString(String text, int attempt) {
+
+		countdown = attempt;
+		display = attempt;
+//		setting the graphical with the milliseconds  preferred.
+		printer.typeWriter(text, 50);
+
+//		Assign the attribute userInput with the client typing.
+		do {
+			try {
+				userInput = myReader.readLine();
+				if (userInput != null) {
+					bugRunning = false;
+				}
+			}
+//			calling the bug message.
+			catch (Exception e) {
+
+				Bug(text, attempt);
+			}
+		} while (bugRunning == true);
+
+		return userInput;
 	}
 
 	public void Bug(String text, int attempt) {
