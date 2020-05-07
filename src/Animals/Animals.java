@@ -1,6 +1,6 @@
 package animals;
 
-public abstract class Animals {
+public class Animals {
 
 //  attributes
 	 protected int idAnimal= 0;

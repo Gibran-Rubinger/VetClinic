@@ -8,27 +8,25 @@ import queryAndValidations.UserInteraction;
 public class SearchItem extends AnimalFactory {
 
 	Animals animal;
-	
+	int check = 0;
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
-	
-	
 
-	public Animals SearchAnimalById(Animals animal, int idSearch) {
-		
-		if (idSearch != 0) {
-			for (Animals id : listOfAnimals) {
-				if (id.getIdAnimal() == idSearch) {
-					printer.typeWriter("\n Your search was successfull:  ", 50);
-					System.out.println(id);
-					return id;
-				}
+	public void SearchAnimalById(Animals animal) {
+
+		while (check > listOfAnimals.size()) {
+
+			// listOfAnimals.get(check).getIdAnimal();
+			if (animal.equals(listOfAnimals.get(check))) {
+				printer.typeWriter("\n Your search was successful:  ", 50);
 			}
-		} else {
 			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
 		}
-		return null;
+
+//			
+//		}
+//		return null;
 	}
 
 }

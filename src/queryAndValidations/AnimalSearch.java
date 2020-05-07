@@ -8,13 +8,12 @@ import search.SearchItem;
 public class AnimalSearch{
 
 	Graphical printer = new Graphical();
-
 	UserInteraction query = new UserInteraction();
-
 	SearchItem where = new SearchItem();
+	
 
 	int idS = query.getBunch();
-	Animals s;
+	
 //	AnimalFactory factory = new AnimalFactory(null);
 
 	public void SearchAnimals() {
@@ -39,7 +38,8 @@ public class AnimalSearch{
 			
               if(query.userMultipleChoiseValidOption == 1) {
             	  query.GettingNumber("Please type the ID you looking for: ", 4);
-            	  where.SearchAnimalById(s,idS);
+            	Animals animalTester1 = new  Animals(idS, null, 0, null, null, null); 
+            	  where.SearchAnimalById(animalTester1);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
             	  System.out.println("no implemented yet");
