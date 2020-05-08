@@ -1,5 +1,6 @@
 package queryAndValidations;
 
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -173,31 +174,6 @@ public class UserInteraction {
 		return bunch;
 	}
 	
-	public String GettingString(String text, int attempt) {
-
-		countdown = attempt;
-		display = attempt;
-//		setting the graphical with the milliseconds  preferred.
-		printer.typeWriter(text, 50);
-
-//		Assign the attribute userInput with the client typing.
-		do {
-			try {
-				userInput = myReader.readLine();
-				if (userInput != null) {
-					bugRunning = false;
-				}
-			}
-//			calling the bug message.
-			catch (Exception e) {
-
-				Bug(text, attempt);
-			}
-		} while (bugRunning == true);
-
-		return userInput;
-	}
-
 	public void Bug(String text, int attempt) {
 		
 		printer.typeWriter(
@@ -260,10 +236,19 @@ public class UserInteraction {
 		this.bunch = bunch;
 	}
 
+	public String getUserInput() {
+		return userInput;
+	}
+
+	public void setUserInput(String userInput) {
+		this.userInput = userInput;
+	}
+
 	public int getUserYesOrNoValidOption() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	
 
 }
 

@@ -1,4 +1,5 @@
 package graphical;
+import java.util.*;
 
 public class Graphical {
 

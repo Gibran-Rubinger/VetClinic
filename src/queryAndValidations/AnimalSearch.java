@@ -1,5 +1,9 @@
 package queryAndValidations;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;
@@ -9,9 +13,10 @@ public class AnimalSearch{
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
 	SearchItem where = new SearchItem();
-	
+	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));	
 
 	int idS = query.getBunch();
+	String specie = query.getUserInput();
 	
 //	AnimalFactory factory = new AnimalFactory(null);
 
@@ -36,18 +41,25 @@ public class AnimalSearch{
 			
 			
               if(query.userMultipleChoiseValidOption == 1) {
-            	  query.GettingNumber("Please type the ID you looking for: ", 4);
+            	  query.GettingNumber("\n Please type the ID you looking for: ", 4);
             	Animals animalTester1 = new  Animals(idS, null, 0, null, null, null); 
             	  where.SearchAnimalById(animalTester1);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
-            	  System.out.println("no implemented yet");
+            	  query.GettingNumber("\n Please type the Specie you looking for: ", 4);
+            	 try {
+					String userInput = myReader.readLine();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            	  where.SearchSpecies(specie);
               }
               else if(query.userMultipleChoiseValidOption == 3) { 
-            	  System.out.println("no implemented yet");
+            	  System.out.println("\n no implemented yet");
               }
               else if(query.userMultipleChoiseValidOption == 4) { 
-            	  System.out.println("no implemented yet");
+            	  System.out.println("\n no implemented yet");
               }
               
               

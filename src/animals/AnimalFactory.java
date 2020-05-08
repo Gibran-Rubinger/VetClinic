@@ -1,6 +1,6 @@
 package animals;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 import java.util.Random;
 import animals.commonPets.*;
@@ -32,7 +32,7 @@ public class AnimalFactory {
 	AnimalsData database = new AnimalsData();
 
 //	generate the Array to storage the random Animals.
-	protected List<Animals> listOfAnimals;
+	public List<Animals> listOfAnimals;
 	
 	public AnimalFactory() {
 		listOfAnimals = new ArrayList<Animals>();

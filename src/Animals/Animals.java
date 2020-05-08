@@ -1,5 +1,6 @@
 package animals;
 
+import java.util.*;
 public class Animals {
 
 //  attributes

@@ -1,5 +1,5 @@
 package queryAndValidations;
-
+import java.util.*;
 import animals.AnimalFactory;
 import graphical.Graphical;
 import search.SearchItem;

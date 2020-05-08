@@ -1,6 +1,6 @@
 package animals;
 //import java.security.Policy;
-
+import java.util.*;
 public class AnimalsData {
 //		generating the Array for populating the objects.
 		String[] poolOfOwnerNames = {"Carolina","Alcione","Livia","Fatima","Carla","Fabiola","Dercio","Alirio","Adair","Adilson","Adriano","Afranio","Alessadra",
@@ -157,5 +157,11 @@ public class AnimalsData {
 				"Sudden weight loss.","Skin blotches caused by hemorrhaging.","Eye cloudiness for immune system is depressed."," internal parasites infection condiction.",
 				"infectious condition Cryptosporidiosis protozoal parasite.","Diagnostic with Skin infection.","Diagnostic with infectious stomatitis.",
 				"Gastric Foreign Object(s) Ingestion.","Lacerations or Bite Wounds","Scratch or Wound on Eye","Heat Stroke/Dehydration","Preventative Healthcare (Check-Up)"};
+
+		String[] typeAnimal = {"dogs","cats","domestic pig","rabbit","hamister","guinea pig","cokcatiel","goudian finch","parrot",     
+				"cockatoo","budgerigar","dove","oscar","neon treta","guppies","discus","betta","goldfish","water dragon",      
+				"chameleon","green tree python","ball python","iguana","eastern box turtle","ox","horse","sheep",      
+				"goat","pony","donkey","pacman frog","green tree frog","cobalt blue tarantula","chile rose spider",
+				"emperor scorpion","heterometrus scorpion"};
 }
 
