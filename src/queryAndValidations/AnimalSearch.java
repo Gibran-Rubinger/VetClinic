@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import animals.AnimalFactory;
 import animals.Animals;
 import graphical.Graphical;
 import search.SearchItem;
@@ -14,6 +15,7 @@ public class AnimalSearch{
 	UserInteraction query = new UserInteraction();
 	SearchItem where = new SearchItem();
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));	
+	AnimalFactory fac = new AnimalFactory();
 
 	int idS = query.getBunch();
 	String specie = query.getUserInput();
@@ -57,6 +59,7 @@ public class AnimalSearch{
               }
               else if(query.userMultipleChoiseValidOption == 3) { 
             	  System.out.println("\n no implemented yet");
+            	  System.out.println(fac.getListOfAnimals());
               }
               else if(query.userMultipleChoiseValidOption == 4) { 
             	  System.out.println("\n no implemented yet");

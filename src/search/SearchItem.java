@@ -19,8 +19,6 @@ public class SearchItem extends AnimalFactory {
 	
 
 	public Animals SearchAnimalById(Animals animal) {
-		System.out.println(listOfAnimals);
-		System.out.println(listOfAnimals.get(2).getName());
 		for (int i = 0; i > listOfAnimals.size();i++){
 			// listOfAnimals.get(check).getIdAnimal();
 			listOfAnimals.get(i).equals(animal);
