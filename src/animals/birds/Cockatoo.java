@@ -40,7 +40,7 @@ Random myRandom = new Random();
 	public void info() {
 		// TODO Auto-generated method stub
 		printer.typeWriter(" Hi my name is "+getName()+" I am a "+getGender()+" and I am very happy to meet you today.\n"
-				+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I born.", 60);	
+				+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I was born.", 60);	
 			
 				
 		query.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
@@ -52,33 +52,19 @@ Random myRandom = new Random();
 			switch(imageGenerator) {
 			case 0: 
 			printer.typeWriter(""
-					+ "<-------____\r\n" + 
-					"         /    \\  __ _____,\r\n" + 
-					"    `-- |  o   \\'  `  &&/\r\n" + 
-					"       `|      | o  },-'\r\n" + 
-					"         \\____( )__/\r\n" + 
-					"         ,'    \\'   \\\r\n" + 
-					" /~~~~~~|.      |   .}~~~\\\r\n" + 
-					"  ,-----( .     |   .}--.\r\n" + 
-					"        | .    /\\___/\r\n" + 
-					"         `----^,\\ \\\r\n" + 
-					"                \\_/"
-					+ "      NO PHOTO REGISTER   ", 1);
+				+ "   .-.\r\n" + 
+				  "  /'v'\\\r\n" + 
+				  " (/   \\)\r\n" + 
+				  "='=\"=\"===< \r\n" + 
+				  "   |_|", 1);
 				break;
 			case 1:
 				printer.typeWriter(""
-						+ " -'\"\"\"`-.\r\n" + 
-						" .'  .-.-.  `.\r\n" + 
-						"/ |--| | |--| \\\r\n" + 
-						"| |  `-^-'  | |\r\n" + 
-						"\\_/   (_)   \\_/\r\n" + 
-						"||           ||\r\n" + 
-						"\\_)         (_/\r\n" + 
-						"  \".       .\"\r\n" + 
-						"    |  |  |\r\n" + 
-						"    |  |  |     \r\n" + 
-						"   (___|___)"
-						+ "NO PHOTO REGISTER", 1);
+					   +"   \\\\\r\n" + 
+						"   (o>\r\n" + 
+						"\\\\_//)\r\n" + 
+						" \\_/_)\r\n" + 
+						"  _|_", 1);
 				break;
 			case 2:
 				printer.typeWriter(""
@@ -105,25 +91,24 @@ Random myRandom = new Random();
 				break;
 			case 4:
 				printer.typeWriter(""
-						+ "         _  .   .   .\r\n" + 
-						"         .' '; '-' '-'|-.\r\n" + 
-						"        (     '------.'  )\r\n" + 
-						"         ;            \\ /\r\n" + 
-						"          :     '   ' |/\r\n" + 
-						"          '._._       \\    .;\r\n" + 
-						"         .-'   ;--.    '--' /\r\n" + 
-						"        /      \\-'---.___.'\r\n" + 
-						"       |     / 7 \\(>o<) /\\\r\n" + 
-						"       |     | \\ |  . \\   \\\r\n" + 
-						"       |=====|   |  .  \\ |-)\r\n" + 
-						"        |-'-'   ./_.-._.\\|\"\r\n" + 
-						"        '-.----'        |\r\n" + 
-						"          |       |     |\r\n" + 
-						"          |     | |   | |\r\n" + 
-						"          |_____|_|___|_|\r\n" + 
-						"          (-------',----'.\r\n" + 
-						"           '-'-----'-----'"
-						+ "      NO PHOTO REGISTER ", 1);
+					  + "		 /\\\\\r\n" + 
+					  "		  .\\\\\\..\r\n" + 
+					  "		  \\\\   \\\\\r\n" + 
+					  "		  \\ (o) /\r\n" + 
+					  "		  (/    \\\r\n" + 
+					  "		   /\\    \\\r\n" + 
+					  "		  ///     \\\r\n" + 
+					  "		 ///|     |\r\n" + 
+					  "		////|     |\r\n" + 
+					  "	   //////   [    /\r\n" + 
+					  "	   |////    [   /\r\n" + 
+					  "	  /|////--    V/  \r\n" + 
+					  "	 //\\//|   |\r\n" + 
+					  "     ___////__\\___\\__________\r\n" + 
+					  "    ()_________'___'_________)\r\n" + 
+					  "	\\\\\\\\\r\n" + 
+					  "	  \\\\\\\r\n" + 
+					  "           \\\\", 1);
 				break;	
 				}
 			}

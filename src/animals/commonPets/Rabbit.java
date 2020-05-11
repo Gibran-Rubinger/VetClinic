@@ -37,7 +37,7 @@ public class Rabbit extends Animals implements Ianimals {
 	public void info() {
 		// TODO Auto-generated method stub
 		printer.typeWriter(" Hi my name is "+getName()+" I am a "+getGender()+" and I am very happy to meet you today.\n"
-				+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I born.", 60);	
+				+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I was born.", 60);	
 			
 				
 		query.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");

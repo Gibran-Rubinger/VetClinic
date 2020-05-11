@@ -17,7 +17,7 @@ public class AnimalSearch{
 	AnimalFactory fac = new AnimalFactory();
 
 	int idS =0;
-	String specie = query.getUserInput();
+	String specie = "";
 	
 //	AnimalFactory factory = new AnimalFactory(null);
 
@@ -50,6 +50,7 @@ public class AnimalSearch{
             	  query.GettingNumber("\n Please type the Specie you looking for: ", "", 4);
             	 try {
 					String userInput = myReader.readLine();
+					specie = userInput;
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
