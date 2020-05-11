@@ -1,6 +1,7 @@
 package animals.birds;
 
 import animals.*;
+
 import java.util.Random;
 
 import graphical.Graphical;
@@ -47,12 +48,12 @@ Random myRandom = new Random();
 		
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
-			int imageGenerator = myRandom.nextInt(5);
+			int imageGenerator = myRandom.nextInt(4);
 //			picture 1
 			switch(imageGenerator) {
-			case 1: 
+			case 0: 
 			printer.typeWriter(""
-					+ "<------- ____\r\n" + 
+					+ "<-------____\r\n" + 
 					"         /    \\  __ _____,\r\n" + 
 					"    `-- |  o   \\'  `  &&/\r\n" + 
 					"       `|      | o  },-'\r\n" + 
@@ -65,9 +66,9 @@ Random myRandom = new Random();
 					"                \\_/"
 					+ "      NO PHOTO REGISTER   ", 1);
 				break;
-			case 2:
+			case 1:
 				printer.typeWriter(""
-						+ "-'\"\"\"`-.\r\n" + 
+						+ " -'\"\"\"`-.\r\n" + 
 						" .'  .-.-.  `.\r\n" + 
 						"/ |--| | |--| \\\r\n" + 
 						"| |  `-^-'  | |\r\n" + 
@@ -80,7 +81,7 @@ Random myRandom = new Random();
 						"   (___|___)"
 						+ "NO PHOTO REGISTER", 1);
 				break;
-			case 3:
+			case 2:
 				printer.typeWriter(""
 						+ "\\,`/ / \r\n" + 
 						" _)..  `_\r\n" + 
@@ -90,9 +91,9 @@ Random myRandom = new Random();
 						"   _||_ ~-/  "
 						+ "NO PHOTO REGISTER", 1);
 				break;
-			case 4:
+			case 3:
 				printer.typeWriter(""
-						+ "     .-\"-.\r\n" + 
+						+ "      .-\"-.\r\n" + 
 						"       /  - -\\\r\n" + 
 						"       \\  @ @/\r\n" + 
 						"        (_ <_)\r\n" + 
@@ -103,9 +104,9 @@ Random myRandom = new Random();
 						"     ((__|__))"
 						+ "NO PHOTO REGISTER", 1);
 				break;
-			case 5:
+			case 4:
 				printer.typeWriter(""
-						+ "     _  .   .   .\r\n" + 
+						+ "         _  .   .   .\r\n" + 
 						"         .' '; '-' '-'|-.\r\n" + 
 						"        (     '------.'  )\r\n" + 
 						"         ;            \\ /\r\n" + 
@@ -130,6 +131,7 @@ Random myRandom = new Random();
 		else if (query.getUserYesOrNoValidOptio() == 0){
 			printer.typeWriter("Ok, see you later", 50);
 		}
+
 
 			System.out.println();
 		}

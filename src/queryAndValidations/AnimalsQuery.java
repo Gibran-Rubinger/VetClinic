@@ -15,7 +15,7 @@ public class AnimalsQuery {
 		query.YesOrNo(3, "\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
 		if (query.getUserYesOrNoValidOptio() == 1) {
 			query.MultipleChoise(3,
-					"\n \n Grand. \nThe animals in our database is devided in 6  sub categories written bellow: \n"
+					"\n \n Grand. \nThe animals in our database is devided in 7  sub categories written bellow: \n"
 							+ "           \n 1 - COMMON PETZ: " + "\n"
 							+ "             |    DOGS       |       CATS         |       DOMESTIC PIG     |        RABBIT     |     HAMISTER     |        GUINEA PIG        |"
 							+ "\n" + "    \n 2 - BIRDS: " + "\n"

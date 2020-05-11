@@ -40,17 +40,17 @@ public class Hamister extends Animals implements Ianimals {
 	public void info() {
 		// TODO Auto-generated method stub
 		printer.typeWriter(" Hi my name is "+getName()+" I am a "+getGender()+" and I am very happy to meet you today.\n"
-				+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I born.", 60);		
+				+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I was born.", 60);		
 						
 				
 		query.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
 		
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
-			int imageGenerator = myRandom.nextInt(5);
+			int imageGenerator = myRandom.nextInt(4);
 //			picture 1
 			switch(imageGenerator) {
-			case 1: 
+			case 0: 
 			printer.typeWriter(
 					""
 					+ "\r\n" + 
@@ -62,7 +62,7 @@ public class Hamister extends Animals implements Ianimals {
 					"                                '~  '~----''\r\n" + 
 					"", 1);
 				break;
-			case 2:
+			case 1:
 				printer.typeWriter(""
 						+ " ,     .\r\n" + 
 						"                       (\\,;,/)\r\n" + 
@@ -72,22 +72,22 @@ public class Hamister extends Animals implements Ianimals {
 						"                            //  \\   |_./\r\n" + 
 						"                          '~' '~----'  ", 1);
 				break;
-			case 3:
+			case 2:
 				printer.typeWriter(""
-						+ "  (`-()_.-=-.\r\n" + 
+						+ "     (`-()_.-=-.\r\n" + 
 						"       /66  ,  ,  \\\r\n" + 
 						"     =(o_/=//_(   /======`\r\n" + 
 						"         ~\"` ~\"~~`", 1);
 				break;
-			case 4:
+			case 3:
 				printer.typeWriter(""
-						+ "          ___\r\n" + 
+						+ "        ___\r\n" + 
 						" _  _  .-'   '-.\r\n" + 
 						"(.)(.)/         \\   \r\n" + 
 						" /@@             ;\r\n" + 
 						"o_\\\\-mm-......-mm`~~~~~~~", 1);
 				break;
-			case 5:
+			case 4:
 				printer.typeWriter(""
 						+ "              _,_\r\n" + 
 						"           _.-~' o'~;,\r\n" + 

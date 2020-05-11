@@ -148,14 +148,14 @@ public class Animals {
 	public void info() {
 		
 			printer.typeWriter(" Hi my name is "+getName()+" I am a "+getGender()+" and I am very happy to meet you today.\n"
-					+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I born.", 60);	
+					+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I was born.", 60);	
 			
 				
 			query.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
 		
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
-			int imageGenerator = myRandom.nextInt(5);
+			int imageGenerator = myRandom.nextInt(4);
 	}
 		else if (query.getUserYesOrNoValidOptio() == 0){
 			printer.typeWriter("Ok, see you later", 50);

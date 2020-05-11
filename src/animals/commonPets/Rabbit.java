@@ -44,13 +44,13 @@ public class Rabbit extends Animals implements Ianimals {
 		
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
-			int imageGenerator = myRandom.nextInt(5);
+			int imageGenerator = myRandom.nextInt(4);
 //			picture 1
 			switch(imageGenerator) {
-			case 1: 
+			case 0: 
 			printer.typeWriter(
 					""
-					+ "         __\r\n" + 
+					+ "                              __\r\n" + 
 					"                     /\\    .-\" /\r\n" + 
 					"                    /  ; .'  .' \r\n" + 
 					"                   :   :/  .'   \r\n" + 
@@ -66,9 +66,9 @@ public class Rabbit extends Animals implements Ianimals {
 					" bug ;     \"-,/_..--\"`-..__)    \r\n" + 
 					"     '\"\"--.._:", 1);
 				break;
-			case 2:
+			case 1:
 				printer.typeWriter(""
-						+ "         ,\r\n" + 
+						+ "       ,\r\n" + 
 						"        /|      __\r\n" + 
 						"       / |   ,-~ /\r\n" + 
 						"      Y :|  //  /\r\n" + 
@@ -88,7 +88,7 @@ public class Rabbit extends Animals implements Ianimals {
 						" ]\\      _\\    /\"\\\r\n" + 
 						"(\" ~----( ~   Y.  )", 1);
 				break;
-			case 3:
+			case 2:
 				printer.typeWriter(""
 						+ "/ \\\r\n" + 
 						"    / _ \\\r\n" + 
@@ -112,18 +112,18 @@ public class Rabbit extends Animals implements Ianimals {
 						"       \\     /\r\n" + 
 						"       |     |", 1);
 				break;
-			case 4:
+			case 3:
 				printer.typeWriter(""
-						+ "       ((`\\\r\n" + 
+						+ "            ((`\\\r\n" + 
 						"            ___ \\\\ '--._\r\n" + 
 						"         .'`   `'    o  )\r\n" + 
 						"        /    \\   '. __.'\r\n" + 
 						"       _|    /_  \\ \\_\\_\r\n" + 
 						"      {_\\______\\-'\\__\\_\\", 1);
 				break;
-			case 5:
+			case 4:
 				printer.typeWriter(""
-						+ "              ,\\\r\n" + 
+						+ "           ,\\\r\n" + 
 						"             \\\\\\,_\r\n" + 
 						"              \\` ,\\\r\n" + 
 						"         __,.-\" =__)\r\n" + 
