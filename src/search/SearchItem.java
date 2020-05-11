@@ -17,16 +17,17 @@ public class SearchItem extends AnimalFactory {
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
 	
-
+	
+	
 	public Animals SearchAnimalById(Animals animal) {
+//		for(Animals print: listOfAnimals) {
+//			System.out.println(print);
+//		}
 		for (Animals id : listOfAnimals){
-			// listOfAnimals.get(check).getIdAnimal();
-			if (animal.equals(id)){
-				printer.typeWriter("\n Your search was successful:  ", 50);
-				return animal;
+			if (id.equals(animal.getIdAnimal())){
+//				printer.typeWriter("\n Your search was successful:  ", 50);
+				return id;
 			}
-				
-			return listOfAnimals.get(i);	
 		}
 		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
 		return null;

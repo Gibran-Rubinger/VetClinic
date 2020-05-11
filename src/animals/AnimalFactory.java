@@ -32,7 +32,7 @@ public class AnimalFactory {
 	AnimalsData database = new AnimalsData();
 
 //	generate the Array to storage the random Animals.
-	public static List<Animals> listOfAnimals;
+	protected static List<Animals> listOfAnimals;
 	
 	public AnimalFactory() {
 		listOfAnimals = new ArrayList<Animals>();
