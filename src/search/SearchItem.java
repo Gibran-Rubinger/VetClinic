@@ -26,11 +26,8 @@ public class SearchItem extends AnimalFactory {
 		for (Animals animal : listOfAnimals){
 			
 			if (idSearch == animal.getIdAnimal()){
-				printer.typeWriter("\n Your search was successful:  \n", 50);
-				System.out.println(animal);
-				animal.info();
+				printer.typeWriter("\n Your search was successful:  ", 50);
 				return animal;
-				
 			}
 		}
 		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
@@ -43,7 +40,7 @@ public class SearchItem extends AnimalFactory {
 //			using the if statement to check in the file  with titles and content and generate the object.
 			if (listOfAnimals.get(i).getSpecies().contains(keyword) ) {
 				foundSpecie.add(listOfAnimals.get(i));
-				printer.typeWriter("\n Your search was successful:  \n", 50);
+				printer.typeWriter("\n Your search was successful:  ", 50);
 				return foundSpecie;
 			}
 		}

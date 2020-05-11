@@ -109,9 +109,9 @@ public class Dog extends Animals implements Ianimals {
 			break;	
 			}
 		}
-		else if (query.getUserYesOrNoValidOptio() == 0) {
-			printer.typeWriter("Ok, see you later", 50);
-		}
+	else if (query.getUserYesOrNoValidOptio() == 0){
+		printer.typeWriter("Ok, see you later", 50);
+	}
 
 		System.out.println();
 	}
