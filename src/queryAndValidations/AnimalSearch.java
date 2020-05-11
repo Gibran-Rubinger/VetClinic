@@ -43,12 +43,12 @@ public class AnimalSearch{
 			
 			
               if(query.userMultipleChoiseValidOption == 1) {
-            	  query.GettingNumber("\n Please type the ID you looking for: ", 4);
+            	  query.GettingNumber("\n Please type the ID you looking for: ", "", 4);
             	Animals animalTester1 = new  Animals(idS, null, 0, null, null, null); 
             	  where.SearchAnimalById(animalTester1);
                 }
               else if(query.userMultipleChoiseValidOption == 2) { 
-            	  query.GettingNumber("\n Please type the Specie you looking for: ", 4);
+            	  query.GettingNumber("\n Please type the Specie you looking for: ", "", 4);
             	 try {
 					String userInput = myReader.readLine();
 				} catch (IOException e) {

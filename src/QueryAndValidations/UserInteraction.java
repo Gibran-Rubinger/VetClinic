@@ -23,7 +23,6 @@ public class UserInteraction {
 	int countdown = 0;
 	int display = 0;
 	int bunch = 0;
-	
 
 //	Those are the pool of valid options typing for the client. 
 	String validAnswer1 = "yes";
@@ -37,6 +36,7 @@ public class UserInteraction {
 //	instantiate of Scanner.
 	Scanner myScanner = new Scanner(System.in);
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
+
 //	this a method to verification by Yes or No choice with bug message when exceed attempt from the client.
 	public void YesOrNo(int attempt, String text) {
 
@@ -64,13 +64,12 @@ public class UserInteraction {
 				else if (validAnswer3.equalsIgnoreCase(userInput) || validAnswer4.equalsIgnoreCase(userInput)) {
 					userYesOrNoValidOption = 0;
 					bugRunning = false;
-				}
-				else {
+				} else {
 					throw new CustomExceptions();
 				}
 //					in this part start to count how many left attempts has.
-			}catch (Exception e) {
-				Bug(text, attempt);
+			} catch (Exception e) {
+				Bug(text, null, attempt);
 			}
 
 		} while (bugRunning == true);
@@ -139,21 +138,22 @@ public class UserInteraction {
 //		calling the bug message.
 			catch (CustomExceptions e) {
 //				System.out.println(e.getMessage());
-				Bug(text, attempt);
+				Bug(text, "", attempt);
 			} catch (Exception e) {
 
-				Bug(text, attempt);
+				Bug(text, "", attempt);
 //								
 			}
 		} while (bugRunning == true);
 	}
 
-	public int GettingNumber(String text, int attempt) {
+	public int GettingNumber(String text, String text2, int attempt) {
 
 		countdown = attempt;
 		display = attempt;
 //		setting the graphical with the milliseconds  preferred.
 		printer.typeWriter(text, 50);
+		printer.typeWriter(text2, 7);
 
 //		Assign the attribute userInput with the client typing.
 		do {
@@ -167,15 +167,15 @@ public class UserInteraction {
 //			calling the bug message.
 			catch (Exception e) {
 
-				Bug(text, attempt);
+				Bug(text, "", attempt);
 			}
 		} while (bugRunning == true);
 
 		return bunch;
 	}
-	
-	public void Bug(String text, int attempt) {
-		
+
+	public void Bug(String text, String text2, int attempt) {
+
 		printer.typeWriter(
 				"Sorry, I can not understand what you type in. Please follow the menu guidelines and type a valid option",
 				60);
@@ -248,7 +248,4 @@ public class UserInteraction {
 		return 0;
 	}
 
-	
-
 }
-
