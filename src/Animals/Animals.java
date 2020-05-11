@@ -1,5 +1,12 @@
 package animals;
 
+import static animals.Ianimals.query;
+
+import java.util.Random;
+
+import graphical.Graphical;
+import queryAndValidations.UserInteraction;
+
 public class Animals {
 
 //  attributes
@@ -10,6 +17,10 @@ public class Animals {
 	private String gender = "";
 	private String medicalCond = "";
 
+	Graphical printer = new Graphical();
+	UserInteraction query = new UserInteraction();
+	Random myRandom = new Random();
+	AnimalOwner owner = new AnimalOwner(null, null, 0, 0, 0);
 
 	
 //	constructor
@@ -133,5 +144,21 @@ public class Animals {
 			return false;
 		return true;
 	}
-	
+
+	public void info() {
+		
+			printer.typeWriter(" Hi my name is "+getName()+" I am a "+getGender()+" and I am very happy to meet you today.\n"
+					+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I born.", 60);	
+			
+				
+			query.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
+		
+		if (query.getUserYesOrNoValidOptio() == 1) {
+
+			int imageGenerator = myRandom.nextInt(5);
+	}
+		else if (query.getUserYesOrNoValidOptio() == 0){
+			printer.typeWriter("Ok, see you later", 50);
+		}
+	}
 }

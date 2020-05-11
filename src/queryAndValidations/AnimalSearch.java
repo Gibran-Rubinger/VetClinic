@@ -16,7 +16,7 @@ public class AnimalSearch{
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));	
 	AnimalFactory fac = new AnimalFactory();
 
-	int idS = query.getBunch();
+	int idS =0;
 	String specie = query.getUserInput();
 	
 //	AnimalFactory factory = new AnimalFactory(null);
@@ -43,7 +43,7 @@ public class AnimalSearch{
 			
               if(query.getUserMultipleChoiseValidOption() == 1) {
             	  query.GettingNumber("\n Please type the ID you looking for: ", "", 4);
-//            	Animals animalTester1 = new  Animals(idS, null, 0, null, null, null); 
+            	  idS = query.getBunch();
             	  where.SearchAnimalById(idS);
                 }
               else if(query.getUserMultipleChoiseValidOption() == 2) { 
