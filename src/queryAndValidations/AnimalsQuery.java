@@ -1,5 +1,4 @@
 package queryAndValidations;
-import java.util.*;
 import animals.AnimalFactory;
 import graphical.Graphical;
 import search.SearchItem;
@@ -14,7 +13,7 @@ public class AnimalsQuery {
 	int quantityOfAnimals = 0;
 	public void AnimalsChoise() {
 		query.YesOrNo(3, "\n\n\n\n Would you like to create a bunch of animals now?  \n\n type Yes or No.");
-		if (query.userYesOrNoValidOption == 1) {
+		if (query.getUserYesOrNoValidOptio() == 1) {
 			query.MultipleChoise(3,
 					"\n \n Grand. \nThe animals in our database is devided in 6  sub categories written bellow: \n"
 							+ "           \n 1 - COMMON PETZ: " + "\n"
@@ -35,7 +34,7 @@ public class AnimalsQuery {
 							+ "_______________________________________________________________________________________________________________________________________________"
 							+ "\n"
 							+ "                               *   Please press the number of the sub category would you like to chosee   *\n",1,7);
-			if (query.userMultipleChoiseValidOption == 1) {
+			if (query.getUserMultipleChoiseValidOption() == 1) {
 				query.GettingNumber("\n\n " + "Nice. " + "\n\n COMMON PETS"
 						+ "\n\n How many Animals would you like to create?"
 						+ "\n 		please type at least 1000 animals.. we are trying to keep ourself busy here =)",
@@ -46,7 +45,7 @@ public class AnimalsQuery {
 				myAnimals.CommonPets(quantityOfAnimals);
 			}
 
-			else if (query.userMultipleChoiseValidOption == 2) {
+			else if (query.getUserMultipleChoiseValidOption() == 2) {
 				query.GettingNumber("\n\n " + "I like your choise." + "\n\n BIRDS"
 						+ "\n\n How many Animals would you like to create? "
 						+ "\n 		please type at least 1000 animals.. we are trying to keep ourself busy here =)", 
@@ -54,7 +53,7 @@ public class AnimalsQuery {
 						+ "can deal before crash >)  ... " + "\n", 3);
 				 quantityOfAnimals = query.getBunch();
 				myAnimals.Birds(quantityOfAnimals);
-			} else if (query.userMultipleChoiseValidOption == 3) {
+			} else if (query.getUserMultipleChoiseValidOption() == 3) {
 				query.GettingNumber("\n\n " + "Grand." + "\n\n FISH"
 						+ "\n\n how many Animals would you like to create?"
 						+ "\n 		please type at least 1000 animals.. we are trying to keep ourself busy here =)",
@@ -62,7 +61,7 @@ public class AnimalsQuery {
 						+ "can deal before crash >)  ... " + "\n", 3);
 				 quantityOfAnimals = query.getBunch();
 				myAnimals.Fish(quantityOfAnimals);
-			} else if (query.userMultipleChoiseValidOption == 4) {
+			} else if (query.getUserMultipleChoiseValidOption() == 4) {
 				query.GettingNumber("\n\n " + "Dont tell for everyone ...  I thik have a reptile as pet is exotic to.."
 						+ "\n\n REPTILES"
 						+ "\n\n How many Animals would you like to create?"
@@ -71,7 +70,7 @@ public class AnimalsQuery {
 						+ "can deal before crash >)  ... " + "\n", 3);
 				 quantityOfAnimals = query.getBunch();
 				myAnimals.Reptile(quantityOfAnimals);
-			} else if (query.userMultipleChoiseValidOption == 5) {
+			} else if (query.getUserMultipleChoiseValidOption() == 5) {
 				query.GettingNumber("\n\n " + "Yay. we will wokr outdoors to helps some Animals " + "\n\n FARM"
 						+ "\n\n how many Animals would you like to create?"
 						+ "\n 		please type at least 1000 animals.. we are trying to keep ourself busy here =)", 
@@ -79,7 +78,7 @@ public class AnimalsQuery {
 						+ "can deal before crash >)  ... " + "\n", 3);
 				 quantityOfAnimals = query.getBunch();
 				myAnimals.Farm(quantityOfAnimals);
-			} else if (query.userMultipleChoiseValidOption == 6) {
+			} else if (query.getUserMultipleChoiseValidOption() == 6) {
 				query.GettingNumber("\n\n " + "Just weird people chose this option ... just saying.  " + "\n\n EXOTIC"
 						+ "\n\n How many Animals would you like to create?"
 						+ "\n 		please type at least 1000 animals.. we are trying to keep ourself busy here =)", 
@@ -87,7 +86,7 @@ public class AnimalsQuery {
 						+ "can deal before crash >)  ... " + "\n", 3);
 				 quantityOfAnimals = query.getBunch();
 				myAnimals.Exotic(quantityOfAnimals);
-			} else if (query.userMultipleChoiseValidOption == 7) {
+			} else if (query.getUserMultipleChoiseValidOption() == 7) {
 				query.GettingNumber("\n\n " + "I knew it!   you looks nuts." + "\n\n CRAZY"
 						+ "\n\n How many Animals would you like to create?"
 						+ "\n 		please type at least 1000 animals.. we are trying to keep ourself busy here =)", 
@@ -97,7 +96,7 @@ public class AnimalsQuery {
 				myAnimals.Crazy(quantityOfAnimals);
 			} 
 			
-		} else if (query.userYesOrNoValidOption == 0) {
+		} else if (query.getUserYesOrNoValidOptio() == 0) {
 			printer.typeWriter("Ok, see you later", 50);
 		}
 	}

@@ -1,6 +1,5 @@
 package animals;
 //import java.security.Policy;
-import java.util.*;
 public class AnimalsData {
 //		generating the Array for populating the objects.
 		String[] poolOfOwnerNames = {"Carolina","Alcione","Livia","Fatima","Carla","Fabiola","Dercio","Alirio","Adair","Adilson","Adriano","Afranio","Alessadra",

@@ -19,14 +19,15 @@ public class SearchItem extends AnimalFactory {
 	
 	
 	
-	public Animals SearchAnimalById(Animals animal) {
+	public Animals SearchAnimalById(int idSearch) {
 //		for(Animals print: listOfAnimals) {
 //			System.out.println(print);
 //		}
-		for (Animals id : listOfAnimals){
-			if (id.equals(animal.getIdAnimal())){
-//				printer.typeWriter("\n Your search was successful:  ", 50);
-				return id;
+		for (Animals animal : listOfAnimals){
+			
+			if (idSearch == animal.getIdAnimal()){
+				printer.typeWriter("\n Your search was successful:  ", 50);
+				return animal;
 			}
 		}
 		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);

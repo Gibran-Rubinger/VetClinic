@@ -1064,7 +1064,7 @@ public class AnimalFactory {
 	}
 
 	public void setListOfAnimals(List<Animals> listOfAnimals) {
-		this.listOfAnimals = listOfAnimals;
+		AnimalFactory.listOfAnimals = listOfAnimals;
 	}
 
 //___________________________________________________________________________

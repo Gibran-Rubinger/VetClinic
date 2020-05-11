@@ -1,6 +1,5 @@
 package queryAndValidations;
 
-import java.util.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -10,19 +9,17 @@ import graphical.*;
 
 public class UserInteraction {
 //	Attributes
-	String userInput = "";
-	protected int userInputInt = 0;
-
-//	This attribute is responsible for validation the algorithm. Initialising the with a key value.
-	public int userYesOrNoValidOption = 1000;
-	public int userMultipleChoiseValidOption = 1000;
+	private String userInput = "";
+	private int userInputInt = 0;
+	private int userYesOrNoValidOption = 1000;
+	private int userMultipleChoiseValidOption = 1000;
 //	This attribute is responsible to count the numbers of attempts left to trigger the bug message.
 
-	boolean bugRunning = true;
+	private boolean bugRunning = true;
 
-	int countdown = 0;
-	int display = 0;
-	int bunch = 0;
+	private int countdown = 0;
+	private int display = 0;
+	private int bunch = 0;
 
 //	Those are the pool of valid options typing for the client. 
 	String validAnswer1 = "yes";
@@ -93,43 +90,43 @@ public class UserInteraction {
 				}
 //  			check if  the client choose yes.								
 				else if (userInputInt == 0) {
-					userMultipleChoiseValidOption = 0;
+					setUserMultipleChoiseValidOption(0);
 					bugRunning = false;
 
 				} else if (userInputInt == 1) {
-					userMultipleChoiseValidOption = 1;
+					setUserMultipleChoiseValidOption(1);
 					bugRunning = false;
 
 				} else if (userInputInt == 2) {
-					userMultipleChoiseValidOption = 2;
+					setUserMultipleChoiseValidOption(2);
 					bugRunning = false;
 
 				} else if (userInputInt == 3) {
-					userMultipleChoiseValidOption = 3;
+					setUserMultipleChoiseValidOption(3);
 					bugRunning = false;
 
 				} else if (userInputInt == 4) {
-					userMultipleChoiseValidOption = 4;
+					setUserMultipleChoiseValidOption(4);
 					bugRunning = false;
 
 				} else if (userInputInt == 5) {
-					userMultipleChoiseValidOption = 5;
+					setUserMultipleChoiseValidOption(5);
 					bugRunning = false;
 
 				} else if (userInputInt == 6) {
-					userMultipleChoiseValidOption = 6;
+					setUserMultipleChoiseValidOption(6);
 					bugRunning = false;
 
 				} else if (userInputInt == 7) {
-					userMultipleChoiseValidOption = 7;
+					setUserMultipleChoiseValidOption(7);
 					bugRunning = false;
 
 				} else if (userInputInt == 8) {
-					userMultipleChoiseValidOption = 8;
+					setUserMultipleChoiseValidOption(8);
 					bugRunning = false;
 
 				} else if (userInputInt == 9) {
-					userMultipleChoiseValidOption = 9;
+					setUserMultipleChoiseValidOption(9);
 					bugRunning = false;
 				}
 //			    Increasing the bug count.	
@@ -228,14 +225,8 @@ public class UserInteraction {
 
 	}
 
-	public int getBunch() {
-		return bunch;
-	}
 
-	public void setBunch(int bunch) {
-		this.bunch = bunch;
-	}
-
+//    getters and setters
 	public String getUserInput() {
 		return userInput;
 	}
@@ -244,8 +235,36 @@ public class UserInteraction {
 		this.userInput = userInput;
 	}
 
-	public int getUserYesOrNoValidOption() {
-		return 0;
+	public int getUserInputInt() {
+		return userInputInt;
+	}
+
+	public void setUserInputInt(int userInputInt) {
+		this.userInputInt = userInputInt;
+	}
+
+	public int getBunch() {
+		return bunch;
+	}
+
+	public void setBunch(int bunch) {
+		this.bunch = bunch;
+	}
+
+	public int getUserYesOrNoValidOptio() {
+		return userYesOrNoValidOption;
+	}
+
+	public void setUserYesOrNoValidOption(int userYesOrNoValidOption) {
+		this.userYesOrNoValidOption = userYesOrNoValidOption;
+	}
+
+	public int getUserMultipleChoiseValidOption() {
+		return userMultipleChoiseValidOption;
+	}
+
+	public void setUserMultipleChoiseValidOption(int userMultipleChoiseValidOption) {
+		this.userMultipleChoiseValidOption = userMultipleChoiseValidOption;
 	}
 
 }
