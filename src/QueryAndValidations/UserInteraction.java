@@ -88,58 +88,58 @@ public class UserInteraction {
 					bugRunning = false;
 					throw new CustomExceptions();
 				}
-//  			check if  the client choose yes.								
-				else if (userInputInt == 0) {
+//  			check if  the client choose yes.	
+				switch(userInputInt) {
+				case 0:
 					setUserMultipleChoiseValidOption(0);
 					bugRunning = false;
-
-				} else if (userInputInt == 1) {
+					break;
+				case 1:
 					setUserMultipleChoiseValidOption(1);
 					bugRunning = false;
-
-				} else if (userInputInt == 2) {
+					break;
+				case 2:
 					setUserMultipleChoiseValidOption(2);
 					bugRunning = false;
-
-				} else if (userInputInt == 3) {
+					break;
+				case 3:
 					setUserMultipleChoiseValidOption(3);
 					bugRunning = false;
-
-				} else if (userInputInt == 4) {
+					break;
+				case 4: 
 					setUserMultipleChoiseValidOption(4);
 					bugRunning = false;
-
-				} else if (userInputInt == 5) {
+					break;
+				case 5: 
 					setUserMultipleChoiseValidOption(5);
 					bugRunning = false;
-
-				} else if (userInputInt == 6) {
+					break;
+				case 6:
 					setUserMultipleChoiseValidOption(6);
 					bugRunning = false;
-
-				} else if (userInputInt == 7) {
+					break;
+				case 7:
 					setUserMultipleChoiseValidOption(7);
 					bugRunning = false;
-
-				} else if (userInputInt == 8) {
+					break;
+				case 8:
 					setUserMultipleChoiseValidOption(8);
 					bugRunning = false;
-
-				} else if (userInputInt == 9) {
+					break;
+				case 9:
 					setUserMultipleChoiseValidOption(9);
 					bugRunning = false;
 				}
-//			    Increasing the bug count.	
+
 			}
 
 //		calling the bug message.
 			catch (CustomExceptions e) {
-//				System.out.println(e.getMessage());
 				Bug(text, "", attempt);
 			} catch (Exception e) {
 
 				Bug(text, "", attempt);
-//								
+
 			}
 		} while (bugRunning == true);
 	}
@@ -224,7 +224,6 @@ public class UserInteraction {
 		}
 
 	}
-
 
 //    getters and setters
 	public String getUserInput() {
