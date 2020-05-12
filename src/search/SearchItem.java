@@ -11,8 +11,10 @@ import queryAndValidations.UserInteraction;
 
 public class SearchItem extends AnimalFactory {
 
-	Animals animal;
-	boolean found = true;
+
+ 	private boolean found = true;
+ 	private int idS = 0;
+ 	private String animalName = "";
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
@@ -52,7 +54,7 @@ public class SearchItem extends AnimalFactory {
 		
 		AnimalsToPrint();
 		if(found == false) {
-			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+			printer.typeWriter("\n sorry the animal Specie you type in was not found.  ", 50);
 		}
 		return null;
 	}
@@ -71,11 +73,12 @@ public class SearchItem extends AnimalFactory {
 		
 		AnimalsToPrint();
 		if(found == false) {
-			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+			printer.typeWriter("\n sorry the animal name you type in was not found.  ", 50);
 		}
 		return null;
 	}
-	
+
+
 	
 //_______________________________________________________________________________________
 //	printer.
@@ -88,5 +91,38 @@ public class SearchItem extends AnimalFactory {
 //			counting the numbers of item in the Array.
 			printer.typeWriter("\n The Total of Animals in the system is:  ", 50);
 			System.out.println(foundAnimal.size());
+			SearchInSearch();
+	}
+//_______________________________________________________________________________________
+//	calling the previous searches inside that one.
+
+	public void SearchInSearch() {
+		
+					query.MultipleChoise(3, "\n\nAs we have "+ foundAnimal.size() +" animals as a result, would you like to clarify a bit more? "
+							+ "\n you know how it works right? please choose one of the options below: "
+						    + "\n\n"
+							+ "             |           0 - CLOSE SEARCH:        |"
+							+ "\n\n"
+							+ "             |           1 - ID:                  |"
+							+ "\n\n"
+							+ "             |           2 - NAME:                |"
+							+ "\n\n"
+							+ "_____________________________________________________________________________________________________________________________________________________________"
+							+ "\n"
+							+ "                               *   Please press the number of the type of search would you like to do   *\n",
+							0, 2);
+				
+					if (query.getUserMultipleChoiseValidOption() == 0) {
+						printer.typeWriter("Ok, see you later", 50);
+					}else if (query.getUserMultipleChoiseValidOption() == 1) {
+						query.GettingNumber("\n Please type the ID you looking for: ", "", 4);
+						idS = query.getBunch();	
+						SearchAnimalById(idS);	
+					}else if (query.getUserMultipleChoiseValidOption() == 2) {
+						query.OnlyString(3, "\n Please type the name you looking for: "
+								+ "\n\n  *BE AWARE* I will put some faith that you will type the species exactly as it shown in your device. otherwise no deal for you. :\n\n");
+						animalName = query.getGoodToGo();
+						SearchName(animalName);
+					}
 	}
 }
