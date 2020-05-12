@@ -39,11 +39,17 @@ public class SearchItem extends AnimalFactory {
 	ArrayList<Animals> foundSpecie = new ArrayList<>(); 
 	public Collection<Animals> SearchSpecies(String keyword) {
 //		checking the all objects.
-		for (int i = 0; i < listOfAnimals.size(); i++) {
+		for (Animals animal : listOfAnimals) {
 //			using the if statement to check in the file  with titles and content and generate the object.
-			if (listOfAnimals.get(i).getSpecies().contains(keyword) ) {
-				foundSpecie.add(listOfAnimals.get(i));
+			if (animal.getSpecies().contains(keyword) ) {
+				foundSpecie.add(animal);
 				printer.typeWriter("\n Your search was successful:  \n", 50);
+				for (Animals animalfound : foundSpecie) {
+				System.out.println(animalfound);	
+				}
+//				counting the numbers of item in the Array.
+				printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
+				System.out.println(foundSpecie.size());
 				return foundSpecie;
 			}
 		}

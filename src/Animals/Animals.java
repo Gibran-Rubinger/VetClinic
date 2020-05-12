@@ -1,13 +1,11 @@
 package animals;
 
-import static animals.Ianimals.query;
-
 import java.util.Random;
 
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 
-public class Animals {
+public abstract class Animals {
 
 //  attributes
 	private int idAnimal = 0;
@@ -155,6 +153,7 @@ public class Animals {
 		
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
+			@SuppressWarnings("unused")
 			int imageGenerator = myRandom.nextInt(4);
 	}
 		else if (query.getUserYesOrNoValidOptio() == 0){

@@ -1,7 +1,5 @@
 package animals.reptile;
 
-import static animals.Ianimals.query;
-
 import java.util.Random;
 import animals.*;
 import graphical.Graphical;
