@@ -12,12 +12,10 @@ import queryAndValidations.UserInteraction;
 public class SearchItem extends AnimalFactory {
 
 	Animals animal;
-	int check = 0;
+	boolean found = true;
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
-	
-	
 	
 	public Animals SearchAnimalById(int idSearch) {
 //		for(Animals print: listOfAnimals) {
@@ -33,29 +31,37 @@ public class SearchItem extends AnimalFactory {
 				
 			}
 		}
+		
 		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
 		return null;
 	}
+	
 	ArrayList<Animals> foundSpecie = new ArrayList<>(); 
+	
 	public Collection<Animals> SearchSpecies(String keyword) {
 //		checking the all objects.
 		for (Animals animal : listOfAnimals) {
 //			using the if statement to check in the file  with titles and content and generate the object.
 			if (animal.getSpecies().contains(keyword) ) {
 				foundSpecie.add(animal);
-				printer.typeWriter("\n Your search was successful:  \n", 50);
-				for (Animals animalfound : foundSpecie) {
-				System.out.println(animalfound);	
-				}
-//				counting the numbers of item in the Array.
-				printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
-				System.out.println(foundSpecie.size());
-				return foundSpecie;
+				found = true;
 			}
 		}
-		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		
+		SpeciesToPrint();
+		if(found == false) {
+			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		}
 		return null;
 	}
-
-
+	public  void SpeciesToPrint() {
+		for (Animals animalfound : foundSpecie) {
+			System.out.println(animalfound);	
+			}
+		printer.typeWriter("\n Your search was successful:  \n", 50);
+//			counting the numbers of item in the Array.
+			printer.typeWriter("\n The Total of Animals in the system is:  ", 50);
+			System.out.println(foundSpecie.size());
+			
+	}
 }

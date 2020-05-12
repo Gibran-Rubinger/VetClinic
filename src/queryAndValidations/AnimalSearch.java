@@ -1,7 +1,6 @@
 package queryAndValidations;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 import animals.AnimalFactory;
@@ -47,14 +46,9 @@ public class AnimalSearch{
             	  where.SearchAnimalById(idS);
                 }
               else if(query.getUserMultipleChoiseValidOption() == 2) { 
-            	  query.GettingNumber("\n Please type the Specie you looking for: ", "", 4);
-            	 try {
-					String userInput = myReader.readLine();
-					specie = userInput;
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+            	  query.OnlyString(3, "\n Please type the Specie you looking for: "
+            	  		+ "\n Please type the specie as you see in your device:\n\n");
+            	 specie = query.getGoodToGo();
             	  where.SearchSpecies(specie);
               }
               else if(query.getUserMultipleChoiseValidOption() == 3) { 

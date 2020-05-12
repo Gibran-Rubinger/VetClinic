@@ -309,4 +309,12 @@ public class UserInteraction {
 		this.userMultipleChoiseValidOption = userMultipleChoiseValidOption;
 	}
 
+	public String getGoodToGo() {
+		return goodToGo;
+	}
+
+	public void setGoodToGo(String goodToGo) {
+		this.goodToGo = goodToGo;
+	}
+
 }
