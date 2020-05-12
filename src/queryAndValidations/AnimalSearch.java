@@ -15,8 +15,9 @@ public class AnimalSearch{
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));	
 	AnimalFactory fac = new AnimalFactory();
 
-	int idS =0;
-	String specie = "";
+	private int idS =0;
+	private String specie = "";
+	private String animalName = "";
 	
 //	AnimalFactory factory = new AnimalFactory(null);
 
@@ -46,14 +47,17 @@ public class AnimalSearch{
             	  where.SearchAnimalById(idS);
                 }
               else if(query.getUserMultipleChoiseValidOption() == 2) { 
+//            	  would be possible implement a method similar to YesOrNo and check all the species names to case sensitive BUT we don't afford the time to do it. 
             	  query.OnlyString(3, "\n Please type the Specie you looking for: "
-            	  		+ "\n Please type the specie as you see in your device:\n\n");
+            	  		+ "\n\n  *BE AWARE* I will put some faith that you will type the species exactly as it shown in your device. otherwise no deal for you. :\n\n");
             	 specie = query.getGoodToGo();
             	  where.SearchSpecies(specie);
               }
               else if(query.getUserMultipleChoiseValidOption() == 3) { 
-            	  System.out.println("\n no implemented yet");
-            	  System.out.println(fac.getListOfAnimals());
+            	  query.OnlyString(3, "\n Please type the name you looking for: "
+              	  		+ "\n\n  *BE AWARE* I will put some faith that you will type the species exactly as it shown in your device. otherwise no deal for you. :\n\n");
+              	 animalName = query.getGoodToGo();
+              	 where.SearchName(animalName);
               }
               else if(query.getUserMultipleChoiseValidOption() == 4) { 
             	  System.out.println("\n no implemented yet");
