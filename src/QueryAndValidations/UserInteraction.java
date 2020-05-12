@@ -20,6 +20,15 @@ public class UserInteraction {
 	private int countdown = 0;
 	private int display = 0;
 	private int bunch = 0;
+	
+	/*
+	 * Regular expression from java
+	 * -? – this part identifies if the given number is negative, the dash “–” searches for dash literally and the question mark “?” marks its presence as an optional one
+\d+ – this searches for one or more digits
+(\.\d+)? – this part of regex is to identify float numbers. Here we're searching for one or more digits followed by a period. The question mark, in the end, signifies that this complete group is optional
+	 */
+	private String hasNumber = "-?\\d+(\\.\\d+)?";
+	private String goodToGo = "";
 
 //	Those are the pool of valid options typing for the client. 
 	String validAnswer1 = "yes";
@@ -129,6 +138,7 @@ public class UserInteraction {
 				case 9:
 					setUserMultipleChoiseValidOption(9);
 					bugRunning = false;
+					break;
 				}
 
 			}
@@ -170,6 +180,39 @@ public class UserInteraction {
 
 		return bunch;
 	}
+	
+	public String OnlyString(int attempt, String text) {
+
+//		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
+
+		countdown = attempt;
+		display = attempt;
+//		setting the graphical with the milliseconds  preferred.
+		printer.typeWriter(text, 50);
+
+		do {
+			try {
+//		Assign the attribute userInput with the client typing.
+				userInput = myReader.readLine();
+
+//		in this for loop the client will be inform when will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
+
+//          		check if  the client choose yes.									
+				if (!userInput.contains(hasNumber)) {
+					goodToGo = userInput;
+					bugRunning = false;
+				} else {
+					throw new CustomExceptions();
+				}
+//					in this part start to count how many left attempts has.
+			} catch (Exception e) {
+				Bug(text, null, attempt);
+			}
+
+		} while (bugRunning == true);
+				return goodToGo;
+	}
+
 
 	public void Bug(String text, String text2, int attempt) {
 
