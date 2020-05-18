@@ -71,7 +71,7 @@ public class Cat extends Animals implements Ianimals {
 			case 1:
 				printer.typeWriter(""
 						+ "     ,\r\n" + 
-						"       \\`-._           __\r\n" + 
+						"       \\`-._            __\r\n" + 
 						"        \\\\  `-..____,.'  `.\r\n" + 
 						"         :`.         /    \\`.\r\n" + 
 						"         :  )       :      : \\\r\n" + 
@@ -116,9 +116,9 @@ public class Cat extends Animals implements Ianimals {
 				break;
 			case 3:
 				printer.typeWriter(""
-						+ "   ___          _\r\n" + 
-						"    /' '\\       / \" \\\r\n" + 
-						"   |  ,--+-----4 /   |\r\n" + 
+						+ "   ___           _\r\n" + 
+						"    /' '\\        / \" \\\r\n" + 
+						"   |  ,--+------4/   |\r\n" + 
 						"   ',/   o  o     --.;\r\n" + 
 						"--._|_   ,--.  _.,-- \\----.\r\n" + 
 						"------'--`--' '-----,' VJ  |\r\n" + 

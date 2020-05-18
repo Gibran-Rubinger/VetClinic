@@ -130,7 +130,7 @@ public class SearchItem extends AnimalFactory {
 		}
 	}
 //	________________________________________________________________________________
-//search in search species	
+//search in search id	
 	public Animals IdInsideSpecies(int idSearch) {
 
 		for (Animals animal : foundAnimal) {
@@ -147,7 +147,7 @@ public class SearchItem extends AnimalFactory {
 		return null;
 	}
 //	________________________________________________________________________________
-//	search in search species	
+//	search in search name	
 	public Collection<Animals> NameInsideSpecies(String keyword) {
 //		checking the all objects.
 		for (Animals animal : foundAnimal) {
