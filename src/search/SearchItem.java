@@ -2,6 +2,7 @@ package search;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import animals.AnimalFactory;
 import animals.Animals;
@@ -10,9 +11,17 @@ import queryAndValidations.UserInteraction;
 
 public class SearchItem extends AnimalFactory {
 
-	private boolean found = true;
+	private boolean found = false;
 	private int idS = 0;
 	private String animalName = "";
+
+	protected static List<Animals> foundAnimal;
+	protected static List<Animals> foundPremium;
+
+	public SearchItem() {
+		foundAnimal = new ArrayList<>();
+		foundPremium = new ArrayList<>();
+	}
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
@@ -20,28 +29,28 @@ public class SearchItem extends AnimalFactory {
 //	_____________________________________________________________________________________
 //	by Id.
 	public Animals SearchAnimalById(int idSearch) {
-
+		found = false;
 		for (Animals animal : listOfAnimals) {
 
 			if (idSearch == animal.getIdAnimal()) {
 				printer.typeWriter("\n Your search was successful:  \n", 50);
 				System.out.println(animal);
 				animal.info();
+				found = true;
 				return animal;
 			}
 		}
-
-		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		if (found == false) {
+			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		}
 		return null;
 	}
-
-	ArrayList<Animals> foundAnimal = new ArrayList<>();
-	ArrayList<Animals> foundPremium = new ArrayList<>();
 
 //_______________________________________________________________________________________
 //	by Species
 	public Collection<Animals> SearchSpecies(String keyword) {
 //		checking the all objects.
+		found = false;
 		for (Animals animal : listOfAnimals) {
 //			using the if statement to check in the file  with titles and content and generate the object.
 			if (animal.getSpecies().contains(keyword)) {
@@ -49,8 +58,9 @@ public class SearchItem extends AnimalFactory {
 				found = true;
 			}
 		}
-
-		AnimalsToPrint();
+		if (found == true) {
+			AnimalsToPrint();
+		}
 		if (found == false) {
 			printer.typeWriter("\n sorry the animal Specie you type in was not found.  ", 50);
 		}
@@ -61,6 +71,7 @@ public class SearchItem extends AnimalFactory {
 //	by Name.
 	public Collection<Animals> SearchName(String keyword) {
 //		checking the all objects.
+		found = false;
 		for (Animals animal : listOfAnimals) {
 //			using the if statement to check in the file  with titles and content and generate the object.
 			if (animal.getName().contains(keyword)) {
@@ -68,9 +79,9 @@ public class SearchItem extends AnimalFactory {
 				found = true;
 			}
 		}
-
-		AnimalsToPrint();
-		if (found == false) {
+		if (found == true) {
+			AnimalsToPrint();
+		} else if (found == false) {
 			printer.typeWriter("\n sorry the animal name you type in was not found.  ", 50);
 		}
 		return null;
@@ -89,7 +100,7 @@ public class SearchItem extends AnimalFactory {
 		System.out.println(foundAnimal.size());
 		SearchInSearch();
 	}
-	
+
 	public void PremiumToPrint() {
 		for (Animals animalfound : foundPremium) {
 			System.out.println(animalfound);
@@ -129,27 +140,32 @@ public class SearchItem extends AnimalFactory {
 			NameInsideSpecies(animalName);
 		}
 	}
+
 //	________________________________________________________________________________
 //search in search id	
 	public Animals IdInsideSpecies(int idSearch) {
-
+		found = false;
 		for (Animals animal : foundAnimal) {
 
 			if (idSearch == animal.getIdAnimal()) {
 				printer.typeWriter("\n Your search was successful:  \n", 50);
 				System.out.println(animal);
 				animal.info();
+				found = true;
 				return animal;
 			}
 		}
-
-		printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		if (found == false) {
+			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+		}
 		return null;
 	}
+
 //	________________________________________________________________________________
 //	search in search name	
 	public Collection<Animals> NameInsideSpecies(String keyword) {
 //		checking the all objects.
+		found = false;
 		for (Animals animal : foundAnimal) {
 //			using the if statement to check in the file  with titles and content and generate the object.
 			if (animal.getName().contains(keyword)) {
