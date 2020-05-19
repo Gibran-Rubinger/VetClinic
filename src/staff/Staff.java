@@ -12,16 +12,15 @@ public class Staff {
 	private String staffName = "";
 	private String staffSurname = "";
 	private String gender = "";
-	private String workFunction = "";
-	private String status = "";
 	private String promoted = "UNREALISED";
 	private String day = "";
 	private String month = "";
 	private String nationality = "";
 	private String maritalStatus = "";
 	private double salaryLevel = 0.00;
+	private int workFunction = 0;
 	private int year = 0;
-	
+	private int status = 0;
 	private int monthsOnCompany = 0;
 	private int promotion = 0;
 	private int phoneN1 = 0;
@@ -37,7 +36,7 @@ public class Staff {
 	
 	
 
-	public Staff(UID id, String staffName, String staffSurname, String gender, String workFunction, double salaryLevel,
+	public Staff(UID id, String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
 			 int monthsOnCompany) {
 		this.id = id;
 		this.staffName = staffName;
@@ -47,7 +46,13 @@ public class Staff {
 		this.salaryLevel = salaryLevel;
 		this.monthsOnCompany = monthsOnCompany;
 	}
-
+	// creating the to String to override it.
+		@Override
+		public String toString() {
+			return "ID: " + id + "   Name: " + staffName +" "+staffSurname+ "         Age: " + age + "        \n Function: " + workFunction
+					+ "           \n\n"
+					+ "\n________________________________________________________________________________________________________________________________________________________";
+		}
 	public void Promotion() {
 		query.YesOrNo(4, "\n\n\n Would you like to check the status of " + staffName + " " + staffSurname
 				+ " on the promotion policy?  \n\n type Yes or No.");
@@ -117,11 +122,10 @@ public class Staff {
 		phoneN3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
 		
 //		birthday
-		int yearStart = 1960;
-		int yeardone = 2000;
+		int yeardone = 2020;
 		day = data.day[myRandom.nextInt(data.day.length)];
 		month = data.month[myRandom.nextInt(data.month.length)];
-		year = (myRandom.nextInt(yeardone - yearStart + 1) + yearStart);
+		year =(yeardone - age );
 		
 		nationality = data.nationality[myRandom.nextInt(data.nationality.length)];
 		maritalStatus = data.maritalStatus [myRandom.nextInt(data.maritalStatus.length)];
@@ -138,12 +142,238 @@ public class Staff {
 	public void jobDaly() {
 		query.YesOrNo(4, "\n\n\n Hi" + staffName + " " + staffSurname
 				+ " would you like to start your job  now?  \n\n type Yes or No.");
-		printer.typeWriter(" Today we had schedule for you "++" g", 20);
-
 		if (query.getUserYesOrNoValidOptio() == 1) {
+			status = 1;
+			
+			/*
+			*
+			*
+			*
+			*
+			*/
 			
 		} else if (query.getUserYesOrNoValidOptio() == 0) {
 			printer.typeWriter(" ok, calling the next procedure.  ", 35);
+			status = 0; 
 		}
 	}
+	public UID getId() {
+		return id;
+	}
+	public void setId(UID id) {
+		this.id = id;
+	}
+	public String getStaffName() {
+		return staffName;
+	}
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
+	public String getStaffSurname() {
+		return staffSurname;
+	}
+	public void setStaffSurname(String staffSurname) {
+		this.staffSurname = staffSurname;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getPromoted() {
+		return promoted;
+	}
+	public void setPromoted(String promoted) {
+		this.promoted = promoted;
+	}
+	public String getDay() {
+		return day;
+	}
+	public void setDay(String day) {
+		this.day = day;
+	}
+	public String getMonth() {
+		return month;
+	}
+	public void setMonth(String month) {
+		this.month = month;
+	}
+	public String getNationality() {
+		return nationality;
+	}
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+	public String getMaritalStatus() {
+		return maritalStatus;
+	}
+	public void setMaritalStatus(String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+	public double getSalaryLevel() {
+		return salaryLevel;
+	}
+	public void setSalaryLevel(double salaryLevel) {
+		this.salaryLevel = salaryLevel;
+	}
+	public int getWorkFunction() {
+		return workFunction;
+	}
+	public void setWorkFunction(int workFunction) {
+		this.workFunction = workFunction;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public int getMonthsOnCompany() {
+		return monthsOnCompany;
+	}
+	public void setMonthsOnCompany(int monthsOnCompany) {
+		this.monthsOnCompany = monthsOnCompany;
+	}
+	public int getPromotion() {
+		return promotion;
+	}
+	public void setPromotion(int promotion) {
+		this.promotion = promotion;
+	}
+	public int getPhoneN1() {
+		return phoneN1;
+	}
+	public void setPhoneN1(int phoneN1) {
+		this.phoneN1 = phoneN1;
+	}
+	public int getPhoneN2() {
+		return phoneN2;
+	}
+	public void setPhoneN2(int phoneN2) {
+		this.phoneN2 = phoneN2;
+	}
+	public int getPhoneN3() {
+		return phoneN3;
+	}
+	public void setPhoneN3(int phoneN3) {
+		this.phoneN3 = phoneN3;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((day == null) ? 0 : day.hashCode());
+		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((maritalStatus == null) ? 0 : maritalStatus.hashCode());
+		result = prime * result + ((month == null) ? 0 : month.hashCode());
+		result = prime * result + monthsOnCompany;
+		result = prime * result + ((nationality == null) ? 0 : nationality.hashCode());
+		result = prime * result + phoneN1;
+		result = prime * result + phoneN2;
+		result = prime * result + phoneN3;
+		result = prime * result + ((promoted == null) ? 0 : promoted.hashCode());
+		result = prime * result + promotion;
+		long temp;
+		temp = Double.doubleToLongBits(salaryLevel);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((staffName == null) ? 0 : staffName.hashCode());
+		result = prime * result + ((staffSurname == null) ? 0 : staffSurname.hashCode());
+		result = prime * result + status;
+		result = prime * result + workFunction;
+		result = prime * result + year;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Staff other = (Staff) obj;
+		if (age != other.age)
+			return false;
+		if (day == null) {
+			if (other.day != null)
+				return false;
+		} else if (!day.equals(other.day))
+			return false;
+		if (gender == null) {
+			if (other.gender != null)
+				return false;
+		} else if (!gender.equals(other.gender))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (maritalStatus == null) {
+			if (other.maritalStatus != null)
+				return false;
+		} else if (!maritalStatus.equals(other.maritalStatus))
+			return false;
+		if (month == null) {
+			if (other.month != null)
+				return false;
+		} else if (!month.equals(other.month))
+			return false;
+		if (monthsOnCompany != other.monthsOnCompany)
+			return false;
+		if (nationality == null) {
+			if (other.nationality != null)
+				return false;
+		} else if (!nationality.equals(other.nationality))
+			return false;
+		if (phoneN1 != other.phoneN1)
+			return false;
+		if (phoneN2 != other.phoneN2)
+			return false;
+		if (phoneN3 != other.phoneN3)
+			return false;
+		if (promoted == null) {
+			if (other.promoted != null)
+				return false;
+		} else if (!promoted.equals(other.promoted))
+			return false;
+		if (promotion != other.promotion)
+			return false;
+		if (Double.doubleToLongBits(salaryLevel) != Double.doubleToLongBits(other.salaryLevel))
+			return false;
+		if (staffName == null) {
+			if (other.staffName != null)
+				return false;
+		} else if (!staffName.equals(other.staffName))
+			return false;
+		if (staffSurname == null) {
+			if (other.staffSurname != null)
+				return false;
+		} else if (!staffSurname.equals(other.staffSurname))
+			return false;
+		if (status != other.status)
+			return false;
+		if (workFunction != other.workFunction)
+			return false;
+		if (year != other.year)
+			return false;
+		return true;
+	}
+	
+	
 }
