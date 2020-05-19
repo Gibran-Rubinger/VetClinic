@@ -4,9 +4,9 @@ import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 import staff.Staff;
 
-public class Receptionist extends Staff{
+public class Driver extends Staff {
 
-	public Receptionist(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
+	public Driver(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
 			int monthsOnCompany, int age) {
 		super(staffName, staffSurname, gender, workFunction, salaryLevel, monthsOnCompany, age);
 		this.setStaffName(staffName);
@@ -38,5 +38,5 @@ public class Receptionist extends Staff{
 			setStatus(0);
 		}
 	}
-
+	
 }
