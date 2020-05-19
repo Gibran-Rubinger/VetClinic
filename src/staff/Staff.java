@@ -36,15 +36,16 @@ public class Staff {
 	
 	
 
-	public Staff(UID id, String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
-			 int monthsOnCompany) {
-		this.id = id;
+	public Staff( String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
+			 int monthsOnCompany, int age) {
+		
 		this.staffName = staffName;
 		this.staffSurname = staffSurname;
 		this.gender = gender;
 		this.workFunction = workFunction;
 		this.salaryLevel = salaryLevel;
 		this.monthsOnCompany = monthsOnCompany;
+		this.age = age;
 	}
 	// creating the to String to override it.
 		@Override
