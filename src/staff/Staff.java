@@ -27,6 +27,7 @@ public class Staff {
 	private int phoneN2 = 0;
 	private int phoneN3 = 0;
 	private int age = 0;
+	private int function = 0;
 	
 
 	Graphical printer = new Graphical();
@@ -37,7 +38,7 @@ public class Staff {
 	
 
 	public Staff( String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
-			 int monthsOnCompany, int age) {
+			 int monthsOnCompany, int age, int funciton) {
 		
 		this.staffName = staffName;
 		this.staffSurname = staffSurname;
@@ -46,6 +47,7 @@ public class Staff {
 		this.salaryLevel = salaryLevel;
 		this.monthsOnCompany = monthsOnCompany;
 		this.age = age;
+		this.function = function;
 	}
 	// creating the to String to override it.
 		@Override
@@ -76,7 +78,7 @@ public class Staff {
 
 			} else if (monthsOnCompany >= 32 && monthsOnCompany <= 72) {
 				printer.typeWriter(
-						"\n\n  The avalible status for promotion is: \n STAGE THREE  - between 31 to 40 months", 35);
+						"\n\n  The avalible status for promotion is: \n STAGE THREE  - between 32 to 72 months", 35);
 				promotion = 3;
 			}
 				query.YesOrNo(4, "\n\n\n Would you like to PROCEED with the promotion for " + staffName + " "
@@ -374,6 +376,13 @@ public class Staff {
 		if (year != other.year)
 			return false;
 		return true;
+		
+	}
+	public int getFunction() {
+		return function;
+	}
+	public void setFunction(int function) {
+		this.function = function;
 	}
 	
 	
