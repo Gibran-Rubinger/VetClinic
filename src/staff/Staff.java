@@ -14,12 +14,14 @@ public class Staff {
 	private String gender = "";
 	private String workFunction = "";
 	private String status = "";
-	private String promoted = "";
+	private String promoted = "UNREALISED";
 	private String day = "";
 	private String month = "";
 	private String nationality = "";
-	private int year = 0;
+	private String maritalStatus = "";
 	private double salaryLevel = 0.00;
+	private int year = 0;
+	
 	private int monthsOnCompany = 0;
 	private int promotion = 0;
 	private int phoneN1 = 0;
@@ -32,6 +34,8 @@ public class Staff {
 	UserInteraction query = new UserInteraction();
 	Random myRandom = new Random();
 	StaffData data = new StaffData();
+	
+	
 
 	public Staff(UID id, String staffName, String staffSurname, String gender, String workFunction, double salaryLevel,
 			 int monthsOnCompany) {
@@ -120,12 +124,26 @@ public class Staff {
 		year = (myRandom.nextInt(yeardone - yearStart + 1) + yearStart);
 		
 		nationality = data.nationality[myRandom.nextInt(data.nationality.length)];
+		maritalStatus = data.maritalStatus [myRandom.nextInt(data.maritalStatus.length)];
 		
 		
 		
-		
-		System.out.println("   NAME: "+staffName+"    SURNAME: "+staffSurname+"       Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + 
+		System.out.println("ID: "+id+"     NAME: "+staffName+"    SURNAME: "+staffSurname+"       Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + 
 				"\n\n      E-mail:  "+ staffName.toLowerCase() + "." +staffSurname.toLowerCase() + "@cct.ie    Age: "+age+"    Birth date: "+day+"/"+month+"/"+year+
 				"\n     Gender:"+gender+"     Nationality:  "+nationality+" t");
+		System.out.println(" \n   PROMOTION POLICY: "+promoted+"     MARITAL STATUS: "+maritalStatus);
+	}
+
+	
+	public void jobDaly() {
+		query.YesOrNo(4, "\n\n\n Hi" + staffName + " " + staffSurname
+				+ " would you like to start your job  now?  \n\n type Yes or No.");
+		printer.typeWriter(" Today we had schedule for you "++" g", 20);
+
+		if (query.getUserYesOrNoValidOptio() == 1) {
+			
+		} else if (query.getUserYesOrNoValidOptio() == 0) {
+			printer.typeWriter(" ok, calling the next procedure.  ", 35);
+		}
 	}
 }
