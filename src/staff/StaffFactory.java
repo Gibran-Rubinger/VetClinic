@@ -117,16 +117,16 @@ public class StaffFactory {
 				addGender = "Male";
 			}
 
-				if (function == 0) {
-					adminStaff.add(new Receptionist(femaleFirstName, surname, addGender, workF, salary, workMonth,
-							ageMaker, function));
-				} else if (function == 1) {
-					adminStaff.add(new Driver(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
-							function));
-				} else if (function == 2) {
-					adminStaff.add(new ITHelpdesk(femaleFirstName, surname, addGender, workF, salary, workMonth,
-							ageMaker, function));
-				}
+			if (function == 0) {
+				adminStaff.add(new Receptionist(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
+						function));
+			} else if (function == 1) {
+				adminStaff.add(
+						new Driver(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker, function));
+			} else if (function == 2) {
+				adminStaff.add(new ITHelpdesk(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
+						function));
+			}
 
 		}
 		for (Staff print : adminStaff) {
@@ -137,63 +137,22 @@ public class StaffFactory {
 		System.out.println(adminStaff.size());
 
 	}
+
 	public void medical(int medicalWorkers) {
- 
-//		removing 5 from the total as we must create always at least 5 veterinarian.
-		medicalWorkers = (medicalWorkers - 5);
-//		For loop responsible to generate the objects.		
-	for (int i = 0; i < medicalWorkers; i++) {
-		String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
-		String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
-		String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
+		
+		
+		for (int vet = 0; vet < 5; vet++) {
+			String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
+			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
+			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
 
-		workMonth = myRandom.nextInt(72) + 1;
-		ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
-		function = myRandom.nextInt(3);
-		salaryMaker = myRandom.nextInt(5);
-		workF = myRandom.nextInt(3);
+			workMonth = myRandom.nextInt(72) + 1;
+			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
+			function = myRandom.nextInt(3);
+			salaryMaker = myRandom.nextInt(5);
+			workF = myRandom.nextInt(3);
 
-//			Trainee 
-		if (function == 0) {
-			switch (salaryMaker) {
-			case 0:
-				salary = 36300.00;
-				break;
-			case 1:
-				salary = 34400.00;
-				break;
-			case 2:
-				salary = 31000.00;
-				break;
-			case 3:
-				salary = 32500.00;
-				break;
-			case 4:
-				salary = 33300.00;
-				break;
-			}
-//				nurse salary
-		} else if (function == 1) {
-			switch (salaryMaker) {
-			case 0:
-				salary = 45700.00;
-				break;
-			case 1:
-				salary = 44600.00;
-				break;
-			case 2:
-				salary = 43100.00;
-				break;
-			case 3:
-				salary = 42500.00;
-				break;
-			case 4:
-				salary = 40300.00;
-				break;
-			}
-		}
 //			IT Veterinarian salary
-		else if (function == 2) {
 			switch (salaryMaker) {
 			case 0:
 				salary = 56300.00;
@@ -211,33 +170,117 @@ public class StaffFactory {
 				salary = 53300.00;
 				break;
 			}
+
+			genderMaker = vet;
+
+			if (genderMaker % 2 == 0) {
+				addGender = "Female";
+			} else if (genderMaker % 2 != 0) {
+				addGender = "Male";
+			}
+			medicalStaff.add(new Veterinarian(femaleFirstName, surname, addGender, workF, salary, workMonth,
+					ageMaker, function));
 		}
 
-		genderMaker = i;
+//		removing 5 from the total as we had created the 5 veterinarian above.
+		medicalWorkers = (medicalWorkers - 5);
+//		For loop responsible to generate the objects.		
+		for (int i = 0; i < medicalWorkers; i++) {
+			String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
+			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
+			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
 
-		if (genderMaker % 2 == 0) {
-			addGender = "Female";
-		} else if (genderMaker % 2 != 0) {
-			addGender = "Male";
-		}
+			workMonth = myRandom.nextInt(72) + 1;
+			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
+			function = myRandom.nextInt(3);
+			salaryMaker = myRandom.nextInt(5);
+			workF = myRandom.nextInt(3);
+
+//			Trainee 
 			if (function == 0) {
-				medicalStaff.add(new TraineeVet(femaleFirstName, surname, addGender, workF, salary, workMonth,
-						ageMaker, function));
+				switch (salaryMaker) {
+				case 0:
+					salary = 36300.00;
+					break;
+				case 1:
+					salary = 34400.00;
+					break;
+				case 2:
+					salary = 31000.00;
+					break;
+				case 3:
+					salary = 32500.00;
+					break;
+				case 4:
+					salary = 33300.00;
+					break;
+				}
+//				nurse salary
 			} else if (function == 1) {
-				medicalStaff.add(new Nurse(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
+				switch (salaryMaker) {
+				case 0:
+					salary = 45700.00;
+					break;
+				case 1:
+					salary = 44600.00;
+					break;
+				case 2:
+					salary = 43100.00;
+					break;
+				case 3:
+					salary = 42500.00;
+					break;
+				case 4:
+					salary = 40300.00;
+					break;
+				}
+			}
+//			IT Veterinarian salary
+			else if (function == 2) {
+				switch (salaryMaker) {
+				case 0:
+					salary = 56300.00;
+					break;
+				case 1:
+					salary = 54400.00;
+					break;
+				case 2:
+					salary = 5100.00;
+					break;
+				case 3:
+					salary = 52500.00;
+					break;
+				case 4:
+					salary = 53300.00;
+					break;
+				}
+			}
+
+			genderMaker = i;
+
+			if (genderMaker % 2 == 0) {
+				addGender = "Female";
+			} else if (genderMaker % 2 != 0) {
+				addGender = "Male";
+			}
+			if (function == 0) {
+				medicalStaff.add(new TraineeVet(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
 						function));
+			} else if (function == 1) {
+				medicalStaff.add(
+						new Nurse(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker, function));
 			} else if (function == 2) {
 				medicalStaff.add(new Veterinarian(femaleFirstName, surname, addGender, workF, salary, workMonth,
 						ageMaker, function));
 			}
-	}
-	for (Staff print : medicalStaff) {
-		System.out.println(print);
-	}
+		}
+		for (Staff print : medicalStaff) {
+			System.out.println(print);
+		}
 //	counting the numbers of item in the Array.
-	printer.typeWriter("\n" + "The Total of admin staff in the system is:  ", 50);
-	System.out.println(medicalStaff.size());
+		printer.typeWriter("\n" + "The Total of admin staff in the system is:  ", 50);
+		System.out.println(medicalStaff.size());
 
-}
+	}
 
 }

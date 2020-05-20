@@ -116,7 +116,7 @@ public class SearchItem extends AnimalFactory {
 
 	public void SearchInSearch() {
 
-		query.MultipleChoise(3, "\n\nAs we have " + foundAnimal.size()
+		query.MultipleChoise(3, "\n\n As we have " + foundAnimal.size()
 				+ " animals as a result, would you like to clarify a bit more? "
 				+ "\n you know how it works right? please choose one of the options below: " + "\n\n"
 				+ "             |           0 - CLOSE SEARCH:        |" + "\n\n"

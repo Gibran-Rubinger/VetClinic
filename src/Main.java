@@ -48,13 +48,12 @@ public class Main {
 
 		
 		AnimalSearch search = new AnimalSearch();
-		StaffFactory staff = new StaffFactory();
+		StaffQuery staff = new StaffQuery();
 		animals.AnimalsChoise();
 		
 		search.SearchAnimals();
-		staff.Admin(100);
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    nowwww");
-		staff.medical(100);
+		
+		staff.Staffchoise();
 	
 	}
 }
