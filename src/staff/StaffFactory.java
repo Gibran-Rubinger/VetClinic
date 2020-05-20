@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import animals.Animals;
 import graphical.Graphical;
 import staff.admin.*;
 import staff.medical.Nurse;
@@ -13,7 +12,7 @@ import staff.medical.Veterinarian;
 
 public class StaffFactory {
 
-	private int medicalWorkers = 0;
+	private String addGender = "";
 	private int genderMaker = 0;
 	private int workMonth = 0;
 	private int ageMaker = 0;
@@ -110,29 +109,24 @@ public class StaffFactory {
 					break;
 				}
 			}
-
 			genderMaker = i;
 
 			if (genderMaker % 2 == 0) {
+				addGender = "Female";
+			} else if (genderMaker % 2 != 0) {
+				addGender = "Male";
+			}
+
 				if (function == 0) {
-					adminStaff.add(new Receptionist(femaleFirstName, surname, "Female", workF, salary, workMonth,
+					adminStaff.add(new Receptionist(femaleFirstName, surname, addGender, workF, salary, workMonth,
 							ageMaker, function));
 				} else if (function == 1) {
-					adminStaff.add(new Driver(femaleFirstName, surname, "Female", workF, salary, workMonth, ageMaker,
+					adminStaff.add(new Driver(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
 							function));
 				} else if (function == 2) {
-					adminStaff.add(new ITHelpdesk(femaleFirstName, surname, "female", workF, salary, workMonth,
+					adminStaff.add(new ITHelpdesk(femaleFirstName, surname, addGender, workF, salary, workMonth,
 							ageMaker, function));
 				}
-			} else if (genderMaker % 2 != 0) {
-				if (function == 0) {
-					adminStaff.add(new Receptionist(maleFistName, surname, "Male", workF, salary, workMonth, ageMaker, function));
-				} else if (function == 1) {
-					adminStaff.add(new Driver(maleFistName, surname, "Male", workF, salary, workMonth, ageMaker, function));
-				} else if (function == 2) {
-					adminStaff.add(new ITHelpdesk(maleFistName, surname, "Male", workF, salary, workMonth, ageMaker, function));
-				}
-			}
 
 		}
 		for (Staff print : adminStaff) {
@@ -144,7 +138,10 @@ public class StaffFactory {
 
 	}
 	public void medical(int medicalWorkers) {
-//		For loop responsible to generate the objects. 
+ 
+//		removing 5 from the total as we must create always at least 5 veterinarian.
+		medicalWorkers = (medicalWorkers - 5);
+//		For loop responsible to generate the objects.		
 	for (int i = 0; i < medicalWorkers; i++) {
 		String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
 		String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
@@ -219,26 +216,20 @@ public class StaffFactory {
 		genderMaker = i;
 
 		if (genderMaker % 2 == 0) {
+			addGender = "Female";
+		} else if (genderMaker % 2 != 0) {
+			addGender = "Male";
+		}
 			if (function == 0) {
-				adminStaff.add(new TraineeVet(femaleFirstName, surname, "Female", workF, salary, workMonth,
+				medicalStaff.add(new TraineeVet(femaleFirstName, surname, addGender, workF, salary, workMonth,
 						ageMaker, function));
 			} else if (function == 1) {
-				adminStaff.add(new Nurse(femaleFirstName, surname, "Female", workF, salary, workMonth, ageMaker,
+				medicalStaff.add(new Nurse(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
 						function));
 			} else if (function == 2) {
-				adminStaff.add(new Veterinarian(femaleFirstName, surname, "female", workF, salary, workMonth,
+				medicalStaff.add(new Veterinarian(femaleFirstName, surname, addGender, workF, salary, workMonth,
 						ageMaker, function));
 			}
-		} else if (genderMaker % 2 != 0) {
-			if (function == 0) {
-				adminStaff.add(new TraineeVet(maleFistName, surname, "Male", workF, salary, workMonth, ageMaker, function));
-			} else if (function == 1) {
-				adminStaff.add(new Nurse(maleFistName, surname, "Male", workF, salary, workMonth, ageMaker, function));
-			} else if (function == 2) {
-				adminStaff.add(new Veterinarian(maleFistName, surname, "Male", workF, salary, workMonth, ageMaker, function));
-			}
-		}
-
 	}
 	for (Staff print : medicalStaff) {
 		System.out.println(print);

@@ -53,6 +53,8 @@ public class Main {
 		
 		search.SearchAnimals();
 		staff.Admin(100);
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    nowwww");
+		staff.medical(100);
 	
 	}
 }
