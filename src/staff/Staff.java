@@ -17,6 +17,7 @@ public class Staff {
 	private String month = "";
 	private String nationality = "";
 	private String maritalStatus = "";
+	private String title = "";
 	private double salaryLevel = 0.00;
 	private int workFunction = 0;
 	private int year = 0;
@@ -49,13 +50,7 @@ public class Staff {
 		this.age = age;
 		this.function = function;
 	}
-	// creating the to String to override it.
-		@Override
-		public String toString() {
-			return "ID: " + id + "   Name: " + staffName +" "+staffSurname+ "         Age: " + age + "        \n Function: " + workFunction
-					+ "           \n\n"
-					+ "\n________________________________________________________________________________________________________________________________________________________";
-		}
+	
 	public void Promotion() {
 		query.YesOrNo(4, "\n\n\n Would you like to check the status of " + staffName + " " + staffSurname
 				+ " on the promotion policy?  \n\n type Yes or No.");
@@ -142,7 +137,7 @@ public class Staff {
 	}
 
 	
-	public void jobDaly() {
+	public void jobDaily() {
 		query.YesOrNo(4, "\n\n\n Hi" + staffName + " " + staffSurname
 				+ " would you like to start your job  now?  \n\n type Yes or No.");
 		if (query.getUserYesOrNoValidOptio() == 1) {
@@ -274,12 +269,26 @@ public class Staff {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+		public int getFunction() {
+		return function;
+	}
+	public void setFunction(int function) {
+		this.function = function;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + age;
 		result = prime * result + ((day == null) ? 0 : day.hashCode());
+		result = prime * result + function;
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((maritalStatus == null) ? 0 : maritalStatus.hashCode());
@@ -297,6 +306,7 @@ public class Staff {
 		result = prime * result + ((staffName == null) ? 0 : staffName.hashCode());
 		result = prime * result + ((staffSurname == null) ? 0 : staffSurname.hashCode());
 		result = prime * result + status;
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		result = prime * result + workFunction;
 		result = prime * result + year;
 		return result;
@@ -316,6 +326,8 @@ public class Staff {
 			if (other.day != null)
 				return false;
 		} else if (!day.equals(other.day))
+			return false;
+		if (function != other.function)
 			return false;
 		if (gender == null) {
 			if (other.gender != null)
@@ -371,19 +383,18 @@ public class Staff {
 			return false;
 		if (status != other.status)
 			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
 		if (workFunction != other.workFunction)
 			return false;
 		if (year != other.year)
 			return false;
 		return true;
-		
 	}
-	public int getFunction() {
-		return function;
-	}
-	public void setFunction(int function) {
-		this.function = function;
-	}
+	
 	
 	
 }

@@ -41,8 +41,6 @@ public class AnimalFactory {
 
 	public void CommonPets(int bunch) {
 
-//		instantiation of the Array
-//		setListOfAnimals(new ArrayList<Animals>(bunch));
 
 //	For loop responsible to generate the objects. 
 		for (int i = 0; i < bunch; i++) {

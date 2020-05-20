@@ -13,5 +13,6 @@ public class StaffData {
 			"Adilson","Adriano","Afranio","Bernardo","Frederico","Fernando","Humberto","Luiz","Mark","Max","Erik","Francisco","Guilherme","Gustavo","Heitor","Hugo","Icaro","Igor","Leonardo","Joao"};
 	protected String[] femaleName = {"Emma","Olivia","Sophia","Mia","Charlotte","Emily","Elizabeth","Madison","Scarlett","Victoria","Grace","Choloe","Camila","Layla","Lilian","Zoey","Mila","Lily",
 			"Lizy","Eleanor","Natalie","Luna","Zoe","Paisley","Audrey","claire","Lucy","Caroline","Carolina","Alcione","Livia","Fatima","Carla","Fabiola","Malu","Marcela","Marli","Natalia",
-			 "Polyana","Rafaela","Sibele","Silvia","Anita","Cristina","Cintia","Fabiana","Livea","Julia","Juliana","Karen","Laura","Lucia","Luisa"};
+			 "Polyana","Rafaela","Sibele","Silvia","Anita","Cristina","Cintia","Fabiana","Livea","Julia","Juliana","Karen","Laura","Lucia","Luisa","Sarah"};
+	
 }
