@@ -13,6 +13,8 @@ import staff.medical.Veterinarian;
 public class StaffFactory {
 
 	private String addGender = "";
+	private String addName = "";
+	private String addSurname = "";
 	private int genderMaker = 0;
 	private int workMonth = 0;
 	private int ageMaker = 0;
@@ -40,10 +42,12 @@ public class StaffFactory {
 	public void Admin(int adminWorkers) {
 //			For loop responsible to generate the objects. 
 		for (int i = 0; i < adminWorkers; i++) {
-			String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
+			String maleFirstName = data.maleName[myRandom.nextInt(data.maleName.length)];
 			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
 			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
-
+			addSurname = surname;
+			
+			
 			workMonth = myRandom.nextInt(72) + 1;
 			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
 			function = myRandom.nextInt(3);
@@ -113,18 +117,20 @@ public class StaffFactory {
 
 			if (genderMaker % 2 == 0) {
 				addGender = "Female";
+				addName = femaleFirstName;
 			} else if (genderMaker % 2 != 0) {
 				addGender = "Male";
+				addName = maleFirstName;
 			}
 
 			if (function == 0) {
-				adminStaff.add(new Receptionist(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
+				adminStaff.add(new Receptionist(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
 						function));
 			} else if (function == 1) {
 				adminStaff.add(
-						new Driver(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker, function));
+						new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function));
 			} else if (function == 2) {
-				adminStaff.add(new ITHelpdesk(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
+				adminStaff.add(new ITHelpdesk(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
 						function));
 			}
 
@@ -140,12 +146,13 @@ public class StaffFactory {
 
 	public void medical(int medicalWorkers) {
 		
-		
+//		
 		for (int vet = 0; vet < 5; vet++) {
-			String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
+			String maleFirstName = data.maleName[myRandom.nextInt(data.maleName.length)];
 			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
 			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
-
+			addSurname = surname;
+			
 			workMonth = myRandom.nextInt(72) + 1;
 			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
 			function = myRandom.nextInt(3);
@@ -175,10 +182,12 @@ public class StaffFactory {
 
 			if (genderMaker % 2 == 0) {
 				addGender = "Female";
+				addName = femaleFirstName;
 			} else if (genderMaker % 2 != 0) {
 				addGender = "Male";
+				addName = maleFirstName;
 			}
-			medicalStaff.add(new Veterinarian(femaleFirstName, surname, addGender, workF, salary, workMonth,
+			medicalStaff.add(new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth,
 					ageMaker, function));
 		}
 
@@ -186,10 +195,11 @@ public class StaffFactory {
 		medicalWorkers = (medicalWorkers - 5);
 //		For loop responsible to generate the objects.		
 		for (int i = 0; i < medicalWorkers; i++) {
-			String maleFistName = data.maleName[myRandom.nextInt(data.maleName.length)];
+			String maleFirstName = data.maleName[myRandom.nextInt(data.maleName.length)];
 			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
 			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
-
+			addSurname = surname;
+			
 			workMonth = myRandom.nextInt(72) + 1;
 			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
 			function = myRandom.nextInt(3);
@@ -260,17 +270,19 @@ public class StaffFactory {
 
 			if (genderMaker % 2 == 0) {
 				addGender = "Female";
+				addName = femaleFirstName;
 			} else if (genderMaker % 2 != 0) {
 				addGender = "Male";
+				addName = maleFirstName;
 			}
 			if (function == 0) {
-				medicalStaff.add(new TraineeVet(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker,
+				medicalStaff.add(new TraineeVet(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
 						function));
 			} else if (function == 1) {
 				medicalStaff.add(
-						new Nurse(femaleFirstName, surname, addGender, workF, salary, workMonth, ageMaker, function));
+						new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function));
 			} else if (function == 2) {
-				medicalStaff.add(new Veterinarian(femaleFirstName, surname, addGender, workF, salary, workMonth,
+				medicalStaff.add(new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth,
 						ageMaker, function));
 			}
 		}
@@ -281,6 +293,16 @@ public class StaffFactory {
 		printer.typeWriter("\n" + "The Total of admin staff in the system is:  ", 50);
 		System.out.println(medicalStaff.size());
 
+	}
+	public void allIn() {
+		for (Staff send : adminStaff) {
+			allStaff.add(send);
+		}
+		for(Staff send : medicalStaff) {
+			allStaff.add(send);
+		}
+		printer.typeWriter("\n" + "The Total staff in today is:  ", 50);
+		System.out.println(allStaff.size());
 	}
 
 }

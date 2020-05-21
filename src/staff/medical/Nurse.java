@@ -41,7 +41,8 @@ public class Nurse extends Staff {
 	}
 	@Override
 	public String toString() {
-		return "ID: " + getId() + "   Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: " + getAge() +"         Title: Nurse "
-				+ "           \n\n\n________________________________________________________________________________________________________________________________________________________";
+	
+	return String.format("\n   ID: %s             Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: "+ getAge() +"         Title: Nurse "
+			+ "           \n\n________________________________________________________________________________________________________________________________________________________", getId());
 	}
 }

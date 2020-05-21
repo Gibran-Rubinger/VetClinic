@@ -41,7 +41,8 @@ public class TraineeVet extends Staff {
 	}
 	@Override
 	public String toString() {
-		return "ID: " + getId() + "   Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: " + getAge() +"         Title: Trainee "
-				+ "           \n\n\n________________________________________________________________________________________________________________________________________________________";
+	
+	return String.format("\n   ID: %s             Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: "+ getAge() +"         Title: Trainee Veterinarian "
+			+ "           \n\n________________________________________________________________________________________________________________________________________________________", getId());
 	}
 }

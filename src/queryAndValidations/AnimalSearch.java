@@ -5,15 +5,14 @@ import java.io.InputStreamReader;
 
 import animals.AnimalFactory;
 import graphical.Graphical;
-import search.SearchItem;
+import search.SearchAnimal;
 
 public class AnimalSearch {
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
-	SearchItem where = new SearchItem();
-	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
-	AnimalFactory fac = new AnimalFactory();
+	SearchAnimal where = new SearchAnimal();
+
 
 	private int idS = 0;
 	private String specie = "";

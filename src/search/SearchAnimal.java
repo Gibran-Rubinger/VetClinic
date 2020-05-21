@@ -9,7 +9,7 @@ import animals.Animals;
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 
-public class SearchItem extends AnimalFactory {
+public class SearchAnimal extends AnimalFactory {
 
 	private boolean found = false;
 	private int idS = 0;
@@ -18,7 +18,7 @@ public class SearchItem extends AnimalFactory {
 	protected static List<Animals> foundAnimal;
 	protected static List<Animals> foundPremium;
 
-	public SearchItem() {
+	public SearchAnimal() {
 		foundAnimal = new ArrayList<>();
 		foundPremium = new ArrayList<>();
 	}

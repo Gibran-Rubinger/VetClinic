@@ -114,7 +114,7 @@ public class Rabbit extends Animals implements Ianimals {
 				break;
 			case 3:
 				printer.typeWriter(""
-						+ "            ((`\\\r\n" + 
+						+ "               ((`\\\r\n" + 
 						"            ___ \\\\ '--._\r\n" + 
 						"         .'`   `'    o  )\r\n" + 
 						"        /    \\   '. __.'\r\n" + 

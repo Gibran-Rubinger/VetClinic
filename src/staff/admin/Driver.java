@@ -41,7 +41,8 @@ public class Driver extends Staff {
 	}
 	@Override
 	public String toString() {
-		return "\n   ID: " + getId() + "\n   Name: " + getStaffName() +" "+getStaffSurname()+ "         Age: " + getAge() +"         Title: Driver "
-				+ "           \n\n________________________________________________________________________________________________________________________________________________________";
+	
+	return String.format("\n   ID: %s             Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: "+ getAge() +"         Title: Driver "
+			+ "           \n\n________________________________________________________________________________________________________________________________________________________", getId());
 	}
 }

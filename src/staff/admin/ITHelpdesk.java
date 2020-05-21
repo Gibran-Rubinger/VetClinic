@@ -41,7 +41,9 @@ public class ITHelpdesk extends Staff{
 	}
 	@Override
 	public String toString() {
-		return "\n   ID: " + getId() + "\n   Name: " + getStaffName() +" "+getStaffSurname()+ "         Age: " + getAge() +"         Title: Helpdesk "
-				+ "           \n\n________________________________________________________________________________________________________________________________________________________";
-	}
+	
+	return String.format("\n   ID: %s             Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: "+ getAge() +"         Title: Helpdesk "
+			+ "           \n\n________________________________________________________________________________________________________________________________________________________", getId());
+	}	
+
 }

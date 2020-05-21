@@ -1,14 +1,14 @@
 package queryAndValidations;
 import animals.AnimalFactory;
 import graphical.Graphical;
-import search.SearchItem;
+import search.SearchAnimal;
 
 public class AnimalsQuery {
 
 	UserInteraction query = new UserInteraction();
 	AnimalFactory myAnimals = new AnimalFactory();
 	Graphical printer = new Graphical();
-	SearchItem where = new SearchItem();
+	SearchAnimal where = new SearchAnimal();
 	
 	int quantityOfAnimals = 0;
 	public void AnimalsChoise() {
