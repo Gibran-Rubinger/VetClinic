@@ -2,8 +2,6 @@ package queryAndValidations;
 
 import exceptions.CustomExceptions;
 import graphical.Graphical;
-import search.SearchAnimal;
-import search.SearchStaff;
 import staff.StaffFactory;
 
 public class StaffQuery {

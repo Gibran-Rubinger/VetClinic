@@ -7,8 +7,8 @@ import staff.Staff;
 public class Receptionist extends Staff{
 
 	public Receptionist(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
-			int monthsOnCompany, int age, int function) {
-		super(staffName, staffSurname, gender, workFunction, salaryLevel, monthsOnCompany, age,function);
+			int monthsOnCompany, int age, int function,String title) {
+		super(staffName, staffSurname, gender, workFunction, salaryLevel, monthsOnCompany, age,function,title);
 		this.setStaffName(staffName);
 		this.setStaffSurname(staffSurname);
 		this.setGender(gender);
@@ -17,6 +17,7 @@ public class Receptionist extends Staff{
 		this.setMonthsOnCompany(monthsOnCompany);
 		this.setAge(age);
 		this.setFunction(function);
+		this.setTitle(title);
 	}
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();

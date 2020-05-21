@@ -15,6 +15,7 @@ public class StaffFactory {
 	private String addGender = "";
 	private String addName = "";
 	private String addSurname = "";
+	private String addTitle = "";
 	private int genderMaker = 0;
 	private int workMonth = 0;
 	private int ageMaker = 0;
@@ -46,8 +47,7 @@ public class StaffFactory {
 			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
 			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
 			addSurname = surname;
-			
-			
+
 			workMonth = myRandom.nextInt(72) + 1;
 			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
 			function = myRandom.nextInt(3);
@@ -56,6 +56,7 @@ public class StaffFactory {
 
 //				Receptionist 
 			if (function == 0) {
+				addTitle = "Receptionist";
 				switch (salaryMaker) {
 				case 0:
 					salary = 26300.00;
@@ -75,6 +76,7 @@ public class StaffFactory {
 				}
 //					driver salary
 			} else if (function == 1) {
+				addTitle = "Driver";
 				switch (salaryMaker) {
 				case 0:
 					salary = 25700.00;
@@ -95,6 +97,7 @@ public class StaffFactory {
 			}
 //				IT Helpdesk salary
 			else if (function == 2) {
+				addTitle = "Helpdesk";
 				switch (salaryMaker) {
 				case 0:
 					salary = 46300.00;
@@ -125,13 +128,13 @@ public class StaffFactory {
 
 			if (function == 0) {
 				adminStaff.add(new Receptionist(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function));
+						function, addTitle));
 			} else if (function == 1) {
-				adminStaff.add(
-						new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function));
+				adminStaff.add(new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,
+						addTitle));
 			} else if (function == 2) {
 				adminStaff.add(new ITHelpdesk(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function));
+						function, addTitle));
 			}
 
 		}
@@ -145,14 +148,14 @@ public class StaffFactory {
 	}
 
 	public void medical(int medicalWorkers) {
-		
+
 //		
 		for (int vet = 0; vet < 5; vet++) {
 			String maleFirstName = data.maleName[myRandom.nextInt(data.maleName.length)];
 			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
 			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
 			addSurname = surname;
-			
+
 			workMonth = myRandom.nextInt(72) + 1;
 			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
 			function = myRandom.nextInt(3);
@@ -160,6 +163,7 @@ public class StaffFactory {
 			workF = myRandom.nextInt(3);
 
 //			IT Veterinarian salary
+			addTitle = "Veterinarian";
 			switch (salaryMaker) {
 			case 0:
 				salary = 56300.00;
@@ -187,8 +191,8 @@ public class StaffFactory {
 				addGender = "Male";
 				addName = maleFirstName;
 			}
-			medicalStaff.add(new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth,
-					ageMaker, function));
+			medicalStaff.add(
+					new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,addTitle));
 		}
 
 //		removing 5 from the total as we had created the 5 veterinarian above.
@@ -199,7 +203,7 @@ public class StaffFactory {
 			String femaleFirstName = data.femaleName[myRandom.nextInt(data.femaleName.length)];
 			String surname = data.Surnames[myRandom.nextInt(data.Surnames.length)];
 			addSurname = surname;
-			
+
 			workMonth = myRandom.nextInt(72) + 1;
 			ageMaker = (myRandom.nextInt(finishAge - startAge + 1) + startAge);
 			function = myRandom.nextInt(3);
@@ -208,6 +212,7 @@ public class StaffFactory {
 
 //			Trainee 
 			if (function == 0) {
+				addTitle = "Trainee";
 				switch (salaryMaker) {
 				case 0:
 					salary = 36300.00;
@@ -227,6 +232,7 @@ public class StaffFactory {
 				}
 //				nurse salary
 			} else if (function == 1) {
+				addTitle = "Salary";
 				switch (salaryMaker) {
 				case 0:
 					salary = 45700.00;
@@ -247,6 +253,7 @@ public class StaffFactory {
 			}
 //			IT Veterinarian salary
 			else if (function == 2) {
+				addTitle = "Veterinarian";
 				switch (salaryMaker) {
 				case 0:
 					salary = 56300.00;
@@ -277,13 +284,13 @@ public class StaffFactory {
 			}
 			if (function == 0) {
 				medicalStaff.add(new TraineeVet(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function));
+						function, addTitle));
 			} else if (function == 1) {
-				medicalStaff.add(
-						new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function));
+				medicalStaff
+						.add(new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,addTitle));
 			} else if (function == 2) {
-				medicalStaff.add(new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth,
-						ageMaker, function));
+				medicalStaff.add(
+						new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,addTitle));
 			}
 		}
 		for (Staff print : medicalStaff) {
@@ -294,11 +301,12 @@ public class StaffFactory {
 		System.out.println(medicalStaff.size());
 
 	}
+
 	public void allIn() {
 		for (Staff send : adminStaff) {
 			allStaff.add(send);
 		}
-		for(Staff send : medicalStaff) {
+		for (Staff send : medicalStaff) {
 			allStaff.add(send);
 		}
 		printer.typeWriter("\n" + "The Total staff in today is:  ", 50);

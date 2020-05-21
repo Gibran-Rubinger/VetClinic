@@ -29,18 +29,15 @@ public class Staff {
 	private int phoneN3 = 0;
 	private int age = 0;
 	private int function = 0;
-	
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
 	Random myRandom = new Random();
 	StaffData data = new StaffData();
-	
-	
 
-	public Staff( String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
-			 int monthsOnCompany, int age, int funciton) {
-		
+	public Staff(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
+			int monthsOnCompany, int age, int funciton, String title) {
+
 		this.staffName = staffName;
 		this.staffSurname = staffSurname;
 		this.gender = gender;
@@ -49,8 +46,9 @@ public class Staff {
 		this.monthsOnCompany = monthsOnCompany;
 		this.age = age;
 		this.function = function;
+		this.title = title;
 	}
-	
+
 	public void Promotion() {
 		query.YesOrNo(4, "\n\n\n Would you like to check the status of " + staffName + " " + staffSurname
 				+ " on the promotion policy?  \n\n type Yes or No.");
@@ -76,37 +74,36 @@ public class Staff {
 						"\n\n  The avalible status for promotion is: \n STAGE THREE  - between 32 to 72 months", 35);
 				promotion = 3;
 			}
-				query.YesOrNo(4, "\n\n\n Would you like to PROCEED with the promotion for " + staffName + " "
-						+ staffSurname + " ?  \n\n type Yes or No.");
-				if (query.getUserYesOrNoValidOptio() == 1) {
-					
-					switch (promotion) {
+			query.YesOrNo(4, "\n\n\n Would you like to PROCEED with the promotion for " + staffName + " " + staffSurname
+					+ " ?  \n\n type Yes or No.");
+			if (query.getUserYesOrNoValidOptio() == 1) {
 
-					case 1:
-						salaryLevel = salaryLevel * 0.25 + salaryLevel;
-						promoted = "STAGE ONE";
-						break;
-					case 2:
-						salaryLevel = salaryLevel * 0.35 + salaryLevel;
-						promoted = "STAGE TWO";
-						break;
-					case 3:
-						salaryLevel = salaryLevel * 0.40 + salaryLevel;
-						promoted = "STAGE THREE";
-						break;
-					}
-					printer.typeWriter("staff salary updated successful", 35);
+				switch (promotion) {
 
-				} else if (query.getUserYesOrNoValidOptio() == 0) {
-					printer.typeWriter("NO CHANGES on the staff ", 35);
+				case 1:
+					salaryLevel = salaryLevel * 0.25 + salaryLevel;
+					promoted = "STAGE ONE";
+					break;
+				case 2:
+					salaryLevel = salaryLevel * 0.35 + salaryLevel;
+					promoted = "STAGE TWO";
+					break;
+				case 3:
+					salaryLevel = salaryLevel * 0.40 + salaryLevel;
+					promoted = "STAGE THREE";
+					break;
 				}
-			
+				printer.typeWriter("staff salary updated successful", 35);
+
+			} else if (query.getUserYesOrNoValidOptio() == 0) {
+				printer.typeWriter("NO CHANGES on the staff ", 35);
+			}
+
 		} else if (query.getUserYesOrNoValidOptio() == 0) {
 			printer.typeWriter(" ok, calling the next procedure.  ", 35);
 		}
 	}
 
-	
 	public void info() {
 //		 doing random phones
 		int number1StartBunch = 80;
@@ -118,170 +115,211 @@ public class Staff {
 		phoneN1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
 		phoneN2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 		phoneN3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
-		
+
 //		birthday
 		int yeardone = 2020;
 		day = data.day[myRandom.nextInt(data.day.length)];
 		month = data.month[myRandom.nextInt(data.month.length)];
-		year =(yeardone - age );
-		
+		year = (yeardone - age);
+
 		nationality = data.nationality[myRandom.nextInt(data.nationality.length)];
-		maritalStatus = data.maritalStatus [myRandom.nextInt(data.maritalStatus.length)];
-		
-		
-		
-		System.out.println("ID: "+id+"     NAME: "+staffName+"    SURNAME: "+staffSurname+"       Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + 
-				"\n\n      E-mail:  "+ staffName.toLowerCase() + "." +staffSurname.toLowerCase() + "@cct.ie    Age: "+age+"    Birth date: "+day+"/"+month+"/"+year+
-				"\n     Gender:"+gender+"     Nationality:  "+nationality+" t");
-		System.out.println(" \n   PROMOTION POLICY: "+promoted+"     MARITAL STATUS: "+maritalStatus);
+		maritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
+
+		System.out.println("ID: " + id + "     NAME: " + staffName + "    SURNAME: " + staffSurname
+				+ "       Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + "\n\n      E-mail:  "
+				+ staffName.toLowerCase() + "." + staffSurname.toLowerCase() + "@cct.ie    Age: " + age
+				+ "    Birth date: " + day + "/" + month + "/" + year + "\n     Gender:" + gender
+				+ "     Nationality:  " + nationality + " TITLE: " + title);
+		System.out.println(" \n   PROMOTION POLICY: " + promoted + "     MARITAL STATUS: " + maritalStatus);
 	}
 
-	
 	public void jobDaily() {
 		query.YesOrNo(4, "\n\n\n Hi" + staffName + " " + staffSurname
 				+ " would you like to start your job  now?  \n\n type Yes or No.");
 		if (query.getUserYesOrNoValidOptio() == 1) {
 			status = 1;
-			
+
 			/*
 			*
 			*
 			*
 			*
 			*/
-			
+
 		} else if (query.getUserYesOrNoValidOptio() == 0) {
 			printer.typeWriter(" ok, calling the next procedure.  ", 35);
-			status = 0; 
+			status = 0;
 		}
 	}
+
 	public UID getId() {
 		return id;
 	}
+
 	public void setId(UID id) {
 		this.id = id;
 	}
+
 	public String getStaffName() {
 		return staffName;
 	}
+
 	public void setStaffName(String staffName) {
 		this.staffName = staffName;
 	}
+
 	public String getStaffSurname() {
 		return staffSurname;
 	}
+
 	public void setStaffSurname(String staffSurname) {
 		this.staffSurname = staffSurname;
 	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 	public String getPromoted() {
 		return promoted;
 	}
+
 	public void setPromoted(String promoted) {
 		this.promoted = promoted;
 	}
+
 	public String getDay() {
 		return day;
 	}
+
 	public void setDay(String day) {
 		this.day = day;
 	}
+
 	public String getMonth() {
 		return month;
 	}
+
 	public void setMonth(String month) {
 		this.month = month;
 	}
+
 	public String getNationality() {
 		return nationality;
 	}
+
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
+
 	public String getMaritalStatus() {
 		return maritalStatus;
 	}
+
 	public void setMaritalStatus(String maritalStatus) {
 		this.maritalStatus = maritalStatus;
 	}
+
 	public double getSalaryLevel() {
 		return salaryLevel;
 	}
+
 	public void setSalaryLevel(double salaryLevel) {
 		this.salaryLevel = salaryLevel;
 	}
+
 	public int getWorkFunction() {
 		return workFunction;
 	}
+
 	public void setWorkFunction(int workFunction) {
 		this.workFunction = workFunction;
 	}
+
 	public int getYear() {
 		return year;
 	}
+
 	public void setYear(int year) {
 		this.year = year;
 	}
+
 	public int getStatus() {
 		return status;
 	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
 	public int getMonthsOnCompany() {
 		return monthsOnCompany;
 	}
+
 	public void setMonthsOnCompany(int monthsOnCompany) {
 		this.monthsOnCompany = monthsOnCompany;
 	}
+
 	public int getPromotion() {
 		return promotion;
 	}
+
 	public void setPromotion(int promotion) {
 		this.promotion = promotion;
 	}
+
 	public int getPhoneN1() {
 		return phoneN1;
 	}
+
 	public void setPhoneN1(int phoneN1) {
 		this.phoneN1 = phoneN1;
 	}
+
 	public int getPhoneN2() {
 		return phoneN2;
 	}
+
 	public void setPhoneN2(int phoneN2) {
 		this.phoneN2 = phoneN2;
 	}
+
 	public int getPhoneN3() {
 		return phoneN3;
 	}
+
 	public void setPhoneN3(int phoneN3) {
 		this.phoneN3 = phoneN3;
 	}
+
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-		public int getFunction() {
+
+	public int getFunction() {
 		return function;
 	}
+
 	public void setFunction(int function) {
 		this.function = function;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -311,6 +349,7 @@ public class Staff {
 		result = prime * result + year;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -394,7 +433,5 @@ public class Staff {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
