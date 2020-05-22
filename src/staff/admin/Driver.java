@@ -7,8 +7,9 @@ import staff.Staff;
 public class Driver extends Staff {
 
 	public Driver(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
-			int monthsOnCompany, int age, int function,String title) {
-		super(staffName, staffSurname, gender, workFunction, salaryLevel, monthsOnCompany, age,function,title);
+			int monthsOnCompany, int age, int function,String title, int phoneN1, int phoneN2, int phoneN3, String day,
+			String month, int year, String nationality, String maritalStatus) {
+		super(staffName, staffSurname, gender, workFunction, salaryLevel, monthsOnCompany, age,function,title,phoneN1,phoneN2,phoneN3,day,month,year,nationality,maritalStatus);
 		this.setStaffName(staffName);
 		this.setStaffSurname(staffSurname);
 		this.setGender(gender);
@@ -18,6 +19,14 @@ public class Driver extends Staff {
 		this.setAge(age);
 		this.setFunction(function);
 		this.setTitle(title);
+		this.setPhoneN1(phoneN1);
+		this.setPhoneN2(phoneN2);
+		this.setPhoneN3(phoneN3);
+		this.setDay(day);
+		this.setMonth(month);
+		this.setYear(year);
+		this.setNationality(nationality);
+		this.setMaritalStatus(maritalStatus);
 	}
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();

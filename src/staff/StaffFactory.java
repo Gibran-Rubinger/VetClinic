@@ -25,6 +25,23 @@ public class StaffFactory {
 	private int workF = 0;
 	private int startAge = 20;
 	private int finishAge = 65;
+	
+	private int number1StartBunch = 80;
+	private int number1FinishBunch = 89;
+	private int number2StartBunch = 100;
+	private int number2FinishBunch = 999;
+	private int number3StartBunch = 1000;
+	private int number3FinishBunch = 9999;
+	private int yeardone = 2020;
+	
+	private int addPhoneN1 = 0;
+	private int addPhoneN2 = 0;
+	private int addPhoneN3 = 0;
+	private int addYear = 0;
+	private String addDay = "";
+	private String addMonth = "";
+	private String addNationality = "";
+	private String addMaritalStatus = "";
 
 	Graphical printer = new Graphical();
 	Random myRandom = new Random();
@@ -54,6 +71,20 @@ public class StaffFactory {
 			salaryMaker = myRandom.nextInt(5);
 			workF = myRandom.nextInt(3);
 
+//			 doing random phones
+			addPhoneN1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
+			addPhoneN2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
+			addPhoneN3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
+
+//		birthday
+
+			addDay = data.day[myRandom.nextInt(data.day.length)];
+			addMonth = data.month[myRandom.nextInt(data.month.length)];
+			addYear = (yeardone - ageMaker);
+
+			addNationality = data.nationality[myRandom.nextInt(data.nationality.length)];
+			addMaritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
+			
 //				Receptionist 
 			if (function == 0) {
 				addTitle = "Receptionist";
@@ -127,14 +158,18 @@ public class StaffFactory {
 			}
 
 			if (function == 0) {
+				
+// int phoneN1, int phoneN2, int phoneN3, String day,
+//				String month, int year, String nationality, String maritalStatus) 
+				
 				adminStaff.add(new Receptionist(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle));
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 			} else if (function == 1) {
-				adminStaff.add(new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,
-						addTitle));
+				adminStaff.add(new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 			} else if (function == 2) {
 				adminStaff.add(new ITHelpdesk(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle));
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 			}
 
 		}
@@ -161,6 +196,20 @@ public class StaffFactory {
 			function = myRandom.nextInt(3);
 			salaryMaker = myRandom.nextInt(5);
 			workF = myRandom.nextInt(3);
+
+//			 doing random phones
+			addPhoneN1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
+			addPhoneN2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
+			addPhoneN3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
+
+//		birthday
+
+			addDay = data.day[myRandom.nextInt(data.day.length)];
+			addMonth = data.month[myRandom.nextInt(data.month.length)];
+			addYear = (yeardone - ageMaker);
+
+			addNationality = data.nationality[myRandom.nextInt(data.nationality.length)];
+			addMaritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
 
 //			IT Veterinarian salary
 			addTitle = "Veterinarian";
@@ -192,7 +241,8 @@ public class StaffFactory {
 				addName = maleFirstName;
 			}
 			medicalStaff.add(
-					new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,addTitle));
+					new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
+							function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 		}
 
 //		removing 5 from the total as we had created the 5 veterinarian above.
@@ -210,6 +260,19 @@ public class StaffFactory {
 			salaryMaker = myRandom.nextInt(5);
 			workF = myRandom.nextInt(3);
 
+//			 doing random phones
+			addPhoneN1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
+			addPhoneN2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
+			addPhoneN3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
+
+//		birthday
+
+			addDay = data.day[myRandom.nextInt(data.day.length)];
+			addMonth = data.month[myRandom.nextInt(data.month.length)];
+			addYear = (yeardone - ageMaker);
+
+			addNationality = data.nationality[myRandom.nextInt(data.nationality.length)];
+			addMaritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
 //			Trainee 
 			if (function == 0) {
 				addTitle = "Trainee";
@@ -284,13 +347,15 @@ public class StaffFactory {
 			}
 			if (function == 0) {
 				medicalStaff.add(new TraineeVet(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle));
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 			} else if (function == 1) {
 				medicalStaff
-						.add(new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,addTitle));
+						.add(new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
+								function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 			} else if (function == 2) {
 				medicalStaff.add(
-						new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,addTitle));
+						new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
+								function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
 			}
 		}
 		for (Staff print : medicalStaff) {

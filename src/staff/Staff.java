@@ -30,13 +30,16 @@ public class Staff {
 	private int age = 0;
 	private int function = 0;
 
+
+
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
 	Random myRandom = new Random();
 	StaffData data = new StaffData();
 
 	public Staff(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
-			int monthsOnCompany, int age, int funciton, String title) {
+			int monthsOnCompany, int age, int funciton, String title, int phoneN1, int phoneN2, int phoneN3, String day,
+			String month, int year, String nationality, String maritalStatus) {
 
 		this.staffName = staffName;
 		this.staffSurname = staffSurname;
@@ -47,9 +50,24 @@ public class Staff {
 		this.age = age;
 		this.function = funciton;
 		this.title = title;
+		this.phoneN1 = phoneN1;
+		this.phoneN2 = phoneN2;
+		this.phoneN3 = phoneN3;
+		this.day = day;
+		this.month = month;
+		this.year = year;
+		this.nationality = nationality;
+		this.maritalStatus = maritalStatus;
+		
+		
+	}
+
+	public void Load() {
+
 	}
 
 	public void Promotion() {
+		boolean promoDone = false;
 		query.YesOrNo(4, "\n\n\n Would you like to check the status of " + staffName + " " + staffSurname
 				+ " on the promotion policy?  \n\n type Yes or No.");
 		// chose a option
@@ -83,14 +101,17 @@ public class Staff {
 				case 1:
 					salaryLevel = salaryLevel * 0.25 + salaryLevel;
 					promoted = "STAGE ONE";
+					promoDone = true;
 					break;
 				case 2:
 					salaryLevel = salaryLevel * 0.35 + salaryLevel;
 					promoted = "STAGE TWO";
+					promoDone = true;
 					break;
 				case 3:
 					salaryLevel = salaryLevel * 0.40 + salaryLevel;
 					promoted = "STAGE THREE";
+					promoDone = true;
 					break;
 				}
 				printer.typeWriter("staff salary updated successful", 35);
@@ -99,44 +120,31 @@ public class Staff {
 				printer.typeWriter("NO CHANGES on the staff ", 35);
 			}
 
-		} else if (query.getUserYesOrNoValidOptio() == 0) {
-			printer.typeWriter(" ok, calling the next procedure.  ", 35);
+		} if (promoDone == true) {
+			query.YesOrNo(2, "\n\n Would you like to see the staff information again?\nType yes or no.\n\n");
+			if (query.getUserYesOrNoValidOptio() == 1) {
+				info();
+
+			} else if (query.getUserYesOrNoValidOptio() == 0) {
+				printer.typeWriter("Ok, all the changes has been record. and " + staffName
+						+ " will have a great surprise! go there and give the great news.", 50);
+			}
 		}
-		query.YesOrNo(2, "Would you like to see the staff information again?");
-		if (query.getUserYesOrNoValidOptio() == 1) {
-			info();
-		} else if (query.getUserYesOrNoValidOptio() == 0) {
-			printer.typeWriter("Ok, all the changes has been record. and " + staffName
-					+ "will have a great surprise! go there and give the great news.", 50);
+		else if (promoDone == false) {
+			if (query.getUserYesOrNoValidOptio() == 0) {
+				printer.typeWriter(" ok, calling the next procedure.  ", 35);
+			}
 		}
 	}
 
 	public void info() {
-//		 doing random phones
-		int number1StartBunch = 80;
-		int number1FinishBunch = 89;
-		int number2StartBunch = 100;
-		int number2FinishBunch = 999;
-		int number3StartBunch = 1000;
-		int number3FinishBunch = 9999;
-		phoneN1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
-		phoneN2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
-		phoneN3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
 
-//		birthday
-		int yeardone = 2020;
-		day = data.day[myRandom.nextInt(data.day.length)];
-		month = data.month[myRandom.nextInt(data.month.length)];
-		year = (yeardone - age);
-
-		nationality = data.nationality[myRandom.nextInt(data.nationality.length)];
-		maritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
-
-		System.out.println("ID: " + id + "     NAME: " + staffName + "    SURNAME: " + staffSurname
-				+ "           Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + "\n\n      E-mail:  "
-				+ staffName.toLowerCase() + "." + staffSurname.toLowerCase() + "@cct.ie    Age: " + age
-				+ "    Birth date: " + day + "/" + month + "/" + year + "\n      Gender:" + gender
-				+ "            Nationality:  " + nationality + "             TITLE: " + title);
+		System.out.println("ID: " + id + "     NAME: " + getStaffName() + "    SURNAME: " + getStaffSurname()
+				+ "           Phone number: +353 0" + getPhoneN1() + "." + getPhoneN2() + "." + getPhoneN3()
+				+ "\n\n      E-mail:  " + getStaffName().toLowerCase() + "." + getStaffSurname().toLowerCase()
+				+ "@cct.ie    Age: " + getAge() + "    Birth date: " + getDay() + "/" + getMonth() + "/" + getYear()
+				+ "\n      Gender:" + getAge() + "            Nationality:  " + getNationality()
+				+ "             TITLE: " + getTitle());
 		printer.typeWriter("_______________________________________________________________________________________"
 				+ "\n      SALARY:" + salaryLevel, 35);
 		printer.typeWriter(
