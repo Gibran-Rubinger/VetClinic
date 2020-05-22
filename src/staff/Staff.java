@@ -57,7 +57,7 @@ public class Staff {
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
 			printer.typeWriter("At moment " + staffName + " " + staffSurname + " has been working for "
-					+ monthsOnCompany + " in this company ", 35);
+					+ monthsOnCompany + " months in this company ", 35);
 
 			if (monthsOnCompany >= 16 && monthsOnCompany <= 30) {
 				printer.typeWriter("\n\n  The avalible status for promotion is: \n STAGE ONE - between 16 to 30 months",
@@ -102,6 +102,13 @@ public class Staff {
 		} else if (query.getUserYesOrNoValidOptio() == 0) {
 			printer.typeWriter(" ok, calling the next procedure.  ", 35);
 		}
+		query.YesOrNo(2, "Would you like to see the staff information again?");
+		if (query.getUserYesOrNoValidOptio() == 1) {
+			info();
+		} else if (query.getUserYesOrNoValidOptio() == 0) {
+			printer.typeWriter("Ok, all the changes has been record. and " + staffName
+					+ "will have a great surprise! go there and give the great news.", 50);
+		}
 	}
 
 	public void info() {
@@ -131,8 +138,9 @@ public class Staff {
 				+ "    Birth date: " + day + "/" + month + "/" + year + "\n      Gender:" + gender
 				+ "            Nationality:  " + nationality + "             TITLE: " + title);
 		printer.typeWriter("_______________________________________________________________________________________"
-				+ "\n      SALARY:"+ salaryLevel, 35);
-		printer.typeWriter(" \n      PROMOTION POLICY: " + promoted + "                 MARITAL STATUS: " + maritalStatus,40);
+				+ "\n      SALARY:" + salaryLevel, 35);
+		printer.typeWriter(
+				" \n      PROMOTION POLICY: " + promoted + "                 MARITAL STATUS: " + maritalStatus, 40);
 		Promotion();
 	}
 

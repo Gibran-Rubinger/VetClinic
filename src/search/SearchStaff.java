@@ -42,7 +42,7 @@ public class SearchStaff extends StaffFactory {
 			}
 		}
 		if (found == false) {
-			printer.typeWriter("\n sorry the animal id you type in was not found.  ", 50);
+			printer.typeWriter("\n sorry the staff id you type in was not found.  ", 50);
 		}
 		return null;
 	}
@@ -63,7 +63,7 @@ public class SearchStaff extends StaffFactory {
 			StaffToPrint();
 		}
 		if (found == false) {
-			printer.typeWriter("\n sorry the animal Specie you type in was not found.  ", 50);
+			printer.typeWriter("\n sorry the staff Specie you type in was not found.  ", 50);
 		}
 		return null;
 	}
