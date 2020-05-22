@@ -232,7 +232,7 @@ public class StaffFactory {
 				}
 //				nurse salary
 			} else if (function == 1) {
-				addTitle = "Salary";
+				addTitle = "Nurse";
 				switch (salaryMaker) {
 				case 0:
 					salary = 45700.00;

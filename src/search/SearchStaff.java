@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import animals.Animals;
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 import staff.Staff;

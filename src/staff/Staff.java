@@ -45,7 +45,7 @@ public class Staff {
 		this.salaryLevel = salaryLevel;
 		this.monthsOnCompany = monthsOnCompany;
 		this.age = age;
-		this.function = function;
+		this.function = funciton;
 		this.title = title;
 	}
 
@@ -126,11 +126,14 @@ public class Staff {
 		maritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
 
 		System.out.println("ID: " + id + "     NAME: " + staffName + "    SURNAME: " + staffSurname
-				+ "       Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + "\n\n      E-mail:  "
+				+ "           Phone number: +353 0" + phoneN1 + "." + phoneN2 + "." + phoneN3 + "\n\n      E-mail:  "
 				+ staffName.toLowerCase() + "." + staffSurname.toLowerCase() + "@cct.ie    Age: " + age
-				+ "    Birth date: " + day + "/" + month + "/" + year + "\n     Gender:" + gender
-				+ "     Nationality:  " + nationality + " TITLE: " + title);
-		System.out.println(" \n   PROMOTION POLICY: " + promoted + "     MARITAL STATUS: " + maritalStatus);
+				+ "    Birth date: " + day + "/" + month + "/" + year + "\n      Gender:" + gender
+				+ "            Nationality:  " + nationality + "             TITLE: " + title);
+		printer.typeWriter("_______________________________________________________________________________________"
+				+ "\n      SALARY:"+ salaryLevel, 35);
+		printer.typeWriter(" \n      PROMOTION POLICY: " + promoted + "                 MARITAL STATUS: " + maritalStatus,40);
+		Promotion();
 	}
 
 	public void jobDaily() {

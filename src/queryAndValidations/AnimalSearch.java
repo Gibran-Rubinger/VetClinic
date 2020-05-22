@@ -1,9 +1,5 @@
 package queryAndValidations;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-import animals.AnimalFactory;
 import graphical.Graphical;
 import search.SearchAnimal;
 
