@@ -15,16 +15,18 @@ public class AnimalFactory {
 
 //	define the size of the ArrayList with this integer.
 	public int animalsQuantity = 0;
-	int idObj = 1000;
-	int speciesGenerator = 0;
-	int groupGenerator = 0;
+	private int idObj = 1000;
+	private int speciesGenerator = 0;
+	private int groupGenerator = 0;
 
-	int number1StartBunch = 80;
-	int number1FinishBunch = 89;
-	int number2StartBunch = 100;
-	int number2FinishBunch = 999;
-	int number3StartBunch = 1000;
-	int number3FinishBunch = 9999;
+	private int number1StartBunch = 80;
+	private int number1FinishBunch = 89;
+	private int number2StartBunch = 100;
+	private int number2FinishBunch = 999;
+	private int number3StartBunch = 1000;
+	private int number3FinishBunch = 9999;
+	
+	private int totalAnimals = 0;
 
 	Graphical printer = new Graphical();
 
@@ -41,10 +43,10 @@ public class AnimalFactory {
 
 	public void CommonPets(int bunch) {
 
-
+		totalAnimals = bunch;
 //	For loop responsible to generate the objects. 
 		for (int i = 0; i < bunch; i++) {
-
+			
 //		this attribute is responsible for generate in a random way with kind of Species the animal will be.
 
 			speciesGenerator = myRandom.nextInt(6);
@@ -1064,6 +1066,16 @@ public class AnimalFactory {
 	public void setListOfAnimals(List<Animals> listOfAnimals) {
 		AnimalFactory.listOfAnimals = listOfAnimals;
 	}
+
+	public int getTotalAnimals() {
+		return totalAnimals;
+	}
+
+	public void setTotalAnimals(int totalAnimals) {
+		this.totalAnimals = totalAnimals;
+	}
+	
+	
 
 //___________________________________________________________________________
 // Searches

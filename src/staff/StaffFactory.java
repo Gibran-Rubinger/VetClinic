@@ -42,6 +42,8 @@ public class StaffFactory {
 	private String addMonth = "";
 	private String addNationality = "";
 	private String addMaritalStatus = "";
+	private int totalAdmin = 0;
+	private int totalMedical = 0;
 
 	Graphical printer = new Graphical();
 	Random myRandom = new Random();
@@ -58,6 +60,7 @@ public class StaffFactory {
 	}
 
 	public void Admin(int adminWorkers) {
+		totalAdmin = adminWorkers;
 //			For loop responsible to generate the objects. 
 		for (int i = 0; i < adminWorkers; i++) {
 			String maleFirstName = data.maleName[myRandom.nextInt(data.maleName.length)];
@@ -183,7 +186,7 @@ public class StaffFactory {
 	}
 
 	public void medical(int medicalWorkers) {
-
+		totalMedical = medicalWorkers;
 //		
 		for (int vet = 0; vet < 5; vet++) {
 			String maleFirstName = data.maleName[myRandom.nextInt(data.maleName.length)];
