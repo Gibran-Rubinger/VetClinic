@@ -122,7 +122,7 @@ public class workFactory {
 		indexMedical = 0;
 		for (Staff staff : medicalStaff) {
 			if (indexMedical < (medicalStaff.size() - 1)) {
-				for (int i = 0; i < amountAdmin; i++) {
+				for (int i = 0; i < amountMedical; i++) {
 					for (Animals animal : loadingAnimalsForMedical) {
 						staff.getListWork().add(animal);
 					}
@@ -130,7 +130,7 @@ public class workFactory {
 			}
 			indexMedical++;
 			if (indexMedical == adminStaff.size()) {
-				for (int i = 0; i < amountAdminOdd; i++) {
+				for (int i = 0; i < amountMedicalOdd; i++) {
 					for (Animals animal : loadingAnimalsForMedical) {
 						staff.getListWork().add(animal);
 					}

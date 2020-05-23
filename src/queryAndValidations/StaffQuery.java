@@ -19,6 +19,7 @@ public class StaffQuery {
 		query.YesOrNo(3, "\n\n Would you like to set  the staff? \n\n Type yes or no. ");
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
+			printer.typeWriter("Nice! \n\n please choose one of the options below:  ", 40);
 			query.MultipleChoise(3, "\n              |           1 - ADMIN:                  |  \n\n\n"
 					+ "				 \n              |           2 - MEDICAL:                |  " + "\n\n\n"
 					+ "_____________________________________________________________________________________________________________________________________________________________\n\n\n"
@@ -62,7 +63,7 @@ public class StaffQuery {
 
 			catch (CustomExceptions e) {
 				printer.typeWriter(
-						"\n Sorry. for the correct operation the clinic must to have at least 30 medical staff.\n\n Please, try again . . .",
+						"\n Sorry. for the correct operation, the clinic must to have at least 30 medical staff.\n\n Please, try again . . .",
 						50);
 			}
 		} while (goodToGo == false);

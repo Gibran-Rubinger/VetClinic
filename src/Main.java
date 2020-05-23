@@ -9,6 +9,9 @@ public class Main {
 
 		Graphical printer = new Graphical();
 		AnimalsQuery animals = new AnimalsQuery();
+		AnimalSearch search = new AnimalSearch();
+		StaffQuery staff = new StaffQuery();
+		WorkQuery work = new WorkQuery();
 
 //		Main Screen is being printed tipeWriter() and the effect of type writer, and the timer delay, is setting by typeWriter()
 	
@@ -46,13 +49,14 @@ public class Main {
 
 
 		
-		AnimalSearch search = new AnimalSearch();
-		StaffQuery staff = new StaffQuery();
+		
 		animals.AnimalsChoise();
 		
 		search.SearchAnimals();
 		
 		staff.Staffchoise();
+		
+		work.WhoIsWorking();
 	
 	}
 }

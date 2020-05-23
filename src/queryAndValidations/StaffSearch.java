@@ -9,6 +9,7 @@ public class StaffSearch {
 	SearchStaff where = new SearchStaff();
 
 	private String idS;
+	private int chooice =1;
 	private String title = "";
 	private String staffName = "";
 
@@ -33,7 +34,7 @@ public class StaffSearch {
 			if (query.getUserMultipleChoiseValidOption() == 1) {
 				query.OnlyString(3, "\n Please type the ID you looking for: \n");
 				idS = query.getGoodToGo();
-				where.SearchStaffById(idS);
+				where.SearchStaffById(idS, chooice);
 			} else if (query.getUserMultipleChoiseValidOption() == 2) {
 //		            	  would be possible implement a method similar to YesOrNo and check all the title names to case sensitive BUT we don't afford the time to do it. 
 				query.OnlyString(3, "\n Please type the title you looking for: "
