@@ -119,7 +119,7 @@ public class Driver extends Staff {
 				getId());
 	}
 
-	public static List<Animals> getListWork() {
+	public List<Animals> getListWork() {
 		return ListWork;
 	}
 

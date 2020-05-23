@@ -347,7 +347,7 @@ public class Staff {
 		this.function = function;
 	}
 
-	public static List<Animals> getListWork() {
+	public List<Animals> getListWork() {
 		return ListWork;
 	}
 

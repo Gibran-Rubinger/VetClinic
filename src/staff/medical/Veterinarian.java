@@ -114,7 +114,7 @@ if (query.getUserYesOrNoValidOptio() == 1) {
 	return String.format("\n   ID: %s             Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: "+ getAge() +"         Title: Veterinarian "
 			+ "           \n\n________________________________________________________________________________________________________________________________________________________", getId());
 	}
-	public static List<Animals> getListWork() {
+	public List<Animals> getListWork() {
 		return ListWork;
 	}
 	public static void setListWork(List<Animals> listWork) {
