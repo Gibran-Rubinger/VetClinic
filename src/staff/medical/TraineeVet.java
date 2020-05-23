@@ -1,10 +1,19 @@
 package staff.medical;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import animals.Animals;
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 import staff.Staff;
 
 public class TraineeVet extends Staff {
+	
+	protected static List<Animals> ListWork = new ArrayList<Animals>();
+	protected static List<Animals> workDone = new ArrayList<Animals>();
+	protected static List<Animals> workUnresolved = new ArrayList<Animals>();
+	protected static List<Animals> workRecord = new ArrayList<Animals>();
 
 	public TraineeVet(String staffName, String staffSurname, String gender, int workFunction, double salaryLevel,
 			int monthsOnCompany, int age, int function,String title, int phoneN1, int phoneN2, int phoneN3, String day,
@@ -55,4 +64,23 @@ public class TraineeVet extends Staff {
 	return String.format("\n   ID: %s             Name: " + getStaffName() +" "+getStaffSurname()+ "\n         Age: "+ getAge() +"         Title: Trainee Veterinarian "
 			+ "           \n\n________________________________________________________________________________________________________________________________________________________", getId());
 	}
+	public static List<Animals> getListWork() {
+		return ListWork;
+	}
+	public static void setListWork(List<Animals> listWork) {
+		ListWork = listWork;
+	}
+	public static List<Animals> getWorkDone() {
+		return workDone;
+	}
+	public static void setWorkDone(List<Animals> workDone) {
+		TraineeVet.workDone = workDone;
+	}
+	public static List<Animals> getWorkUnresolved() {
+		return workUnresolved;
+	}
+	public static void setWorkUnresolved(List<Animals> workUnresolved) {
+		TraineeVet.workUnresolved = workUnresolved;
+	}
+	
 }

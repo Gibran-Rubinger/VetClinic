@@ -381,4 +381,36 @@ public class StaffFactory {
 		System.out.println(allStaff.size());
 	}
 
+	public int getTotalAdmin() {
+		return totalAdmin;
+	}
+
+	public void setTotalAdmin(int totalAdmin) {
+		this.totalAdmin = totalAdmin;
+	}
+
+	public int getTotalMedical() {
+		return totalMedical;
+	}
+
+	public void setTotalMedical(int totalMedical) {
+		this.totalMedical = totalMedical;
+	}
+
+	public static List<Staff> getAdminStaff() {
+		return adminStaff;
+	}
+
+	public static void setAdminStaff(List<Staff> adminStaff) {
+		StaffFactory.adminStaff = adminStaff;
+	}
+
+	public static List<Staff> getMedicalStaff() {
+		return medicalStaff;
+	}
+
+	public static void setMedicalStaff(List<Staff> medicalStaff) {
+		StaffFactory.medicalStaff = medicalStaff;
+	}
+
 }

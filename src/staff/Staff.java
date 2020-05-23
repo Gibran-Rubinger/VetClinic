@@ -1,8 +1,11 @@
 package staff;
 
 import java.rmi.server.UID;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+import animals.Animals;
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 
@@ -30,7 +33,10 @@ public class Staff {
 	private int age = 0;
 	private int function = 0;
 
-
+	protected static List<Animals> ListWork;
+	protected static List<Animals> workDone;
+	protected static List<Animals> workUnresolved;
+	protected static List<Animals> workRecord;
 
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
@@ -58,8 +64,10 @@ public class Staff {
 		this.year = year;
 		this.nationality = nationality;
 		this.maritalStatus = maritalStatus;
-		
-		
+		ListWork = new ArrayList<Animals>();
+		workDone = new ArrayList<Animals>();
+		workUnresolved = new ArrayList<Animals>();
+		workRecord = new ArrayList<Animals>();
 	}
 
 	public void Load() {
@@ -120,7 +128,8 @@ public class Staff {
 				printer.typeWriter("NO CHANGES on the staff ", 35);
 			}
 
-		} if (promoDone == true) {
+		}
+		if (promoDone == true) {
 			query.YesOrNo(2, "\n\n Would you like to see the staff information again?\nType yes or no.\n\n");
 			if (query.getUserYesOrNoValidOptio() == 1) {
 				info();
@@ -129,8 +138,7 @@ public class Staff {
 				printer.typeWriter("Ok, all the changes has been record. and " + staffName
 						+ " will have a great surprise! go there and give the great news.", 50);
 			}
-		}
-		else if (promoDone == false) {
+		} else if (promoDone == false) {
 			if (query.getUserYesOrNoValidOptio() == 0) {
 				printer.typeWriter(" ok, calling the next procedure.  ", 35);
 			}
@@ -337,6 +345,30 @@ public class Staff {
 
 	public void setFunction(int function) {
 		this.function = function;
+	}
+
+	public static List<Animals> getListWork() {
+		return ListWork;
+	}
+
+	public static void setListWork(List<Animals> listWork) {
+		ListWork = listWork;
+	}
+
+	public static List<Animals> getWorkDone() {
+		return workDone;
+	}
+
+	public static void setWorkDone(List<Animals> workDone) {
+		Staff.workDone = workDone;
+	}
+
+	public static List<Animals> getWorkUnresolved() {
+		return workUnresolved;
+	}
+
+	public static void setWorkUnresolved(List<Animals> workUnresolved) {
+		Staff.workUnresolved = workUnresolved;
 	}
 
 	@Override
