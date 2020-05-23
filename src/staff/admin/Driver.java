@@ -77,7 +77,7 @@ public class Driver extends Staff {
 					for (Animals animal : workUnresolved) {
 						System.out.println(animal);
 					}
-					printer.typeWriter("Let's get start one by one.", 40);
+					printer.typeWriter("Let's get start one by one again.", 40);
 
 					for (Animals animal : workUnresolved) {
 						System.out.println(animal);
