@@ -20,12 +20,14 @@ public class UserInteraction {
 	private int countdown = 0;
 	private int display = 0;
 	private int bunch = 0;
-	
+
 	/*
-	 * Regular expression from java
-	 * -? – this part identifies if the given number is negative, the dash “–” searches for dash literally and the question mark “?” marks its presence as an optional one
-\d+ – this searches for one or more digits
-(\.\d+)? – this part of regex is to identify float numbers. Here we're searching for one or more digits followed by a period. The question mark, in the end, signifies that this complete group is optional
+	 * Regular expression from java -? – this part identifies if the given number is
+	 * negative, the dash “–” searches for dash literally and the question mark “?”
+	 * marks its presence as an optional one \d+ – this searches for one or more
+	 * digits (\.\d+)? – this part of regex is to identify float numbers. Here we're
+	 * searching for one or more digits followed by a period. The question mark, in
+	 * the end, signifies that this complete group is optional
 	 */
 	private String hasNumber = "-?\\d+(\\.\\d+)?";
 	private String goodToGo = "";
@@ -47,7 +49,6 @@ public class UserInteraction {
 	public void YesOrNo(int attempt, String text) {
 
 //		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
-
 		countdown = attempt;
 		display = attempt;
 //		setting the graphical with the milliseconds  preferred.
@@ -58,22 +59,22 @@ public class UserInteraction {
 //		Assign the attribute userInput with the client typing.
 				userInput = myReader.readLine();
 
-//		in this for loop the client will be inform when will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
+//		in this statement the client will be inform when will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
 
-//          		check if  the client choose yes.									
+//          	check if  the client choose yes.									
 				if (validAnswer1.equalsIgnoreCase(userInput) || validAnswer2.equalsIgnoreCase(userInput)) {
 					userYesOrNoValidOption = 1;
 					bugRunning = false;
 				}
-//                  check if if the client choose no.
-//					No case sensitive
+//              check if if the client choose no.
+//				No case sensitive
 				else if (validAnswer3.equalsIgnoreCase(userInput) || validAnswer4.equalsIgnoreCase(userInput)) {
 					userYesOrNoValidOption = 0;
 					bugRunning = false;
 				} else {
 					throw new CustomExceptions();
 				}
-//					in this part start to count how many left attempts has.
+//			  in this part start to count how many left attempts has.
 			} catch (Exception e) {
 				Bug(text, null, attempt);
 			}
@@ -86,7 +87,7 @@ public class UserInteraction {
 	public void MultipleChoise(int attempt, String text, int starN, int endN) {
 		countdown = attempt;
 		display = attempt;
-		printer.typeWriter(text, 1);
+		printer.typeWriter(text, 20);
 
 //		Assign the attribute userInput with the client typing.
 		do {
@@ -98,7 +99,7 @@ public class UserInteraction {
 					throw new CustomExceptions();
 				}
 //  			check if  the client choose yes.	
-				switch(userInputInt) {
+				switch (userInputInt) {
 				case 0:
 					setUserMultipleChoiseValidOption(0);
 					bugRunning = false;
@@ -115,11 +116,11 @@ public class UserInteraction {
 					setUserMultipleChoiseValidOption(3);
 					bugRunning = false;
 					break;
-				case 4: 
+				case 4:
 					setUserMultipleChoiseValidOption(4);
 					bugRunning = false;
 					break;
-				case 5: 
+				case 5:
 					setUserMultipleChoiseValidOption(5);
 					bugRunning = false;
 					break;
@@ -143,7 +144,7 @@ public class UserInteraction {
 
 			}
 
-//		calling the bug message.
+//			calling the bug message.
 			catch (CustomExceptions e) {
 				Bug(text, "", attempt);
 			} catch (Exception e) {
@@ -180,11 +181,10 @@ public class UserInteraction {
 
 		return bunch;
 	}
-	
+
 	public String OnlyString(int attempt, String text) {
 
 //		before to start the for loop, count down and display are being created and evaluated with the same number of attempt defined in the main method.
-
 		countdown = attempt;
 		display = attempt;
 //		setting the graphical with the milliseconds  preferred.
@@ -195,24 +195,23 @@ public class UserInteraction {
 //		Assign the attribute userInput with the client typing.
 				userInput = myReader.readLine();
 
-//		in this for loop the client will be inform when will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
+//		in this statement the client will be inform when will be the last attempt. if the numbers of attempt is exceed the bug message is trigger.
 
-//          		check if  the client choose yes.									
+//          	check if  the client choose yes.									
 				if (!userInput.contains(hasNumber)) {
 					goodToGo = userInput;
 					bugRunning = false;
 				} else {
 					throw new CustomExceptions();
 				}
-//					in this part start to count how many left attempts has.
+//			in this part start to count how many left attempts has.
 			} catch (Exception e) {
 				Bug(text, null, attempt);
 			}
 
 		} while (bugRunning == true);
-				return goodToGo;
+		return goodToGo;
 	}
-
 
 	public void Bug(String text, String text2, int attempt) {
 

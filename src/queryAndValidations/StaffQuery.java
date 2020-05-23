@@ -13,13 +13,12 @@ public class StaffQuery {
 	Graphical printer = new Graphical();
 	StaffSearch where = new StaffSearch();
 	StaffFactory myStaff = new StaffFactory();
-	
 
 	public void Staffchoise() {
 		query.YesOrNo(3, "\n\n Would you like to set  the staff? \n\n Type yes or no. ");
 		if (query.getUserYesOrNoValidOptio() == 1) {
 
-			printer.typeWriter("Nice! \n\n please choose one of the options below:  ", 40);
+			printer.typeWriter("Nice! \n\n please choose one of the options below: \n\n ", 20);
 			query.MultipleChoise(3, "\n              |           1 - ADMIN:                  |  \n\n\n"
 					+ "				 \n              |           2 - MEDICAL:                |  " + "\n\n\n"
 					+ "_____________________________________________________________________________________________________________________________________________________________\n\n\n"
@@ -43,7 +42,7 @@ public class StaffQuery {
 		}
 		where.SearchStaff();
 	}
-	
+
 	public void Medical() {
 		goodToGo = false;
 		do {
@@ -68,14 +67,13 @@ public class StaffQuery {
 			}
 		} while (goodToGo == false);
 	}
-	
-	
+
 	public void Admin() {
 		goodToGo = false;
 		do {
 			try {
-				query.GettingNumber("\n\n " + "\n\n ADMIN STAFF"
-						+ "\n\n How many admin Staff would you like to create?" + "\n ",
+				query.GettingNumber(
+						"\n\n " + "\n\n ADMIN STAFF" + "\n\n How many admin Staff would you like to create?" + "\n ",
 						"\n\n		 * * type at least 10 * * ", 3);
 
 				medicalStaffQ = query.getBunch();
@@ -85,7 +83,7 @@ public class StaffQuery {
 
 					myStaff.Admin(medicalStaffQ);
 					goodToGo = true;
-					
+
 				}
 			}
 
@@ -96,7 +94,5 @@ public class StaffQuery {
 			}
 		} while (goodToGo == false);
 	}
-
-	
 
 }

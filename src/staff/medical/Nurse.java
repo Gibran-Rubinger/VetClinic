@@ -43,23 +43,24 @@ public class Nurse extends Staff {
 	UserInteraction query = new UserInteraction();
 
 	public void jobDaily() {
-		query.YesOrNo(4, "\n\n\n Hi" + getStaffName() + " " + getStaffSurname()
+		query.YesOrNo(4, "\n\n\n Hi, " + getStaffName() + " " + getStaffSurname()
 				+ " would you like to start your task now?  \n\n type Yes or No.");
 		if (query.getUserYesOrNoValidOptio() == 1) {
 			setStatus(1);
 //start to load the "queue".
 			printer.typeWriter(
-					"Grand, let's see how many animals to administering drugs and preparing for procedure today:", 40);
+					"\n\n Grand, let's see how many animals to administering drugs and preparing for procedure today:",
+					40);
 
 			for (Animals animal : ListWork) {
 				System.out.println(animal);
 			}
-			printer.typeWriter("Let's get start one by one.", 40);
+			printer.typeWriter("\n\n Let's get start one by one.", 40);
 //Producing the effect to "adding" and "removing" animals
 			for (Animals animal : ListWork) {
 				System.out.println(animal);
 				query.YesOrNo(2,
-						"Please type   *yes or no*    \n to mark the animal status for this animal. \n\n yes - Done        no - Unresolved");
+						"\n\n Please type   *yes or no*    \n to mark the animal status for this animal. \n\n yes - Done        no - Unresolved");
 				if (query.getUserYesOrNoValidOptio() == 1) {
 					workDone.add(animal);
 //	we could remove the object but we prefer to have the object as record.
@@ -71,19 +72,19 @@ public class Nurse extends Staff {
 			if (workDone.size() != ListWork.size()) {
 
 //	give a chance the user finish the list again.
-				query.YesOrNo(2, "would you like to finish the animals mark as Unsolved? \n\n type *yes or no*  ");
+				query.YesOrNo(2, "\n\n Would you like to finish the animals mark as Unsolved? \n\n type *yes or no*  ");
 				if (query.getUserYesOrNoValidOptio() == 1) {
-					printer.typeWriter("That's nice, let's see how many animals you left behind", 40);
+					printer.typeWriter("\n That's nice, let's see how many animals you left behind", 40);
 
 					for (Animals animal : workUnresolved) {
 						System.out.println(animal);
 					}
-					printer.typeWriter("Let's get start one by one again.", 40);
+					printer.typeWriter("\n Let's get start one by one again.", 40);
 
 					for (Animals animal : workUnresolved) {
 						System.out.println(animal);
 						query.YesOrNo(2,
-								"Please type   *yes or no*    \n to mark the animal status for this animal. \\n\\n yes - Done        no - Unresolved");
+								"\n\n Please type   *yes or no*    \n to mark the animal status for this animal. \\n\\n yes - Done        no - Unresolved");
 						if (query.getUserYesOrNoValidOptio() == 1) {
 							workDone.add(animal);
 
@@ -92,7 +93,7 @@ public class Nurse extends Staff {
 						}
 					}
 				} else if (query.getUserYesOrNoValidOptio() == 0) {
-					printer.typeWriter("ok this will be record as unsolved.", 40);
+					printer.typeWriter("\n Ok this will be record as unsolved.", 40);
 
 					for (Animals animal : workUnresolved) {
 						workRecord.add(animal);
@@ -100,13 +101,13 @@ public class Nurse extends Staff {
 
 				}
 			} else {
-				printer.typeWriter("Well done " + getStaffName() + " " + getStaffSurname()
+				printer.typeWriter("\n\n Well done " + getStaffName() + " " + getStaffSurname()
 						+ " you finnish all the task raised for you today! ", 40);
 			}
 //we could make a statement to clear the records on listWork but we decide leave as it is.
 
 		} else if (query.getUserYesOrNoValidOptio() == 0) {
-			printer.typeWriter(" ok, calling the next procedure.  ", 35);
+			printer.typeWriter("\n Ok, calling the next procedure.  ", 35);
 			setStatus(0);
 		}
 	}

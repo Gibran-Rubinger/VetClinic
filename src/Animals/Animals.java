@@ -1,12 +1,10 @@
 package animals;
 
 import java.util.Random;
-
 import graphical.Graphical;
 import queryAndValidations.UserInteraction;
 
 public abstract class Animals {
-
 //  attributes
 	private int idAnimal = 0;
 	private String name = "";
@@ -15,17 +13,17 @@ public abstract class Animals {
 	private String gender = "";
 	private String medicalCond = "";
 
+//	Instantiate the classes necessary
 	Graphical printer = new Graphical();
 	UserInteraction query = new UserInteraction();
 	Random myRandom = new Random();
 	AnimalOwner owner = new AnimalOwner(null, null, 0, 0, 0);
 
-	
 //	constructor
 	public Animals() {
 	}
 
-//	constructor to set the Attributes.
+//	constructor passing the attributes as a parameters.
 	public Animals(int idAnimal, String name, int age, String species, String gender, String medicalCond) {
 		this.idAnimal = idAnimal;
 		this.name = name;
@@ -33,11 +31,8 @@ public abstract class Animals {
 		this.species = species;
 		this.gender = gender;
 		this.medicalCond = medicalCond;
-		
 	}
 
-
-	
 // creating the to String to override it.
 	@Override
 	public String toString() {
@@ -45,7 +40,8 @@ public abstract class Animals {
 				+ "       Gender: " + gender + "   \n \n Medical Condition: " + medicalCond + ". \n\n"
 				+ "\n________________________________________________________________________________________________________________________________________________________";
 	}
-//	produce the methods for getters and setters.
+
+//	produce the methods getters and setters.
 	public int getIdAnimal() {
 		return idAnimal;
 	}
@@ -93,6 +89,7 @@ public abstract class Animals {
 	public void setMedicalCond(String medicalCond) {
 		this.medicalCond = medicalCond;
 	}
+
 //	produce the methods for hashCode and equals.
 	@Override
 	public int hashCode() {
@@ -144,19 +141,15 @@ public abstract class Animals {
 	}
 
 	public void info() {
-		
-			printer.typeWriter(" Hi my name is "+getName()+" I am a "+getGender()+" and I am very happy to meet you today.\n"
-					+"My owner "+owner.getOwnerName()+ " and I having being fun since "+(getAge() - 2020)+" when I was born.", 60);	
-			
-				
-			query.YesOrNo(3,"\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
-		
-		if (query.getUserYesOrNoValidOptio() == 1) {
+		printer.typeWriter(" Hi my name is " + getName() + " I am a " + getGender()
+				+ " and I am very happy to meet you today.\n" + "My owner " + owner.getOwnerName()
+				+ " and I having being fun since " + (getAge() - 2020) + " when I was born.", 60);
 
+		query.YesOrNo(3, "\n\n\n\n Would you like to see my picture now?  \n\n type Yes or No.");
+		if (query.getUserYesOrNoValidOptio() == 1) {
 			@SuppressWarnings("unused")
 			int imageGenerator = myRandom.nextInt(4);
-	}
-		else if (query.getUserYesOrNoValidOptio() == 0){
+		} else if (query.getUserYesOrNoValidOptio() == 0) {
 			printer.typeWriter("Ok, see you later", 50);
 		}
 	}

@@ -13,8 +13,10 @@ public class workFactory {
 //	Attributes
 	private int totalAnimals = 0;
 	private int totalAdminStaff = 0;
+	@SuppressWarnings("unused")
 	private int totalMedicalStaff = 0;
 	private int animalsToAdmin = 0;
+	@SuppressWarnings("unused")
 	private int animalsToMedical = 0;
 	private int indexAllAnimals = 0;
 	private int indexAdmin = 0;
@@ -117,8 +119,7 @@ public class workFactory {
 			}
 
 		}
-		
-		
+
 		indexMedical = 0;
 		for (Staff staff : medicalStaff) {
 			if (indexMedical < (medicalStaff.size() - 1)) {
@@ -138,7 +139,6 @@ public class workFactory {
 			}
 
 		}
-		
-		
+
 	}
 }

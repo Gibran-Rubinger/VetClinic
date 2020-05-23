@@ -128,7 +128,7 @@ public class SearchAnimal extends AnimalFactory {
 				0, 2);
 
 		if (query.getUserMultipleChoiseValidOption() == 0) {
-			printer.typeWriter("Ok, see you later", 50);
+			printer.typeWriter("Ok, calling the next step", 50);
 		} else if (query.getUserMultipleChoiseValidOption() == 1) {
 			query.GettingNumber("\n Please type the ID you looking for: ", "", 4);
 			idS = query.getBunch();

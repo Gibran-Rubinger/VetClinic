@@ -1,10 +1,10 @@
 import graphical.*;
+import greetings.SendOurGreetings;
 import queryAndValidations.*;
 
-//above are being import the super classes that it will be used in the code.
+//above are being imports
 public class Main {
 
-//	this is the constructor that will call the objects (methods)	
 	public static void main(String[] args) {
 
 		Graphical printer = new Graphical();
@@ -12,9 +12,8 @@ public class Main {
 		AnimalSearch search = new AnimalSearch();
 		StaffQuery staff = new StaffQuery();
 		WorkQuery work = new WorkQuery();
+		SendOurGreetings end = new SendOurGreetings();
 
-//		Main Screen is being printed tipeWriter() and the effect of type writer, and the timer delay, is setting by typeWriter()
-	
 		printer.typeWriter(
 				"##############################################################################################################################################################################\r\n"
 						+ "##############################################################################################################################################################################\r\n"
@@ -47,16 +46,15 @@ public class Main {
 						+ "",
 				1);
 
-
-		
-		
 		animals.AnimalsChoise();
-		
+
 		search.SearchAnimals();
-		
+
 		staff.Staffchoise();
-		
+
 		work.WhoIsWorking();
-	
+
+		end.bye();
+
 	}
 }

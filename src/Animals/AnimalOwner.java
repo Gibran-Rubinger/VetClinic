@@ -4,7 +4,6 @@ public class AnimalOwner extends AnimalsData {
 
 	private String ownerName = "";
 	private String ownerSurname = "";
-
 	private int phoneN1 = 0;
 	private int phoneN2 = 0;
 	private int phoneN3 = 0;

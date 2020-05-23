@@ -34,13 +34,13 @@ public class SearchStaff extends StaffFactory {
 		for (Staff staff : allStaff) {
 // we need to pass the UID in toString  to able bufferedReader to pass an string to compare. it was very trick to learn :)
 			if (staff.getId().toString().equals(idSearch)) {
-				if(chooice ==1) {
-				printer.typeWriter("\n Your search was successful:  \n", 50);
-				System.out.println(staff);
-				staff.info();
-				found = true;
-				return staff;
-				} else if(chooice==2) {
+				if (chooice == 1) {
+					printer.typeWriter("\n Your search was successful:  \n", 50);
+					System.out.println(staff);
+					staff.info();
+					found = true;
+					return staff;
+				} else if (chooice == 2) {
 					printer.typeWriter("\n Ok, i could find you here!   \n", 50);
 					System.out.println(staff);
 					staff.jobDaily();

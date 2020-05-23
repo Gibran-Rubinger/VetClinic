@@ -70,10 +70,6 @@ public class Staff {
 		workRecord = new ArrayList<Animals>();
 	}
 
-	public void Load() {
-
-	}
-
 	public void Promotion() {
 		boolean promoDone = false;
 		query.YesOrNo(4, "\n\n\n Would you like to check the status of " + staffName + " " + staffSurname
@@ -85,7 +81,12 @@ public class Staff {
 			printer.typeWriter("At moment " + staffName + " " + staffSurname + " has been working for "
 					+ monthsOnCompany + " months in this company ", 35);
 
-			if (monthsOnCompany >= 16 && monthsOnCompany <= 30) {
+			if (monthsOnCompany < 16) {
+				printer.typeWriter("\n\n  Unfortunately" + staffName + " " + staffSurname
+						+ " has not complete at least 16 months to get into a STAGE ONE policy :(", 35);
+			}
+
+			else if (monthsOnCompany >= 16 && monthsOnCompany <= 30) {
 				printer.typeWriter("\n\n  The avalible status for promotion is: \n STAGE ONE - between 16 to 30 months",
 						35);
 				promotion = 1;
@@ -157,25 +158,75 @@ public class Staff {
 				+ "\n      SALARY:" + salaryLevel, 35);
 		printer.typeWriter(
 				" \n      PROMOTION POLICY: " + promoted + "                 MARITAL STATUS: " + maritalStatus, 40);
+
 		Promotion();
 	}
 
 	public void jobDaily() {
-		query.YesOrNo(4, "\n\n\n Hi" + staffName + " " + staffSurname
-				+ " would you like to start your job  now?  \n\n type Yes or No.");
+		query.YesOrNo(4, "\n\n\n Hi, " + getStaffName() + " " + getStaffSurname()
+				+ " would you like to start your task now?  \n\n type Yes or No.");
 		if (query.getUserYesOrNoValidOptio() == 1) {
-			status = 1;
+			setStatus(1);
+//start to load the "queue".
+			printer.typeWriter("\n\n Grand, let's see how many animals you need to delivery today", 40);
 
-			/*
-			*
-			*
-			*
-			*
-			*/
+			for (Animals animal : ListWork) {
+				System.out.println(animal);
+			}
+			printer.typeWriter("\n\n Let's get start one by one.", 40);
+//Producing the effect to "adding" and "removing" animals
+			for (Animals animal : ListWork) {
+				System.out.println(animal);
+				query.YesOrNo(2,
+						"\n\n Please type   *yes or no*    \n to mark the delivery status. \n\n yes - Done        no - Unresolved");
+				if (query.getUserYesOrNoValidOptio() == 1) {
+					workDone.add(animal);
+//			we could remove the object but we prefer to have the object as record.
+				} else if (query.getUserYesOrNoValidOptio() == 0) {
+					workUnresolved.add(animal);
+				}
+			}
+//	check if all animals had being done
+			if (workDone.size() != ListWork.size()) {
+
+//			give a chance the user finish the list again.
+				query.YesOrNo(2, "\n\n Would you like to finish the animals mark as Unsolved? \n\n type *yes or no*  ");
+				if (query.getUserYesOrNoValidOptio() == 1) {
+					printer.typeWriter("\n That's nice, let's see how many animals you left behind", 40);
+
+					for (Animals animal : workUnresolved) {
+						System.out.println(animal);
+					}
+					printer.typeWriter("\n\n Let's get start one by one again.", 40);
+
+					for (Animals animal : workUnresolved) {
+						System.out.println(animal);
+						query.YesOrNo(2,
+								"\n\n Please type   *yes or no*    \n to mark the delivery status. \n\n yes - Done        no - Unresolved");
+						if (query.getUserYesOrNoValidOptio() == 1) {
+							workDone.add(animal);
+
+						} else if (query.getUserYesOrNoValidOptio() == 0) {
+							workRecord.add(animal);
+						}
+					}
+				} else if (query.getUserYesOrNoValidOptio() == 0) {
+					printer.typeWriter("\n\n Ok this will be record as unsolved.", 40);
+
+					for (Animals animal : workUnresolved) {
+						workRecord.add(animal);
+					}
+
+				}
+			} else {
+				printer.typeWriter("\n\n Well done " + getStaffName() + " " + getStaffSurname()
+						+ " you finnish all the task raised for you today! ", 40);
+			}
+//	we could make a statement to clear the records on listWork but we decide leave as it is.
 
 		} else if (query.getUserYesOrNoValidOptio() == 0) {
-			printer.typeWriter(" ok, calling the next procedure.  ", 35);
-			status = 0;
+			printer.typeWriter("\n ok, calling the next procedure.  ", 35);
+			setStatus(0);
 		}
 	}
 

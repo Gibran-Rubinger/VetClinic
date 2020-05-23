@@ -25,7 +25,7 @@ public class StaffFactory {
 	private int workF = 0;
 	private int startAge = 20;
 	private int finishAge = 65;
-	
+
 	private int number1StartBunch = 80;
 	private int number1FinishBunch = 89;
 	private int number2StartBunch = 100;
@@ -33,7 +33,7 @@ public class StaffFactory {
 	private int number3StartBunch = 1000;
 	private int number3FinishBunch = 9999;
 	private int yeardone = 2020;
-	
+
 	private int addPhoneN1 = 0;
 	private int addPhoneN2 = 0;
 	private int addPhoneN3 = 0;
@@ -87,7 +87,7 @@ public class StaffFactory {
 
 			addNationality = data.nationality[myRandom.nextInt(data.nationality.length)];
 			addMaritalStatus = data.maritalStatus[myRandom.nextInt(data.maritalStatus.length)];
-			
+
 //				Receptionist 
 			if (function == 0) {
 				addTitle = "Receptionist";
@@ -161,18 +161,21 @@ public class StaffFactory {
 			}
 
 			if (function == 0) {
-				
+
 // int phoneN1, int phoneN2, int phoneN3, String day,
 //				String month, int year, String nationality, String maritalStatus) 
-				
+
 				adminStaff.add(new Receptionist(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear,
+						addNationality, addMaritalStatus));
 			} else if (function == 1) {
-				adminStaff.add(new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+				adminStaff.add(new Driver(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,
+						addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality,
+						addMaritalStatus));
 			} else if (function == 2) {
 				adminStaff.add(new ITHelpdesk(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear,
+						addNationality, addMaritalStatus));
 			}
 
 		}
@@ -243,9 +246,9 @@ public class StaffFactory {
 				addGender = "Male";
 				addName = maleFirstName;
 			}
-			medicalStaff.add(
-					new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-							function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+			medicalStaff.add(new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
+					function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality,
+					addMaritalStatus));
 		}
 
 //		removing 5 from the total as we had created the 5 veterinarian above.
@@ -350,22 +353,23 @@ public class StaffFactory {
 			}
 			if (function == 0) {
 				medicalStaff.add(new TraineeVet(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear,
+						addNationality, addMaritalStatus));
 			} else if (function == 1) {
-				medicalStaff
-						.add(new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-								function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+				medicalStaff.add(new Nurse(addName, addSurname, addGender, workF, salary, workMonth, ageMaker, function,
+						addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality,
+						addMaritalStatus));
 			} else if (function == 2) {
-				medicalStaff.add(
-						new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
-								function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear, addNationality, addMaritalStatus));
+				medicalStaff.add(new Veterinarian(addName, addSurname, addGender, workF, salary, workMonth, ageMaker,
+						function, addTitle, addPhoneN1, addPhoneN2, addPhoneN3, addDay, addMonth, addYear,
+						addNationality, addMaritalStatus));
 			}
 		}
 		for (Staff print : medicalStaff) {
 			System.out.println(print);
 		}
 //	counting the numbers of item in the Array.
-		printer.typeWriter("\n" + "The Total of admin staff in the system is:  ", 50);
+		printer.typeWriter("\n" + "The Total of medical staff in the system is:  ", 50);
 		System.out.println(medicalStaff.size());
 
 	}

@@ -25,7 +25,7 @@ public class AnimalFactory {
 	private int number2FinishBunch = 999;
 	private int number3StartBunch = 1000;
 	private int number3FinishBunch = 9999;
-	
+
 	private int totalAnimals = 0;
 
 	Graphical printer = new Graphical();
@@ -33,9 +33,9 @@ public class AnimalFactory {
 	Random myRandom = new Random();
 	AnimalsData database = new AnimalsData();
 
-//	generate the Array to storage the random Animals.
+//	generate the List to storage the random Animals.
 	protected static List<Animals> listOfAnimals;
-	
+
 	public AnimalFactory() {
 		listOfAnimals = new ArrayList<Animals>();
 	}
@@ -46,9 +46,8 @@ public class AnimalFactory {
 		totalAnimals = bunch;
 //	For loop responsible to generate the objects. 
 		for (int i = 0; i < bunch; i++) {
-			
-//		this attribute is responsible for generate in a random way with kind of Species the animal will be.
 
+//		this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6);
 
 //      Generate the id 
@@ -59,11 +58,8 @@ public class AnimalFactory {
 //		Loading random Names
 			String femaleAnimalNames = database.poolOfFemaleNames[myRandom.nextInt(database.poolOfFemaleNames.length)];
 			String maleAnimalNames = database.poolOfMaleNames[myRandom.nextInt(database.poolOfMaleNames.length)];
-
 //		__________________________________________
 //		Medical conditions 
-
-//		Common Pets
 			String dogMedicalCond = database.dogMedCond[myRandom.nextInt(database.dogMedCond.length)];
 			String catMedicalCond = database.catMedCond[myRandom.nextInt(database.catMedCond.length)];
 			String domesticPigMedicalCond = database.domesticPigMedCond[myRandom
@@ -71,24 +67,20 @@ public class AnimalFactory {
 			String rabbitMedicalCond = database.rabbitMedCond[myRandom.nextInt(database.rabbitMedCond.length)];
 			String hamisterMedicalCond = database.hamisterMedCond[myRandom.nextInt(database.hamisterMedCond.length)];
 			String guineaPigMedicalCond = database.guineaPigMedCond[myRandom.nextInt(database.guineaPigMedCond.length)];
-
 //		__________________________________________
 //		Loading random Owners
-
 			String firstNameOwner = database.poolOfOwnerNames[myRandom.nextInt(database.poolOfOwnerNames.length)];
 			String SurnameOwner = database.poolOfOwnerSurnames[myRandom.nextInt(database.poolOfOwnerSurnames.length)];
 
 			int n1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
-
 //		__________________________________________
 //		
-
-//								if statement responsible to generate objects per gender.
+//			if statement responsible to generate objects per gender.
 			if (idObj % 2 == 0) {
 
-//									Inside the if statement just Female Object.
+//				Inside the if statement just Female Object.
 				if (speciesGenerator == 0) {
 					getListOfAnimals().add(new Dog(idObj, femaleAnimalNames, AgeRandom(20), "Dog", " Female ",
 							dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -113,7 +105,7 @@ public class AnimalFactory {
 			}
 
 			else {
-//								Male Object - every attribute of the object is picked using the random method.
+//				Male Object - every attribute of the object is picked using the random method.
 				if (speciesGenerator == 0) {
 					getListOfAnimals().add(new Dog(idObj, maleAnimalNames, AgeRandom(20), "Dog", " Male ",
 							dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -139,14 +131,12 @@ public class AnimalFactory {
 		}
 
 //		counting the numbers of item in the Array.
-
 		for (Animals print : getListOfAnimals()) {
 			System.out.println(print);
 		}
 //		counting the numbers of item in the Array.
 		printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
 		System.out.println(getListOfAnimals().size());
-
 	}
 
 	public void Birds(int bunch) {
@@ -160,7 +150,7 @@ public class AnimalFactory {
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6);
 
-//	      Generate the id 
+//	        Generate the id 
 			idObj += i;
 
 //			generate the random attribute just once instead to repeat the same amount of code every time.
@@ -168,24 +158,19 @@ public class AnimalFactory {
 //			Loading random Names
 			String femaleAnimalNames = database.poolOfFemaleNames[myRandom.nextInt(database.poolOfFemaleNames.length)];
 			String maleAnimalNames = database.poolOfMaleNames[myRandom.nextInt(database.poolOfMaleNames.length)];
-
 //			__________________________________________
 //			Medical conditions 
 			String birdsMedicalCond = database.birdsMedCond[myRandom.nextInt(database.birdsMedCond.length)];
-
 //			__________________________________________
 //			Loading random Owners
-
 			String firstNameOwner = database.poolOfOwnerNames[myRandom.nextInt(database.poolOfOwnerNames.length)];
 			String SurnameOwner = database.poolOfOwnerSurnames[myRandom.nextInt(database.poolOfOwnerSurnames.length)];
 
 			int n1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
-
 //			__________________________________________
-
-//				if statement responsible to generate objects per gender.
+//		    if statement responsible to generate objects per gender.
 			if (idObj % 2 == 0) {
 
 //					Inside the if statement just Female Object.
@@ -237,7 +222,7 @@ public class AnimalFactory {
 		for (Animals print : getListOfAnimals()) {
 			System.out.println(print);
 		}
-//			counting the numbers of item in the Array.
+//		counting the numbers of item in the Array.
 		printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
 		System.out.println(getListOfAnimals().size());
 	}
@@ -253,7 +238,7 @@ public class AnimalFactory {
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6);
 
-//	      Generate the id 
+//	        Generate the id 
 			idObj += i;
 
 //			generate the random attribute just once instead to repeat the same amount of code every time.
@@ -261,11 +246,9 @@ public class AnimalFactory {
 //			Loading random Names
 			String femaleAnimalNames = database.poolOfFemaleNames[myRandom.nextInt(database.poolOfFemaleNames.length)];
 			String maleAnimalNames = database.poolOfMaleNames[myRandom.nextInt(database.poolOfMaleNames.length)];
-
 //			__________________________________________
 //			Medical conditions 
 			String fishMedicalCond = database.fishMedCond[myRandom.nextInt(database.fishMedCond.length)];
-
 //			__________________________________________
 //			Loading random Owners
 
@@ -275,13 +258,11 @@ public class AnimalFactory {
 			int n1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
-
 //			__________________________________________
-
 //				if statement responsible to generate objects per gender.
 			if (idObj % 2 == 0) {
 
-//					Inside the if statement just Female Object.
+//				Inside the if statement just Female Object.
 				if (speciesGenerator == 0) {
 					getListOfAnimals().add(new Oscar(idObj, femaleAnimalNames, AgeRandom(21), "Oscar", " Female ",
 							fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -330,7 +311,7 @@ public class AnimalFactory {
 		for (Animals print : getListOfAnimals()) {
 			System.out.println(print);
 		}
-//			counting the numbers of item in the Array.
+//		counting the numbers of item in the Array.
 		printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
 		System.out.println(getListOfAnimals().size());
 	}
@@ -347,7 +328,7 @@ public class AnimalFactory {
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6);
 
-//	      Generate the id 
+//	       Generate the id 
 			idObj += i;
 
 //			generate the random attribute just once instead to repeat the same amount of code every time.
@@ -355,11 +336,9 @@ public class AnimalFactory {
 //			Loading random Names
 			String femaleAnimalNames = database.poolOfFemaleNames[myRandom.nextInt(database.poolOfFemaleNames.length)];
 			String maleAnimalNames = database.poolOfMaleNames[myRandom.nextInt(database.poolOfMaleNames.length)];
-
 //			__________________________________________
 //			Medical conditions 
 			String reptileMedicalCond = database.reptileMedCond[myRandom.nextInt(database.reptileMedCond.length)];
-
 //			__________________________________________
 //			Loading random Owners
 
@@ -369,13 +348,12 @@ public class AnimalFactory {
 			int n1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
-
 //			__________________________________________
 
-//				if statement responsible to generate objects per gender.
+//			if statement responsible to generate objects per gender.
 			if (idObj % 2 == 0) {
 
-//					Inside the if statement just Female Object.
+//				Inside the if statement just Female Object.
 				if (speciesGenerator == 0) {
 					getListOfAnimals().add(new WaterDragon(idObj, femaleAnimalNames, AgeRandom(21), "Whater Dragon",
 							" Female ", reptileMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -428,7 +406,7 @@ public class AnimalFactory {
 		for (Animals print : getListOfAnimals()) {
 			System.out.println(print);
 		}
-//			counting the numbers of item in the Array.
+//		counting the numbers of item in the Array.
 		printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
 		System.out.println(getListOfAnimals().size());
 	}
@@ -444,7 +422,7 @@ public class AnimalFactory {
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6);
 
-//	      Generate the id 
+//	        Generate the id 
 			idObj += i;
 
 //			generate the random attribute just once instead to repeat the same amount of code every time.
@@ -452,7 +430,6 @@ public class AnimalFactory {
 //			Loading random Names
 			String femaleAnimalNames = database.poolOfFemaleNames[myRandom.nextInt(database.poolOfFemaleNames.length)];
 			String maleAnimalNames = database.poolOfMaleNames[myRandom.nextInt(database.poolOfMaleNames.length)];
-
 //			__________________________________________
 //			Medical conditions 
 			String oxMedicalCond = database.oxMedCond[myRandom.nextInt(database.oxMedCond.length)];
@@ -469,13 +446,12 @@ public class AnimalFactory {
 			int n1 = (myRandom.nextInt(number1FinishBunch - number1StartBunch + 1) + number1StartBunch);
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
-
 //			__________________________________________
 
-//				if statement responsible to generate objects per gender.
+//			if statement responsible to generate objects per gender.
 			if (idObj % 2 == 0) {
 
-//					Inside the if statement just Female Object.
+//				Inside the if statement just Female Object.
 				if (speciesGenerator == 0) {
 					getListOfAnimals().add(new Ox(idObj, femaleAnimalNames, AgeRandom(23), "Ox", " Female ",
 							oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -526,7 +502,7 @@ public class AnimalFactory {
 		for (Animals print : getListOfAnimals()) {
 			System.out.println(print);
 		}
-//			counting the numbers of item in the Array.
+//		counting the numbers of item in the Array.
 		printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
 		System.out.println(getListOfAnimals().size());
 	}
@@ -542,7 +518,7 @@ public class AnimalFactory {
 //			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			speciesGenerator = myRandom.nextInt(6);
 
-//	      Generate the id 
+//	        Generate the id 
 			idObj += i;
 
 //			generate the random attribute just once instead to repeat the same amount of code every time.
@@ -566,10 +542,10 @@ public class AnimalFactory {
 
 //			__________________________________________
 
-//				if statement responsible to generate objects per gender.
+//			if statement responsible to generate objects per gender.
 			if (idObj % 2 == 0) {
 
-//					Inside the if statement just Female Object.
+//				Inside the if statement just Female Object.
 				if (speciesGenerator == 0) {
 					getListOfAnimals().add(new PacmanFrog(idObj, femaleAnimalNames, AgeRandom(16), "PacmanFrong",
 							" Female ", exoticMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -625,7 +601,7 @@ public class AnimalFactory {
 		for (Animals print : getListOfAnimals()) {
 			System.out.println(print);
 		}
-//			counting the numbers of item in the Array.
+//		counting the numbers of item in the Array.
 		printer.typeWriter("\n" + "The Total of Animals in the system is:  ", 50);
 		System.out.println(getListOfAnimals().size());
 	}
@@ -638,23 +614,23 @@ public class AnimalFactory {
 //	For loop responsible to generate the objects. 
 		for (int i = 0; i < bunch; i++) {
 
-//		this attribute is responsible for generate in a random way with kind of Species the animal will be.
+//			this attribute is responsible for generate in a random way with kind of Species the animal will be.
 			groupGenerator = myRandom.nextInt(6);
 			speciesGenerator = myRandom.nextInt(6);
 
-//      Generate the id 
+//     		 Generate the id 
 			idObj += i;
 
-//		generate the random attribute just once instead to repeat the same amount of code every time.
-//		__________________________________________
-//		Loading random Names
+//			generate the random attribute just once instead to repeat the same amount of code every time.
+//			__________________________________________
+//			Loading random Names
 			String femaleAnimalNames = database.poolOfFemaleNames[myRandom.nextInt(database.poolOfFemaleNames.length)];
 			String maleAnimalNames = database.poolOfMaleNames[myRandom.nextInt(database.poolOfMaleNames.length)];
 
-//		__________________________________________
-//		Medical conditions 
+//			__________________________________________
+//			Medical conditions 
 
-//		Common Pets
+//			Common Pets
 			String dogMedicalCond = database.dogMedCond[myRandom.nextInt(database.dogMedCond.length)];
 			String catMedicalCond = database.catMedCond[myRandom.nextInt(database.catMedCond.length)];
 			String domesticPigMedicalCond = database.domesticPigMedCond[myRandom
@@ -663,28 +639,27 @@ public class AnimalFactory {
 			String hamisterMedicalCond = database.hamisterMedCond[myRandom.nextInt(database.hamisterMedCond.length)];
 			String guineaPigMedicalCond = database.guineaPigMedCond[myRandom.nextInt(database.guineaPigMedCond.length)];
 
-//		Birds
+//			Birds
 			String birdsMedicalCond = database.birdsMedCond[myRandom.nextInt(database.birdsMedCond.length)];
 
-//		fish
+//			fish
 			String fishMedicalCond = database.fishMedCond[myRandom.nextInt(database.fishMedCond.length)];
 
-//		Reptile
+//			Reptile
 			String reptileMedicalCond = database.reptileMedCond[myRandom.nextInt(database.reptileMedCond.length)];
 
-//		Farm
+//			Farm
 			String oxMedicalCond = database.oxMedCond[myRandom.nextInt(database.oxMedCond.length)];
 			String horsePonyAndDonkeyMedicalCond = database.horsePonyAndDonkeyMedCond[myRandom
 					.nextInt(database.horsePonyAndDonkeyMedCond.length)];
 			String sheepAndGoatMedicalCond = database.sheepAndGoatMedCond[myRandom
 					.nextInt(database.sheepAndGoatMedCond.length)];
 
-//		Exotic
+//			Exotic
 			String exoticMedicalCond = database.exoticMedCond[myRandom.nextInt(database.exoticMedCond.length)];
 
-//		__________________________________________
-//		Loading random Owners
-
+//			__________________________________________
+//			Loading random Owners
 			String firstNameOwner = database.poolOfOwnerNames[myRandom.nextInt(database.poolOfOwnerNames.length)];
 			String SurnameOwner = database.poolOfOwnerSurnames[myRandom.nextInt(database.poolOfOwnerSurnames.length)];
 
@@ -692,14 +667,14 @@ public class AnimalFactory {
 			int n2 = (myRandom.nextInt(number2FinishBunch - number2StartBunch + 1) + number2StartBunch);
 			int n3 = (myRandom.nextInt(number3FinishBunch - number3StartBunch + 1) + number3StartBunch);
 
-//		__________________________________________
+//			__________________________________________
 
-//		Common Pets
+//			Common Pets
 			if (groupGenerator == 0) {
-//								if statement responsible to generate objects per gender.
+//				if statement responsible to generate objects per gender.
 				if (idObj % 2 == 0) {
 
-//									Inside the if statement just Female Object.
+//					Inside the if statement just Female Object.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Dog(idObj, femaleAnimalNames, AgeRandom(20), "Dog", " Female ",
 								dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -725,7 +700,7 @@ public class AnimalFactory {
 				}
 
 				else {
-//								Male Object - every attribute of the object is picked using the random method.
+//					Male Object - every attribute of the object is picked using the random method.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Dog(idObj, maleAnimalNames, AgeRandom(20), "Dog", " Male ",
 								dogMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -751,12 +726,12 @@ public class AnimalFactory {
 				}
 			}
 
-//	Birds sub group	
+//			Birds sub group	
 			else if (groupGenerator == 1) {
 
 				if (idObj % 2 == 0) {
 
-//									Inside the if statement just Female Object.
+//					Inside the if statement just Female Object.
 					if (speciesGenerator == 0) {
 						getListOfAnimals()
 								.add(new Cokcatiel(idObj, femaleAnimalNames, AgeRandom(14), "Cokcatiel", " Female ",
@@ -783,7 +758,7 @@ public class AnimalFactory {
 				}
 
 				else {
-//										Male Object - every attribute of the object is picked using the random method.
+//					Male Object - every attribute of the object is picked using the random method.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Cokcatiel(idObj, maleAnimalNames, AgeRandom(14), "Cokcatiel",
 								" Male ", birdsMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -806,11 +781,11 @@ public class AnimalFactory {
 				}
 			}
 
-//  Fish sub group 							
+//          Fish sub group 							
 			else if (groupGenerator == 2) {
 
 				if (idObj % 2 == 0) {
-//								Inside the if statement just Female Object.
+//					Inside the if statement just Female Object.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Oscar(idObj, femaleAnimalNames, AgeRandom(21), "Oscar", " Female ",
 								fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -836,7 +811,7 @@ public class AnimalFactory {
 				}
 
 				else {
-//                       			Male Object - every attribute of the object is picked using the random method.
+//                  Male Object - every attribute of the object is picked using the random method.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Oscar(idObj, maleAnimalNames, AgeRandom(21), "Oscar", " Male ",
 								fishMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -858,11 +833,11 @@ public class AnimalFactory {
 					}
 				}
 			}
-//		Reptiles sub Group
+//			Reptiles sub Group
 			else if (groupGenerator == 3) {
 
 				if (idObj % 2 == 0) {
-//											Inside the if statement just Female Object.
+//					Inside the if statement just Female Object.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(
 								new WaterDragon(idObj, femaleAnimalNames, AgeRandom(21), "Whater Dragon", " Female ",
@@ -890,7 +865,7 @@ public class AnimalFactory {
 				}
 
 				else {
-//											Male Object - every attribute of the object is picked using the random method.
+//					Male Object - every attribute of the object is picked using the random method.
 					if (speciesGenerator == 0) {
 						getListOfAnimals()
 								.add(new WaterDragon(idObj, maleAnimalNames, AgeRandom(21), "Whater Dragon", " Male ",
@@ -917,11 +892,11 @@ public class AnimalFactory {
 					}
 				}
 			}
-//		Farm Sub group
+//		 	Farm Sub group
 			else if (groupGenerator == 4) {
 				if (idObj % 2 == 0) {
 
-					// Inside the if statement just Female Object.
+// 					Inside the if statement just Female Object.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Ox(idObj, femaleAnimalNames, AgeRandom(23), "Ox", " Female ",
 								oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -947,8 +922,8 @@ public class AnimalFactory {
 				}
 
 				else {
-					// Male Object - every attribute of the object is picked using the random
-					// method.
+// 					Male Object - every attribute of the object is picked using the random
+// 					method.
 					if (speciesGenerator == 0) {
 						getListOfAnimals().add(new Ox(idObj, maleAnimalNames, AgeRandom(23), "Ox", " Male ",
 								oxMedicalCond, new AnimalOwner(firstNameOwner, SurnameOwner, n1, n2, n3)));
@@ -974,11 +949,11 @@ public class AnimalFactory {
 				}
 
 			}
-//		Exotic sub group
+//			Exotic sub group
 			else if (groupGenerator == 5) {
 				if (idObj % 2 == 0) {
 
-//											Inside the if statement just Female Object.
+//					Inside the if statement just Female Object.
 					if (speciesGenerator == 0) {
 						getListOfAnimals()
 								.add(new PacmanFrog(idObj, femaleAnimalNames, AgeRandom(16), "PacmanFrong", " Female ",
@@ -1007,7 +982,7 @@ public class AnimalFactory {
 				}
 
 				else {
-//											Male Object - every attribute of the object is picked using the random method.
+//					Male Object - every attribute of the object is picked using the random method.
 					if (speciesGenerator == 0) {
 						getListOfAnimals()
 								.add(new PacmanFrog(idObj, maleAnimalNames, AgeRandom(16), "PacmanFrong", " Male ",
@@ -1049,12 +1024,13 @@ public class AnimalFactory {
 
 //___________________________________________________________________________
 
+	/*
+	 * as random can choose 0 (animals with 0 age is too weird) we did this method
+	 * we did this method just to avoid to repeat this line of code in witch object.
+	 */
 	public int AgeRandom(int limitAge) {
-
 		int randomAge = 0;
-//		as random can choose 0 (animals with 0 age is too weird) we did this method 
-		randomAge = myRandom.nextInt(limitAge) + 1;// we did this method just to avoid to repeat this line of code in
-													// witch object.
+		randomAge = myRandom.nextInt(limitAge) + 1;
 		return randomAge;
 
 	}
@@ -1074,10 +1050,4 @@ public class AnimalFactory {
 	public void setTotalAnimals(int totalAnimals) {
 		this.totalAnimals = totalAnimals;
 	}
-	
-	
-
-//___________________________________________________________________________
-// Searches
-
 }
