@@ -48,8 +48,8 @@ public class Nurse extends Staff {
 		if (query.getUserYesOrNoValidOptio() == 1) {
 			setStatus(1);
 //start to load the "queue".
-			printer.typeWriter("Grand, let's see how many animals to administering drugs and preparing for procedure today:",
-					40);
+			printer.typeWriter(
+					"Grand, let's see how many animals to administering drugs and preparing for procedure today:", 40);
 
 			for (Animals animal : ListWork) {
 				System.out.println(animal);
@@ -70,7 +70,7 @@ public class Nurse extends Staff {
 //check if all animals had being done
 			if (workDone.size() != ListWork.size()) {
 
-//	give a change the user finish the list again.
+//	give a chance the user finish the list again.
 				query.YesOrNo(2, "would you like to finish the animals mark as Unsolved? \n\n type *yes or no*  ");
 				if (query.getUserYesOrNoValidOptio() == 1) {
 					printer.typeWriter("That's nice, let's see how many animals you left behind", 40);

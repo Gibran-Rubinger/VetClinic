@@ -69,7 +69,7 @@ public class Driver extends Staff {
 //			check if all animals had being done
 			if (workDone.size() != ListWork.size()) {
 
-// 				give a change the user finish the list again.
+// 				give a chance the user finish the list again.
 				query.YesOrNo(2, "would you like to finish the animals mark as Unsolved? \n\n type *yes or no*  ");
 				if (query.getUserYesOrNoValidOptio() == 1) {
 					printer.typeWriter("That's nice, let's see how many animals you left behind", 40);
